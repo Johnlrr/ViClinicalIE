@@ -1,0 +1,22 @@
+[
+  {
+    "text": "khó thở khi gắng sức",
+    "position": [
+      59,
+      79
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isHistorical"
+    ]
+  },
+  {
+    "text": "Khó thở khi gắng sức",
+    "position": [
+      190,
+      210
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  }
+]

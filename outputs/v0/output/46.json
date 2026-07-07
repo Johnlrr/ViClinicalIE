@@ -1,0 +1,14 @@
+[
+  {
+    "text": "tăng huyết áp",
+    "position": [
+      59,
+      72
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "text": "đau ngực",
+    "position": [
+      567,
+      575
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau bụng",
+    "position": [
+      586,
+      594
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  }
+]
