@@ -1,0 +1,3188 @@
+# 1.txt
+1.  Tiền sử bệnh
+    Thuốc trước khi nhập viện
+    - metoprolol 25mg po bid
+    - doxycycline cho viêm tuyến mồ hôi
+    - atenolol (uống hôm nay)
+    Các yếu tố nguy cơ liên quan
+    - Theo lời bệnh nhân kể lại bệnh nhân có   Căng thẳng  nhiều trong công việc
+    - Mất việc làm 8 ngày trước
+    -  Một ngày người bệnh có thể uống hàng chục tách cà phê có caffeine
+    -  và 1 tách cà phê không caffeine
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện:  Bệnh nhân vào viện vì xuất hiện triệu chứng đánh trống ngực
+    Thời điểm khởi phát triệu chứng: 
+- Cách 10 ngày trước khi vào việc  bệnh nhân xuất hiện cảm giác đánh trống ngực
+    Các triệu chứng hiện tại
+    - đánh trống ngực
+    - Khó thở nhẹ khó thở
+    - cảm giác thắt chặt ngực vùng trước tim (khởi phát lúc 17 giờ)
+    - Tăng đánh trống ngực (khởi phát lúc 17 giờ)
+    - khó thở (khởi phát lúc 17 giờ)
+    - Cảm thấy mệt mỏi nhiều khi gắng sức trong tuần qua
+    - Cảm thấy mệt mỏi nhiều hơn sau khi luyện tập thể dục so với mọi ngày 
+    Đặc điểm triệu chứng khi khám tại khoa cấp cứu
+    - đánh trống ngực:  còn cảm giác đánh trống ngực khi nhập viện.
+    - khó thở: Nhẹ, liên quan đến đánh trống ngực, liên quan đến khó thở (khởi phát lúc 17 giờ)
+    - cảm giác thắt chặt ngực: Trung tâm, khởi phát lúc 17 giờ, kéo dài 20 giây, không có khó chịu vùng ngực khi đến tầng
+    - khó thở: Liên quan đến đánh trống ngực, khởi phát lúc 17 giờ, kéo dài 20 giây
+    - giảm dung nạp gắng sức: 
+    - Không  buồn nôn, hay nôn, đổ mồ hôi
+    - Không liên quan đến gắng sức hoặc tư thế
+    Các diễn biến  trước khi nhập viện
+    - Được thăm khám bởi bác sĩ phụ trách chính 
+    - monitor holter cho thấy Nhịp xoang chiếm ưu thế. Ghi nhận ngoại tâm thu nhĩ và ngoại tâm thu thất xuất hiện thường xuyên.
+    - Bắt đầu dùng metoprolol 25mg po bid, không có cải thiện
+    -  Ở nhà bệnh nhân đã sử dụng atenololtrong ngày
+    - Lên lịch tái khám với bác sĩ tim mạch và được chỉ định siêu âm tim qua thành ngực vào tuần tới
+    - Ngày hôm nay khoảng Lúc 17 giờ,  khi đang mang đồ tạp hóa ra xe, xuất hiện cảm giác thắt chặt ngực vùng trước tim, tăng đánh trống ngực, và khó thở kéo dài 20 giây
+    - Sau đó Đến Khoa Cấp cứu
+    - Được chỉ định điều trị  aspirin 325mg x 1
+    - chụp x-quang ngực không ghi nhận gì bất thường
+    - phân tích nước tiểu không ghi nhận gì bất thường
+    - ecg bình thường
+    Tình trạng ngay trước khi nhập viện: Tiếp tục cảm thấy đánh trống ngực
+
+3.  Đánh giá tại bệnh viện
+    Kết quả khám lâm sàng
+    - VS98.3 12987 56 18 99RA
+    - Khi được chuyển vào khoa điều trị, bệnh nhân không còn cảm giáckhó chịu vùng ngực
+    Kết quả xét nghiệm: phân tích nước tiểu không có gì đáng chú ý
+    Kết quả chẩn đoán hình ảnh: chụp x-quang ngực không có gì đáng chú ý
+    Các kết quả chẩn đoán khác
+    - điện tâm đồ là không ghi nhận gì bất thường
+    - monitor holter cho thấy Nhịp xoang chiếm ưu thế. Ghi nhận ngoại tâm thu nhĩ và ngoại tâm thu thất xuất hiện thường xuyên.
+
+# 2.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu
+    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia
+
+2.  Tiền sử bệnh hiện tại
+    Triệu chứng hiện tại: hội chứng não gan
+    Các sự kiện trước khi nhập viện
+    - đến bệnh viện  với hội chứng não gan
+    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm
+    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan
+    - không thể tự chăm sóc bản thân tại nhà
+
+3.  Đánh giá tại bệnh viện
+    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da
+
+# 3.txt
+1. Tiền sử bệnh
+Các tập kinh lâm sàng trước đây
+- Tái phát các cơn ngất xỉu trong khoảng vài năm nay.
+- Ban đầu các cơn xảy ra vài lần một năm, tăng tần suất lên hơn một lần một tháng.
+Các bệnh lý nội khoa mạn tính
+- bệnh tim mạch do xơ vữa động mạch
+- tăng huyết áp
+- phình động mạch chủ nhỏ
+Thuốc trước khi nhập viện lần này: không tuân thủ điều trị bằng thuốc
+Các yếu tố nguy cơ liên quan: Hiện đang  hút thuốc
+
+2. Bệnh sử hiện tại
+Lý do nhập viện: cơn ngất xỉu
+Thời điểm khởi phát triệu chứng: Hôm qua
+Các triệu chứng hiện tại
+- ngất xỉu trong xe
+- Tỉnh dậy thấy cháu gái hét lên
+- ước tính mất ý thức có thể trong 30 giây
+- Không có triệu chứng trước đó
+- Cảm thấy khỏe khi thức dậy
+- Không đánh trống ngực
+- Không quầng sáng
+- Không chóng mặt
+- Không buồn nôn
+- Không đổ mồ hôi
+- Không mất kiểm soát đại tiện hoặc tiểu tiện
+- đau chân sau khi đi bộ vài chặng
+- đau ngực
+- khó thở khi gắng sức
+- khó thở về đêm
+- khó thở khi nằm
+- phù mắt cá chân
+- đánh trống ngực
+- ngất xỉu
+- Xỉu trước
+Đặc điểm triệu chứng
+- ngất xỉu
+- Vị trí: N/A
+- Mức độ nghiêm trọng: N/A
+- Thời gian: 30 giây (ước tính)
+- Tần suất: Hơn một lần một tháng
+- Chiếu xạ: N/A
+- Các yếu tố làm nặng thêm: N/A
+- Các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: trước khi xảy ra triệu chứng bệnh nhân cảm thấy khó chịu   cảm thấy khó chịu,không choáng váng, chóng mặt, buồn nôn, đánh trống ngực, hoặc đau ngực. Không cảm nhận được triệu chứng sau cơn ngất.
+- đau chân:
+- Vị trí: Chân
+- Mức độ nghiêm trọng: N/A
+- Thời gian: N/A
+- Tần suất: N/A
+- Chiếu xạ: N/A
+- Các yếu tố làm nặng thêm: Đi bộ vài chặng
+- Các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: N/A
+- đau ngực:
+- Vị trí: Ngực
+- Mức độ nghiêm trọng: N/A
+- Thời gian: N/A
+- Tần suất: N/A
+- Chiếu xạ: N/A
+- các yếu tố làm nặng thêm: N/A
+- các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: N/A
+- **khó thở khi gắng sức:**
+- Vị trí: N/A
+- Mức độ nghiêm trọng: N/A
+- Thời gian: N/A
+- Tần suất: N/A
+- Chiếu xạ: N/A
+- Các yếu tố làm nặng thêm: Gắng sức
+- Các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: N/A
+- **khó thở về đêm:**
+- Vị trí: N/A
+- Mức độ nghiêm trọng: N/A
+- Thời gian: N/A
+- Tần suất: N/A
+- Chiếu xạ: N/A
+- Các yếu tố làm nặng thêm: N/A
+- Các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: N/A
+- **khó thở khi nằm:**
+- Vị trí: N/A
+- Mức độ nghiêm trọng: N/A
+- Thời gian: N/A
+- Tần suất: N/A
+- Chiếu xạ: N/A
+- Các yếu tố làm nặng thêm: N/A
+- Các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: N/A
+- phù mắt cá chân:
+- Vị trí: Mắt cá chân
+- đánh trống ngực:
+- các yếu tố làm nặng thêm: N/A
+- các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: N/A
+- ngất xỉu:
+- Vị trí: N/A
+- Mức độ nghiêm trọng: N/A
+- Thời gian: N/A
+- Tần suất: N/A
+- Chiếu xạ: N/A
+- các yếu tố làm nặng thêm: N/A
+- các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: N/A
+- **Xỉu trước:**
+- Vị trí: N/A
+- Mức độ nghiêm trọng: N/A
+- Thời gian: N/A
+- Tần suất: N/A
+- Chiếu xạ: N/A
+- Các yếu tố làm nặng thêm: N/A
+- Các yếu tố làm giảm: N/A
+- Các triệu chứng liên quan: N/A
+Các sự kiện trước khi nhập viện
+- Được đưa đến một bệnh viện OSH sau khi bị té ngã.
+- dấu hiệu sinh tồn ban đầu là mạch 83, huyết áp 159/72, nhịp thở 20, spo2 (độ bão hòa oxy) 94-95 RA.
+- Phát hiện rung nhĩ kèm đáp ứng thất nhanh mới ở mức 130-150, sau đó là nhịp tim chậm tương đối.
+- điện tâm đồ (ecg) cho thấy bằng chứng có thể là nhồi máu cơ tim vùng dưới cũ và những thay đổi sóng T không đặc hiệu thay đổi sóng t.
+- bảng công thức sinh hóa máu cơ bản, bảng công thức máu, bảng chức năng gan và bản phân tích nước tiểu đều bình thườngbình thườngbình thườngbình thường.
+- troponin 0.01.
+- chụp x-quang ngực cho thấy tim to nhưng không có bất thường nào khác.
+- chụp cắt lớp vi tính sọ não bình thường.
+- Nhập viện khoa Nội.
+- Quyết định rằng cô ấy sẽ được phục vụ tốt hơn bằng cách chuyển đến bệnh viện này để tiếp cận chẩn đoán / thăm dò
+Tình trạng ngay trước khi nhập viện: ổn định và không có phàn nàn khi đến tầng.
+
+3. Đánh giá tại bệnh viện
+Kết quả xét nghiệm
+- bảng công thức sinh hóa máu cơ bản bình thường
+- bảng công thức máu bình thường
+- bảng chức năng gan bình thường
+- bản phân tích nước tiểu bình thường
+- troponin 0.01
+- rung nhĩ kèm đáp ứng thất nhanh mới ở mức 130-150, sau đó là nhịp tim chậm tương đối
+- Có thể là nhồi máu cơ tim vùng dưới cũ (điện tâm đồ (ecg))
+- thay đổi sóng t không đặc hiệu (điện tâm đồ (ecg))
+Kết quả hình ảnh
+- Tim to (chụp x-quang ngực)
+- chụp cắt lớp vi tính sọ não bình thường
+
+# 4.txt
+1.  Tiền sử bệnh
+    Bệnh nhân có tiền sử dụng thuốc
+    - NSAID để điều trị đau đầu gối (đã ngừng)
+    - omeprazole (bắt đầu dùng)
+
+2.  Tiền sử bệnh hiện tại
+2. Tiền sử bệnh hiện tạiBệnh nhân nhập viện vì đau vùng hạ sườn phải kéo dài vài tuần nay.
+Khởi phát bệnh cách thời điểm nhập viện vài tuần với triệu chứng đau vùng hạ sườn phải, kèm chướng bụng và buồn nôn thoáng qua. 
+Bệnh nhân không ghi nhận nôn ói.Ngoài ra, bệnh nhân có tiền sử đau lưng kéo dài từ lâu, khu trú vùng cạnh cột sống bên trái đoạn giữa lưng, đôi khi lan ra phía trước bụng.
+Đau bụng chủ yếu khu trú vùng hạ sườn phải, xuất hiện nhiều sau ăn, kèm cảm giác chướng bụng. 
+Các triệu chứng liên quan gồm buồn nôn thoáng qua, không nôn. Bệnh nhân cũng ghi nhận tình trạng đau lưng kéo dài như trên.Hiện tại, bệnh nhân nhập viện để tiếp tục được thăm khám, chẩn đoán và điều trị.
+    Lý do nhập viện: đau bụng vùng hạ sườn phải
+    Thời điểm khởi phát triệu chứng: Vài tuần
+    Các triệu chứng hiện tại
+    - đau bụng vùng hạ sườn phải
+    - chướng bụng 
+    - buồn nôn thoáng qua
+    - Nôn mửa
+    - Bệnh nhân có  đau lưng âm ỉ
+    Đặc điểm triệu chứng
+    - Vị trí: đau bụng hạ sườn phải, đau lưng (khu trú vùng cạnh cột sống bên trái đoạn giữa lưng, đôi khi lan ra phía trước bụng.)
+    - Thời gian: Thường xuất hiện sau bữa ăn (đau bụng, chướng bụng)
+    - Các triệu chứng liên quan: chướng bụng,  buồn nôn thoáng qua, nôn, đau lưng kéo dài 
+    Các sự kiện trước khi nhập viện
+Bệnh nhân được nội soi thực quản - dạ dày - tá tràng ngoại trú, kết quả ghi nhận viêm dạ dày.
+Đã ngừng sử dụng thuốc NSAIDs.
+Được điều trị bằng omeprazole.
+Chụp cộng hưởng từ mật tụy  ghi nhận sỏi đoạn cuối ống mật chủ.
+Xét nghiệm chức năng gan cho thấy men gan tăng.
+Sau đó bệnh nhân đến khoa Cấp cứu để được đánh giá và điều trị tiếp
+.Đánh giá tại bệnh viện
+Xét nghiệm:Xét nghiệm chức năng gan ghi nhận tăng men gan.
+Chẩn đoán hình ảnh và thăm dò:Nội soi thực quản - dạ dày - tá tràng: viêm dạ dày.
+Cộng hưởng từ mật tụy : sỏi đoạn cuối ống mật chủ.
+Thủ thuật được thực hiện   :Nội soi mật tụy ngược dòng (ERCP). Trong quá trình ERCP, lấy thành công 02 viên sỏi tại đoạn cuối ống mật chủ (CBD).
+    - chụp cộng hưởng từ mật tụy tụi mật được thực hiện cho thấy sỏi ống dẫn mật chung đoạn cuối
+
+
+# 5.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mạn tính
+    - bệnh tim mạch do xơ vữa động mạch
+    - Tăng huyết áp
+    - tăng lipid máu, không đặc hiệu
+    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đau bụng
+    Thời điểm khởi phát triệu chứng
+    - Tiền sử 1 ngày
+    - Khởi phát trong khi ăn tối
+    Triệu chứng chính
+    - đau bụng vùng thượng vị
+    - buồn nôn
+    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác
+
+3.  Đánh giá tại bệnh viện
+    Dấu hiệu lâm sàng
+    - sốt đến 101.4
+    - Tăng lên 101.8 trước thủ thuật
+    - hạ huyết áp, không đặc hiệu trong khi thủ thuật
+    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)
+    Kết quả xét nghiệm
+    - viêm gan do men
+    - ast (aspartate aminotransferase) là 319
+    - alt (alanine aminotransferase) là 690
+    - phosphatase kiềm (ap) là 983
+    - bilirubin toàn phần (tbili) là 2.4
+    - bạch cầu (wbc) 11.6
+    - Đã lấy cấy máu
+ Kết quả chẩn đoán hình ảnh: 
+Siêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.
+Các thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng 
+Đặt stent đường mật để dẫn lưu và giải áp đường mật.
+Đặt nội khí quản nhằm 
+Đặt catheter động mạch (
+Đặt đường truyền tĩnh mạch ngoại vi 
+    - levophed
+    - propofol để an thần
+    - Đã đặt phentolamine
+
+# 6.txt
+1.  Tiền sử bệnh nội khoa
+   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.
+
+2.  Tiền sử bệnh hiện tại
+    Các sự kiện trước khi nhập viện
+    - Được theo dõi định kỳ bằng  siêu âm Doppler động mạchcho nghẽn tắc và hẹp động mạch cảnh
+    - Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng, tỷ số PSV/EDV > 7, vận tốc dòng chảy tăng rõ
+    Tình trạng ngay trước khi nhập viện
+    - Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị.
+3.  Đánh giá tại bệnh viện
+
+# 7.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mạn tính
+    - ho Rối loạn cảm xúc (trầm cảm) (tiền sử giai đoạn trầm cảm không đặc hiệu)
+    - hội chứng nghiện rượu
+    Thuốc trước khi nhập viện lần này: seroquel (ngụ ý, vì bệnh nhân cho rằng lú lẫn, chóng mặt, khó nhìn gần có thể liên quan đến thuốc)
+    Các yếu tố nguy cơ liên quan: hội chứng nghiện rượu
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Bày tỏ tự tử với nhân viên khi xuất viện
+    Triệu chứng hiện tại
+    - tự tử
+    - Lú lẫn từng đợt gần đây
+    - cảm giác chóng mặt
+    - khó khăn khi nhìn gần
+    - rối loạn thị giác, nhìn thấy con cái mình ở góc mắt
+    - ảo giác thị giác (ảo giác thị giác)
+    - Ảo thanh (AH) (ảo giác thính giác)
+    Đặc điểm triệu chứng
+    - tự tử: thụ động, diễn ra liên tục, tưởng tượng về cái chết mãn tính kể từ khi ly hôn
+    - Lú lẫn: từng đợt
+    - chóng mặt
+    - Khó khăn về thị lực gần
+    - rối loạn thị giác: nhìn thấy con cái ở góc mắt
+    - ảo giác thị giác, Ảo thanh (AH): có vẻ là ảo giác hơn là ảo ảnh thực sự
+    Các sự kiện trước khi nhập viện
+    - Được đưa đến Cấp cứu sau khi bày tỏ tự tử với nhân viên khi xuất viện
+    - Được yêu cầu ký một mẫu đơn cam kết đảm bảo an toàn trong 24 giờ trước khi bắt đầu chương trình điều trị bán trú, và anh ấy không thể làm được
+    - chụp ct sọ được phát hiện tình cờ tại Cấp cứu; phát hiện bệnh lý chất trắng
+    - chọc dò dịch não tủy là không phát hiện bất thường
+    - đánh giá thần kinh để tìm bệnh lý chất trắng
+    - các băng nhóm oligoclonal đang chờ kết quả
+    - Được bác sĩ khoa tâm thần cho nhập chỉ định viện tâm thần 
+    Tình trạng ngay trước khi nhập viện: Phủ nhận tự tử chủ động, ý định, kế hoạch hiện tại khi đã lên tầng, cảm thấy an toàn
+
+3.  Đánh giá tại bệnh viện
+    Kết quả xét nghiệm: chọc dò dịch não tủy là âm tính
+    Kết quả chẩn đoán hình ảnh: chụp ct sọ: phát hiện bệnh lý chất trắng (được phát hiện tình cờ)
+    Các thủ thuật đã thực hiện: chọc dò dịch não tủy (Đột sống thắt lưng)
+    Các phát hiện chẩn đoán khác
+    - đánh giá thần kinh để tìm bệnh lý chất trắng
+    - các băng nhóm oligoclonal đang chờ kết quả
+    - Nguyên nhân chưa rõ (đối với phát hiện bệnh lý chất trắng)
+    - Sẽ không điển hình cho Bệnh đa xơ cứng theo ý kiến của bác sĩ thần kinh
+    - Ảo giác do rượu (suy nghĩ)
+    - Không được coi là thực sự loạn thần
+
+# 8.txt
+Bệnh sử 
+Bệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.
+Qua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. 
+Bệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. 
+Kết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.
+Tại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.
+Kết quả khám tại bệnh viện
+Kết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.
+Thủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm.
+
+# 9.txt
+1.  Tiền sử bệnh
+    Bệnh lý mãn tính: u cơ trơn tử cung, không đặc hiệu
+    Thuốc trước khi nhập viện: iron
+
+2.  Lịch sử bệnh hiện tại
+    Lý do nhập viện: Bắt đầu đau bụng dưới và chảy máu nhiều
+    Triệu chứng hiện tại
+    - lower abdominal pain
+    - chảy máu nhiều
+    Các sự kiện trước khi nhập viện
+    - siêu âm được thực hiện vào [Date]
+    - huyết cầu tố là 26.1 vào thời điểm đó
+    - Các lựa chọn điều trị được cân nhắc: điều trị bảo tồn, điều trị nội khoa, can thiệp x-quang và điều trị ngoại khoa
+    - Bệnh nhân yêu cầu cắt bỏ u xơ tử cung qua đường bụng
+    - Tất cả các giấy tờ đồng ý đã được ký trước khi vào phòng mổ
+
+3.  Đánh giá tại bệnh viện
+    Kết quả phòng thí nghiệm: huyết cầu tố 26.1
+    Kết quả chẩn đoán hình ảnh
+    - siêu âm tử cung vào [Date] cho thấy:
+    - Tử cung đo 14,2 x 8,8 x 7,5 cm
+    - U cơ trơn lớn nhất ở đoạn dưới của tử cung đo 4,1 x 4,8 x 4,1 cm
+    - Dải nội mạc tử cung không thể xác định được
+    - Cả hai buồng trứng đều có vẻ bình thường
+    - Không thấy dịch tự do trong túi cùng Douglas
+    - Không có giãn bể thận
+
+# 10.txt
+1. Tiền sử bệnh nội khoa
+Chưa phát hiện bệnh lý bất thường
+2. Tiền sử bệnh hiện tại
+Triệu chứng hiện tại
+- Đờm
+- ho
+- đôi khi đau bụng quặn
+- tiêu chảy
+- đôi khi đi ngoài ra máu
+- không tăng cân nhiều
+3. Đánh giá tại bệnh viện
+Kết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9
+Kết quả chẩn đoán hình ảnh
+- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể
+- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt
+Thủ thuật thực hiện
+- sinh thiết (trước đây)
+- siêu âm hôm nay
+Các phát hiện chẩn đoán khác
+- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể
+- sinh thiết chỉ cho thấy một u tuyến
+- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)
+
+# 11.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mạn tính
+    - tăng huyết áp
+    - bệnh gút không đặc hiệu
+    - bệnh thận mạn, không đặc hiệu
+    - ung thư đại tràng
+    - béo phì
+    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.
+    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu
+2.  Tiền sử bệnh hiện tại
+Chưa phát hiện bất thường
+3.  Đánh giá tại bệnh viện
+    Các thủ thuật đã thực hiện
+    - chọc dò màng phổi 3L4
+    - chọc dò dịch ổ bụng 7L
+    - thủ thuật TIPS
+
+# 12.txt
+1.  Tiền sử bệnh nội khoa
+    Bệnh lý mãn tính: U Sacoit tổn thương chủ yếu tại tim.
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: ho x1 ngày và kèm theo ho ra máu cỡ đồng xu x3 đêm qua
+    Thời điểm khởi phát triệu chứng
+    - ho x1 ngày
+    - ho ra máu x3 đêm qua
+    Diễn biến bệnh
+    - Các triệu chứng bắt đầu với ho và mệt mỏi
+    - Tối qua tiến triển thành 3 cơn ho đánh thức bệnh nhân khỏi giấc ngủ và có đờm có màu hồng
+    - Sau đó 2 giờ, bệnh nhân sốt đến 38.8°C (101.8°F)
+    - Không có thêm ho ra máu kể từ sáng nay
+    Triệu chứng hiện tại
+    - ho
+    - mệt mỏi
+    - ho ra máu cỡ đồng xu x3 đêm qua
+    - Đờm pha màu hồng
+    - fever (trở thành sốt đến 38.8°C)
+    - Đau bụng  âm ỉ  trong tháng qua 
+   - Các diễn biến  trước khi nhập viện
+    - Đến gặp bác sĩ chăm sóc chính sáng nay
+    - Được chuyển đến phòng cấp cứu khám và điều trị
+    - Được cho dùng levofloxacin vì nghi ngờ viêm phế quản do viêm phổi mắc phải cộng đồng ở bệnh nhân phức tạp,  cùng tylenol
+
+3.  Đánh giá tại bệnh viện
+    Kết quả xét nghiệm: công thức máu (cbc) nâng cao lên 11.3
+    Kết quả chẩn đoán hình ảnh: chụp x-quang ngực không phát hiện viêm phổi hoặc phù phổi
+    Các thủ thuật đã thực hiện: Lấy mẫu cấy máu
+
+# 13.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+- Bệnh phổi kẽ do sử dụng corticoid liều cao kéo dài.
+    - Thở oxy tại nhà
+    - Hội chứng kháng enzym tổng hợp protein.
+    - béo phì
+    - Tăng huyết áp nguyên phát.
+    Tiền sử phẫu thuật / thủ thuật: Sinh thiết nội mạc tử cung gần đây
+    Thuốc trước khi nhập viện
+    -Corticoid liều cao kéo dài
+    - Thở oxy tại nhà
+    - Tăng liều bactrim (do bác sĩ chăm sóc chính kê đơn)
+    - doxycycline (do bác sĩ chăm sóc chính kê đơn)
+- Suy giảm miễn dịch do sử dụng corticoid kéo dài
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Tình trạng tổn thương vùng âm hộ và mông bên phải ngày càng nặng
+    Diễn biến bệnh
+- Bệnh nhân nhập viện vì tổn thương vùng âm hộ phải lan rộng sang mông phải, diễn biến tăng dần trong khoảng 5 ngày trước nhập viện.
+- Cách nhập viện 5 ngày, bệnh nhân phát hiện một tổn thương đơn độc vùng âm hộ phải. Sau đó được bác sĩ điều trị khám và tăng liều cotrimoxazol, đồng thời bổ sung doxycyclin do nghi ngờ viêm mô tế bào. Bệnh nhân thấy  ban đỏ quanh tổn thương giảm sau điều trị
+    - Tuy nhiên tổn thương tiếp tục tiến triển, xuất hiện nhiều bọng nước, lan rộng sang mông phải, đau nhiều, một số vị trí rỉ dịch vàng đục giống mủ.
+    - Khám tại phòng khám vào ngày nhập viện
+    - Được chuyển  đến Khoa Cấp cứu để khám và điều trị tiếp
+    Triệu chứng khi nhập viện
+    - tổn thương vùng âm hộ và mông bên phải
+    - Tổn thương cực kỳ đau đớn
+    - Tình trạng tổn thương dạng bóng nước ngày càng nặng
+    - Lan đến mông bên phải
+    - có dịch giống mủ có màu vàng  chảy ra từ tổn thương
+    Đặc điểm của triệu chứng
+    - Vị trí: âm hộ bên phải, mông bên phải
+    - Mức độ nghiêm trọng: cực kỳ đau đớn
+    - Thời gian: Tình trạng ngày càng nặng trong 5 ngày
+    - Các triệu chứng liên quan: ban đỏ, chảy mủ
+    Các sự kiện trước khi nhập viện
+    - Được bác sĩ chăm sóc chính thay thế khám vào ngày, được tăng liều bactrim và doxycycline để điều trị chẩn đoán Viêm mô tế bào
+    - Báo cáo có cải thiện một phần về ban đỏ
+    - dịch tiết có vẻ như mủ từ một số tổn thương vào ngày, nhưng tình trạng này đã tự khỏi
+    - Khám tại phòng khám vào ngày nhập viện
+    - Được giới thiệu đến Khoa Cấp cứu để đánh giá thêm
+    - Bệnh nhân kiên quyết muốn tiếp tục sử dụng doxycyclinebactrim cho khả năng Viêm mô tế bào
+    - Cảm thấy rằng cô ấy đã có cải thiện do những loại thuốc này và không muốn ngừng chúng cho đến khi được bác sĩ Truyền nhiễm khám
+3.  Đánh giá tại bệnh viện
+    Các phát hiện chẩn đoán khác: Lo ngại về Nhiễm virus Herpes simplex (HSV) hoặc Bệnh thủy đậu/Zona (do Varicella Zoster Virus)
+
+# 14.txt
+1.  Tiền sử bệnh nội khoa
+2.  Tiền sử bệnh hiện tại
+Lý do nhập viện: đau ngực tráikèm theo  khó thở
+Triệu chứng hiện tại
+- đau ngực trái
+- khó thở
+- chóng mặt
+Đặc điểm triệu chứng
+- đau ngực trái: gián đoạn, không liên quan đến gắng sức
+- khó thở: không liên quan đến gắng sức, được cho là do dị ứng theo mùa và dị ứng phấn hoa
+- chóng mặt: các đợt kéo dài vài phút, đến rồi đi
+Các sự kiện trước khi nhập viện
+- Các nghiệm pháp gắng sức trước đây cho kết quả bất thường
+- Xạ hình tưới máu cơ tim gần đây cho thấy thiếu máu cơ tim vùng dưới và thành bên
+Chụp động mạch vành: hẹp 60% đoạn gần động mạch liên thất trước trái.
+Được chỉ định đánh giá phẫu thuật bắc cầu động mạch vành.
+Chẩn đoán sơ bộ : Bệnh động mạch vành mạn tính có thiếu máu cơ tim, hẹp 60% đoạn gần động mạch liên thất trước trái.
+
+
+# 15.txt
+2. Bệnh sử hiện tại
+Lý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu
+
+3. Đánh giá tại bệnh viện
+Các thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc
+Các phát hiện chẩn đoán khác
+- xuất huyết nội sọ không do chấn thương, không đặc hiệu
+- Điều trị chống đông
+
+# 16.txt
+1. Tiền sử bệnh
+Các bệnh lý mạn tính
+- Ung thư biểu mô tuyến đại tràng
+- bệnh phổi tắc nghẽn mạn tính, không xác định
+- Đái tháo đường
+- xơ gan do rượu
+Tiền sử phẫu thuật / thủ thuật: Dựa trên tiền sử phẫu thuật mới được bổ sung: "Phẫu thuật mở cắt nối trực tràng/đại tràng sigma vì ung thư tuyến đại tràng
+Các yếu tố nguy cơ liên quan: xơ gan do rượu
+
+2. Bệnh sử hiện tại
+Lý do nhập viện: tụt huyết áp không rõ nguyên nhân và mệt mỏi
+Thời điểm khởi phát triệu chứng: vài ngày mệt mỏi
+Diễn biến bệnh
+- Bệnh nhân nhập viện, quá trình điều trị biến chứng bởi Viêm phổi bệnh viện và rung nhĩ và nhịp nhanh trên thất, sau đó xuất viện về trung tâm phục hồi chức năng.
+- Bệnh nhân tái khám tại phòng khám vào ngày hẹn để cắt bỏ các mũi kẹp còn lại và thay thế vật liệu độn.
+- Hôm nay, bệnh nhân đến khoa Cấp cứu khám vì tình trạng mệt mỏi kéo dài trong vài ngày, kèm theo khó khăn khi ra khỏi giường vào sáng nay.
+- Bệnh nhân đã có đau bụng gián đoạn kể từ khi phẫu thuật.
+Triệu chứng hiện tại
+- hạ huyết áp, không đặc hiệu
+- mệt mỏi
+- mệt mỏi
+- khó khăn khi ra khỏi giường
+- đau bụng gián đoạn
+- khó thở khi gắng sức
+- ho mạn tính có đờm vàng loãng
+- chán ăn trong vài tháng
+Đặc điểm triệu chứng
+- đi tiêu không liên quan đến đau bụng, buồn nôn, nôn, tiêu chảy, hoặc táo bón.
+- Bệnh nhân đang có đi tiêu mỗi ngày.
+- Không có sốt, đau ngực, chóng mặt, đánh trống ngực.
+- Không có đau bụng hoặc dịch từ vết mổ.
+- Không có đỏ da, hoặc bục chỉ khâu bụng.
+3. Đánh giá tại bệnh viện
+Kết quả khám thực thể
+- Khám thấy ran nổ, phù phù, dịch rỉ huyết thanh từ vết mổ, và phân nâu dương tính guaiac.
+- dấu hiệu sinh tồn là: 98.8 65 9360 20 95 2LNC (tại khoa Cấp cứu)
+- dấu hiệu sinh tồn 98.6 70 10356 17 962LNC (khi đến MICU)
+Dấu hiệu lâm sàng
+- hạ huyết áp, không đặc hiệu
+- mệt mỏi
+- mệt mỏi
+- khó thở khi gắng sức
+- ho mạn tính có đờm vàng loãng
+- ran
+- phù phù
+- dịch thanh dịch lẫn máu từ vết mổ
+- phân nâu dương tính guaiac
+Kết quả xét nghiệm: huyết khối 26.3, giảm so với hôm qua, nhưng ổn định ở mức 28 hậu phẫu tuần trước.
+Kết quả chẩn đoán hình ảnh: chụp x-quang ngực có xẹp phổi thùy dưới phải do chèn ép kèm tràn dịch màng phổi.
+Các thủ thuật đã thực hiện
+- Truyền dịch tĩnh mạch 750cc
+- Xông khí dung
+Các phát hiện chẩn đoán khác
+- Viêm phổi bệnh viện
+- Rung nhĩ kèm nhịp nhanh trên thất
+
+# 17.txt
+1. Tiền sử bệnh nội khoa
+Bệnh mãn tính: bệnh trào ngược dạ dày- thực quản không có viêm thực quản
+2. Bệnh sử hiện tại
+Lý do nhập viện: sốt và đau cơ sau khi đi du lịch
+Thời điểm khởi phát triệu chứng: 13 ngày sau khi trở về từ một chuyến du thuyền
+Diễn biến bệnh
+- Bắt đầu cảm thấy không khỏe kèm theo sốt, mệt mỏi, đau cơ
+- Sốt cao nhất là 102.9°F không đáp ứng với tylenol và advil
+- Báo cáo đau cổ và vai phải kèm theo sưng quanh khớp ức đòn
+- Đã khám bác sĩ chăm sóc chính  hai lần
+- Sau đó được nhập viện vào khoa cấp cứu
+- cảm thấy tốt hơn sau khi dẫn lưu áp xe, và lại thấy đỡ  sốt và đau cổ
+Triệu chứng hiện tại
+- sốt
+- đau cơ
+- đau cổ
+- đau vai phải
+- sưng quanh khớp ức đòn
+- mệt mỏi
+- ho khan
+- đau đầu
+- sợ ánh sáng
+Các biến trước khi nhập viện
+- Đã khám bác sĩ chăm sóc chính hai lần
+-sau đó nhaoaj viện tại khoa cấp cứu 
+- Đã thực hiện khám và điều trị
+- Đã thực hiện siêu âm vùng cổ phải  cho có kết qủa là  áp xe/viêm khớp nhiễm trùng
+- Dẫn lưu dịch
+- x-quang đề nghị mri
+- nhập viện tại  khoa cấp cứu để điều trị thêm, dùng kháng sinh tĩnh mạch và mri
+3. Đánh giá tại bệnh viện
+Kết quả khám lâm sàng
+- Vết rạch nhỏ trên ngực phải, hơi đau khi sờ nắn
+- Không đau khi vận động cánh tay
+- Không có dấu hiệu viêm mô tế bào hoặc nhiễm trùng ở các bộ phận khác trên cơ thể
+- Phổi rõ tiếng khi nghe
+- Tim nhịp đều, không có tiếng tim bệnh lý
+Kết quả xét nghiệm máu
+- bạch cầu 13.9
+- 80 neutrophil
+- 11 lymphocyte
+- bình thường chem 7
+- ck 58
+- alt 92
+- hiv vl đang chờ
+- soi tươi ký sinh trùng âm tính
+Kết quả chẩn đoán hình ảnh
+- siêu âm vùng cổ phải (scm):  ổ tụ dịch chia làm hai thùy, giới hạn và bờ không rõ. Cấu trúc tổn thương giảm âm, có hồi âm lợn cợn (vẩn đục) bên trong. Kích thước đo được khoảng 3.7 x 0.7 cm trên mặt cắt ngang. Ổ dịch có xu hướng lan lên trên và ăn sâu xuống phía dưới xương đòn.
+- sung huyết ngoại vi nhẹ nhưng không có mạch máu bên trong
+Các thủ thuật đã thực hiện
+- siêu âm vùng cổ phải (scm)
+- Hút 0.5cc dịch mủ
+- Dẫn lưu dịch mủ/dịch chứa
+
+# 18.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng
+    Thời điểm khởi phát triệu chứng: cấp tính
+    Triệu chứng hiện tại
+    - đau ngực trái
+    - đau sau xương ức
+    - đau lan ra sau lưng
+    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến
+3.  Đánh giá tại bệnh viện
+    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B 
+    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện
+    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B
+
+# 19.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý nội khoa mạn tính
+    - Giai đoạn IV Ung thư phổi không tế bào nhỏ
+    - Di căn não vùng trán phải dã phẫu thuật lấy u
+    - Tắc mạch huyết khối tĩnh mạch chủ dưới (IVC) và tĩnh mạch chủ trên (SVC) phải
+    - Tăng huyết áp
+    - Sa van hai lá
+    Tiền sử phẫu thuật / thủ thuật: lấy u di căn bán cầu não phải
+    Thuốc trước khi nhập viện: vicodin (uống không thấy giảm đau)
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đau bẹn trái
+    Thời điểm khởi phát triệu chứng: 3 ngày trước
+    Diễn biến bệnh
+    - đau bắt đầu 3 ngày trước khi đi lại.
+    - đau ngày càng nặng hơn trong vài ngày tiếp theo.
+    - đau cản trở việc đi lại của bà.
+    Triệu chứng hiện tại: đau bẹn trái
+    Đặc điểm triệu chứng
+    - Vị trí: bẹn trái
+    - Lan tỏa: đôi khi lan ra bên hông trái, xuống đầu gối trái khi đau dữ dội
+    - Yếu tố làm nặng thêm: đi lại
+    - Yếu tố làm giảm: vicodin (không thấy giảm đau)
+    - Triệu chứng kèm theo: Không có cảm giác tê, cảm giác châm chích, yếu hoặc cảm giác nặng ở chân trái.
+    Sự kiện trước khi nhập viện: Uống vicodin không thấy giảm đau.
+3.  Đánh giá tại bệnh viện
+    Dấu hiệu lâm sàng: Bầm máu vùng bẹn trái (được phát hiện tại phòng cấp cứu)
+
+# 20.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - Tăng huyết áp
+    - bệnh thận mạn, không đặc hiệu
+    - bệnh tim mạch do xơ vữa động mạch với Nhồi máu cơ tim gần đây
+    - rung nhĩ kịch phát
+    - tăng sản tuyến tiền liệt
+    Tiền sử phẫu thuật / thủ thuật
+    - đã phẫu thuật TURP 
+    - xạ hình tưới máu cơ tim mibi
+    Thuốc trước khi nhập viện
+    - metoprolol (reduced from 50mg to 25mg daily)
+    - desmopressin
+    Các yếu tố nguy cơ liên quan
+    - Cựu chiến binh Thế chiến II
+    - Rối loạn dáng đi với nhiều lần ngã
+    - thường xuyên luyện tập, đi bộ 20 phút mỗi ngày trên máy chạy bộ
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: ngã với gãy cổ xương đùi di lệch
+    Thời điểm khởi phát triệu chứng: Hôm qua
+    Diễn biến bệnh
+    - ngã hôm qua
+    - Có thể tự đi lại và lái xe sau ngã
+    - Sáng nay không thể tự ra khỏi giường và tự đi lại
+    - Gọi xe cứu thương
+    - Phát hiện có gãy cổ xương đùi di lệch
+    Triệu chứng khi nhập viện: Đau ở hông phải khi cử động và thay đổi tư thế
+    Đặc điểm triệu chứng
+    - Vị trí: hông phải
+    - Yếu tố làm nặng thêm: cử động, thay đổi tư thế
+    Các sự kiện trước khi nhập viện
+    - ngã do cơ học hôm qua
+    - Chấn thương tù ở Chi dưới phải (RLE)
+    - vết thương hở phần khác của chi dưới
+    - Không có tiền sử chấn thương đầu hoặc mất ý thức (mất ý thức)
+    - có thể chịu trọng lượng và lái xe sau ngã
+    - Gọi xe cứu thương
+    - Phát hiện có gãy cổ xương đùi di lệch; mất vận động vùng đỉnh
+    - chụp x-quang ngực Hình ảnh mức nước - hơi vùng ngực.
+    - chụp ct ngực không thuốc cản quang cho thấy tim to, tràn dịch màng tim, tràn dịch màng phổi hai bên, thoát vị hoành nhỏ, thay đổi khí phế thủng, và xẹp phổi hai đáy
+    Tình trạng tiến triển nặng trước nhập viện, bệnh nhân nằm tại giường, không thể tự di chuyển và không chịu lực được khi đứng.
+
+3.  Đánh giá tại bệnh viện
+    Kết quả khám lâm sàng
+    - cảm thấy khỏe trên sàn
+    - Than phiền đau ở hông phải khi cử động và thay đổi tư thế
+    Kết quả chụp ảnh/kỹ thuật chẩn đoán hình ảnh
+    - chụp x-quang ngực: mức nước-khí
+    - chụp ct ngực không thuốc cản quang: tim to, tràn dịch màng tim, tràn dịch màng phổi hai bên, thoát vị hoành nhỏ, thay đổi khí phế thủng, xẹp phổi hai đáy
+    - xạ hình tưới máu cơ tim  mibi: khuyết tật toàn bộ, không hồi phục, kích thước vừa phải ở thành dưới gần mấu
+    - siêu âm tim qua thành ngực (siêu âm tim qua thành ngực): EF30, mất vận động vùng đỉnh, hở van ba lá vừa-nặng (mod-severe TR) và hở van hai lá/van động mạch chủ nhẹ (mild ARMR)
+    - Gãy xương hông phải: gãy cổ xương đùi phải, lún đầu dưới
+    Các thủ thuật đã thực hiện
+    - chụp ct ngực không thuốc cản quang
+    - siêu âm tim qua thành ngực (siêu âm tim qua thành ngực)
+    - chụp xạ hình tim bằng mibi
+    - đã phẫu thuật TURP (Transurethral Resection of the Prostate)
+    Các phát hiện chẩn đoán khác
+    - Nhồi máu cơ tim vùng vách liên thất, mạn tính và đỉnh
+    - rung nhĩ kịch phát liên tục kể từ Nhồi máu cơ tim
+    - tiểu đêm nhiều  do  tăng sản tuyến tiền liệt
+
+# 21.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - Tăng huyết áp
+    - suy tim, không đặc hiệu
+    - bệnh thận mạn, không đặc hiệu
+    Tiền sử phẫu thuật / thủ thuật: Đã đặt 02 stent graft động mạch chủ ngực trong phẫu thuật điều trị phình động mạch chủ ngực – bụng giai đoạn 1 (không rõ thời điểm).
+    Các yếu tố nguy cơ liên quan: Sử dụng sử dụng thuốc lá nhiều năm
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Đến khám để thực hiện giai đoạn 2 của phẫu thuật sửa van tĩnh mạch chủ ngực bụng
+3.  Đánh giá tại bệnh viện
+
+# 22.txt
+1. Tiền sử bệnh
+Bệnh lý mãn tính: bệnh mạch máu
+Thuốc trước khi nhập viện: aspirin 325mg hằng ngày
+2. Bệnh sử hiện tại
+3. Đánh giá tại bệnh viện
+Kết quả khám thực thể: Không có rối loạn thần kinh
+Kết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên
+Các thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang
+
+
+# 23.txt
+1.  Tiền sử bệnh lý
+
+Bệnh tim mạch do xơ vữa động mạch.
+ăng huyết áp.Rối loạn lipid máu.
+Đái tháo đường.2. 
+Bệnh sử
+Lý do vào viện: Cơn rối loạn ý thức thoáng qua, nghi ngờ cơn co giật.
+Khoảng 1 tháng trước nhập viện, bệnh nhân bị ngã và được chẩn đoán xuất huyết dưới nhện. Chụp cắt lớp vi tính sọ não cho hình ảnh  xuất huyết dưới nhện vùng trán phải, bầm dập nhu mô vùng trán phải và trán - thái dương phải, kèm một lớp dịch dưới màng cứng mỏng vùng thùy trán phải, nghĩ nhiều đến nang màng nhện hoặc tụ dịch/tụ máu dưới màng cứng mạn tính. 
+Các lần chụp CT theo dõi sau đó ổn định và bệnh nhân được xuất viện, hẹn tái khám chuyên khoa Ngoại thần kinh.
+Sau xuất viện, bệnh nhân từng quay lại khoa Cấp cứu vì đau đầu kéo dài. 
+Chụp kiểm tra ghi nhận tụ máu ngoài màng cứng phải cấp tính trên nền tổn thương mạn tính. 
+Bệnh nhân tiếp tục được theo dõi, các lần chụp CT kiểm tra không ghi nhận diễn tiến xấu nên được xuất viện về nhà.
+Trong thời gian sau đó, bệnh nhân tương đối ổn định nhưng vẫn còn đau đầu vùng thái dương phải và đỉnh đầu, kèm cảm giác tê bì nửa mặt phải, đặc biệt vùng trán phải và da đầu phải từ sau lần ngã.
+Ngày vào viện, buổi sáng bệnh nhân thức dậy tỉnh táo, sinh hoạt bình thường, ăn sáng, đọc báo và sử dụng máy tính. Đến cuối buổi sáng, khi đang đi trong nhà, bệnh nhân nói muốn đi vệ sinh. 
+Người nhà nhận thấy bệnh nhân có biểu hiện bất thường, mất định hướng, đi lại không vững và gần như ngất. 
+Bệnh nhân lúc mở mắt, lúc nhắm mắt, nhiều lần ngửa đầu ra sau và không đáp ứng được các câu hỏi của người nhà.Sau đó bệnh nhân được dìu nằm nghỉ. 
+Trong cơn, bệnh nhân kích thích nhẹ, liên tục cố gắng đứng dậy và tỏ ra không hiểu tình trạng đang xảy ra. 
+Tình trạng ý thức dao động kéo dài khoảng 20 phút rồi cải thiện dần. 
+Khi nhân viên cấp cứu đến nơi, bệnh nhân bắt đầu tỉnh táo trở lại và hồi phục hoàn toàn về trạng thái ban đầu.
+Bệnh nhân không ghi nhận run giật tay chân, không cứng đờ, không cắn lưỡi và không tiểu tiện không tự chủ trong cơn.
+Triệu chứng khi nhập viện:
+Đau đầu vùng thái dương phải, đỉnh đầu, đôi khi lan ra sau mắt phải.
+Tê bì vùng trán phải, da đầu phải và nửa mặt phải.
+Cơn rối loạn ý thức thoáng qua.Mất định hướng.
+Mất thăng bằng.Gần ngất.
+Tình trạng trước nhập viện: Sau cơn bệnh nhân tỉnh táo hoàn toàn, ý thức trở về mức nền ban đầu.
+3. Đánh giá tại bệnh viện
+Khám lâm sàng:
+Có ghi nhận giai đoạn mất định hướng và đi lại không vững theo lời kể người nhà.
+Trong cơn có biểu hiện kích thích nhẹ, ngửa đầu ra sau và nhắm mắt từng lúc.
+Không ghi nhận co giật, cứng đờ, cắn lưỡi hoặc tiểu tiện không tự chủ.
+Cận lâm sàng: CT sọ não trước đó ghi nhận xuất huyết dưới nhện vùng trán phải.Bầm dập nhu mô vùng trán phải và trán - thái dương phải.Lớp dịch dưới màng cứng mỏng vùng thùy trán phải, nghĩ đến nang màng nhện hoặc tụ máu dưới màng cứng mạn tính.Tụ máu ngoài màng cứng phải cấp tính trên nền tổn thương mạn tính.
+
+
+# 24.txt
+1.  Tiền sử bệnh
+    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái
+    Tiền sử phẫu thuật / thủ thuật
+    - cắt bỏ tuyến vú trái đơn giản
+    - thủ thuật nạo hạch gác rồng bên trái
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ
+    Triệu chứng Bắt đầu
+    - sau khi xuất viện
+    - ống dẫn lưu JP được rút vào ngày DD MM
+    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ
+    Diễn biến bệnh
+    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ
+    - đến khám tại phòng khám
+    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm
+    - được cho về vớ đơn thuốci levafloxacin và cephalexin
+    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt
+    - được chuyển đến Khoa Cấp cứu
+    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự
+    Triệu chứng hiện tại
+    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật
+    - đau khi sờ nắn vùng mổ
+    - chóng mặt
+    - không sốt
+    - hiện tại chưa phát hiện các triệu chứng toàn thân khác
+3.  khám tại bệnh viện
+    Dấu hiệu lâm sàng
+    - ban đỏ ở vị trí phẫu thuật
+    - đau ấn vùng mổ
+    - không sốt
+    - chưa phát hiện các triệu chứng toàn thân khác
+    Thủ thuật đã thực hiện
+    - Đã khám tổn thương da, chọc hút dịch
+    - dùng vancomycin
+
+# 25.txt
+1.  Tiền sử bệnh nội khoa
+    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân
+    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.
+2.  Tiền sử bệnh hiện tại
+3.  khám  tại bệnh viện
+    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò
+    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước.
+
+# 26.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mãn tính: béo phì
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật
+    Các sự kiện trước khi nhập viện
+    - nhiều lần cố gắng giảm cân và tăng cân trở lại
+    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại
+3.  Đánh giá tại bệnh viện
+
+# 27.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - hội chứng turner, không đặc hiệu
+    - Tăng huyết áp
+    - Tiền sử phẫu thuật cắt bỏ đại tràng do Ung thư đại tràng
+    - Tiền sử Thuyên tắc phổi đang dùng coumadin (tiền sử Thuyên tắc phổi đang dùng coumadin)
+    Tiền sử phẫu thuật / thủ thuật: Cắt đại tràng nhiều năm trước
+    Thuốc trước khi nhập viện: coumadin
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: khó thở
+    Các triệu chứng hiện tại
+    - khó thở 
+    - Cảm giác có đờm ở cổ họng
+    - Cần phải ho nó ra
+    - Không sốt
+    - Không ớn lạnh
+    - Không đau ngực
+    - Không  khó thở
+    -Không  thay đổi tính chất cơn đau khi thay đổi tư thế
+    - Không khó thở khi gắng sức
+    - Không đánh trống ngực
+    - Không khó thở tăng lên khi xuất hiện  Cơn nhịp nhanh
+    - Không đau ngực 
+    Các diễn biến trước khi nhập viện
+    - Gần đây nhập viện để đánh giá tổng quát về tiêu hóa
+    - đánh giá tổng quát về tiêu hóa vì cảm thấy  khó nuốt
+3.  Đánh giá tại bệnh viện
+    Các thủ thuật đã thực hiện
+    - albuterolipratropium nebs x2
+    - metoprolol 5mg iv x2
+    Các phát hiện chẩn đoán khác
+    - Các chỉ số ban đầu vs là tc 37 độ c hr 88 bp 13482 rr 14 spo2 100ra
+    - Bị kích hoạt để hr 140 khoảng một giờ sau khi dùng ống xịt thứ hai
+    - hr cải thiện lên mức 110 sau khi dùng metoprolol
+    - Bệnh nhân cho biết  cảm thấy khỏe khi đến phòng khám
+
+
+# 28.txt
+1.  Tiền sử bệnh
+    bệnh nhân có tiền sử nhập viện gần đây vìviêm tụy
+    Bệnh lý mãn tính
+    - tiền sử rung nhĩ
+    - phẫu thuật cắt bỏ tuyến tiền liệt (u ác của tuyến tiền liệt)
+    - rối loạn cảm xúc lưỡng cực khác
+    Tiền sử phẫu thuật / thủ thuật: phẫu thuật cắt bỏ tuyến tiền liệt (u ác của tuyến tiền liệt)
+    Thuốc trước khi nhập viện: đang dùng eliquis (cho rung nhĩ)
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: sốt và đau bụng
+    Thời điểm khởi phát triệu chứng
+    - khởi phát đau bụng trên (lần nhập viện trước)
+    - Hôm nay, bệnh nhân có sốt nhẹ đến 38.3°C kèm theo đau hạ sườn phải tái phát, ngày càng nặng hơn.
+    Diễn biến bệnh
+    - Ban đầu xuất hiện đau bụng trên. sau đó nhập viện để khám và điều trị tại bệnh viện,  trong quá trình nằm viện ngày hôm qua bệnh nhân thấy  đỡ đau hơn. 
+    - Bệnh nhân Tự ý bỏ về từ  bệnh viện ngày hôm qua.
+    - Hôm nay, bệnh nhân có sốt nhẹ đến 38.3°C kèm theo đau hạ sườn phải tái phát, ngày càng nặng hơn.
+    - Được gọi lại nhập viện do có kết quả  cấy máu dương tính 
+    Triệu chứng hiện tại
+    - sốt
+    - đau bụng
+    - đau hạ sườn phải
+    - sốt nhẹ đến 38.3°C
+    - đau hạ sườn phải tái phát, ngày càng nặng hơn
+    - đau hạ sườn phải liên tục
+    Đặc điểm triệu chứng
+    - Vị trí: Vùng hạ sườn phải 
+    - Mức độ nghiêm trọng: ngày càng nặng hơn
+    - Tính chất: liên tục
+    - Triệu chứng liên quan: không thấy  buồn nôn, nôn, ớn lạnh, thay đổi chức năng ruột, đau ngực, khó thở.
+  Diễn biến  trước khi nhập viện
+    - Tự ý rời bệnh viện (AMA) ngày hôm qua sau khi cơn đau đỡ hơn ở  lần nhập viện trước.
+    - Được thực hiện siêu âm vùng gan mật tại phòng cấp cứu cho thấy túi mật căng to với dịch quanh túi mật gợi ý viêm túi mật cấp.
+3.  Đánh giá tại bệnh viện
+    Kết quả laboratory
+    - lipase là tăng lên ở mức 623 (lần nhập viện trước)
+    - tăng men gan nhẹ (lần nhập viện trước)
+    - tbr là cao tới 1.0 sau đó cải thiện (lần nhập viện trước)
+    - các xét nghiệm khác có xu hướng giảm (lần nhập viện trước)
+    - dương tính cấy máu khi tái khám với GPRs
+    Kết quả chẩn đoán hình ảnh
+    - siêu âm vùng gan mật cho thấy sỏi mật nhưng không có viêm túi mật hoặc sỏi ống mật (lần nhập viện trước)
+    - chụp ct bụng chậu là chưa phát hiện bất thường (lần nhập viện trước)
+    - siêu âm vùng gan mật hiện tại cho thấy túi mật căng to với dịch quanh túi mật gợi ý viêm túi mật cấp
+    Các phát hiện chẩn đoán khác: lo ngại viêm túi mật cấp
+
+# 29.txt
+1.  Tiền sử bệnh nội khoa
+
+2.  Tiền sử bệnh hiện tại
+Lý do nhập viện: tiểu tiện không tự chủ và sa âm đạo
+Thời điểm khởi phát triệu chứng: khoảng vài năm
+Triệu chứng hiện tại
+- tiểu tiện không tự chủ
+- sa âm đạo
+- bàng quang căng,
+- cảm giác bí tiếu liên tục
+3.  Đánh giá tại bệnh viện
+Kết quả khám thực thể: sờ thấy một khối cứng trong âm đạo khi bệnh nhân vệ sinh cá nhân
+
+# 30.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mạn tính
+    - Bệnh bạch cầu dòng tủy mãn tính
+    - tăng cholesterol máu đơn thuần
+    - tăng huyết áp
+    Thuốc trước khi nhập viện lần này
+    - gleevec (ngừng uống cách nhập viện 5 ngày)
+    - allopurinol (ngừng uống 
+cách nhập viện 5 ngày)
+    - Thuốc giảm đau (ngừng)
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: ảo giác
+    Thời điểm khởi phát triệu chứng: Khoảng một tháng trước
+    Diễn biến
+    - ảo giácxuất hiện khoảng một tháng trước.
+    - Đã được điều trị nhiễm khuẩn đường tiết niệu, vị trí không xác định.
+    - Thuốc giảm đau đã ngừng.
+    - Không có thay đổi đáng kể về triệu chứng mặc dù đã điều trị nhiễm khuẩn đường tiết niệu, vị trí không xác định và ngừng thuốc giảm đau.
+    - Liều gleevec đã ngừng cách nhập viện 5 ngày.
+    - allopurinol đã ngừng cách nhập viện 5 ngày.
+    - ảo giác xảy ra khoảng mỗi đêm lúc 2 giờ sáng.
+    Triệu chứng hiện tại: ảo giác
+    Đặc điểm triệu chứng
+ Bệnh nhân nhìn/nghe thấy có nhiều người (đôi khi tổng cộng khoảng 8 người).
+Thấy những người này đang nói chuyện với mình.
+Ảo giác không mang tính chất ra lệnh 
+Bệnh nhân thường hoang tưởng/lo sợ rằng họ sẽ chạm vào da của mình.
+    Diễn biên  trước khi nhập viện
+    - Điều trị nhiễm khuẩn đường tiết niệu, vị trí không xác định
+    - Thuốc giảm đau đã ngừng
+    - Liều gleevec đã ngừng cách nhập viện 5 ngày
+    - allopurinol đã ngừng cách nhập viện 5 ngày
+    Tình trạng ngay trước khi nhập viện: ảo giác khoảng mỗi đêm lúc 2 giờ sáng
+3.  Đánh giá tại bệnh viện
+
+# 31.txt
+Lý do nhập viện: Khởi phát chuyển dạBệnh sử: Thai 41 tuần, nhập viện để khởi phát chuyển dạ. Hiện có cơn co tử cung, 
+thai máy tốt (FM +), 
+chưa  ra huyết âm đạo (VB -), chưa vỡ ối/rỉ ối (LOF -).
+
+
+# 32.txt
+1. Tiền sử bệnh nội
+Các bệnh lý mạn tính
+- ho Bệnh bạch cầu dòng tủy mãn tính
+- Tăng huyết áp
+- Đái tháo đường típ 2
+- ho Rung nhĩ kèm đáp ứng thất nhanh
+- bệnh thận mạn, không đặc hiệu
+2. Bệnh sử hiện tại
+Lý do vào viện: Khó thở tăng dần, diễn tiến nặng hơn từ sáng ngày nhập viện.
+Khoảng 5 ngày trước nhập viện, bệnh nhân xuất hiện cảm giác nghẹt ngực kèm sốt, nhiệt độ cao nhất khoảng 38,3°C. 
+Sau đó không còn sốt nhưng tình trạng nghẹt ngực vẫn kéo dài. 
+Trong vài ngày gần đây, bệnh nhân xuất hiện khó thở tăng dần, chủ yếu khi gắng sức, kèm phù ngoại vi tăng dần trong vài tuần trở lại đây.
+Bệnh nhân có tiền sử nhập viện gần đây vì sốt và đau vai. 
+Trong đợt điều trị đó, bệnh nhân diễn tiến suy hô hấp kèm tăng huyết áp, không đáp ứng đáng kể với điều trị lợi tiểu và phải chuyển khoa Hồi sức tích cực để hỗ trợ thở áp lực dương không xâm nhập (BiPAP). 
+Tình trạng hô hấp cải thiện sau hỗ trợ hô hấp và bệnh nhân ổn định trở lại. 
+Trong thời gian nằm viện, bệnh nhân được chẩn đoán nhiễm khuẩn huyết do tụ cầu vàng nhạy cảm methicillin, nghi liên quan đến đường truyền tĩnh mạch trung tâm ngoại vi (PICC). 
+Siêu âm mạch máu chi trên không ghi nhận huyết khối, xạ hình thông khí - tưới máu phổi cho thấy xác suất thấp thuyên tắc phổi.
+Sau xuất viện, bệnh nhân được chuyển đến trung tâm phục hồi chức năng, đi lại bằng khung tập đi. 
+Sáng ngày nhập viện, bệnh nhân xuất hiện khò khè và ho tăng lên. 
+Tại trung tâm phục hồi chức năng, bệnh nhân được khí dung albuterol 2 lần, dùng guaifenesin và furosemide 40 mg đường uống nhưng triệu chứng không cải thiện. 
+Gia đình lo ngại tình trạng bệnh nên yêu cầu chuyển viện.
+Triệu chứng khi nhập viện:
+Khó thở tăng dần, chủ yếu khi gắng sức.
+Nghẹt ngực kéo dài.
+Ho.Khò khè
+Phù ngoại vi tăng dần trong vài tuần gần đây.Tiền sử sốt 38,3°C khoảng 5 ngày trước nhập viện.Tình trạng ngay trước nhập viện:
+Bệnh nhân xuất hiện ho và khò khè tăng lên tại trung tâm phục hồi chức năng. Khi được đánh giá tại khoa Hồi sức, bệnh nhân còn cảm giác nghẹt ngực nhưng tình trạng hô hấp tạm ổn định, không ghi nhận khó thở rõ, đau ngực hoặc ho nhiều
+.Các phát hiện chẩn đoán khác:
+Nhiễm khuẩn huyết do tụ cầu vàng nhạy cảm methicillin, nghi liên quan catheter PICC 
+Siêu âm mạch máu chi trên không ghi nhận huyết khối.
+Xạ hình thông khí – tưới máu phổi cho thấy xác suất thấp thuyên tắc phổi.
+
+
+# 33.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - béo phì
+    - đái tháo đường được kiểm soát bằng chế độ ăn
+    - ngừng thở khi ngủ
+    - tiền sử lâm sàng suy tim, không đặc hiệu
+    Dị ứng: Dị ứng furosemide
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: khó thở
+    Thời điểm khởi phát triệu chứng
+    - tiền sử trước vào viện  ba ngày
+    - bắt đầu nhận thấy khó thở khi xem TV lúc 11:00 sáng ba ngày trước
+    Triệu chứng hiện tại
+    - khó thở
+    - khó nằm vào ban đêm để ngủ vì thở
+    - căng cứng vai trái (ngắt quãng, xảy ra vài lần mỗi ngày, kéo dài 5 phút)
+    - tiền sử ho có đờm trắng
+    - chủ quan sốt
+    - phù chi dưới (ổn định)
+    Đặc điểm triệu chứng
+    - Vị trí: căng cứng vai trái
+    - Thời gian: kéo dài 5 phút (căng cứng vai trái)
+    - Tần suất: xảy ra vài lần mỗi ngày (căng cứng vai trái)
+    - Triệu chứng liên quan: khó nằm vào ban đêm để ngủ vì khó thở, ho có đờm trắng, chủ quan sốt, phù chi dưới
+    Các sự kiện trước khi nhập viện
+    - bỏ lỡ 3 ngày dùng một số thuốc vì quên đổ thuốc vào hộp (tuần qua)
+    - gọi EMS
+    - EMS phát hiện bệnh nhân thiếu oxy với độ bão hòa oxy là 86 khi thở khí trời
+    - EMS cho bệnh nhân thở oxy qua mask không hồi phục (NRB)
+    - EMS đưa bệnh nhân đến khoa Cấp cứu
+    Tình trạng ngay trước khi nhập viện: thiếu oxy với độ bão hòa oxy là 86 khi thở khí trời
+
+3.  Đánh giá tại bệnh viện
+    Các thuốc đã thực hiện
+    - được cho bumetanide 2mg iv
+    - được cho vancomycin 1 gram
+    - được cho levofloxacin 750mg iv
+    - được cho aspirin 325mg
+    - được cho albuterolipratropium nebulizer
+    - được cho methylprednisolone 125mg iv
+    - lợi tiểu 600cc
+
+# 34.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mạn tính
+    - Viêm loét đại tràng trong nhiều năm qua
+    - bằng chứng Bệnh gan do rượu ở vị trí 35cm
+    Tiền sử phẫu thuật / thủ thuật: đã phẫu thuật tạo hậu môn nhân tạo kiểu túi nối hồi tràng - hậu môn
+    Thuốc trước khi nhập viện: thuốc giảm đau opioid
+
+2.  Tiền sử bệnh hiện tại
+    Thời điểm khởi phát triệu chứng: 48 giờ qua
+    Triệu chứng hiện tại
+    - ăn uống kém do buồn nôn
+    - đau bụng/khó chịu vùng bụng tăng dần, đặc biệt ở vùng hạ vị bên trái (LLQ)
+    - buồn nôn
+    - nôn x 1
+    - chủ quan sốt và run rẩy
+    - mất cảm giác ngon miệng/chán ăn
+    - suy nhược
+    -  Toàn trạng suy kiệt
+    - giảm lượng nước tiểu từ 1800 ml xuống còn 300 ml trong vòng 24 giờ
+    - tăng đáng kể lượng dịch từ ống thông hồi tràng từ 350 ml lên 1200 mltrong cùng khoảng thời gian
+    Đặc điểm triệu chứng
+    - Vị trí: LLQ
+    - Mức độ nghiêm trọng: đau bụng/khó chịu vùng bụng tăng dần
+    - Thời gian: 48 giờ qua
+    - Tần suất: nôn x 1
+    - Triệu chứng liên quan: chủ quan sốt và run rẩy, mất cảm giác ngon miệng/chán ăn, suy nhược, toàn trạng suy kiệt  thiểu niệu, chảy dịch từ lỗ dò tăng đáng kể
+    Sự kiện trước khi nhập viện
+    - ăn uống kém do buồn nôn, được cho là do tác dụng phụ của thuốc giảm đau opioid
+    - ngừng thuốc giảm đau opioid vào hôm qua mà không có thay đổi các triệu chứng
+
+3.  Đánh giá tại bệnh viện
+
+# 35.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mạn tính
+    - Bệnh bạch cầu dòng tủy mãn tính đang dùng gleevec
+    - Tăng huyết áp
+    - tăng lipid máu, không đặc hiệu
+    - Đái tháo đường típ 2
+    - hẹp ống sống
+    - Giả gout
+    - bệnh thận mạn, không đặc hiệu Giai đoạn 4
+    - tăng sản tuyến tiền liệt
+    - Nhiều lần ngã gần đây Ngã
+    - ảo giác
+    Thuốc trước khi nhập viện: gleevec (dừng theo chỉ dẫn sau xuất viện)
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện
+    - Toàn trạng suy kiệt  kể từ khi xuất viện
+    - ảo giác dai dẳng
+    - Lú lẫn ngày càng nặng
+    Thời điểm khởi phát triệu chứng: Cực kỳ yếu kể từ khi xuất viện
+    Diễn biến bệnh
+    - ảo giác được vợ nhận thấy
+    - Lú lẫn ngày càng nặng được vợ nhận thấy
+    - yếu cơ dẫn đến ngã hôm nay
+    Triệu chứng hiện tại
+    - toàn trạng suy kiệt
+    - ảo giác
+    - Lú lẫn
+    - Ăn uống kém, ăn vào dễ nôn.
+    - Nôn không ra máu, không ra dịch mật
+    Các sự kiện trước khi nhập viện
+    - Vừa được xuất viện sau  chẩn đoán cho ảo giác bình thường
+    - Được hướng dẫn ngừng gleevec
+    Tình trạng ngay trước khi nhập viện
+    - Toàn trạng suy kiệt
+    - trượt ngã xuống sàn do yếu cơ
+    - Ăn uống kém, ăn vào dễ nôn.
+    - Nôn không ra máu, không ra dịch mật
+
+3.  Đánh giá tại bệnh viện
+    Kết quả xét nghiệm
+    - bạch cầu tăng là 39.2
+    - creatinin là 3.0
+    - troponin là 0.10
+    - inr là 1.4
+    - Tăng men gan. với alt là 176 và ast là 287
+    - tổng phân tích nước tiểu có đái tháo đườngđái tháo đường
+    Kết quả chẩn đoán hình ảnh: chụp x-quang ngực là bình thường
+    Các phát hiện chẩn đoán khác: đánh giá chuyên khoa huyết học - ung bướu: không nghĩ đây là biến đổi cấp tính và có khả năng đại diện cho cml trong bối cảnh ngừng gleevec
+
+# 36.txt
+1.  Tiền sử bệnh
+    *   Bệnh mạn tính:  Bệnh thận đa nang (tiền sử Bệnh thận đa nang)
+    *   Tiền sử phẫu thuật / thủ thuật: phẫu thuật tái tạo niệu quản trái.
+    *   Thuốc trước khi nhập viện
+        *   azathioprine
+        *   prograf (dose decreased from 5mg bid to 1mg bid)
+        *   cellcept (bệnh nhân đang dùng cellcept)
+
+2.  Tiền sử bệnh hiện tại
+    *   Lý do nhập viện: Suy thận ngày càng nặng
+    *   Thời điểm khởi phát triệu chứng: Muộn (creatinine  tăng cao)
+    *   Diễn biến bệnh
+        *   creatinine ổn định ở mức 1.4-1.6 sau khi ghép.
+        *   creatinine bắt đầu tăng muộn.
+        *   Tình trạng tiêu chảy đáng kể khi dùng cellcept và uống kém.
+        *   Tăng creatinine ban đầu được cho là do nguyên nhân prerenal, ít nhất một phần.
+        *   Giai đoạn giữa (pcr là dương tính với virus bk).
+        *   creatinin tăng được cho là do bệnh lý BK.
+        *   prograf dose decreased from 5mg bid to 1mg bid.
+        *   creatinine tiếp tục tăng.
+        *   Lo ngại về đào thải.
+        *   siêu âm thận cho thấy chỉ số kháng trở bình thường.
+        *   sinh thiết ghép thận không có bằng chứng đào thải kháng thể hữu hình cấp tính.
+        *   creatinine là 5.1 hôm nay.
+        *   k là 5.8 hôm nay.
+    *   Triệu chứng khi nhập viện: Suy thận ngày càng nặng
+    *   Các sự kiện trước khi nhập viện
+        *   Tình trạng tiêu chảy đáng kể khi dùng cellcept và uống kém.
+        *   pcr dương tính với virus bk vào giữa.
+        *   prograf dose decreased from 5mg bid to 1mg bid.
+        *   siêu âm thận cho thấy chỉ số kháng trở bình thường.
+        *   sinh thiết ghép thận không có bằng chứng đào thải kháng thể hữu hình cấp tính.
+        *   xét nghiệm được kiểm tra ngoại trú hôm nay cho thấy creatinine 5.1; k 5.8.
+    *   Tình trạng ngay trước khi nhập viện: Nhập viện để đánh giá thêm và sinh thiết thận lại vào buổi sáng.
+
+3.  Đánh giá tại bệnh viện
+    *   Kết quả xét nghiệm
+        *   creatinine 5.1
+        *   k 5.8
+        *   pcr dương tính với virus bk
+    *   Kết quả chẩn đoán hình ảnh: siêu âm thận cho thấy chỉ số kháng trở bình thường
+    *   Thủ thuật đã thực hiện
+        *   Sinh thiết thận (vào chính ngày hôm đó)
+        *   Sinh thiết thận lại vào buổi sáng (dự kiến)
+    *   Các kết quả chẩn đoán khác
+        *   Bệnh lý thận do BK
+        *   Lo ngại về đào thải
+        *   Không có bằng chứng đào thải kháng thể hữu hình cấp tính (trong sinh thiết)
+
+# 37.txt
+1. Tiền sử bệnh
+Tiền sử bệnh nội khoa:
+Tăng huyết áp.
+Đái tháo đường, có biến chứng bệnh lý thần kinh ngoại biên.
+Suy tim không do thiếu máu cơ tim (theo chẩn đoán trước đây).
+Bệnh thận mạn tính.
+Thuốc trước khi nhập viện 
+
+Torsemide: uống 1 viên/ngày, đôi khi 2 viên/ngày.
+Insulin glargine: theo đơn 100 đơn vị x 2 lần/ngày, hiện đã ngừng sử dụng.
+Isosorbide: đã hết thuốc khoảng 3 tuần trước nhập viện.
+Rosuvastatin (Crestor): đã hết thuốc khoảng 3 tuần trước nhập viện.
+Carvedilol: đã hết thuốc khoảng 3 tuần trước nhập viện.
+2. Bệnh sử hiện tại
+Lý do nhập viện: xét nghiệm bất thường - tăng kali máu và Creatinine tăng
+Các sự kiện trước khi nhập viện
+- Đi khám bác sĩ chăm sóc chính (PCP) để tái khám hàng năm
+- Báo cáo đang dùng 1 viên Torsemide/ ngày , đôi khi 2 viên
+- Bác sĩ đề nghị ngừng sử dụng torsemide lâu dài
+- Bệnh nhân không kiểm tra đường huyết thường xuyên tại nhà do hết que thử đường máu.
+- glucose là thấp, nên ngừng dùng glargine
+- Báo cáo bị ngã gần đây
+- Dùng xe đẩy hàng làm dụng cụ hỗ trợ đi lại
+- Các loại thuốc (isosorbide, crestor, carvedilol) đã hết khi đi khám PCP
+- Hết isosorbide, crestor, carvedilol khoảng 3 tuần trước
+- Các xét nghiệm xét nghiệm được kiểm tra bởi PCP: kali là 6.3 mẫu không tan máu
+- Được gọi điện bởi bác sĩ nội trú trực và được yêu cầu đến khoa Cấp cứu
+
+3. Đánh giá tại bệnh viện
+Kết quả xét nghiệm
+- kali 6.3, mẫu không tan máu
+- kali (k).8
+- ure (bun) 83
+- creatinine 5.7
+- hemoglobin 7.8
+- hba1c 6.5
+- bnp 21,000
+- tổng phân tích nước tiểu bình thường
+- cúm âm tính
+Kết quả chẩn đoán hình ảnh: chụp x-quang ngực: Tăng gánh nhẹ tuần hoàn phổi, tràn dịch màng phổi hai bên nhẹ, tim to
+Các thủ thuật đã thực hiện
+- Được dùng insulin và dextrose cho tăng kali máu
+- iv lasix 40 mg once
+
+# 38.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - Đái tháo đường típ 2
+    - bệnh tim mạch do xơ vữa động mạch đặt stent
+    - Suy tim dãn tâm thu giữ nguyên trương lực
+    Tiền sử phẫu thuật / thủ thuật: đặt stent
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đau họng
+    Thời điểm khởi phát triệu chứng: 5 ngày trước khi nhập viện
+    Các triệu chứng hiện tại
+    - đau họng kèm theo nuốt vướng
+    - buồn nôn
+    - Tăng tăng cân 3 pound trong 7 ngày qua
+    Đặc điểm triệu chứng
+    - Vị trí: họng
+    - Yếu tố làm nặng thêm: nuốt vướng
+    - Yếu tố làm giảm: đồ uống lạnh
+    - Các triệu chứng liên quan: buồn nôn, tăng tăng cân 3 pound trong 7 ngày qua
+    Các sự kiện trước khi nhập viện
+    - Tự đo từ temperate đến tmax 102 sốt tại nhà
+    - Không có khó thở hoặc ho
+    - Chưa kiểm tra đường huyết
+    - Cháu gái xét nghiệm tuổi gần đây bị bệnh kèm theo đau họng, nhưng được cho là xét nghiệm âm tính với viêm họng do liên cầu
+
+3.  Đánh giá tại bệnh viện
+    Kết quả xét nghiệm
+    - glucose 537
+    - glucose cải thiện thành 367
+    - bun (ure) 3
+    - cr (creatinine) 1.2
+    - ag (anion gap) 17
+    - ag (anion gap) đóng
+
+# 39.txt
+2. Bệnh sử hiện tại
+Lý do nhập viện: đau bụng dữ dội
+Thời điểm khởi phát triệu chứng: vài ngày
+Triệu chứng hiện tại
+- đau bụng dữ dội
+- chướng bụng
+- ớn lạnh
+- mất ăn ngon
+Đặc điểm triệu chứng
+- Vị trí: thượng vị và góc phần tư trên bên phải
+- Mức độ nghiêm trọng: nghiêm trọng
+- Triệu chứng kèm theo: chướng bụng, ớn lạnh, mất ăn ngon
+- Không có buồn nôn hoặc nôn
+
+3. Đánh giá tại bệnh viện
+Dấu hiệu lâm sàng
+- sốt
+- nhịp tim nhanh
+Kết quả xét nghiệm
+- công thức máu là 32
+- suy thận cấp
+- bất thường điện giải
+Kết quả chẩn đoán hình ảnh: Kết quả chụp cắt lớp vi tính cho thấy viêm túi mật thủng cấp tính
+Thủ thuật thực hiện: Đặt ống dẫn lưu phúc mạc qua da cho túi mật
+
+# 40.txt
+1.  Tiền sử bệnh lý
+    Các bệnh lý mạn tính
+    - ho đái tháo đường
+    - tăng huyết áp
+    - béo phì
+    - ngưng thở khi ngủ do tắc nghẽn
+    Thuốc trước khi nhập viện
+    - tylenol
+    - mucinex d
+    - thỉnh thoảng tiêu chảy các thuốc của ông ấy
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: ho, thiếu oxy
+    Thời điểm khởi phát triệu chứng: 1 tuần trước khi nhập viện
+    Triệu chứng hiện tại
+    - ho
+    - nghẹt ngực
+    - khó thở nhẹ-vừa khó thở khi gắng sức
+    - mệt mỏi
+    - mệt mỏi
+    - sốt lên đến 101
+    - thỉnh thoảng tiêu chảy các thuốc của ông ấy
+    - đi tiểu nhiều lần vào ban đêm, không có đau buốt khi đi tiểu
+    Đặc điểm triệu chứng
+    - khó thở khi gắng sức bao gồm cảm giác khó thở sau khi đi bộ vài khối
+    - ho đặc như bã theo lời bệnh nhân nhưng ông ấy không khạc nhổ gì
+    - sốt lần cuối sốt là vào ngày
+    - tiêu chảy đã tự khỏi vào buổi sáng hôm sau
+    - Phủ nhận đau ngực
+    - Phủ nhận buồn nôn/nôn
+    - Phủ nhận đổ mồ hôi đêm
+    - Phủ nhận khó thở khi nằm
+    - Phủ nhận khó thở khi nằm đột ngột (paroxysmal nocturnal dyspnea)
+    Sự kiện trước khi nhập viện
+    - Vợ có các triệu chứng tương tự 3 tuần trước, được chẩn đoán là giãn phế quản, phản ứng tốt với azithromycin
+    - Tự điều trị bằng tylenol và mucinex d
+    - Đi khám bác sĩ chăm sóc chính (PCP) vào buổi sáng ngày nhập viện
+    - Bác sĩ PCP ghi nhận spo2 là 90-92% spo2 khi thở khí trời, 93% khi không dùng oxy
+    - Bác sĩ PCP đã gửi bệnh nhân  đến phòng cấp cứu
+
+3.  Đánh giá tại bệnh viện
+    Kết quả xét nghiệm
+    - số lượng bạch cầu là 12.5
+    - tổng phân tích nước tiểu đáng chú ý chỉ có vếtvết protein niệu.  
+    - troponin âm tính x1
+    Kết quả chẩn đoán hình ảnh: chụp x-quang ngực được cho là viêm phổi thùy dưới phải (RLL PNA)
+
+# 41.txt
+1.  Tiền sử bệnh
+    Các tập phát bệnh tương tự trước đây
+    - Tái phát buồn nôn và tiêu chảy cách đây vài năm
+    - Nôn ra máu 2 tuần sau tập viêm dạ dày ruột do virus
+    - Nôn ra máu trong 2 ngày qua
+    Bệnh lý mãn tính: hội chứng ruột kích thích (được chẩn đoán hội chứng ruột kích thích cách đây vài năm)
+    Tiền sử phẫu thuật / thủ thuật
+    - Nội soi (cách đây vài năm, phát hiện loét tá tràng)
+    - Nội soi (cho thấy nhiều loét tá tràng và hồi tràng)
+    - nội soi (Viêm thực quản độ C, loét thực quản dưới 6 mm có điểm sắc tố, nhiều loét nông sạch đáy ở tá tràng và hồi tràng sớm)
+    Thuốc trước khi nhập viện: omeprazole (vừa ngừng để làm test hơi thở h. pylori)
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Nôn ra máu
+    Thời điểm khởi phát triệu chứng
+    - Triệu chứng cách đây vài năm (buồn nôn và tiêu chảy)
+    - Tập viêm dạ dày ruột do virus (trong năm nay)
+    - Tiếp tục khó khăn khi ăn uống qua đường miệng, buồn nôn và tiêu chảy (2 tuần sau tập viêm dạ dày ruột do virus)
+    - Nôn ra máu (2 tuần sau tập viêm dạ dày ruột do virus)
+    - Nôn ra máu (trong 2 ngày qua)
+    - Tình trạng đau bụng và nôn ra máu trở nên tồi tệ hơn (khi ngừng omeprazole)
+    Diễn biến bệnh
+    - Triệu chứng cách đây vài năm: tái phát buồn nôn và tiêu chảy, chẩn đoán hội chứng ruột kích thích, phát hiện loét tá tràng khi nội soi.
+    - Trong năm nay: không thể giữ được bất cứ thứ gì, chẩn đoán viêm dạ dày ruột do virus.
+    - 2 tuần sau điều trị  viêm dạ dày ruột do virus: tiếp tục khó khăn khi ăn uống qua đường miệng, buồn nôn, tiêu chảy, nôn ra máu. nội soi cho thấy nhiều loét tá tràng và hồi tràng. dương tính xét nghiệm phân tìm cryptosporidium.
+    - Gần đây: ngừng sử dụng omeprazole để làm test hơi thở h. pylori.
+    - Khi ngừng omeprazole: phát triển đau bụng và nôn ra máu trở nên tồi tệ hơn.
+    - 2 ngày qua: tiếp tục nôn ra máu.
+    Triệu chứng khi nhập viện
+    - Nôn ra máu
+    - Ăn uống kém.
+    - nausea
+    - diarrhea
+    - abdominal pain
+    Các sự kiện trước khi nhập viện
+    - Chẩn đoán viêm dạ dày ruột do virus (trong năm nay)
+    - Tiếp tục khó khăn khi ăn uống qua đường miệng, buồn nôn và tiêu chảy (2 tuần sau tập viêm dạ dày ruột do virus)
+    - Nhập viện vì nôn ra máu (2 tuần sau tập viêm dạ dày ruột do virus)
+    - nội soi cho thấy nhiều loét tá tràng và hồi tràng (2 tuần sau tập viêm dạ dày ruột do virus)
+    - dương tính xét nghiệm phân tìm cryptosporidium (2 tuần sau tập viêm dạ dày ruột do virus)
+    - Ngừng sử dụng omeprazole để làm test hơi thở h. pylori (gần đây)
+    - Phát triển đau bụng và nôn ra máu trở nên tồi tệ hơn (khi ngừng omeprazole)
+    Tình trạng ngay trước khi nhập viện: Tiếp tục nôn ra máu trong 2 ngày qua
+
+3.  khám  tại bệnh viện
+    Kết quả phòng thí nghiệm
+    - dương tính xét nghiệm phân tìm cryptosporidium (2 tuần sau tập viêm dạ dày ruột do virus)
+    - test hơi thở h. pylori (lý do ngừng omeprazole)
+    Các thủ thuật đã thực hiện
+    - nội soi (cách đây vài năm)
+    - nội soi (cho thấy nhiều loét tá tràng và hồi tràng)
+    - nội soi (Viêm thực quản độ C, loét thực quản dưới 6 mm có điểm sắc tố, nhiều loét nông sạch đáy ở tá tràng và hồi tràng sớm)
+    Các phát hiện chẩn đoán khác
+    - Viêm thực quản độ C ở thực quản dưới
+    - Loét loét thực quản 6 mm có điểm sắc tố
+    - Nhiều loét sạch đáy loét ở tá tràng kéo dài từ hành tá tràng đến hồi tràng sớm
+
+# 42.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến
+    Thuốc trước khi nhập viện lần này: đang dùng methadone
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Đánh giá phù, chủ quan sốt và ớn lạnh, và đau tăng dần khi đi lại
+    Các triệu chứng hiện tại
+    - phù hai bên
+    - ban đỏ, RL
+    - chủ quan sốt
+    - ớn lạnh
+    - đau tăng dần khi đi lại
+    Đặc điểm triệu chứng
+    - Vị trí: RL (Chân phải)
+    - Mức độ nghiêm trọng: đau tăng dần
+    - Các triệu chứng liên quan: phù, ban đỏ, chủ quan sốt, ớn lạnh
+    Các sự kiện trước khi nhập viện: được chuyển từ nơi trú ẩn đến Khoa Cấp cứu để đánh giá
+    Tình trạng ngay trước khi nhập viện
+    - lơ mơ khi đến tầng và không thể tỉnh táo đủ lâu để cung cấp tiền sử
+    - được ghi nhận phù hai bên và ban đỏ, RL
+    - phủ nhận đau ngực
+    - phủ nhận khó thở
+    - phủ nhận đau bụng
+
+3.  Đánh giá tại bệnh viện
+
+# 43.txt
+1.  Tiền sử bệnh nội khoa
+    Tiền sử phẫu thuật / thủ thuật: cắt cụt nhiều ngón chân phải do nhiễm trùng tụ cầu, vị trí không xác định
+
+2.  Tiền sử bệnh hiện tại
+    Thời điểm khởi phát triệu chứng: tỉnh giấc kèm theo cảm giác như vòi nước
+    Triệu chứng hiện tại: cảm giác như bị xịt nước bắt đầu ở ngực trái lan sang ngực phải
+    Các sự kiện trước khi nhập viện
+    - loại trừ khả năng nhồi máu cơ tim
+    - đã thực hiện siêu âm tim cho thấy hẹp van động mạch chủ nghiêm trọng
+    - đã khám với bác sĩ tim mạch tại
+    - được đề nghị phẫu thuật thay van động mạch chủ
+    - được giới thiệu để gặp bác sĩ
+    - đã thực hiện siêu âm tim gắng sức dobutamine ghi nhận hẹp van động mạch chủ nghiêm trọng
+    - đến khám để thực hiện thông tim để đánh giá trước phẫu thuật
+    - thông tim trái không ghi nhận hẹp gây hạn chế dòng chảy
+    - được giới thiệu đến khoa phẫu thuật tim mạch
+    - tình trạng chung tốt kể từ khi chụp tim trái
+    - phủ nhận bất kỳ triệu chứng nào như khó thở, đau ngực, khó thở khi nằm, khó thở khi ngủ hoặc ngất xỉu
+    - vẫn còn cảm giác tương tự ở ngực xảy ra mà không có yếu tố khởi phát rõ ràng
+
+3.  Đánh giá tại bệnh viện
+    Kết quả chẩn đoán hình ảnh
+    - siêu âm tim cho thấy hẹp van động mạch chủ nghiêm trọng
+    - siêu âm tim gắng sức dobutamine ghi nhận hẹp van động mạch chủ nghiêm trọng
+    Thủ thuật đã thực hiện
+    - chụp tim mạch
+    - LHC
+    Các kết quả chẩn đoán khác
+    - hẹp van động mạch chủ nghiêm trọng
+    - LHC không ghi nhận hẹp gây hạn chế dòng chảy
+
+# 44.txt
+1. Tiền sử bệnh
+Các bệnh lý mạn tính
+- rung nhĩ
+- tăng huyết áp
+- suy tim, không đặc hiệu
+- béo phì
+
+2. Bệnh sử hiện tại
+Lý do nhập viện
+- Tăng khó thở
+- phù chi dưới
+- đau ngực
+Thời điểm khởi phát triệu chứng: bắt đầu từ tối qua
+Diễn biến bệnh
+- Tăng khó thở và yếu trong vài tuần qua
+- cơn ngất xỉu 2 tháng trước
+- đau rát khi đi tiểu, từng đợt, khoảng 2 tuần
+- chán ăn trong 3 ngày qua
+- nôn từng đợt sau khi ăn trong 3 ngày qua
+Triệu chứng khi nhập viện
+- Tăng khó thở
+- phù chi dưới
+- đau ngực
+- mệt mỏi và weak
+- Thường xuyên ngủ quên hoặc có thể ngất xỉu
+- giảm khả năng quan hệ tình dục với bạn tình
+- Đau buốt khi đi tiểu
+- chán ăn
+- nôn từng đợt sau khi ăn
+Đặc điểm triệu chứng
+- đau ngực:
+- xảy ra khoảng trước khi nhập viện khi bệnh nhân đang nằm
+- nhói
+- bên trái
+- lan xuống cánh tay trái
+- kèm theo tê bì ở cánh tay trái trên và đau ở cánh tay trái dưới và bàn tay
+- liên tục
+- không nặng hơn/giảm khi làm gì
+- không giảm khi dùng bất kỳ thuốc nào ở phòng cấp cứu
+- shortness of breath:
+- tăng dần trong vài tuần qua
+- yếu:
+- tăng dần trong vài tuần qua
+- đau rát khi đi tiểu:
+- từng đợt, khoảng 2 tuần
+- Ăn uống:
+- kém trong 3 ngày qua
+- Nôn mửa:
+- từng đợt sau khi ăn trong 3 ngày qua
+- cơn ngất xỉu:
+- 2 tháng trước
+- bệnh nhân không nhớ rõ
+- va phải cánh tay phải và bụng phải nhưng không nhớ đập đầu
+- không nhớ bị đánh trống ngực, chóng mặt trước khi bị ngã
+Sự kiện trước khi nhập viện
+- Bệnh nhân đã dùng thêm 80mg po lasix ở nhà mà không có tác dụng
+- Bệnh nhân không được chăm sóc y tế thường xuyên trong những tháng gần đây; bác sĩ chăm sóc chính của anh ấy từ trần và anh ấy chưa theo dõi với ai khác
+
+3. Đánh giá tại bệnh viện
+Các thủ thuật đã thực hiện
+- Nhận 2 sl ntg
+- Nhận asa
+- Nhận 80mg lasix iv
+- Nhận 8mg morphine
+- Nhận 1mg dilaudid
+- Được cho po metoprolol
+- Được cho 10mg iv diltiazem
+Các phát hiện chẩn đoán khác
+- Với ntg khó thở cải thiện nhưng đau ngực vẫn còn
+- Với ntg khó thở cải thiện nhưng đau ngực vẫn còn
+- nhịp tim cải thiện thành
+
+# 45.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - đái tháo đường
+    - tăng huyết áp
+    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải
+    Các yếu tố nguy cơ liên quan
+    - đái tháo đường
+    - tăng huyết áp
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Thủ thuật điện chọn
+    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này
+    Các sự kiện trước khi nhập viện
+    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải
+    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét
+    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh
+
+3.  Đánh giá tại bệnh viện
+    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét
+
+# 46.txt
+1.  Tiền sử bệnh
+    Bệnh lý mãn tính: tiền sử lâu dài của tăng huyết áp
+    Tiền sử phẫu thuật / thủ thuật: đã thực hiện R BK-pop đến DP BPG
+
+2.  Tiền sử bệnh hiện tại
+    Triệu chứng hiện tại
+    - khó khăn với hạ huyết áp, không đặc hiệu
+    - khó kiểm soát huyết áp đáng kể
+    - đi khập khiễng cách quãng
+    Sự kiện trước khi nhập viện: chụp cắt lớp vi tính (ct) được thực hiện cho thấy tắc hẹp 80% động mạch thận trái L
+
+3.  Đánh giá tại bệnh viện
+    Kết quả chẩn đoán hình ảnh: chụp cắt lớp vi tính (ct) cho thấy tắc hẹp 80% động mạch thận trái L
+    Thủ thuật thực hiện
+    - chụp mạch máu thận
+    - stent
+
+# 47.txt
+1.  Tiền sử bệnh nội khoa
+    Tiền sử phẫu thuật / thủ thuật: Đã thực hiện phẫu thuật cắt bỏ ống dẫn mật chung, cắt bỏ một phần thùy gan bên trái và nối mật tụy bằng ống dẫn hồi tràng (RNY hepaticojejunostomy) vào ngày [Ngày] vì nghi ngờ ung thư biểu mô tế bào mật không thể cắt bỏ.
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Đến hôm nay để đặt stent thành vách vĩnh viễn
+    Diễn biến bệnh
+    - Gần đây nhất được bác sĩ [Tên bác sĩ] khám tại phòng khám vào ngày [Ngày]. Lúc đó bệnh nhân tình trạng rất tốt.
+    - Bà ấy ăn uống bình thường, cân nặng đã cải thiện của bà ấy đã cải thiện, và bà ấy đã trở lại các hoạt động hàng ngày bình thường.
+    - Bà ấy tiếp tục có ống dẫn mật xuyên gan tại chỗ.
+    - Bà ấy phủ nhận bất kỳ buồn nôn, nôn, sốt, ớn lạnh, hoặc dịch rò rỉ quanh ống thông.
+    - Đã thực hiện cholangiogram vào ngày [Ngày] cho thấy tắc nghẽn kéo dài gần chỗ nối mật tụy, ảnh hưởng đến ống dẫn trước và sau bên phải.
+    - Cả hai ống dẫn mật đều được tăng kích cỡ từ 8.5fr lên 10.2 fr vào thời điểm đó.
+    - Đã thực hiện sinh thiết và lấy mẫu bằng bàn chải vào ngày [Ngày] và kết quả lấy mẫu bằng bàn chải cho thấy tế bào bất thường, đáng ngại cho ung thư biểu mô tuyến.
+    - Thảo luận tại cuộc họp [Tên cuộc họp] vào ngày [Ngày] và quyết định rằng bệnh nhân nên được đặt stent thành vách vĩnh viễn.
+    - Bà ấy đã được đặt 3 stent thành vách vĩnh viễn và có 3 ống dẫn mật ngoài-trong tại chỗ.
+    - Bệnh nhân dung nạp thủ thuật tốt.
+    - Sau thủ thuật, bệnh nhân phủ nhận bất kỳ buồn nôn, nôn, đau ngực, hoặc khó thở.
+    - Bà ấy cho biết có một chút đau khi sờ nắn xung quanh vị trí đặt ống dẫn, đặc biệt là khi hít thở sâu.
+    Sự kiện trước khi nhập viện
+    - Được bác sĩ [Tên bác sĩ] khám tại phòng khám vào ngày [Ngày]. Bệnh nhân tình trạng rất tốt.
+    - ăn uống bình thường, cân nặng đã cải thiện, trở lại các hoạt động hàng ngày bình thường.
+    - Có ống dẫn mật xuyên gan tại chỗ.
+    - Phủ nhận buồn nôn, nôn, sốt, ớn lạnh, hoặc dịch rò rỉ quanh ống thông.
+    - Đã thực hiện cholangiogram vào ngày [Ngày] cho thấy tắc nghẽn kéo dài gần chỗ nối mật tụy, ảnh hưởng đến ống dẫn trước và sau bên phải.
+    - Ống dẫn mật được tăng kích cỡ từ 8.5fr lên 10.2 fr vào thời điểm đó.
+    - Đã thực hiện sinh thiết và lấy mẫu bằng bàn chải vào ngày [Ngày] và kết quả lấy mẫu bằng bàn chải cho thấy các tế bào bất thường, đáng lo ngại cho ung thư biểu mô tuyến.
+    - Thảo luận tại cuộc họp [Tên cuộc họp] vào ngày [Ngày] và quyết định rằng bệnh nhân nên được đặt stent thành vách vĩnh viễn.
+
+3.  Đánh giá tại bệnh viện
+    Dấu hiệu lâm sàng: đau khi sờ nắn xung quanh vị trí đặt ống dẫn, đặc biệt là khi hít thở sâu
+    Kết quả phòng thí nghiệm: lấy mẫu bằng bàn chải cho thấy tế bào bất thườngtế bào bất thường, đáng ngại cho ung thư biểu mô tuyến
+    Kết quả chẩn đoán hình ảnh: cholangiogram vào ngày [Ngày] cho thấy tắc nghẽn kéo dài gần chỗ nối mật tụy, ảnh hưởng đến ống dẫn trước và sau bên phải
+    Thủ thuật thực hiện: Đặt 3 stent thành vách vĩnh viễn
+
+# 48.txt
+1.  Tiền sử bệnh
+    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Yếu nửa người trái
+    Thời điểm khởi phát triệu chứng: Hôm nay
+    Diễn biến bệnh
+    - 2 đợt yếu nửa người trái riêng biệt trong ngày hôm nay
+    - ngã khoảng 6 tuần trước, không va đập đầu, bình thường chụp ct não vào thời điểm đó
+    - Gần đây được chẩn đoán ngất xỉu do phản ứng thần kinh mạch máu sau cơn ngất
+    - Sau khi xuất viện vì ngất xỉu, vào [ngày bị thiếu], ông ấy đã ổn định
+    - Gia đình nhận thấy khó khăn khi cài cúc áo và kéo khóa quần, điều này bất thường đối với ông ấy
+    - Thấy ông ấy hơi vụng về và tiểu tiện ra sàn
+    - Hôm nay, cảm thấy yếu sức
+    - Vào buổi trưa, khó khăn khi ra khỏi ghế tựa, nhận thấy ông ấy kéo lê chân trái và cánh tay trái được cho là lơ lửng
+    - khó khăn khi ước lượng vị trí ngồi xuống ghế ăn trưa
+    - khó khăn khi ăn
+    - Tình trạng kéo dài khoảng 30 phút, sau đó ông ấy trở về trạng thái bình thường
+    - Báo cáo rằng cảm giác bất thường ở bên phải đầu
+    - tình trạng ổn định vào buổi chiều, có thể dễ dàng lên cầu thang
+    - Sau đó trong ngày, khoảng 5 giờ 30 phút, ông ấy có cùng các vấn đề như bữa trưa, bao gồm kéo lê chân trái và cánh tay buông thõng và khó khăn khi tự ăn tối
+    Triệu chứng khi nhập viện
+    - Yếu nửa người trái
+    - cảm thấy yếu sức
+    - khó khăn khi cài cúc áo
+    - Khó kéo khóa quần
+    - Hơi vụng về
+    - tiểu tiện ra sàn
+    - khó khăn khi ra khỏi ghế tựa
+    - kéo lê chân trái
+    - Cánh tay trái lơ lửng
+    - khó khăn khi ước lượng vị trí ngồi xuống ghế
+    - khó khăn khi ăn
+    - cảm giác bất thường ở bên phải đầu
+    Đặc điểm triệu chứng
+    - Vị trí: Nửa trái, bên phải đầu
+    - Mức độ nghiêm trọng: Không được chỉ định
+    - Thời gian: Khoảng 30 phút (đợt đầu tiên)
+    - Tần suất: 2 đợt hôm nay
+    - Lan tỏa: Không được chỉ định
+    - Các yếu tố làm trầm trọng thêm: Không được chỉ định
+    - Các yếu tố làm giảm nhẹ: Trở lại trạng thái bình thường
+    - Triệu chứng liên quan: khó khăn khi cài cúc áo, kéo khóa quần, vụng về, đi tiểu trên sàn, khó khăn khi ra khỏi ghế tựa, kéo lê chân trái, cánh tay trái lơ lửng, khó khăn khi ước lượng vị trí ngồi, khó khăn khi ăn, cảm giác bất thường bên phải đầu
+    Các sự kiện trước khi nhập viện
+    - Không có chấn thương đầu gần đây
+    - ngã khoảng 6 tuần trước nhưng không đập đầu; bình thường chụp ct não vào thời điểm đó
+    - Gần đây được chẩn đoán ngất xỉu do phản ứng thần kinh mạch máu sau cơn ngất
+    - Nhập viện vì ngất xỉu, xuất viện, sau đó ổn định
+    - Gia đình nhận thấy khó khăn khi cài cúc áo và kéo khóa quần, hơi vụng về và tiểu tiện ra sàn
+
+3.  Đánh giá tại bệnh viện
+    Kết quả chụp ảnh / tạo ảnh: Phát hiện xuất huyết dưới màng cứng tại bệnh viện bên ngoài
+
+# 49.txt
+Lý do nhập viện
+2. Bệnh sử hiện tại
+Lý do nhập viện: Khối sa âm đạo gây khó chịu, được bác sĩ giới thiệu khám chuyên khoa.
+Bệnh nhân xuất hiện cảm giác có khối lồi trong âm đạo khoảng 5 năm nay. 
+Các triệu chứng tiến triển tăng dần theo thời gian. Hiện bệnh nhân thường xuyên cảm thấy  căng tức vùng âm đạo, sờ thấy khối sa tại âm hộ.
+Kèm theo đó, bệnh nhân có triệu chứng tiểu buốt, đôi khi không kiểm soát được tiểu tiện khi có cảm giác buồn tiểu nhưng không kịp vào nhà vệ sinh. 
+Bệnh nhân có  táo bón, khô âm đạo, đau nhiều khi  giao hợp và đôi lúc ra huyết âm đạo lượng ít.
+Triệu chứng hiện tại:
+Cảm giác có khối sa lồi ra âm đạo.Cảm giác căng tức vùng âm đạo.
+Tiểu dắt .Tiểu không tự chủ, xuất hiện từng đợt.
+Táo bón.Khô âm đạo.
+Đau khi giao hợp.
+Ra huyết âm đạo lượng ít, từng đợt.
+Các diễn biến  trước khi nhập viện
+- bệnh nhân được khám  niệu sản khoa khoảng năm trước.
+- Được gắn vòng pessary để điều trị các triệu chứng.
+- Vòng pessary bị rơi ra.
+- Không tái khám để đánh giá thêm.
+- Thỉnh thoảng tự đẩy khối lồi âm đạo vào bên trong âm đạo, thường là vào cuối ngày hoặc sau khi đứng lâu.
+- Không sử dụng băng vệ tinh.
+- không đau khi đi tiểu.
+- Phủ nhận tiểu máu.
+- không nhiễm khuẩn đường tiết niệu, vị trí không xác định.
+- không sỏi thận
+- không viêm bể thận.
+
+
+# 50.txt
+1.  Tiền sử bệnh
+    Các đợt tương tự trước đây: Nhập viện trong quá khứ vì đợt cấp hen suyễn
+    Bệnh mạn tính: hen suyễn
+    Thuốc trước khi nhập viện
+    - albuterol nebs q4h tại nhà
+    - z-pack
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: khó thở và tiếng rít
+    Thời điểm khởi phát triệu chứng
+    - Khoảng một tuần trước: đau khi ấn xoang, ho nhẹ
+    - Triệu chứng tiếng rít và khó thở trở nên nặng hơn
+    - tiếng rít vào ban đêm
+    Diễn biến bệnh
+    - Một tuần trước: đau khi ấn xoang, ho nhẹ
+    - tiếng rít và khó thở trở nên tồi tệ hơn
+    - tiếng rít vào ban đêm
+   2. Bệnh sử hiện tạiBệnh nhân được bác sĩ chăm sóc ban đầu khám cách đây khoảng 1 tuần vì khó thở, khò khè và các triệu chứng đường hô hấp trên. 
+Bệnh nhân được kê prednisone giảm liều và amoxicillin. Tuy nhiên, bệnh nhân không dung nạp amoxicillin do xuất hiện tiêu chảy nên được chuyển sang sử dụng azithromycin.Bệnh nhân đã dùng prednisone 40 mg/ngày trong 3 ngày, sau đó giảm xuống 30 mg vào ngày trước nhập viện. Sau liều prednisone đầu tiên, bệnh nhân xuất hiện đau đầu. Triệu chứng tiếp tục tiến triển tăng dần. Đêm trước nhập viện, bệnh nhân xuất hiện đau đầu dữ dội, khò khè nhiều, nghe tiếng rít về đêm, mất ngủ và đau vùng hạ vị.
+Triệu chứng khi nhập viện:
+Khó thở.
+Khò khè.
+Tiếng rít về đêm.
+Đau vùng xoang.
+Ho nhẹ.
+Đau đầu dữ dội.
+Đau hạ vị.
+Các sự kiện trước khi nhập viện:
+Được khám bởi bác sĩ chăm sóc ban đầu khoảng 1 tuần trước.
+Được chỉ định prednisone giảm liều và amoxicillin.
+Ngừng amoxicillin do tiêu chảy.
+Chuyển sang điều trị bằng azithromycin.
+Đã dùng prednisone 40 mg/ngày trong 3 ngày, sau đó 30 mg vào ngày trước nhập viện.
+Tình trạng ngay trước khi nhập viện:
+Đau đầu dữ dội.Khò khè nhiều, đặc biệt về đêm.
+Mất ngủ.
+Đau hạ vị.
+3.  Đánh giá tại bệnh viện
+    Kết quả chẩn đoán hình ảnh: chụp x-quang ngực không cho thấy bằng chứng của viêm phổi hoặc các đám mờ
+    Các thủ thuật đã thực hiện
+    - combivent nebs x3 every 20 minutes
+    - iv magnesium
+    - 30 mg of prednisone (total of 60 mg bổ sung hôm nay)
+    - lưu lượng đỉnh thở ra đo được từ 240 đến 260
+
+# 51.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mạn tính
+    - Đái tháo đường type 2
+    - Tăng huyết áp
+
+2.  Tiền sử bệnh hiện tại
+    Thời điểm khởi phát triệu chứng: 5 ngày qua
+    Triệu chứng hiện tại
+    - cảm thấy khó chịu chung
+    - nghẹt mũi nhiều hơn
+    - đau đầu bên trái
+    - mệt mỏi
+    - tiêu chảy
+    Đặc điểm triệu chứng
+    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân
+    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy
+    Sự kiện trước khi nhập viện
+    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4
+    - Được bổ sung kali 80mEq trong 24 giờ
+    - Quay lại để làm lại xét nghiệm vào ngày
+    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2
+    - Được giới thiệu đến Khoa Cấp cứu
+    - Được kê azithromycin vào ngày
+
+3.  Đánh giá tại bệnh viện
+    Kết quả khám thực thể
+    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời
+    - khám là bình thường
+    Kết quả xét nghiệm
+    - kali là 2.4
+    - kali vẫn giảm xuống 2.2
+    - kali dai dẳng 2.2
+    Thủ thuật đã thực hiện
+    - Nhận 40meq po k
+    - Nhận 40meq iv k
+    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định
+
+# 52.txt
+1.  Tiền sử bệnh nội khoa
+    Tiền sử phẫu thuật / thủ thuật
+    - cắt bỏ ống dẫn mật chủ
+    - cắt bỏ phân đoạn bên trái gan
+    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ
+    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn
+
+2.  Tiền sử bệnh hiện tại
+    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện
+    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt
+    Các sự kiện trước khi nhập viện
+    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe
+    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện
+    - Ra viện với đơn Augmentin đường uống trong 10 ngày 
+    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện
+3.  Đánh giá tại bệnh viện
+    Kết quả chụp chẩn đoán hình ảnh
+    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ
+    - ba stent mật kim loại đã được đặt
+    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước
+
+# 53.txt
+1.  Tiền sử bệnh
+    Các đợt tương tự trước đây: Có thể là đợt có biểu hiện tương tự trong vài tuần qua
+    Bệnh lý mãn tính
+    - bệnh tim mạch do xơ vữa động mạch
+    - blốc nhĩ thất, hoàn toàn sau khi đặt máy tạo nhịp (PPM)
+    - bệnh thận mạn, không đặc hiệu
+    - Suy giảm nhận thức nhẹ suy giảm nhận thức
+    Tiền sử phẫu thuật / thủ thuật: sau khi đặt máy tạo nhịp (status post PPM)
+
+2.  Tiền sử bệnh bệnh hiện tại
+    Lý do nhập viện: Các đợt Cảm giác thắt chặt ngực.
+    Thời điểm khởi phát triệu chứng
+    - Thời gian khởi phát: 14 giờ
+    - Khởi phát cấp tính hay từ từ: Cấp tính
+    Triệu chứng hiện tại
+    - Cảm giác thắt chặt ngực dưới xương ức nghiêm trọng
+    - khó thở
+    Đặc điểm triệu chứng
+    - Vị trí: Sau xương ức
+    - Mức độ nghiêm trọng: Nghiêm trọng
+    - Thời gian: Phút
+    - Tần suất: Các đợt trong vài tuần qua
+    - Yếu tố làm nặng thêm: Xảy ra khi nghỉ ngơi
+    - Yếu tố làm giảm: Tự khỏi
+    - Triệu chứng kèm theo: khó thở
+    Sự kiện trước khi nhập viện
+    - Bệnh nhân ban đầu đến
+    - Chuyển đến vì lo ngại Cơn đau thắt ngực không ổn định cần can thiệp mạch vành
+
+3.  Đánh giá tại bệnh viện
+    Các phát hiện chẩn đoán khác: Lo ngại Cơn đau thắt ngực không ổn định cần can thiệp mạch vành
+
+# 54.txt
+1. Tiền sử bệnh
+Các bệnh lý mạn tính
+- tái phát u ác trực tràng
+- ung thư biểu mô tế bào thận sau cắt bỏ một phần thận phải và tuyến thượng thận phải
+
+Tiền sử phẫu thuật / thủ thuật
+- cắt bỏ một phần thận phải
+- cắt bỏ tuyến thượng thận phải
+- DC cardioversion
+
+Thuốc trước khi nhập viện lần này
+- vancomycin
+- ceftazidime
+- amiodarone
+- thay thế bicarbonate
+
+2. Bệnh sử hiện tại
+Lý do nhập viện: Không có lý do khám bệnh chính
+Diễn biến bệnh
+- Nhập viện từ cơ sở điều dưỡng với suy thận cấp.
+- Tái phát u ác trực tràng được phát hiện trong quá trình điều trị.
+- Thỉnh thoảng có máu trong phân, trong trực tràng trong suốt quá trình điều trị.
+- Chẩn đoán viêm phổi thuỳ, không đặc hiệu chụp x-quang.
+- Điều trị bằng Đã điều trị vancomycin trong 7 ngàyĐã điều trị vancomycinvà ceftazidime trong 7 ngày.
+- Phát hiện  rung nhĩ điển hình kèm theo đáp ứng thất nhanh và rối loạn huyết động.
+- Tiến hành chuyển nhịp bằng sốc điện đồng bộ bắt đầu liệu pháp amiodarone.
+- Phát hiện có rối loạn cân bằng kiềm toan phối hợp.
+- Bắt đầu thay thế bicarbonate.
+- hct vào ngày xuất viện là 24.5 và lặp lại ở 26.1.
+- Tình trạng sức khỏe bình thường tại cơ sở điều dưỡng cho đến ngày nhập viện.
+- xét nghiệm theo dõi được lấy tại cơ sở điều dưỡng, hct trả về là 24.7.
+- Được đưa đến phòng cấp cứu để truyền máu.
+- dấu hiệu sinh tồn tại phòng cấp cứu là 98.1 11663, 99, 17, 99 RA.
+- Được truyền 1 L ns và nhập viện vào OMED để truyền máu.
+- Hiện tại tình trạng ổn định và không có các triệu chứng.
+- Báo cáo phân ít và không có máu từ trực tràng kể từ khi xuất viện.
+- Báo cáo sưng ở chân trái, sưng nhẹ, đau nhẹ (3 ngày).
+Triệu chứng khi nhập viện
+- thiếu máu
+- phân và máu trong trực tràng (thỉnh thoảng)
+- viêm phổi thuỳ, không đặc hiệu
+- rung cuống nhĩ với đáp ứng thất nhanh
+- suy giảm huyết động
+- rối loạn cân bằng kiềm toan phối hợp
+- sưng, sưng nhẹ, đau nhẹ ở mắt cá chân trái (3 ngày)
+Các sự kiện trước khi nhập viện
+- xét nghiệm theo dõi được lấy tại cơ sở điều dưỡng.
+- hct trả về là 24.7.
+- Được đưa đến phòng cấp cứu để truyền máu.
+Tình trạng ngay trước khi nhập viện
+- Không có lý do khám bệnh chính
+- tình trạng trở lại như trước đây sau thời gian nằm viện kéo dài
+
+3. Đánh giá tại bệnh viện
+Kết quả khám thực thể
+- dấu hiệu sinh tồn tại phòng cấp cứu là 98.1 11663, 99, 17, 99 RA.
+- Hiện tại tình trạng ổn định và không có các triệu chứng.
+- Báo cáo lượng dịch thải từ lỗ rò và ống dẫn niệu bình thường.
+- Báo cáo phân ít và không có máu từ trực tràng kể từ khi xuất viện.
+- Báo cáo sưng, sưng nhẹ, đau nhẹ ở mắt cá chân trái (3 ngày).
+Kết quả xét nghiệm
+- hct vào ngày xuất viện là 24.5
+- hct lặp lại tại 26.1
+- hct trả về là 24.7 (tại cơ sở điều dưỡng)
+- rối loạn cân bằng kiềm toan phối hợp
+Kết quả chẩn đoán hình ảnh: chẩn đoán viêm phổi thùy dưới trái bằng hình ảnh
+Các thủ thuật đã thực hiện
+- Chuyển nhịp bằng sốc điện đồng bộ
+- truyền máu
+Các phát hiện chẩn đoán khác
+- suy thận cấp
+- tái phát u ác trực tràng
+- rung cuống nhĩ với đáp ứng thất nhanh
+
+# 55.txt
+2. Lịch sử bệnh hiện tại
+Lý do nhập viện: sốt, đau quanh vết mổ
+Triệu chứng hiện tại
+- sốt
+- đau quanh vết mổ
+
+3. Đánh giá tại bệnh viện
+
+# 56.txt
+Các bệnh lý mãn tính
+- tiền sử Đái tháo đường (tiền sử Đái tháo đường)
+- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))
+
+2. Tiền sử bệnh bệnh hiện tại
+Lý do nhập viện: xét nghiệm gắng sức bất thường
+Thời điểm khởi phát triệu chứng: Hôm qua (không rõ ngày cụ thể)
+Các triệu chứng hiện tại
+- khó chịu vùng ngực gián đoạn
+- chóng mặt
+- khó thở (khó thở)
+- đổ mồ hôi
+Đặc điểm triệu chứng
+- Vị trí: Không rõ (ngụ ý vùng ngực)
+- Mức độ nghiêm trọng: Không rõ
+- Thời gian: Không rõ
+- Tần suất: Gián đoạn
+- Chiếu r xạ: Không rõ
+- Các yếu tố làm nặng thêm: Hoạt động gắng sức
+- Các yếu tố làm giảm bớt: Nghỉ ngơi
+- Các triệu chứng liên quan: chóng mặt, khó thở, đổ mồ hôi
+Các sự kiện trước khi nhập viện: xét nghiệm gắng sức bất thường
+
+3. Đánh giá tại bệnh viện
+Kết quả thăm khám lâm sàng
+- Không có đau tại phòng cấp cứu
+- điện tâm đồ bình thường tại phòng cấp cứu
+- Các chỉ số ban đầu tại phòng cấp cứu: Nhiệt độ 36.7°c, Huyết áp 139/68 mmhg, Mạch 67 lần/phút, Nhịp thở 16 lần/phút, SpO2 100% (không thở oxy) (nhiệt độ 36.7°c, huyết áp 139/68 mmhg, nhịp tim 67 lần/phút, nhịp thở 16 lần/phút, độ bão hòa oxy 100% trên khí trời)
+Các thủ thuật đã thực hiện: ống nội khí quản (nghiệm pháp gắng sức trên máy chạy bộ)
+Các phát hiện chẩn đoán khác
+Nghiệm pháp gắng sức dương tính với thiếu máu cơ tim cục bộ, biểu hiện ST chênh xuống ở các chuyển đạo thành dưới và thành bên. 
+Đoạn ST chênh xuống kiểu xuống dốc xuất hiện trong giai đoạn hồi phục, còn tồn tại sau 1 phút và kéo dài đến sau 5 phút hồi phục.
+
+
+# 57.txt
+1.  Tiền sử bệnh nội khoa
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái
+    Thời điểm khởi phát triệu chứng: vài năm
+    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái
+
+3.  Đánh giá tại bệnh viện
+    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp
+
+# 58.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mạn tính
+    - bệnh Graves
+    - tăng lipid máu, không đặc hiệu
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện
+    - yếu sức nửa người bên phải
+    - tình trạng tri giác giảm sút
+    - nhìn song thị
+    Thời điểm khởi phát triệu chứng
+    - Thời gian: khoảng 11:00 sáng
+    - Khởi phát cấp tính hay từ từ: Không ghi rõ
+    Diễn biến bệnh
+    - Được con trai phát hiện tại nhà lúc khoảng 11:00 sáng, nằm sải trên sàn.
+    - Than phiền về không thể tự đứng dậy do yếu sức chân phải.
+    - Không nhớ cách mình bị ngã xuống sàn hay lý do tại sao mình bị ngã.
+    - không thể chịu lực ở chân phải, liên tục khuỵu chân khi được giúp đỡ đứng dậy.
+    - Đã được chụp chụp ct sọ não kết quả âm tính.
+    - Đội ngũ y tế tiến hành chọc dò dịch não tủy.
+    - Bị một cơn nhịp tim chậm nặng và hạ huyết áp ngay sau khi study.
+    - Cơn bệnh tự khỏi sau khi dùng intravenous fluids.
+    - Chụp lại chụp ct sọ não, kết quả âm tính.
+    - Chuyển đến bệnh viện để tiếp tục điều trị.
+    - Được gọi là Code tai biến mạch máu não.
+    - Ban đầu tỉnh chậm phản xạ kém.
+    - Dần dần tỉnh táo hơn tỉnh táo và tỉnh khi gọi.
+    - Phủ nhận các bệnh nền lớn tiền sử bệnh hoặc triệu chứng nào khác ngoại trừ nhiễm trùng nhiễm trùng răng miệng gần đây cần dùng kháng sinh.
+    - Phủ nhận tiền sử bị tai biến mạch máu não hoặc co giật.
+    Triệu chứng khi nhập viện
+    - yếu sức nửa người bên phải
+    - tình trạng tri giác giảm sút
+    - nhìn song thị
+    - mệt mỏi
+    Đặc điểm triệu chứng
+    - Vị trí: yếu chân phải
+    - Mức độ nghiêm trọng: Không ghi rõ
+    - Thời gian: Không ghi rõ
+    - Tần suất: Không ghi rõ
+    - Lan tỏa: Không ghi rõ
+    - Các yếu tố làm nặng thêm: Không ghi rõ
+    - Các yếu tố làm giảm bớt: Không ghi rõ
+    - Triệu chứng liên quan: mệt mỏi
+    Các sự kiện trước khi nhập viện
+    - Được con trai phát hiện tại nhà.
+    - Than phiền về yếu sức chân phải.
+    - Đã được chụp chụp ct sọ não kết quả âm tính.
+    - Tiến hành chọc dò dịch não tủy.
+    - Bị nhịp tim chậm nặng và hạ huyết áp, không đặc hiệu.
+    - Cơn bệnh tự khỏi sau khi dùng intravenous fluids.
+    - Chụp lại chụp ct sọ não, kết quả âm tính.
+    - Đã dùng kháng sinh cho nhiễm trùng nhiễm trùng răng miệng gần đây.
+    Tình trạng ngay trước khi nhập viện
+    - Nằm sải trên sàn.
+    - không thể tự đứng dậy do yếu sức chân phải.
+    - không thể chịu lực ở chân phải, liên tục khuỵu chân.
+    - tỉnh chậm, phản xạ kém.
+
+3.  Đánh giá tại bệnh viện
+    Dấu hiệu lâm sàng
+    - yếu nửa người bên phải
+    - suy giảm tri giác
+    - nhìn song thị
+    - nhịp tim chậm
+    - hạ huyết áp, không đặc hiệu
+    - không nhấc chân phải khỏi mặt giường
+    - chân phải liên tục khuỵ xuống
+    - tỉnh chậm, phản xạ kém
+    Kết quả xét nghiệm
+    - Chẩn đoán hình ảnh
+    - chụp ct sọ não: âm tính
+    - Chụp lại chụp ct sọ não: âm tính
+    Các thủ thuật đã thực hiện
+    - chụp ct sọ não
+    - chọc dò dịch não tủy
+    - Truyền dịch tĩnh mạch
+
+# 59.txt
+1.  Tiền sử bệnh
+    Các tập tương tự trước đây
+    - Nhập viện khoa Thần kinh từ [Date] với thông não so với chụp cắt lớp vi tính (ct) đầu từ [Date].
+    - Bị tăng đau đầu cải thiện khi nằm ngửa.
+    - Nhập viện khoa Thần kinh vào thời điểm đó để điều trị chứng đau đầu.
+    - Được bác sĩ nhãn khoa khám trong quá trình nhập viện đó và không phát hiện phù gai thị.
+    Bệnh lý mãn tính: não úng thuỷ khác từ thời kỳ sơ sinh
+    Tiền sử phẫu thuật / thủ thuật
+    - Phẫu thuật đặt cảng để điều trị chứng tăng nhãn áp ở thời kỳ sơ sinh
+- Hệ thống dẫn lưu được chỉnh sửa/thay thế khi 3 tháng tuổi
+- Hệ thống dẫn lưu được chỉnh sửa/thay thế lại khi [Số] tuổi
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đau đầu kéo dài kèm theo mờ mắt
+    Thời điểm khởi phát triệu chứng: nhìn mờ tiến triển trong 2 tuần qua
+    Diễn biến bệnh
+    - Bệnh nhân bị não úng tuỷ từ thời kỳ sơ sinh, được điều trị bằng cách đặt dẫn lưu shunt
+    - Trước đây đã từng nhập viện với chẩn đoán não úng thủy, có biểu hiện tăng đau đầu , triệu chứng cải thiện khi nằm ngửa.
+    - Nhập viện trước đây vào khoa Thần kinh để điều trị chứng đau đầu.
+    - Khám nhãn khoa trong quá trình nhập viện trước đó cho thấy không có phù gai thị.
+    - Đến hôm nay, bệnh nhân bị mờ mắt ở cả hai mắt, bên trái nặng hơn bên phải, tiến triển trong 2 tuần qua.
+    - Đến hôm nay, bệnh nhân bị tăng tần suất đau đầu gián đoạn.
+    Triệu chứng hiện tại
+    - đau đầu kéo dài
+    - nhìn mờ ở cả hai mắt, bên trái nặng hơn bên phải
+    -  cơn  đau đầu nhiều hơn
+    Đặc điểm triệu chứng
+    - nhìn mờ: tiến triển trong 2 tuần qua, bên trái nặng hơn bên phải
+    - đau đầu: nhiều hơn
+    Sự kiện trước khi nhập viện
+    - Được bác sĩ nhãn khoa [Name] khám ngoại trú hôm nay
+    - Được bác sĩ nhãn khoa giới thiệu đến Khoa Cấp cứu vì phù gai thị, bên trái nặng hơn bên phải
+3.  Đánh giá tại bệnh viện
+    Dấu hiệu lâm sàng: Phù gai thị, bên trái nặng hơn bên phải (theo báo cáo của bác sĩ nhãn khoa)
+    Các phát hiện chẩn đoán khác
+    - Tăng nhãn áp so với chụp cắt lớp vi tính (ct) đầu từ [Date] (từ lần nhập viện trước)
+    - Phù gai thị (theo báo cáo của bác sĩ nhãn khoa)
+
+
+# 60.txt
+1.  Tiền sử bệnh nội khoa
+    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.
+    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.
+    Triệu chứng hiện tại
+    - triệu chứng trào ngược
+3.  Đánh giá tại bệnh viện
+    Kết quả Chẩn đoán hình ảnh
+    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.
+    - Phát hiện có một thoát vị cạnh thực quản khá lớn.
+    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.
+    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.
+
+
+# 61.txt
+1.  Tiền sử bệnh
+    CGhi nhận triệu chứng tương tự trước đây: xuất hiện đau vùng xương bánh chè – đùi phải dữ dội, xảy ra cách đây vài tháng.
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: Tái khám vì đau đầu gối phải
+    Thời điểm khởi phát triệu chứng
+    - Thời gian khởi phát: cách đây vài tháng (đối với lần khám  trước)
+    - Khởi phát cấp tính hay dần dần: Không ghi rõ
+    Diễn biến bệnh
+    - Thứ tự phát triển triệu chứng: Đau bánh chè đùi phải dữ dội cách đây vài tháng. Tiếp tục bị đau đau dữ dội khi thực hiện hầu hết các hoạt động.
+    - Tiến triển bệnh: Không ghi rõ
+    Triệu chứng hiện tại: đau đầu gối phải
+    Đặc điểm triệu chứng
+    - Vị trí: đầu gối phải
+    - Mức độ nghiêm trọng: dữ dội
+    - Thời gian: Không ghi rõ
+    - Tần suất: Không ghi rõ
+    - Chiếu xạ: Không ghi rõ
+    - Các yếu tố làm nặng thêm: hầu hết các hoạt động, đặc biệt là leo cầu thang và gập sâu
+    - Các yếu tố làm giảm: Không ghi rõ
+    - Các triệu chứng liên quan: Không ghi rõ
+
+3.  Đánh giá tại bệnh viện
+    Kết quả chẩn đoán hình ảnh
+    - x-quang vào thời điểm đó cho thấy những thay đổi thoái hóa nghiêm trọng của khớp bánh chè đùi phải
+    - chụp cắt lớp vi tính kể từ lần khám cuối cùng cho thấy góc tăng lên
+
+# 62.txt
+1.  Tiền sử bệnh nội khoa
+    Tiền sử phẫu thuật / thủ thuật
+    - tiền sử R BKpop-DP bypass bằng tĩnh mạch hiển
+    - tiền sử đặt stent động mạch thận trái
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện:loét mới ở ngón chân út bên phải
+    Triệu chứng hiện tại
+    - loét đau
+    - loét đỏ
+    - loét sưng
+
+3.  Đánh giá tại bệnh viện
+
+# 63.txt
+1.  Tiền sử bệnh nội khoa
+    Bệnh mãn tính: tiền sử Bệnh túi thừa ở cả ruột non và đại tràng, chưa có biến chứng thủng hoặc áp xe.
+    Thuốc trước khi nhập viện: thường dùng colace
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đau bụng
+    Thời điểm khởi phát triệu chứng: khởi phát đột ngột đau hố chậu
+    Diễn biến bệnh
+    - Bệnh nhân cảm thấy rất táo bón
+    - Bệnh nhân đã ăn quả mận khô
+    - ban đêm, bệnh nhân có thể đi đại tiện vài lần liên tục, phân có vẻ thành khuôn
+    - Sau đó, bệnh nhân nhận thấy khởi phát đột ngột đau hố chậu
+    - gọi cho bác sĩ chăm sóc chính (PCP)
+    - Bác sĩ PCP khuyên dùng tylenol cho đau
+    - bệnh nhân dùng tylenol nhưng phải đến phòng cấp cứu vì đau vẫn tiếp tục
+    Triệu chứng hiện tại
+    - đau bụng
+    - táo bón
+    - buồn nôn
+    Đặc điểm triệu chứng
+    - Vị trí: đau hố chậu
+    - Mức độ nghiêm trọng: cơn đau vẫn tiếp diễn mặc dù đã dùng tylenol
+    - Triệu chứng liên quan: buồn nôn
+    Các sự kiện trước khi nhập viện
+    - đã dùng quả mận khô
+    - đã dùng tylenol
+    - gọi cho bác sĩ PCP
+    - Bác sĩ PCP khuyên dùng tylenol cho đau
+    Tình trạng ngay trước khi nhập viện: đau vẫn tiếp diễn
+
+3.  Đánh giá tại bệnh viện
+    khám thực thể Kết quả: dấu hiệu sinh tồn ban đầu được ghi nhận là T97.8, nhịp tim 84, huyết áp 15670, nhịp thở 20, độ bão hòa oxy 99 khi thở khí trời
+    xét nghiệm Kết quả
+    - thiếu máu hồng cầu nhỏ là 27.2
+    - bun/creatinine
+    Kết quả chẩn đoán hình ảnh: chụp ct bụng, chậu, không thuốc cản quang cho thấy một lượng nhỏ dịch và mỡ bao quanh một quai ruột kết sigma, gợi ý viêm túi mật cấp tính không biến chứng
+    Các kết quả chẩn đoán khác: viêm túi mật cấp tính không biến chứng
+
+# 64.txt
+1.  Tiền sử bệnh
+    Các đợt tương tự trước đây
+    - Nhiều lần nhập viện trước đây vào khoa nội để điều trị viêm túi mật
+    - Nhập viện trước đây bắt đầu bằng ciproflagyl
+    - Tiếp tục đau tại thời điểm xuất viện khỏi lần nhập viện trước, được kiểm soát trung bình bằng percocet
+    - Nhiều lần chụp chụp cắt lớp vi tính trong lần nhập viện trước cho thấy viêm túi mật không biến chứng
+    Bệnh lý mãn tính
+    - Tiền sử đã biết của bệnh túi thừa của cả ruột non và đại tràng, không thủng hay áp xe
+    - táo bón trở nên tồi tệ hơn gần đây
+    Thuốc trước khi nhập viện lần này: percocet (để kiểm soát cơn đau)
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đau vùng hạ vị bên phải và hạ vị bên trái
+    Thời điểm khởi phát triệu chứng: đau bụng ở vùng bụng dưới trở nên tồi tệ hơn trong 1 ngày
+    Triệu chứng hiện tại
+    - đau vùng hạ vị bên phải và hạ vị bên trái
+    - táo bón trở nên tồi tệ hơn gần đây
+    - đổ mồ hôi qua đêm
+    - Không ghi nhận sốt
+    - Không chóng mặt
+    - Không hoa mắt
+    - đi tiêu bình thường, không ra máu
+    Đặc điểm triệu chứng
+    - Vị trí: vùng bụng dưới (đau RLQLLQ)
+    - Mức độ nghiêm trọng: Tồi tệ hơn
+    - Thời gian: 1 ngày
+    - Các triệu chứng liên quan: đổ mồ hôi
+    Sự kiện trước khi nhập viện
+    - sử dụng ciproflagyl trong lần nhập viện trước
+    - Tiếp tục đau tại thời điểm xuất viện khỏi lần nhập viện trước, được kiểm soát trung bình bằng percocet
+    - Không ghi nhận sốt
+    - Không chóng mặt
+    - Không hoa mắt
+    - đi tiêu bình thường, không ra máu
+
+3.  Đánh giá tại bệnh viện
+    Dấu hiệu lâm sàng
+    - đổ mồ hôi qua đêm
+    - Không ghi nhận sốt
+    Kết quả chẩn đoán hình ảnh: Nhiều lần chụp chụp cắt lớp vi tính trong lần nhập viện trước cho thấy viêm túi mật không biến chứng
+
+# 65.txt
+Thuốc trước khi nhập viện: chỉ dùng để chống đông máu
+
+2. Bệnh sử hiện tại
+Lý do nhập viện: 3 ngày đại tiện ra máu đỏ tươi gián đoạn
+Thời điểm khởi phát triệu chứng: 3 ngày
+Triệu chứng hiện tại
+- đại tiện ra máu đỏ tươi gián đoạn
+- chóng mặt
+Đặc điểm triệu chứng
+- Vị trí: qua đường hậu môn
+- Màu sắc: đỏ tươi
+- Triệu chứng kèm theo: chóng mặt
+Các sự kiện trước khi nhập viện
+- Bệnh nhân được khám tại phòng cấp cứu
+- inr là 2.0
+Tình trạng ngay trước khi nhập viện
+- nhập viện để đánh giá rối loạn đông máu
+- nhập viện để đánh giá tăng Cr theo phòng cấp cứu
+
+3. Đánh giá tại bệnh viện
+Kết quả xét nghiệm
+- inr là 2.0
+- tăng Cr theo phòng cấp cứu
+
+
+# 66.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh mãn tính
+    - Tiểu đường loại 1 đái tháo đường
+    - tăng huyết áp
+    - tăng lipid máu, không đặc hiệu
+    - béo phì
+    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định
+
+2.  Lịch sử bệnh hiện tại
+    Lý do nhập viện: đau bàn chân phải
+    Các triệu chứng hiện tại
+    - đau bàn chân phải
+    - mất thăng bằng khi đi lại
+    Các sự kiện trước khi nhập viện
+    - Gần đây nhập viện vì viêm bể thận và viêm phế quản
+    - Xuất viện về nhà ngày hôm qua
+    - Đang dùng một liệu trình 14 day course of ertapenem
+    Tình trạng ngay trước khi nhập viện
+    - đau bàn chân phải đã hoàn toàn hết
+    - cảm thấy tốt hơn
+    - Vẫn cảm thấy không vững khi đứng
+
+3.  Đánh giá tại bệnh viện
+    Kết quả xét nghiệm xét nghiệm
+    - hct (hematocrit) 8.126.3
+    - tiểu cầu (platelets) 478
+    - hco3- (bicarbonate) 20
+    - ag (anion gap) 13
+    - bun/creatinine (ure/creatinine)
+    - glucose (đường huyết) 316
+    - lactate (acid lactat) 1.3
+    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite
+    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh
+    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính
+    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy
+    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)
+
+# 67.txt
+1.  Tiền sử bệnh nội khoa
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang
+    Triệu chứng hiện tại: đau vùng hạ sườn phải
+    Các sự kiện trước khi nhập viện
+    - siêu âm cho thấy sỏi mật
+    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ
+
+3.  Đánh giá tại bệnh viện
+    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật
+    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang
+
+# 68.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mãn tính
+    - bệnh phổi tắc nghẽn mạn tính, không xác định
+    - tâm thần phân liệt
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: yếu
+    Các triệu chứng hiện tại: yếu
+    Đặc điểm triệu chứng: Vị trí: đáng chú ý nhất ở ngực
+
+3.  Đánh giá tại bệnh viện
+
+# 69.txt
+1.  Tiền sử bệnh nội khoa
+    Tiền sử phẫu thuật / thủ thuật
+    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận
+    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đến khám vì mệt mỏi, thiếu máu và phân có guaiac dương tính đến
+
+    Triệu chứng hiện tại
+    - mệt mỏi
+    - thiếu máu
+    - phân có guaiac dương tính
+
+    Các sự kiện trước khi nhập viện
+    - Nội soi đại tràng sau xuất viện cho thấy một khối ở chỗ uốn gan
+    - sinh thiết dương tính với ung thư biểu mô tuyến
+
+3.  Đánh giá tại bệnh viện
+    Kết quả phòng thí nghiệm: thiếu máu
+    Kết quả chẩn đoán hình ảnh: chụp cắt lớp vi tính ổ bụng năm ngoái cho thấy không có dấu hiệu bệnh lan rộng
+
+    Thủ thuật thực hiện
+    - nội soi đại tràng
+    - sinh thiết
+
+    Các phát hiện chẩn đoán khác
+    - khối ở chỗ uốn gan
+    - ung thư biểu mô tuyến trên sinh thiết
+    - tiền sử khối u thận
+    - ung thư biểu mô tế bào thận
+    - ung thư biểu mô tuyến giật nhú
+
+# 70.txt
+1. Tiền sử bệnh
+Các tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc
+Thuốc trước khi nhập viện
+- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi cơn đau dữ dội, thường 4 viên mỗi giờ
+- làm hỏng dạ dày của cô ấy bằng cách uống 2 chai thuốc an thần trong quá khứ
+
+2. Bệnh sử hiện tại
+Lý do nhập viện: đau bụng ngày càng nặng
+Thời điểm khởi phát triệu chứng
+- Tiền sử 2 ngày đau bụng ngày càng nặng
+- Tiền sử 2 tháng đau bụng liên tục
+Diễn biến bệnh
+- Tiền sử 2 tháng đau bụng liên tục
+- 2 ngày trước khi nhập viện, đau bụng trở nên tồi tệ hơn
+- Diễn biến trong viện: tăng men gan bắt đầu có xu hướng giảm mặc dù tổng bilirubin bắt đầu tăng lên đạt đỉnh 6.7 vào
+Các triệu chứng hiện tại triệu chứng
+- đau bụng ngày càng nặng
+- đau bụng liên tục
+- mệt mỏi toàn thân
+- yếu sức
+- khó thở khi gắng sức
+- ngứa toàn thân
+- Vài lần tiểu ra máu không đau
+Đặc điểm triệu chứng
+- Vị trí: Đau vùng gan phải (RUQ) và thượng vị lan ra sau lưng
+- Không có buồn nôn
+- Không có nôn
+- Không có thay đổi thói quen đại tiện
+- Không có phân có máu, đen hoặc nhựa đường
+Các sự kiện trước khi nhập viện
+- Tự điều trị bằng liều cao acetaminophen 500mg
+- làm hỏng dạ dày của cô ấy bằng cách uống 2 chai thuốc an thần trong quá khứ
+- Tại bệnh viện OSH, phát hiện tăng men gan với tăng bilirubin máu: ast 421, alt 336, alp 185, bilirubin toàn phần 0.9
+- âm tính siêu âm bụng có doppler
+- âm tính chụp hida
+- Chưa từng xét nghiệm nồng độ acetaminophen
+- Chưa từng dùng nac
+- Chuyển tạm thời để thực hiện ercp
+- ercp cho thấy túi mật giãn nở rõ rệt nhưng không có sỏi hoặc bệnh lý khác
+- Chuyển lại bệnh viện OSH và được cho là đã tống ra một viên sỏi mật
+Tình trạng ngay trước khi nhập viện: tăng bilirubin máu và tăng men gan kéo dài
+
+3. Đánh giá tại bệnh viện
+Kết quả xét nghiệm
+- ast 421
+- alt 336
+- alp 185
+- bilirubin toàn phần 0.9
+- total bili bắt đầu tăng lên đạt đỉnh 6.7
+- bảng xét nghiệm viêm gan virus là âm tính
+- ferritin là bình thường
+- ceruloplasmin vẫn đang chờ kết quả đang chờ kết quả tại thời điểm chuyển viện
+Kết quả chẩn đoán hình ảnh
+- siêu âm bụng có doppler âm tính âm tính
+- âm tính chụp hida
+- ercp cho thấy túi mật giãn nở rõ rệt túi mật giãn nhưng không có sỏi hoặc bệnh lý giải phẫu bệnh khác
+Thủ thuật thực hiện: ercp
+Các phát hiện chẩn đoán khác
+- tăng men gan
+- tăng bilirubin máu
+
+# 71.txt
+1. Tiền sử bệnh
+Các bệnh lý mãn tính
+- Tăng huyết áp
+- Tăng lipid máu
+- Đái tháo đường típ 2
+- bệnh tim mạch do xơ vữa động mạch sau CABG
+- suy tim, không đặc hiệu hệ số tống máu 50 inch
+- Tăng huyết áp phổi
+Tiền sử phẫu thuật / thủ thuật: CABG
+Thuốc trước khi nhập viện: lasix (tăng liều gần đây)
+
+2. Bệnh sử hiện tại
+Triệu chứng hiện tại
+- mệt mỏi
+- khó thở khi gắng sức nhẹ
+- ho khan ho
+- sưng phù hai mắt cá chân
+- khó thở khi nằm
+- phù
+Các sự kiện trước khi nhập viện
+- đến ED vì Suy tim sung huyết cấp
+- được điều trị bằng cách tăng liều lasix
+Tình trạng ngay trước khi nhập viện
+- vẫn mệt mỏi và khó thở khi gắng sức nhẹ
+- ho khan ho
+- sưng phù hai mắt cá chân
+
+3. Đánh giá tại bệnh viện
+Các thủ thuật đã thực hiện
+- thông tim trái và phải
+- thông tim trái
+- thông tim phải
+Các phát hiện chẩn đoán khác
+- graft SVG bị tắc
+- graft lima ổn định
+- Bệnh động mạch vành phải nặng hơn với 60 RPL và 40 mid RCA
+- Động mạch vành trái bình thường
+- áp lực nạp tăng
+- áp lực tâm thu phổi ở
+- áp lực tĩnh mạch bít
+
+# 72.txt
+1.  Tiền sử bệnh nội khoa
+
+2.  Tiền sử bệnh hiện tại
+Thời điểm khởi phát triệu chứng: giữa
+Các triệu chứng hiện tại
+- vàng da không đau
+- ngứa
+Các sự kiện trước khi nhập viện
+- tăngtăng các xét nghiệm chức năng gan và bilirubin khi khám
+- âm tính đánh giá từ xét nghiệm huyết thanh của cô ấy
+- siêu âm cho thấy giãn đường dẫn mật trong gan ở ống mật chủ 15 mm tại mức tuyến tụy
+- ercp (nội soi mật tụy ngược dòng) bởi Bác sĩ cho thấy một khối phình to 2 cm ở nhúm tá tràng lớn với gợi ý về một khối khối u lân cận
+- một chỗ hẹp đơn lẻ được thấy, dài 7 mm ở một phần ba dưới của ống mật chủ
+- lấy mẫu tế bào bằng chổi là phiên hình
+- sinh thiết cho thấy ung thư biểu mô tuyến, biệt hóa vừa phải đến kém
+- các đặc điểm mô học phù hợp với một khối u có nguồn gốc từ đường mật tụy
+
+3.  Đánh giá tại bệnh viện
+Kết quả xét nghiệm
+- tăng các xét nghiệm chức năng gan
+- bilirubin
+- lấy mẫu tế bào bằng chổi là phiên hình
+- sinh thiết cho thấy ung thư biểu mô tuyến, biệt hóa vừa phải đến kém
+Kết quả chẩn đoán hình ảnh
+- siêu âm cho thấy giãn đường dẫn mật trong gan ở ống mật chủ 15 mm tại mức tuyến tụy
+- ercp (nội soi mật tụy ngược dòng) cho thấy một khối phình to 2 cm ở nhúm tá tràng lớn với gợi ý về một khối khối u lân cận
+- một chỗ hẹp đơn lẻ được thấy, dài 7 mm ở một phần ba dưới của ống mật chủ
+Các thủ thuật đã thực hiện
+- ERCP bởi Bác sĩ
+- Sinh thiết
+Các phát hiện chẩn đoán khác
+- u ác của đầu tuỵ mới được chẩn đoán
+- các đặc điểm mô học phù hợp với một khối u có nguồn gốc từ đường mật tụy
+
+# 73.txt
+1.  Tiền sử bệnh
+    Các tập tương tự trước đây: Nhập viện trước đó vì đau ngực (đau ngực), loại trừ Nhồi máu cơ tim và nghi ngờ thấp về Hội chứng mạch vành cấp.
+    Các bệnh lý mãn tính
+    - tăng huyết áp vô căn (nguyên phát) (Tăng huyết áp)
+    - tăng lipid máu, không đặc hiệu (tăng lipid máu, không đặc hiệu)
+    - Đái tháo đường type 2 (Đái tháo đường típ 2)
+    - bệnh phổi tắc nghẽn mạn tính, không xác định (bệnh phổi tắc nghẽn mạn tính, không xác định)
+    - bệnh tim mạch do xơ vữa động mạch (bệnh tim mạch do xơ vữa động mạch) đã phẫu thuật bắc cầu chủ động mạch vành (sp CABG)
+    - Nhập viện gần đây vì Đã tử vong (dced)
+    Tiền sử phẫu thuật / thủ thuật: Phẫu thuật bắc cầu chủ động mạch vành (CABG)
+    Thuốc trước khi nhập viện lần này
+    - aspirin 81mg (asa81)
+    - clopidogrel (prasugrel chuyển sang clopidogrel do Đột quỵ gần đây)
+    - metoprolol succinate 100mg daily (tăng liều)
+    - lasix 40mg daily (tăng liều)
+    - atorvastatin 80mg daily (bắt đầu)
+    - lisinopril 2.5mg daily (bắt đầu)
+    - ranexa 500mg daily (tiếp tục)
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện: đau ngực
+    Thời điểm khởi phát triệu chứng: Lần cuối (khung thời gian không được chỉ định)
+    Diễn biến bệnh
+    - Tình trạng tốt trong quá trình phục hồi chức năng vào tuần đầu tiên.
+    - Bắt đầu phát triển đau ngực vào ban đêm lần cuối (khung thời gian không được chỉ định).
+    Triệu chứng hiện tại: đau ngực
+    Các sự kiện trước khi nhập viện: Đến trung tâm phục hồi chức năng sau khi xuất viện lần trước.
+    Tình trạng ngay trước khi nhập viện
+    - Không có đau ngực, khó thở, đánh trống ngực.
+    - tổng trạng thái ổn.
+    - Ngủ kê cao đầu bằng 2 gối vào ban đêm.
+
+3.  Đánh giá tại bệnh viện
+
+# 74.txt
+1.  Tiền sử bệnh
+    Tiền sử phẫu thuật / thủ thuật: sp TLH (tình trạng sau phẫu thuật cắt tử cung bằng nội soi toàn bộ)
+    Thuốc trước khi nhập viện lần này
+    - cipro
+    - bactrim
+    - Kháng sinh cho nhiễm khuẩn đường tiết niệu, vị trí không xác định (được bác sĩ chăm sóc chính kê đơn vào cuối tuần)
+
+2.  Tiền sử bệnh bệnh hiện tại
+    Lý do nhập viện: đau bụng dưới
+    Thời điểm khởi phát triệu chứng: 7 ngày
+    Diễn biến bệnh
+    - Triệu chứng trở nên tồi tệ hơn
+    - Đau tiến triển và lan vào sườn trái và LLQ (Tứ phân vị dưới trái)
+    - Ban đầu có buồn nôn nhưng đã thuyên giảm
+    - đau cải thiện đáng kể sau khi dùng iv morphineiv morphine and toradol
+    Triệu chứng hiện tại
+    - đau bụng dưới
+    - ớn lạnh
+    - khó chịu khi đi tiểu
+    - khó chịu khi đại tiện
+    Sự kiện trước khi nhập viện
+    - Được bác sĩ chăm sóc chính khám vào cuối tuần, được kê đơn kháng sinh cho nhiễm khuẩn đường tiết niệu, vị trí không xác định
+    - Đi khám lại bác sĩ chăm sóc chính vào hôm qua, bắt đầu dùng cipro và bactrim
+    Tình trạng ngay trước khi nhập viện
+    - đau tiến triển và lan vào sườn trái và LLQ
+    - đau liên tục, lan tỏa ra lưng và có tính chất kéo
+    - Đồng ý ớn lạnh và một số khó chịu khi đi tiểu và đại tiện
+    - Không có máu trong phân hoặc nước tiểu, đau đớn khi đi tiểu, tiểu gấp hoặc các triệu chứng tiết niệu khác
+    - Phủ nhận CPSOB (đau ngực, khó thở), NV (buồn nôn, nôn mửa), VB (chảy máu âm đạo), khí hư bất thường, thay đổi cân nặng
+
+3.  Đánh giá tại bệnh viện
+    Kết quả xét nghiệm: công thức máu (cbc) là 12 (tăng nhẹ))
+    Kết quả chẩn đoán hình ảnh: chụp cắt lớp vi tính (ct) bụng và chậu cho thấy một khoang chứa dịch phức tạp lớn kích thước 12x9x9cm nằm sâu trong vùng chậu
+    Các phát hiện chẩn đoán khác: Lo ngại về áp xe (Đã tư vấn Ngoại khoa Tổng hợp)
+
+# 75.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - bệnh động mạch vành sau can thiệp bắc cầu nối
+    - Nhiều lần chụp mạch và can thiệp tim mạch do đau ngực
+    Tiền sử phẫu thuật / thủ thuật
+    - Bắc cầu nối chủ vành
+    - Can thiệp mạch vành qua da và đặt stent phủ thuốc (DES) ở động mạch liên thất trước (LAD).
+    - Can thiệp mạch vành qua da (POBA) vào động mạch chéo gốc
+    - Can thiệp mạch vành qua da và đặt 2 stent phủ thuốc có chồng lấp nhau ở đoạn giữa động mạch vành phải (RCA)
+    - Nong bóng động mạch vành qua da (PTCA) tại nhánh sau bên (posterolateral branch) của động mạch vành.
+
+2.  bệnh sử hiện tại
+    Lý do nhập viện: đau ngực trái dữ dội lan xuống cánh tay trái
+    Theo lời kể bệnh nhân  bắt đầu đau trước khi đi ngủ vài đêm nay,  đau đã được giảm đau bằng ngậm nitroglycerin dưới lưỡi 1 liều vào các đêm trước. Đêm vào viện xuất hiện cơn đau dữ dội,  kèm theo khó thở, dã dùng 3 viên nitroglycerin nhưng không giảm đau, đau ngực hết trước khi chuyển viện, vào viện
+    Triệu chứng lúc nhập viện cơ sở
+    - đau ngực trái dữ dội lan xuống cánh tay trái
+    - vã mồ hôi
+    - khó thở
+     Đến bệnh viện tuyến cơ sở
+    - Phát hiện điện tim sóng ST chênh xuống ở các chuyển đạo v4 đến v6
+    - Được dùng aspirin
+Ngậm dưới lưỡi 4 liều nitroglycerin.
+    - Thuốc nitroglycerin dạng bôi/dán lên da (mỡ nitroglycerin)
+    - ativan ( Lorazepam)
+    - lovenox lúc 0100
+Sau dùng thuốc đau ngực hết, sóng ST trên điện tim cải thiện không chênh
+    - Chuyển đến bệnh viện tuyến trên để tiếp tục điều trị
+ 
+3.  Lúc vào viện bệnh viện
+    Dấu hiệu lâm sàng: vã mồ hôi
+    Kết quả xét nghiệm: troponin là 0.10
+    Kết quả chẩn đoán hình ảnh
+    - điện tâm đồ cho thấy nhịp xoangnhịp xoang, tần số 91 lần/phút
+    - điện tâm đồ cho thấy Sóng ST chênh xuống  ở các chuyển đạo v4 đến v6chênh nhiều so với EKG ở  trước đó
+
+
+# 76.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - Đái tháo đường
+    - tăng lipid máu
+    -  bệnh động mạch vành
+    -  Nhồi máu cơ tim
+    Tiền sử phẫu thuật / thủ thuật
+    - đã từng âm tính thử nghiệm gắng sức
+    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.
+    Thuốc dùng trước khi nhập viện
+    - plavix
+    - dùng nitrateskhi  đau ngực
+
+2.  Tiền sử bệnh hiện tại
+    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức
+    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.
+   Khám thấy:
+    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục
+    - khó thở
+    - vã mồ hôi
+    - buồn nôn
+    - nôn
+    - tiêu chảy
+Xử trí 
+- bắt đầu dùng heparin
+đau ngực giảm sau khi dùng nitro và dilaudid 3mg  
+    Kết quả xét nghiệm:
+    - troponin là 0.03
+    - creatinine là  2.0 -> 3.2
+    - k (kali) là 5.4
+    - phosphate là 5.6
+    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường
+
+
+
+# 77.txt
+1.  Tiền sử bệnh
+    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực
+  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất
+    Các bệnh mãn tính
+    - Rối loạn cảm xúc 
+    - Rối loạn lưỡng cực
+    - rối loạn lo âu
+    Thuốc đã điều trị trước khi nhập viện lần này
+    - Thuốc kê đơn (tên không được chỉ định)
+    - klonopinclonidine (được kê đơn)
+    - clonidine (mua trên đường phố)
+    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày
+    Các yếu tố nguy cơ liên quan
+    - Lạm dụng chất kích thích, chất gây nghiện opioid
+2.   Bệnh sử hiện tại
+    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu
+   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua
+    Triệu chứng khi vào viện
+    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu
+    - lo âu
+hoảng sợ
+    - hoang tưởng như đang chiếm khí oxy của người khác
+ Điều trị
+    - Hiện đang được chăm sóc tâm thần bởi bác sĩ
+
+
+
+# 78.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    -ung thư vú
+    - ung thư phổi gây ho khó thở kéo dài tại nhà
+    Trước khi nhập viện: thở oxy 3L/p tại nhà
+
+2.  Bệnh sử hiện tại
+    Lý do nhập viện: suy nhược toàn thân
+Theo lời kể bệnh nhân xuất hiện tình trạng khó thở  gần đây , liên tục, kể cả lúc nghỉ ngơi kèm theo  hồi hộp, đánh trống ngực.
+    Triệu chứng lúc vào viện
+    - suy nhược toàn thân
+    - khó thở liên tục, nhất là khi nằm
+    - ho
+    - hồi hộp (đánh trống ngực
+  Khám thấy
+    - chỉ số bão hòa oxy (đo độ bão hòa oxy dưới 90 %
+Cận lâm sàng
+   Siêu âm tim: chèn ép tim
+  
+
+# 79.txt
+1.  Tiền sử bệnh
+    Bệnh lý mãn tính: bàn chân vẹo bẩm sinh
+    Tiền sử phẫu thuật / thủ thuật
+    - đã phẫu thuật chân trái nhiều lần trong quá khứ vì bàn chân vẹo bẩm sinh
+
+2.  Bệnh sử hiện tại
+    Lý do nhập viện: chảy dịch liên tục từ mặt trong của bàn chân trái
+    Triệu chứng hiện tại: chảy dịch liên tục từ mặt trong của bàn chân trái
+
+
+# 80.txt
+1.  Tiền sử bệnh nội khoa
+    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác
+
+2.  Bệnh sử  hiện tại
+    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông
+Bệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường
+    Triệu chứng lúc vào: chấn thương gãy xương sườn trái
+   Cận lâm sàng:
+    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương
+    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy
+
+# 81.txt
+2. Bệnh sử hiện tại
+Lý do nhập viện: vết thương thấu bụng giữa bên phải
+Triệu chứng khi đến:
+- vết thương thấu bụng giữa bên phải
+Tình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến
+3. Đánh giá tại bệnh viện
+Kết quả chẩn đoán hình ảnh:
+- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên
+- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng
+Các thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán
+
+# 82.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mạn tính
+    - Suy thận mạn giai đoạn V do đái tháo đường và tăng huyết áp
+    - u ác của tuyến tiền liệt điều trị bằng xạ trị cấy hạt 
+    Tiền sử phẫu thuật / thủ thuật
+    - Phẫu thuật cắt bỏ u dây thần kinh số VIII 
+    - Đặt shunt động tĩnh mạch (AVF) ở tay phải (RUE AVF)
+    - Sinh thiết tuyến tiền liệt
+2.  Bệnh sử hiện tại
+    Lý do nhập viện:  mệt mỏi, mất trí nhớ chi tiết
+Bệnh nhân kể cảm thấy khó chịu mệt mỏi nhiều, ăn không ngon miệng, ngứa da toàn thân nhiều, và mất trí nhớ chi tiết, khó thở khi gắng sức. Tuần qua có buồn nôn, và nôn .
+Khám hiện tại thấy
+Bệnh nhân tỉnhi
+    - Mệt mỏi nhiều
+    - Ăn không ngon miệng
+    - Ngứa da toàn thân nhiều
+    - mất trí nhớ chi tiết
+    - khó thở khi gắng sức 
+    - buồn nôn và nôn 
+Cận lâm sàng
+    - Kết quả xét nghiệm cho thấy creatinine tăng từ 5.2 lên 6.3 mg/dl (460 - 557 umol/l) và 
+  Ure tăng từ 69 lên 91 mg/dl ( 24.6 -32.5 mmol/l)trong 2 tháng qua,  photpho 8.4
+Điều trị: 
+    -  Bệnh nhân đã  hoàn thành quá trình đánh giá trước ghép thận nhưng tạm hoãn ghép thận do chẩn đoán u ác của tuyến tiền liệtAnh ấy có một vài người hiến tiềm năng, nhưng anh ấy không muốn nhận thận từ bất kỳ ai trong số họ
+    - Điều trị bắt đầu chạy thận nhân tạo (HD)
+
+
+# 83.txt
+2. Bệnh sử hiện tại
+Khoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện 
+Tình trạng lúc vào viện: 
+Bệnh nhân tỉnh
+Khó thở khi gắng sức
+Cận lâm sàng:
+Chẩn đoán hình ảnh
+-  siêu âm tim cho thấy hở van hai lá nặng
+- Chụp động mạch vành cho thấy không có bệnh động mạch vành 
+Điều trị:
+ Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt
+
+
+
+# 84.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh mãn tính
+    - hen suyễn
+    - rối loạn lo âu
+    - tăng huyết áp (tăng huyết áp)
+    - Táo bón mãn tính 
+    - ngưng thở khi ngủ
+
+2. Bệnh sử hiện tại
+    Lý do nhập viện: nhịp thở nhanh và thiếu oxy
+    Theo lời kể , khoảng 2 tuần trước khi nhập viện bệnh nhân xuất hiện mệt mỏi, ho và chảy nước mũi.Nhiều thành viên trong gia đình có các triệu chứng tương tự. Bệnh nhân đã được bác sĩ gia đình khám vì các triệu chứng nhiễm trùng đường hô hấp trên.
+    - Tại phòng khám, bệnh nhân được ghi nhận có độ bão hòa oxy (SPO2) từ 88-92 % khi thở khí trời và nhịp thở nhanh.
+    - Bệnh nhân được chuyển đến phòng cấp cứu để đánh giá và điều trị thêm.
+    Lúc vào phòng cấp cứu trong tình trạng:
+    - mệt mỏi
+    - ho
+    - chảy nước mũi
+    - nhịp thở nhanh
+    - Thiếu oxy
+    - đau
+    Kết quả xét nghiệm
+    - bạch cầu 26.7
+    - bnp 4227
+    - kali 3.2
+    - troponin 0.01
+    - lactate 1.8
+    - tổng phân tích nước tiểu có kết quả dương tính  với 182bạch cầuvài vi khuẩn (vi khuẩn), nitrite
+    Kết quả chẩn đoán hình ảnh
+    - chẩn đoán hình ảnh không cho thấy quá trình bệnh lý tim mạch hoặc hô hấp cấp tính 
+    - chụp x-quang ngực phù hợp với viêm phổi kẽ.
+Đã xử trí thuốc và thủ thuật
+    - Khí dung phối hợp Albuterol và Ipratropium 1 lần
+    - Ceftriaxone 1 gram dùng 1 liều
+    - Uống Tylenol 1 gram, 1 liều duy nhất.
+    - cấy máu 2 mẫu và cấy nước tiểu đã được gửi.
+
+# 85.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mãn tính
+    - Đái tháo đường type II
+    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành
+    - suy tim
+    - bệnh mạch máu ngoại biên
+    - bệnh phổi tắc nghẽn mạn tính
+    - Ngưng thở khi ngủ do tắc nghẽn đang dùng BiPAP
+    - Ung thư biểu mô tế bào vảy xâm nhập của dương vậtbiệt hóa kém, sau cắt bao quy đầu với bờ diện cắt dương tính.
+    Tiền sử phẫu thuật / thủ thuật
+    -  phẫu thuật bắc cầu nối động mạch vành
+    - phẫu thuật cắt bao quy đầu
+    Trước khi nhập viện: thở không xâm nhập BiPAP
+
+2.  Bệnh sử  hiện tại
+
+3.  Đánh giá tại bệnh viện
+
+# 86.txt
+1. Tiền sử bệnh
+Bệnh lý mãn tính: bệnh động mạch vành, bệnh lý thần kinh ngoại biên
+
+2. Bệnh sử hiện tại
+ Trong vòng một năm qua bệnh nhân thi thoảng xuất hiện mệt mỏi, nhất là khi vận động gắng sức khó thở tăng.
+Lúc vào viện khám
+Bệnh nhân tỉnh
+- mệt mỏi
+- Khó thở tăng khi vận động gắng sức
+- Đi lại khó khăn, cần dùng gậy hỗ trợ đi lại
+- Đau hai bàn chân do bệnh lý thần kinh ngoại biên 
+Cận lâm sàng:
+Kết quả chẩn đoán hình ảnh
+- Đo sức bền cơ tim bằng đồng vị phóng xạ kết quả có dị tật cố định vùng trước vách và vách dưới với  giảm chức năng tâm thu thất trái nghiêm trọng kèm theo rối loạn chức năng thất trái.
+- Chụp động mạch vành cho thấy bệnh ba thân động mạch vành nghiêm trọng 
+Các thủ thuật đã thực hiện
+- Chụp động mạch vành can thiệp
+- Can thiệp mạch vành qua da và đặt stent phủ thuốc (DES) vào đoạn giữa của động mạch liên thất trước (LAD)
+
+
+# 87.txt
+1.  Tiền sử bệnh
+    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ
+    Bệnh lý mãn tính
+    - trầm cảm và  rối loạn lo âu
+2.  Bệnh sử hiện tại
+    Lý do nhập viện:  tổn thương chi dưới do tự tử không thành
+    Theo lời người nhà kể lại bệnh nhân bị sốc khi chia tay bạn trai cũ, bị bạn bè trêu chọc, buồn chán, uống nhiều rượu,hút cần sa. Sau đó lái xe đến một cây cầu, nhảy từ trên cầu xuống  bệnh nhân nhảy cầu tự tử, sau đó tổn thương chi dưới , vào viện
+Tình trạng khi đến khoa Cấp cứu:
+Bệnh nhân tỉnh, tiếp xúc tốt
+Không xác nhận đã bị trầm cảm trước đó, và không xác nhận có ý định tự tử
+ Khám thấy bị tổn thương tổn thương chi dưới nghiêm trọng.
+Chẩn đoán: Phẫu thuật cắt cụt chân trái bên trên gối  và cắt cụt chân phải bên dưới gối / biến chứng thuyên tắc phổi hai bên  - nhiễm trùng chi dưới bên phải do Enterococcus kháng vancomycin
+    Điều trị :
+ Đã phẫu thuật cắt cụt chân trái trên gối và chân phải dưới gối.
+Dùng kháng sinh tĩnh mạch.
+
+Có ý định điều trị và lắp chân giả
+Bệnh nhân suy nghĩ tích cực nghĩ cho tương lai ( nói rằng uộc sống không dừng lại vì một chấn thương từ bên ngoài)
+ Diễn biến ổn định và được chuyển vào khoa tâm thần nội trú.
+
+
+# 88.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - Đái tháo đường típ 1 có biến chứng viêm thần kinh ngoại biên
+    - Viêm gan virus C và B
+    - Tăng áp động mạch phổi mức độ trung bình
+    -U lympho không hodgkin tế bàoB lớn lan toả)
+    Tiền sử phẫu thuật / thủ thuật: 
+Phẫu thuật thay toàn bộ khớp háng phải 
+    Thuốc đang dùng trước khi nhập viện
+    - Dùngmethadonekéo dài
+    - lasixđã dừng cách vài tuần
+
+2.  Bệnh sử hiện tại
+    Lý do nhập viện: Phù chân trái và hoại tử ngày càng nặng
+    Ttheo lời bệnh nhân kể, bệnh nhân có khó khăn trong việc tự chăm sóc bản thân tại nhà, bệnh nhân tự ý dừng Lasix vì không muốn đi tiểu nhiều lần. Sau khi dừng sử dụng lasix cách đây vài tuần, xuất hiện phù chân. Ngày nay phù chân và hoại tử nặng lên, chưa xử trí gì, vào viện.
+Tình trạng lúc khám vào viện:
+Bệnh nhân tỉnh, tiếp xúc được
+Phù 2 chân nặng, Loét 2 bàn chân, chảy dịch vàng và có hoại tử đen kích thước 2*4 cm
+Chẩn đoán: Theo dõiLoét bàn chân nhiễm trùng
+
+
+# 89.txt
+1.  Tiền sử bệnh
+    Lịch sử phẫu thuật / thủ thuật: nội soi mật tuỵ ngược dòng (ERCP) ,đặt stent ống tuỵ gần,  phẫu thuật cắt bỏ khối u thần kinh nội tiết ở thân tụy
+    Thuốc đang điều trị theo đơn
+    - octreotide
+    - flagyl, chăm sóc vết thương tại chỗ, nhịn ăn đường miệng, dinh dưỡng tĩnh mạch
+
+
+2.  Bệnh sử hiện tại
+    Lý do nhập viện: Tuột sonde dẫn lưu ổ bụng
+    Theo lời bệnh nhân kể, bệnh nhân đã phẫu thuật bóc tách u nội tiết từ thân tuỵ gây biến chứng rò ống tuỵ mật. Sử dụng ống dẫn lưu tại chỗ dò (  do ERCP không thể qua được chỗ gián đoạn ống dẫn, đặt stent vào ống dẫn tụy gần, không làm giảm đáng kể lượng dịch rò) ,  hậu phẫu  bệnh nhân bị nhiễm Clostridioides difficile, và nhiễm trùng vết mổổ đã được điều trị bằng flagyl, chăm sóc vết thương tại chỗ, sau 23 ngày điều trị thì xuất viện.  Đêm trước ngày vào viện bệnh nhân bị tuột ống sonde dẫn lưu ổ bụng. Đến sáng hôm sau xuất hiện chân sonde dẫn lưu sưng nề, đỏ, chồng bệnh nhân thấy mũi chỉ khâu da cố định ống dẫn bị tuột ra, ống dẫn chỉ bị tuột ra khoảng 2,54 cm, xử trí cố định ống dẫn bằng băng dính và đến khám tại phòng cấp cứu.
+Tình trạng lúc vào viện:
+Tại chân sonde dẫn lưu ổ bụng sưng nề, đỏ
+ ống dẫn lưu bị tuột ra 15,24 cm
+Nhịn ăn uống đường miệng, nuôi dưỡng đường tĩnh mạch
+ Catheter PICC được chuyển sang tay trái
+Cận lâm sàng: 
+- siêu âm:  không phát hiện huyết khối tĩnh mạch sâu 
+    Thủ thuật đã thực hiện
+    - PICC được chuyển sang LUE
+
+
+# 90.txt
+2. Bệnh sử hiện tại
+Lý do khám bệnh: giọng khàn do tổn thương dây thanh quản
+Triệu chứng hiện tại
+- giọng khàn
+- tổn thương dây thanh quản thật sự
+
+3. Đánh giá tại bệnh viện
+Các thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản
+
+# 91.txt
+1.  Tiền sử bệnh
+    Các bệnh lý mãn tính
+    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ
+sau Phẫu thuật thay van tim hai lá cơ học
+    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại
+    Tiền sử phẫu thuật / thủ thuật
+    - Phẫu thuật thay van hai lá cơ học
+    - ghép thận thất bại
+    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày
+
+2.  Bệnh sử hiện tại
+Lý do vào viện:, INR dưới ngưỡng điều trị
+Theo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện
+    Khám hiện tại:
+Không chảy máu mũi
+Không có đau ngực
+Không có khó thở
+Không có đau bụng
+ Không có buồn nôn, không nôn
+    Các cơ quan khác chưa phát hiện bất thường
+
+3.  Khám tại bệnh viện
+    Kết quả khám thực thể: dấu hiệu sinh tồn
+ Nhiệt độ : 36.5 độ C
+Mạch:  88 l/p
+Huyết áp: 120/70 mmHg
+Nhịp thở: 20 l/p
+SPO2:  92 %
+    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7
+   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục
+
+# 92.txt
+1.  Tiền sử bệnh nội khoa
+    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc
+
+2.  Bệnh sử  hiện tại
+    Lý do nhập viện: theo dõi đại tràng giãn
+    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện
+    Tình trạng vào Khoa Cấp cứu. 
+  Bệnh nhân lơ mơ
+3.  Đánh giá tại bệnh viện
+    Kết quả xét nghiệm: Bạch cầu tăng
+    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp
+    Các kết quả  khác: Theo dõi đại tràng giãn
+
+# 93.txt
+1. Tiền sử bệnh nội khoa
+Ung thư vú di căn, tràn dịch màng phổi trái tái phát
+
+2. Bệnh sử hiện tại
+Lý do vào việni: khó thở
+3. Khám tại bệnh viện
+Lâm sàng: tràn dịch màng ngoài tim mức độ trung bình
+Kết quả chẩn đoán hình ảnh: ung thư di căn theo đường bạch huyết ở hai phổi
+Các thủ thuật đã thực hiện
+- dẫn lưu dịch màng tim
+- Không thực hiện gây dính màng phổi bằng talc
+
+
+# 94.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−
+    đang dùng thuốc  weekly taxol
+và fulvestrant để điều trị
+
+2.  Bệnh sử hiện tại
+    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng
+    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.
+Tình trạng lúc vào:
+Người bệnh tỉnh
+Da niêm mạc hồngi
+ Đau bụng hạ sườn phải
+ Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu 
+Khám thấy
+Huyết áp:130/76 mmHg
+Mạch: 93 l/p
+Nhiệt độ : 36.3 độ C
+Nhịp thở: 14 l/p 
+SPO2: 99 %
+   Điều trị tại bệnh viện:
+    - compazine và alevenhưng vẫn còn đau
+    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ
+
+3.  Đánh giá tại bệnh viện
+
+
+# 95.txt
+1.  Tiền sử bệnh
+   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa
+
+2.  Bệnh sử  hin tại
+    Lý do nhập viện: đau âm ỉ vùng quanh rốn
+    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.
+  Tình trạng lúc vào viện:
+Bệnh nhân tỉnh
+Da niêm mạc hồng nhạt
+Không xuất huyết dưới da
+    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni
+    - buồn nôn nhẹ, không nôn
+    - Không sốt, không  ớn lạnh
+    - Đại tiện bình thường, không có nhầy máu
+    - Không đau ngực
+    - Không khó thở
+Khám bụng mềm, không chướng
+- Khám cơ quan khác chưa phát hiện bất thường
+3.  Đánh giá tại bệnh viện
+
+# 96.txt
+1. Tiền sử bệnh
+- viêm tủy xương mãn tính và bàng quang thần kinh gây biến chứng liệt hai chi dưới và loét tì đè giai đoạn IV mãn tính
+- đặt lưu sonde tiểu    gây nhiễm khuẩn đường tiết niệu tái phát
+Thuốc đã dùng trước đây
+- Đã sử dụngvancozosyn nhưng hiện tại đang dừng. Sau khi khám chuyên khoa Truyền nhiễm đang dùng bactrim để điều trị nhiễm khuẩn đường tiết niệu
+
+2. Bệnh sử hiện tại
+Lý do nhập viện: sốt cao
+Cách ngày vào viện 2 tuần bệnh nhân đã vào viện vì hạ huyết áp và được chẩn đoán  nhiễm trùng huyết điều trị bằng kháng sinh  vancozosynbactrim  điều trị  bệnh viêm tuỷ xương.  Sau đó dùng zosyn 8 ngày và dừng tất cả kháng sinh để điều trị viêm tủy xương mãn tính tại khoa Hồi sức tích cực. Ra viện và tái khám không sử dụng thuốc kháng sinh vì khám lâm sàng ổn
+ Sáng cùng ngày vào viện bệnh nhân xuất hiện sốt cao 39.7 độ C , vào viện điều trị.
+Tình trạng lúc vào:
+Bệnh nhân tỉnh
+Cảm giác khát nước
+Da khô, nếp véo da mất chậm
+Không ngực,  không khó thở
+Đau bụng, đau hông từng cơn-
+Hạ huyết áp
+Mạch nhanh 
+Tim nhịp nhanh đều
+Phổi thông khí đều
+Còn sonde tiểu, nước tiểu có cặn
+Cận lâm sàng::
+- lactate 1.1-->0.8
+- Cấy nước tiểu : nhiễm khuẩn đường tiết niệu có các vi khuẩn hỗn hợp
+- cấy máu :âm tính
+-chỉ số marker viêm của anh ấy đã có xu hướng tăng 
+chẩn đoán hình ảnh: 
+ - MRI:  không thấy tình trạng viêm xương tủy nặng hơn
+- Xquang ngực thẳng: không thấy thâm nhiễm
+Thủ thuật:
+- svo2 là 82
+Đặt ống thông tĩnh mạch trung tâm : đo cvp là 6
+Chẩn đoán: nhiễm trùng huyết đường vào tiết niệu- viêm tủy xương mãn tính,
+
+Điều trị: 
+- Truyền dịch : 4000 ml NS 0.9 %
+- Kháng sinh Cefepim và Vancomycin truyền tĩnh mạch
+
+.
+
+ 
+
+
+# 97.txt
+1.  Tiền sử bệnh nội khoa
+    Các bệnh lý mãn tính: viêm tủy xương và bàng quang thần kinh có biến chứng liệt hai chi dưới
+
+2.  Bệnh sử hiện tại
+    Lý do nhập viện: biến đổi ý thức kèm theo hạ thân nhiệt và hạ huyết áp
+    Thời điểm khởi phát triệu chứng: Được ghi nhận bởi đội cấp cứu trên đường đến Khoa Cấp cứu
+Trước khi nhập viện, bệnh nhân được phát hiện trong tình trạng biến đổi ý thức, hạ thân nhiệt, hạ huyết áp với huyết áp tâm thu là 90
+    Các triệu chứng hiện tại
+    - biến đổi ý thức
+    - hạ thân nhiệt
+    - hạ huyết áp
+    - đau toàn thân ít
+    - đau ngực ít 
+    - đau bụng
+3.  Khám tại bệnh viện
+    Dấu hiệu lâm sàng
+    - hạ huyết áp
+    - hạ thân nhiệt
+    - lắc đầu có/không
+    Kết quả xét nghiệm
+    - kali là 6.6 mmol/l
+    - creatinin là 1.9 mmol/l
+    - tiểu cầu là 81 G/L
+    - bạch cầu là 10.9 G/L
+    - tổng phân tích nước tiểu nhiễm trùng đường tiết niệu
+    Kết quả chẩn đoán hình ảnh
+    - chẩn đoán hình ảnh: chụp x-quang ngực cho thấy không có hình ảnh tổn thương viêm cấp tính so với chụp x-quang ngực trước đó
+    Các thủ thuật đã thực hiện
+    - Đặt sonde bàng quang
+    - Gửi xét nghiệm máu và cấy nước tiểu
+    Các thủ thuậ khác
+    - điện tâm đồ cho thấy nhịp chậm xoang 
+- đường huyết lúc đóiđường huyết thấp)
+
+# 98.txt
+1.  Tiền sử bệnh nội khoa
+    Bệnh mãn tính: tiền sử tăng huyết áp
+2.  Bệnh sử
+Lý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.
+    Triệu chứng hiện tại
+    - ho
+    - đau lưng
+    Cận lâm sàng  trước khi nhập viện
+    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương
+    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương
+3.  Đánh giá tại bệnh viện
+    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa
+    Chẩn đoán: Đa u tủy xương
+
+# 99.txt
+1.  Tiền sử bệnh
+    Bệnh lý mãn tính: rối loạn lo âu, không biệt định nghiêm trọng
+    Tiền sử phẫu thuật / thủ thuật: phẫu thuật nội soi cắt bỏ tuyến tiền liệt  bên trái
+
+2.  Bệnh sử
+    Lý do nhập viện: buồn nôn, đau dai dẳng, và táo bón
+    Triệu chứng hiện tại
+    - buồn nôn
+    - đau dai dẳng
+    - táo bón
+
+3.  Đánh giá tại bệnh viện
+
+# 100.txt
+1.  Tiền sử bệnh
+    Các bệnh đã điều trị trước đây: tiền sử tăng calci máu trước đây; 11.6
+    Các bệnh lý mãn tính
+    - U ác của đại tràng
+    - cường cận giáp nguyên phát
+    - Xơ vữa động mạch
+    - cơn đau thắt ngực ổn định
+
+2. Bệnh sử
+    Lý do nhập viện: đến khám vì tăng calci máu
+    Triệu chứng hiện tại: tăng calci máu
+    Các lần khám và xét nghiệm trước khi nhập viện
+    - xét nghiệm xét nghiệm ngoại trú được thực hiện hôm nay và canxi là 12.0; canxi ion hóa 6.8 
+    - xuất hiện hai lần ngất xỉu, một lần khi lái xe lần cuối và một lần khác khi nói chuyện với bạn trong xe một tháng trước
+    - Cả hai lần đều kéo dài vài giây
+    - Không có các biểu hiện đau ngực, khó thở, chóng mặt trước lần này
+    - Không có biểu hiện động kinh
+    - đã chỉ định MRI ngoại trú  có hình ảnh nhồi máu cũ nhỏ ở vỏ não đỉnh trái, không có tổn thương cấp tính
+    - Bệnh nhân xuất hiện một lần đau ngực vào chiều ngày vào viện, cơn đau kéo dài khoảng 5 phút
+ sau đó đã được sử dụng ngay 01 viên nitroglycerin đặt dưới lưỡi
+    - Hiện tại bệnh nhân còn đau ở sau đầu và cổ từ khi bị ngã trong bồn tắm năm ngoái đến nay
+
+3.  Đánh giá tại bệnh viện
+    Kết quả xétí nghiệm
+    - canxi toàn phần là 12.0; canxi ion hóa 6.8
+    - canx toàn phầni là 12.3
+    - cr (creatinine) 1.2
+    Kết quả chẩn đoán hình ảnh: MRI ngoại trú cho thấy hình ảnh  nhồi máu cũ nhỏ ở vỏ não đỉnh trái nhưng không có quá trình cấp tính
+    Xử trí thuốc
+    - đã dùng Laxis 20mg tiêm tĩnh mạch
+    - Truyền  dịch Natriclori 0.9 %  tĩnh mạch
