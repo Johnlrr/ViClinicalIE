@@ -30,11 +30,12 @@ def _candidate_key(candidate: SpanCandidate) -> Tuple[str, int, int, str]:
     return (candidate.file_id, candidate.start, candidate.end, candidate.type_candidate)
 
 
-def _rank(candidate: SpanCandidate) -> Tuple[int, float, int, int]:
+def _rank(candidate: SpanCandidate) -> Tuple[int, float, int, int, int]:
     """Lower tuple wins for overlap selection."""
     priority = TYPE_PRIORITY.get(candidate.type_candidate, 99)
     span_len = candidate.end - candidate.start
-    return (priority, -candidate.confidence, -span_len, candidate.start)
+    is_structural = 1 if "structural_fallback" in candidate.source else 0
+    return (priority, -candidate.confidence, is_structural, -span_len, candidate.start)
 
 
 def _overlaps(candidate: SpanCandidate, accepted: Iterable[SpanCandidate]) -> bool:

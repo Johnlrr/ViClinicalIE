@@ -17,6 +17,7 @@ from src.rule_extractors import (
     extract_diagnosis_candidates,
     extract_drug_candidates,
     extract_lab_candidates,
+    extract_structural_candidates,
     extract_symptom_candidates,
     reject_non_target_candidates,
 )
@@ -118,6 +119,85 @@ def test_non_target_rejected_but_finding_extracted():
     print("✓ test_non_target_rejected_but_finding_extracted passed")
 
 
+def test_structural_bullet_harvest_splits_clean_concepts():
+    """Dictionary-free bullet fallback should split chronic-disease concepts."""
+    doc = make_doc(
+        "1. Tiền sử bệnh\n"
+        "Các bệnh lý mãn tính\n"
+        "- bệnh thận mạn, rung nhĩ (AF); suy tim\n"
+    )
+    candidates = extract_structural_candidates(doc, [])
+
+    diagnosis_texts = [candidate.text for candidate in candidates if candidate.type_candidate == ENTITY_DIAGNOSIS]
+    assert diagnosis_texts == ["bệnh thận mạn", "rung nhĩ (AF)", "suy tim"]
+    assert all(candidate.source == ["structural_fallback"] for candidate in candidates)
+    assert all(candidate.confidence == 0.40 for candidate in candidates)
+    assert_offsets(doc, candidates)
+
+    print("✓ test_structural_bullet_harvest_splits_clean_concepts passed")
+
+
+def test_structural_key_value_harvest_strips_parenthetical_and_caps_long_values():
+    """Key-value fallback should harvest capped values and drop final parentheticals."""
+    doc = make_doc(
+        "2. Bệnh sử hiện tại\n"
+        "Lý do nhập viện: đau đầu dữ dội (3 ngày)\n"
+        "Triệu chứng hiện tại: đau ngực, khó thở\n"
+        "Diễn biến bệnh\n"
+        "Vị trí: ngực trái\n"
+        "Tóm tắt: một hai ba bốn năm sáu bảy tám chín mười mười một mười hai mười ba\n"
+    )
+    candidates = extract_structural_candidates(doc, [])
+
+    symptom_texts = [candidate.text for candidate in candidates if candidate.type_candidate == ENTITY_SYMPTOM]
+    assert "đau đầu dữ dội" in symptom_texts
+    assert "đau ngực" in symptom_texts
+    assert "khó thở" in symptom_texts
+    assert "ngực trái" not in symptom_texts
+    assert not any(text.startswith("một hai ba") for text in symptom_texts)
+    assert_offsets(doc, candidates)
+
+    print("✓ test_structural_key_value_harvest_strips_parenthetical_and_caps_long_values passed")
+
+
+def test_structural_imaging_bullet_and_event_verb_guard():
+    """Imaging bullets should be allowed, but event/action bullets skipped."""
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Chẩn đoán hình ảnh\n"
+        "- chụp cắt lớp vi tính mạch máu (ctma)\n"
+        "- Được chuyển khoa tim mạch\n"
+    )
+    candidates = extract_structural_candidates(doc, [])
+
+    lab_name_texts = [candidate.text for candidate in candidates if candidate.type_candidate == ENTITY_LAB_NAME]
+    assert lab_name_texts == ["chụp cắt lớp vi tính mạch máu (ctma)"]
+    assert_offsets(doc, candidates)
+
+    print("✓ test_structural_imaging_bullet_and_event_verb_guard passed")
+
+
+def test_structural_current_history_event_bullets_recover_file6_shape():
+    """Current-history event bullets should recover non-empty structural symptoms."""
+    doc = make_doc(
+        "2. Tiền sử bệnh hiện tại\n"
+        "Các sự kiện trước khi nhập viện\n"
+        "- Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng, tỷ số PSV/EDV > 7, vận tốc dòng chảy tăng rõ\n"
+        "Tình trạng ngay trước khi nhập viện\n"
+        "- Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị.\n"
+    )
+    candidates = extract_structural_candidates(doc, [])
+
+    symptom_texts = [candidate.text for candidate in candidates if candidate.type_candidate == ENTITY_SYMPTOM]
+    assert "Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng" in symptom_texts
+    assert "tỷ số PSV/EDV > 7" in symptom_texts
+    assert "vận tốc dòng chảy tăng rõ" in symptom_texts
+    assert "Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị" in symptom_texts
+    assert_offsets(doc, candidates)
+
+    print("✓ test_structural_current_history_event_bullets_recover_file6_shape passed")
+
+
 def run_all_tests():
     """Run rule extractor tests without requiring pytest."""
     print("Running rule extractor tests...\n")
@@ -126,6 +206,10 @@ def run_all_tests():
     test_diagnosis_from_chronic_disease_section()
     test_symptoms_from_admission_and_current_symptoms()
     test_non_target_rejected_but_finding_extracted()
+    test_structural_bullet_harvest_splits_clean_concepts()
+    test_structural_key_value_harvest_strips_parenthetical_and_caps_long_values()
+    test_structural_imaging_bullet_and_event_verb_guard()
+    test_structural_current_history_event_bullets_recover_file6_shape()
     print("\n✓✓✓ All rule extractor tests passed! ✓✓✓")
 
 

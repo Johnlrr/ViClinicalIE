@@ -22,6 +22,7 @@ from src.rule_extractors import (
     extract_diagnosis_candidates,
     extract_drug_candidates,
     extract_lab_candidates,
+    extract_structural_candidates,
     extract_symptom_candidates,
     reject_non_target_candidates,
     validate_candidate_offsets,
@@ -54,6 +55,7 @@ def run_rule_extraction(documents: list) -> tuple[list, dict]:
             )
         )
         all_candidates.extend(extract_symptom_candidates(doc, resources["symptom_terms"]))
+        all_candidates.extend(extract_structural_candidates(doc, resources["non_target_terms"]))
         all_candidates.extend(reject_non_target_candidates(doc, resources["non_target_terms"]))
 
     candidates = dedupe_candidates(all_candidates)

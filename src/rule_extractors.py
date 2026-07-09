@@ -46,6 +46,51 @@ SYMPTOM_SUBSECTIONS = {
     "IMMEDIATE_PRE_ADMISSION_STATUS",
 }
 
+STRUCTURAL_SOURCE_TAG = ["structural_fallback"]
+STRUCTURAL_CONFIDENCE = 0.40
+
+# Tier 1: bullet-line harvest allowlist (concept-bearing subsections)
+STRUCTURAL_BULLET_SECTIONS = {
+    "CHRONIC_DISEASES": ENTITY_DIAGNOSIS,
+    "CURRENT_SYMPTOMS": ENTITY_SYMPTOM,
+    "DIAGNOSTIC_FINDINGS": ENTITY_DIAGNOSIS,
+    "LAB_RESULT_SECTION": ENTITY_LAB_NAME,
+    "IMAGING_RESULT_SECTION": ENTITY_LAB_NAME,
+    "ADMISSION_REASON": ENTITY_SYMPTOM,
+}
+STRUCTURAL_CURRENT_HISTORY_BULLET_SUBSECTIONS = {
+    "PRE_ADMISSION_EVENTS",
+    "IMMEDIATE_PRE_ADMISSION_STATUS",
+}
+
+# Tier 2: section-level key-value harvest allowlist
+STRUCTURAL_KEY_VALUE_SECTIONS = {
+    "ADMISSION_REASON": ENTITY_SYMPTOM,
+    "CHRONIC_DISEASES": ENTITY_DIAGNOSIS,
+    "DIAGNOSTIC_FINDINGS": ENTITY_DIAGNOSIS,
+    "LAB_RESULT_SECTION": ENTITY_LAB_NAME,
+    "IMAGING_RESULT_SECTION": ENTITY_LAB_NAME,
+    "MEDICATION_HISTORY": ENTITY_DRUG,
+    "MEDICATION_ADMINISTERED": ENTITY_DRUG,
+}
+# CURRENT_HISTORY section-level fallback -> ENTITY_SYMPTOM (handled separately,
+# mirrors extract_symptom_candidates' existing `section_type == CURRENT_HISTORY` rule)
+
+EVENT_VERB_PREFIXES = (
+    "được", "bắt đầu", "lên lịch", "đã", "gọi", "đến", "sau đó",
+)
+
+SYMPTOM_DETAIL_QUALIFIER_STOPLIST = {
+    normalize_for_matching(term) for term in (
+        "Vị trí", "Mức độ nghiêm trọng", "Thời gian", "Tần suất", "Chiếu xạ",
+        "Các yếu tố làm nặng thêm", "Các yếu tố làm giảm",
+        "Các triệu chứng liên quan", "Lan tỏa",
+        "Yếu tố làm nặng thêm", "Yếu tố làm giảm", "Triệu chứng kèm theo",
+    )
+}
+
+STRUCTURAL_MAX_VALUE_WORDS = 12
+
 VALUE_PATTERN = re.compile(
     r"(?P<value>"
     r"[<>]?\d+(?:[,.]\d+)?(?:\s*(?:mg/dl|mg/l|mmol/l|g/dl|k/uL|u/l|%|x\s*10\^?\d+/\w+))?"
@@ -63,6 +108,7 @@ DOSE_TRAIL_PATTERN = re.compile(
 )
 
 SPAN_TRIM_CHARS = " \t\r\n,;:.()[]{}-*•+"
+STRUCTURAL_SPAN_TRIM_CHARS = " \t\r\n,;:.[]{}-*•+"
 BOUNDARY_LEFT = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀ-ỹ_"
 BOUNDARY_RIGHT = BOUNDARY_LEFT
 
@@ -108,6 +154,15 @@ def trim_span(raw_text: str, start: int, end: int) -> Tuple[int, int]:
     while start < end and raw_text[start] in SPAN_TRIM_CHARS:
         start += 1
     while end > start and raw_text[end - 1] in SPAN_TRIM_CHARS:
+        end -= 1
+    return start, end
+
+
+def trim_structural_span(raw_text: str, start: int, end: int) -> Tuple[int, int]:
+    """Trim structural delimiters while preserving balanced parentheses."""
+    while start < end and raw_text[start] in STRUCTURAL_SPAN_TRIM_CHARS:
+        start += 1
+    while end > start and raw_text[end - 1] in STRUCTURAL_SPAN_TRIM_CHARS:
         end -= 1
     return start, end
 
@@ -430,6 +485,200 @@ def extract_symptom_candidates(doc: ClinicalDocument, symptom_terms: Sequence[st
             )
             if candidate:
                 candidates.append(candidate)
+    return candidates
+
+
+def split_span_on_structural_delimiters(raw_text: str, start: int, end: int) -> List[Tuple[int, int]]:
+    """Split a raw span on comma/semicolon delimiters outside parentheses."""
+    spans: List[Tuple[int, int]] = []
+    depth = 0
+    cursor = start
+    for index in range(start, end):
+        char = raw_text[index]
+        if char == "(":
+            depth += 1
+        elif char == ")" and depth > 0:
+            depth -= 1
+        elif char in {",", ";"} and depth == 0:
+            fragment_start, fragment_end = trim_structural_span(raw_text, cursor, index)
+            if fragment_start < fragment_end:
+                spans.append((fragment_start, fragment_end))
+            cursor = index + 1
+
+    fragment_start, fragment_end = trim_structural_span(raw_text, cursor, end)
+    if fragment_start < fragment_end:
+        spans.append((fragment_start, fragment_end))
+    return spans
+
+
+def strip_trailing_parenthetical_span(raw_text: str, start: int, end: int) -> Tuple[int, int]:
+    """Narrow a raw span to remove one final parenthetical suffix."""
+    start, end = trim_structural_span(raw_text, start, end)
+    if start >= end:
+        return start, end
+
+    match = re.search(r"\s*\([^)]*\)\s*$", raw_text[start:end])
+    if match:
+        end = start + match.start()
+    return trim_structural_span(raw_text, start, end)
+
+
+def structural_content_span(line: Line) -> Tuple[int, int]:
+    """Return line content offsets after a leading bullet marker, if present."""
+    prefix_match = re.match(r"\s*[-*•+]\s*", line.text)
+    if prefix_match:
+        return line.start + prefix_match.end(), line.end
+    return line.start, line.end
+
+
+def structural_entity_for_bullet(line: Line) -> Optional[str]:
+    """Return the structural entity type for a bullet line context."""
+    if line.subsection_type in STRUCTURAL_BULLET_SECTIONS:
+        return STRUCTURAL_BULLET_SECTIONS[line.subsection_type]
+    if line.section_type in STRUCTURAL_BULLET_SECTIONS:
+        return STRUCTURAL_BULLET_SECTIONS[line.section_type]
+    if (
+        line.section_type == "CURRENT_HISTORY"
+        and line.subsection_type in STRUCTURAL_CURRENT_HISTORY_BULLET_SUBSECTIONS
+    ):
+        return ENTITY_SYMPTOM
+    return None
+
+
+def structural_entity_for_key_value(line: Line) -> Optional[str]:
+    """Return the structural entity type for a key-value line context."""
+    if line.subsection_type in STRUCTURAL_KEY_VALUE_SECTIONS:
+        return STRUCTURAL_KEY_VALUE_SECTIONS[line.subsection_type]
+    if line.section_type in STRUCTURAL_KEY_VALUE_SECTIONS:
+        return STRUCTURAL_KEY_VALUE_SECTIONS[line.section_type]
+    if line.section_type == "CURRENT_HISTORY":
+        return ENTITY_SYMPTOM
+    return None
+
+
+def is_event_verb_bullet(raw_text: str, start: int, end: int) -> bool:
+    """Detect event/action-led bullets that should not become concepts."""
+    normalized_text = normalize_for_matching(raw_text[start:end])
+    return any(
+        normalized_text == prefix or normalized_text.startswith(f"{prefix} ")
+        for prefix in EVENT_VERB_PREFIXES
+    )
+
+
+def make_structural_candidate(
+    doc: ClinicalDocument,
+    line: Line,
+    start: int,
+    end: int,
+    entity_type: str,
+    non_target_norms: set[str],
+    *,
+    strip_parenthetical: bool = False,
+    cap_words: bool = False,
+) -> Optional[SpanCandidate]:
+    """Create one validated structural fallback candidate from raw offsets."""
+    if strip_parenthetical:
+        start, end = strip_trailing_parenthetical_span(doc.raw_text, start, end)
+    else:
+        start, end = trim_structural_span(doc.raw_text, start, end)
+    if start >= end:
+        return None
+
+    text = doc.raw_text[start:end]
+    normalized_text = normalize_for_matching(text)
+    if not normalized_text or normalized_text in non_target_norms:
+        return None
+    if cap_words and len(normalized_text.split()) > STRUCTURAL_MAX_VALUE_WORDS:
+        return None
+
+    left_context, right_context = line_context(line)
+    return SpanCandidate(
+        file_id=doc.file_id,
+        text=text,
+        start=start,
+        end=end,
+        type_candidate=entity_type,
+        section_type=line.section_type,
+        subsection_type=line.subsection_type,
+        line_id=line.line_id,
+        line_text=line.text,
+        left_context=left_context,
+        right_context=right_context,
+        source=list(STRUCTURAL_SOURCE_TAG),
+        confidence=STRUCTURAL_CONFIDENCE,
+        should_output=True,
+        span_status="candidate",
+    )
+
+
+def extract_structural_candidates(
+    doc: ClinicalDocument,
+    non_target_terms: Sequence[str],
+) -> List[SpanCandidate]:
+    """Dictionary-free fallback: harvest concepts from bullet/key-value structure.
+
+    Tier 1: bullet lines in STRUCTURAL_BULLET_SECTIONS are split on comma and
+    semicolon delimiters outside parentheses, with event/action bullets skipped.
+    Tier 2: key-value lines in STRUCTURAL_KEY_VALUE_SECTIONS, or any key-value
+    line under CURRENT_HISTORY, harvest value spans with a word cap and
+    SYMPTOM_DETAIL qualifier stoplist.
+    Tier 3: free-text prose is intentionally out of scope.
+    """
+    candidates: List[SpanCandidate] = []
+    non_target_norms = {
+        normalize_for_matching(term)
+        for term in non_target_terms
+        if normalize_for_matching(term)
+    }
+
+    for line in doc.lines:
+        if line.line_kind == "bullet":
+            entity_type = structural_entity_for_bullet(line)
+            if entity_type is None:
+                continue
+            content_start, content_end = structural_content_span(line)
+            if is_event_verb_bullet(doc.raw_text, content_start, content_end):
+                continue
+            for fragment_start, fragment_end in split_span_on_structural_delimiters(doc.raw_text, content_start, content_end):
+                candidate = make_structural_candidate(
+                    doc,
+                    line,
+                    fragment_start,
+                    fragment_end,
+                    entity_type,
+                    non_target_norms,
+                )
+                if candidate:
+                    candidates.append(candidate)
+
+        elif line.line_kind == "key_value":
+            entity_type = structural_entity_for_key_value(line)
+            if entity_type is None:
+                continue
+            if line.key is not None and line.value is not None and not line.value.strip():
+                continue
+            if (
+                line.subsection_type == "SYMPTOM_DETAIL"
+                and line.key is not None
+                and normalize_for_matching(line.key) in SYMPTOM_DETAIL_QUALIFIER_STOPLIST
+            ):
+                continue
+
+            value_start, value_end = value_or_line_span(line)
+            for fragment_start, fragment_end in split_span_on_structural_delimiters(doc.raw_text, value_start, value_end):
+                candidate = make_structural_candidate(
+                    doc,
+                    line,
+                    fragment_start,
+                    fragment_end,
+                    entity_type,
+                    non_target_norms,
+                    strip_parenthetical=True,
+                    cap_words=True,
+                )
+                if candidate:
+                    candidates.append(candidate)
+
     return candidates
 
 
