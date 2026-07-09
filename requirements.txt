@@ -1,0 +1,15 @@
+pandas
+numpy
+regex
+rapidfuzz
+scikit-learn
+scipy
+pyyaml
+tqdm
+pydantic
+orjson
+pytest
+intervaltree
+rank-bm25
+streamlit
+

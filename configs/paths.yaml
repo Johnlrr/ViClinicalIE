@@ -1,0 +1,10 @@
+raw_input_dir: data/raw/input
+icd10_csv: data/terminologies/icd10_byt.csv
+rxnorm_rff: data/terminologies/RXNCONSO.RRF
+processed_dir: data/processed
+golden_input_dir: data/golden/input
+golden_gold_dir: data/golden/gold
+prediction_dir: outputs/predictions
+report_dir: outputs/reports
+submission_dir: outputs/submission
+

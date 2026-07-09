@@ -1,0 +1,7 @@
+torch
+transformers
+sentence-transformers
+accelerate
+faiss-cpu
+peft
+

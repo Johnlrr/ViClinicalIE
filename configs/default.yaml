@@ -1,0 +1,37 @@
+project:
+  name: ViClinicalIE
+  phase: phase_0_foundation
+paths_config: paths.yaml
+encoding: utf-8
+seed: 42
+setup:
+  expected_raw_inputs: 100
+  golden_ids:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+logging:
+  run_prefix: run
+  log_files:
+    - errors.jsonl
+    - span_mismatch.jsonl
+    - no_candidate.jsonl
+    - low_confidence.jsonl
+
