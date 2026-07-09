@@ -25,7 +25,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I25.0"
+    ]
   },
   {
     "text": "tăng huyết áp",
@@ -45,7 +47,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I71.9"
+    ]
   },
   {
     "text": "ngất xỉu trong xe",
@@ -222,7 +226,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I25.2"
+    ]
   },
   {
     "text": "bảng công thức sinh hóa máu cơ bản",

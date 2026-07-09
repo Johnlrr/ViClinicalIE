@@ -123,7 +123,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "D12.8"
+    ]
   },
   {
     "text": "u ác trực tràng",
@@ -133,6 +135,8 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "C20"
+    ]
   }
 ]

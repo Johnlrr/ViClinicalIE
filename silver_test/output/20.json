@@ -7,7 +7,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I12.9"
+    ]
   },
   {
     "text": "bệnh thận mạn, không đặc hiệu",
@@ -17,7 +19,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "N18.9"
+    ]
   },
   {
     "text": "bệnh tim mạch do xơ vữa động mạch với Nhồi máu cơ tim gần đây",
@@ -27,7 +31,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I25.0"
+    ]
   },
   {
     "text": "rung nhĩ kịch phát",
@@ -37,7 +43,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I48.0"
+    ]
   },
   {
     "text": "tăng sản tuyến tiền liệt",
@@ -47,7 +55,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "N40"
+    ]
   },
   {
     "text": "TURP",
@@ -87,7 +97,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "S72.0"
+    ]
   },
   {
     "text": "Đau ở hông phải khi cử động và thay đổi tư thế",

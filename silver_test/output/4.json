@@ -18,7 +18,9 @@
     ],
     "type": "THUỐC",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "7646"
+    ]
   },
   {
     "text": "đau vùng hạ sườn phải",
@@ -167,7 +169,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "K29.5"
+    ]
   },
   {
     "text": "viêm dạ dày",
@@ -177,7 +181,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "K29.5"
+    ]
   },
   {
     "text": "sỏi đoạn cuối ống mật chủ",

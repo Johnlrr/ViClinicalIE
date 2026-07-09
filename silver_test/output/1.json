@@ -10,7 +10,7 @@
       "isHistorical"
     ],
     "candidates": [
-      "308135"
+      "866426"
     ]
   },
   {
@@ -23,7 +23,9 @@
     "assertions": [
       "isHistorical"
     ],
-    "candidates": []
+    "candidates": [
+      "371966"
+    ]
   },
   {
     "text": "atenolol (uống hôm nay)",
@@ -35,7 +37,9 @@
     "assertions": [
       "isHistorical"
     ],
-    "candidates": []
+    "candidates": [
+      "370619"
+    ]
   },
   {
     "text": "Căng thẳng",
@@ -207,7 +211,9 @@
     ],
     "type": "THUỐC",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "866426"
+    ]
   },
   {
     "text": "atenololtrong ngày",
@@ -217,7 +223,9 @@
     ],
     "type": "THUỐC",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "1202"
+    ]
   },
   {
     "text": "siêu âm tim qua thành ngực",
@@ -237,7 +245,7 @@
     "type": "THUỐC",
     "assertions": [],
     "candidates": [
-      "308135"
+      "198466"
     ]
   },
   {

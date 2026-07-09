@@ -7,7 +7,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I25.1"
+    ]
   },
   {
     "text": "Tăng huyết áp",
@@ -27,7 +29,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "E78.5"
+    ]
   },
   {
     "text": "bệnh trào ngược dạ dày- thực quản không có viêm thực quản",
@@ -39,7 +43,9 @@
     "assertions": [
       "isNegated"
     ],
-    "candidates": []
+    "candidates": [
+      "K21.9"
+    ]
   },
   {
     "text": "đau bụng",
@@ -169,7 +175,9 @@
     ],
     "type": "THUỐC",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "227559"
+    ]
   },
   {
     "text": "propofol để an thần",
@@ -179,7 +187,9 @@
     ],
     "type": "THUỐC",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "8782"
+    ]
   },
   {
     "text": "phentolamine",
@@ -189,6 +199,8 @@
     ],
     "type": "THUỐC",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "8153"
+    ]
   }
 ]

@@ -1,0 +1,197 @@
+{
+  "base_url": "https://api.vietapi.tech/v1",
+  "model": "gpt-5.5",
+  "output_dir": "/Users/mac/Dev/Viettel_AI_Race/ViClinicalIE/silver_test/output",
+  "shortlist_size": 10,
+  "files": [
+    {
+      "file_id": "1",
+      "status": "ok",
+      "spans": 6,
+      "diagnosis_spans": 0,
+      "drug_spans": 6,
+      "codes_filled": 6,
+      "error": null
+    },
+    {
+      "file_id": "2",
+      "status": "ok",
+      "spans": 5,
+      "diagnosis_spans": 5,
+      "drug_spans": 0,
+      "codes_filled": 1,
+      "error": null
+    },
+    {
+      "file_id": "3",
+      "status": "ok",
+      "spans": 4,
+      "diagnosis_spans": 4,
+      "drug_spans": 0,
+      "codes_filled": 3,
+      "error": null
+    },
+    {
+      "file_id": "4",
+      "status": "ok",
+      "spans": 5,
+      "diagnosis_spans": 4,
+      "drug_spans": 1,
+      "codes_filled": 3,
+      "error": null
+    },
+    {
+      "file_id": "5",
+      "status": "ok",
+      "spans": 8,
+      "diagnosis_spans": 5,
+      "drug_spans": 3,
+      "codes_filled": 6,
+      "error": null
+    },
+    {
+      "file_id": "6",
+      "status": "ok",
+      "spans": 2,
+      "diagnosis_spans": 2,
+      "drug_spans": 0,
+      "codes_filled": 1,
+      "error": null
+    },
+    {
+      "file_id": "7",
+      "status": "ok",
+      "spans": 10,
+      "diagnosis_spans": 9,
+      "drug_spans": 1,
+      "codes_filled": 4,
+      "error": null
+    },
+    {
+      "file_id": "8",
+      "status": "ok",
+      "spans": 3,
+      "diagnosis_spans": 1,
+      "drug_spans": 2,
+      "codes_filled": 1,
+      "error": null
+    },
+    {
+      "file_id": "9",
+      "status": "ok",
+      "spans": 2,
+      "diagnosis_spans": 1,
+      "drug_spans": 1,
+      "codes_filled": 2,
+      "error": null
+    },
+    {
+      "file_id": "10",
+      "status": "ok",
+      "spans": 4,
+      "diagnosis_spans": 3,
+      "drug_spans": 1,
+      "codes_filled": 2,
+      "error": null
+    },
+    {
+      "file_id": "11",
+      "status": "ok",
+      "spans": 7,
+      "diagnosis_spans": 6,
+      "drug_spans": 1,
+      "codes_filled": 5,
+      "error": null
+    },
+    {
+      "file_id": "12",
+      "status": "ok",
+      "spans": 3,
+      "diagnosis_spans": 1,
+      "drug_spans": 2,
+      "codes_filled": 1,
+      "error": null
+    },
+    {
+      "file_id": "13",
+      "status": "ok",
+      "spans": 14,
+      "diagnosis_spans": 8,
+      "drug_spans": 6,
+      "codes_filled": 6,
+      "error": null
+    },
+    {
+      "file_id": "14",
+      "status": "ok",
+      "spans": 2,
+      "diagnosis_spans": 2,
+      "drug_spans": 0,
+      "codes_filled": 1,
+      "error": null
+    },
+    {
+      "file_id": "15",
+      "status": "ok",
+      "spans": 4,
+      "diagnosis_spans": 2,
+      "drug_spans": 2,
+      "codes_filled": 2,
+      "error": null
+    },
+    {
+      "file_id": "16",
+      "status": "ok",
+      "spans": 9,
+      "diagnosis_spans": 7,
+      "drug_spans": 2,
+      "codes_filled": 6,
+      "error": null
+    },
+    {
+      "file_id": "17",
+      "status": "ok",
+      "spans": 2,
+      "diagnosis_spans": 1,
+      "drug_spans": 1,
+      "codes_filled": 1,
+      "error": null
+    },
+    {
+      "file_id": "18",
+      "status": "ok",
+      "spans": 2,
+      "diagnosis_spans": 2,
+      "drug_spans": 0,
+      "codes_filled": 0,
+      "error": null
+    },
+    {
+      "file_id": "19",
+      "status": "ok",
+      "spans": 6,
+      "diagnosis_spans": 5,
+      "drug_spans": 1,
+      "codes_filled": 2,
+      "error": null
+    },
+    {
+      "file_id": "20",
+      "status": "ok",
+      "spans": 9,
+      "diagnosis_spans": 8,
+      "drug_spans": 1,
+      "codes_filled": 6,
+      "error": null
+    }
+  ],
+  "totals": {
+    "files": 20,
+    "ok": 20,
+    "errors": 0,
+    "spans": 107,
+    "diagnosis_spans": 76,
+    "drug_spans": 31,
+    "codes_filled": 59
+  }
+}

@@ -16,7 +16,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "F38.1"
+    ]
   },
   {
     "text": "hội chứng nghiện rượu",
@@ -26,7 +28,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "F10.2"
+    ]
   },
   {
     "text": "seroquel",
@@ -38,7 +42,9 @@
     "assertions": [
       "isHistorical"
     ],
-    "candidates": []
+    "candidates": [
+      "83553"
+    ]
   },
   {
     "text": "lú lẫn",
@@ -177,7 +183,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "R69"
+    ]
   },
   {
     "text": "Bệnh đa xơ cứng",

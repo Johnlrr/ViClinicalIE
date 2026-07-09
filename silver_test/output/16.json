@@ -7,7 +7,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "D01.0"
+    ]
   },
   {
     "text": "bệnh phổi tắc nghẽn mạn tính, không xác định",
@@ -17,7 +19,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "J44.9"
+    ]
   },
   {
     "text": "Đái tháo đường",
@@ -37,7 +41,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "K70.3"
+    ]
   },
   {
     "text": "tụt huyết áp không rõ nguyên nhân",
@@ -74,7 +80,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "Y95"
+    ]
   },
   {
     "text": "rung nhĩ",
@@ -84,7 +92,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I48.9"
+    ]
   },
   {
     "text": "nhịp nhanh trên thất",
@@ -94,7 +104,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I47.1"
+    ]
   },
   {
     "text": "mệt mỏi kéo dài",

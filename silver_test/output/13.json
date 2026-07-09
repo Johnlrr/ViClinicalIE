@@ -36,7 +36,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "E66.9"
+    ]
   },
   {
     "text": "Tăng huyết áp nguyên phát",
@@ -46,7 +48,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I10"
+    ]
   },
   {
     "text": "Sinh thiết nội mạc tử cung gần đây",
@@ -100,7 +104,9 @@
     "assertions": [
       "isHistorical"
     ],
-    "candidates": []
+    "candidates": [
+      "371965"
+    ]
   },
   {
     "text": "Suy giảm miễn dịch do sử dụng corticoid kéo dài",
@@ -110,7 +116,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "D84.8"
+    ]
   },
   {
     "text": "Tình trạng tổn thương vùng âm hộ và mông bên phải ngày càng nặng",
@@ -321,7 +329,9 @@
     ],
     "type": "THUỐC",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "371965"
+    ]
   },
   {
     "text": "Cảm thấy rằng cô ấy đã có cải thiện do những loại thuốc này",
@@ -340,7 +350,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "A60.0"
+    ]
   },
   {
     "text": "Bệnh thủy đậu/Zona (do Varicella Zoster Virus)",

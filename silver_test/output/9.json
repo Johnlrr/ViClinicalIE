@@ -7,7 +7,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "D25"
+    ]
   },
   {
     "text": "iron",
@@ -19,7 +21,9 @@
     "assertions": [
       "isHistorical"
     ],
-    "candidates": []
+    "candidates": [
+      "90176"
+    ]
   },
   {
     "text": "đau bụng dưới",

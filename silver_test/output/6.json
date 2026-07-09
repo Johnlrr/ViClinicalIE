@@ -7,7 +7,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I65.2"
+    ]
   },
   {
     "text": "siêu âm Doppler động mạch",

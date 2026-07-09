@@ -17,7 +17,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "I62.9"
+    ]
   },
   {
     "text": "Truyền dịch yếu tố IX đậm đặc",
@@ -27,7 +29,9 @@
     ],
     "type": "THUỐC",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "221099"
+    ]
   },
   {
     "text": "Điều trị chống đông",

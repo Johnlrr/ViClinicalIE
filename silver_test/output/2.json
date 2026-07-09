@@ -32,9 +32,7 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": [
-      "K72.9"
-    ]
+    "candidates": []
   },
   {
     "text": "hội chứng não gan",
@@ -44,9 +42,7 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": [
-      "K72.9"
-    ]
+    "candidates": []
   },
   {
     "text": "hội chứng não gan",
@@ -56,9 +52,7 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": [
-      "K72.9"
-    ]
+    "candidates": []
   },
   {
     "text": "ý thức suy giảm",
@@ -77,9 +71,7 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": [
-      "K72.9"
-    ]
+    "candidates": []
   },
   {
     "text": "không thể tự chăm sóc bản thân tại nhà",

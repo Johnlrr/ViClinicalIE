@@ -17,7 +17,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "M10.9"
+    ]
   },
   {
     "text": "bệnh thận mạn, không đặc hiệu",
@@ -27,7 +29,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "N18.9"
+    ]
   },
   {
     "text": "ung thư đại tràng",
@@ -37,7 +41,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "C18"
+    ]
   },
   {
     "text": "béo phì",
@@ -47,7 +53,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "E66.9"
+    ]
   },
   {
     "text": "xơ gan mất bù",
@@ -57,7 +65,9 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
-    "candidates": []
+    "candidates": [
+      "K72.1"
+    ]
   },
   {
     "text": "tăng áp lực tĩnh mạch cửa",
