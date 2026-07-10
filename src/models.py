@@ -3,6 +3,8 @@
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+from src.preprocessing import TextWindow, TokenOffset
+
 
 @dataclass
 class Line:
@@ -41,16 +43,22 @@ class ClinicalDocument:
     normalized_text: str = ""
     norm_to_raw_map: List[int] = field(default_factory=list)
     raw_to_norm_map: List[int] = field(default_factory=list)
+    line_windows: List[TextWindow] = field(default_factory=list)
+    sentence_windows: List[TextWindow] = field(default_factory=list)
+    model_windows: List[TextWindow] = field(default_factory=list)
+    token_offsets: List[TokenOffset] = field(default_factory=list)
     sections: List[Section] = field(default_factory=list)
     lines: List[Line] = field(default_factory=list)
     metadata: dict = field(default_factory=dict)
     
     def __post_init__(self):
         """Calculate metadata after initialization."""
+        existing_metadata = dict(self.metadata)
         self.metadata = {
             'char_len': len(self.raw_text),
             'line_count': len(self.raw_text.splitlines())
         }
+        self.metadata.update(existing_metadata)
 
 
 @dataclass

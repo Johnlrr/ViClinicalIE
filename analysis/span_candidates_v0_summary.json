@@ -1,8 +1,8 @@
 {
-  "total_candidates": 1242,
-  "output_candidates": 903,
+  "total_candidates": 1369,
+  "output_candidates": 1030,
   "by_type": {
-    "THUỐC": 69,
+    "THUỐC": 196,
     "TRIỆU_CHỨNG": 557,
     "CHẨN_ĐOÁN": 181,
     "TÊN_XÉT_NGHIỆM": 49,
@@ -22,7 +22,6 @@
     "79",
     "80",
     "81",
-    "89",
     "90",
     "92"
   ],

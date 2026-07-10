@@ -60,82 +60,94 @@ def normalize_text(text: str, for_matching: bool = False) -> str:
     return text
 
 
-def _replacement_raw_index(raw_start: int, raw_len: int, replacement_len: int, replacement_index: int) -> int:
-    """Map one replacement character back into the raw matched span."""
-    if raw_len <= 1 or replacement_len <= 1:
-        return raw_start
-    return raw_start + round(replacement_index * (raw_len - 1) / (replacement_len - 1))
+def _unicode_nfc_view(text: str) -> Tuple[str, List[Tuple[int, int]]]:
+    """Return an NFC view whose characters retain spans in the original string."""
+    chars: List[str] = []
+    sources: List[Tuple[int, int]] = []
+    index = 0
+    while index < len(text):
+        cluster_end = index + 1
+        while cluster_end < len(text) and unicodedata.combining(text[cluster_end]):
+            cluster_end += 1
+        normalized_cluster = unicodedata.normalize("NFC", text[index:cluster_end])
+        for char in normalized_cluster:
+            chars.append(char)
+            sources.append((index, cluster_end))
+        index = cluster_end
+    return "".join(chars), sources
 
 
 def normalize_with_mapping(text: str, for_matching: bool = True) -> Tuple[str, List[int], List[int]]:
-    """
-    Normalize text while preserving a normalized-index to raw-index map.
+    """Normalize a lookup view while preserving offsets into the exact input.
 
-    This is intended for matching only. Any final output must recover the raw
-    substring through the returned mapping before writing `text` and `position`.
+    The returned maps are character maps. ``norm_to_raw[i]`` points to the first
+    raw character that produced normalized character ``i``. ``raw_to_norm[j]``
+    points to a normalized character produced from raw character ``j``, or ``-1``
+    when that raw character was stripped. Final entity offsets must always be
+    recovered against the original ``text`` argument.
     """
-    raw_text = unicodedata.normalize('NFC', text)
+    unicode_text, unicode_sources = _unicode_nfc_view(text)
     norm_chars: List[str] = []
-    norm_to_raw: List[int] = []
-    raw_to_norm: List[int] = [-1] * len(raw_text)
-
+    norm_sources: List[Tuple[int, int]] = []
     replacements = sorted(
-        ((typo.lower(), correct.lower()) for typo, correct in NOISE_NORMALIZATION.items()),
+        ((unicodedata.normalize("NFC", typo).lower(), unicodedata.normalize("NFC", correct).lower())
+         for typo, correct in NOISE_NORMALIZATION.items()),
         key=lambda item: len(item[0]),
         reverse=True,
     )
 
-    i = 0
-    while i < len(raw_text):
-        raw_char = raw_text[i]
-
+    index = 0
+    while index < len(unicode_text):
+        matched = None
         if for_matching:
-            lowered_remaining = raw_text[i:].lower()
-            matched = None
-            for typo, correct in replacements:
-                if lowered_remaining.startswith(typo):
-                    matched = (typo, correct)
-                    break
+            lowered_remaining = unicode_text[index:].lower()
+            matched = next(
+                ((typo, correct) for typo, correct in replacements if lowered_remaining.startswith(typo)),
+                None,
+            )
 
-            if matched:
-                typo, correct = matched
-                raw_len = len(typo)
-                start_norm = len(norm_chars)
-                for j, out_char in enumerate(correct):
-                    norm_chars.append(out_char)
-                    norm_to_raw.append(_replacement_raw_index(i, raw_len, len(correct), j))
-                for raw_index in range(i, min(i + raw_len, len(raw_text))):
-                    raw_to_norm[raw_index] = start_norm
-                i += raw_len
-                continue
-
-        if for_matching and raw_char.isspace():
-            whitespace_start = i
-            while i < len(raw_text) and raw_text[i].isspace():
-                i += 1
-            if norm_chars and norm_chars[-1] != " ":
-                norm_index = len(norm_chars)
-                norm_chars.append(" ")
-                norm_to_raw.append(whitespace_start)
-                for raw_index in range(whitespace_start, i):
-                    raw_to_norm[raw_index] = norm_index
+        if matched is not None:
+            typo, replacement = matched
+            source_start = unicode_sources[index][0]
+            source_end = unicode_sources[index + len(typo) - 1][1]
+            for char in replacement:
+                norm_chars.append(char)
+                norm_sources.append((source_start, source_end))
+            index += len(typo)
             continue
 
-        out_char = raw_char.lower() if for_matching else raw_char
-        norm_index = len(norm_chars)
-        norm_chars.append(out_char)
-        norm_to_raw.append(i)
-        raw_to_norm[i] = norm_index
-        i += 1
+        char = unicode_text[index]
+        if for_matching and char.isspace():
+            whitespace_start = unicode_sources[index][0]
+            whitespace_end = unicode_sources[index][1]
+            index += 1
+            while index < len(unicode_text) and unicode_text[index].isspace():
+                whitespace_end = unicode_sources[index][1]
+                index += 1
+            norm_chars.append(" ")
+            norm_sources.append((whitespace_start, whitespace_end))
+            continue
+
+        output = char.lower() if for_matching else char
+        for output_char in output:
+            norm_chars.append(output_char)
+            norm_sources.append(unicode_sources[index])
+        index += 1
 
     if for_matching:
         while norm_chars and norm_chars[-1] == " ":
             norm_chars.pop()
-            norm_to_raw.pop()
+            norm_sources.pop()
         while norm_chars and norm_chars[0] == " ":
             norm_chars.pop(0)
-            norm_to_raw.pop(0)
-            raw_to_norm = [idx - 1 if idx > 0 else idx for idx in raw_to_norm]
+            norm_sources.pop(0)
+
+    norm_to_raw = [source_start for source_start, _ in norm_sources]
+    raw_to_norm: List[int] = [-1] * len(text)
+    for norm_index, (source_start, source_end) in enumerate(norm_sources):
+        for raw_index in range(source_start, source_end):
+            if raw_to_norm[raw_index] == -1:
+                raw_to_norm[raw_index] = norm_index
 
     return "".join(norm_chars), norm_to_raw, raw_to_norm
 

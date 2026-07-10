@@ -73,15 +73,26 @@ class OffsetMapper:
         if norm_start < 0 or norm_end > len(self.norm_to_raw_map) or norm_start >= norm_end:
             return None
 
-        mapped_indices = self.norm_to_raw_map[norm_start:norm_end]
-        if not mapped_indices:
-            return None
+        # Prefer the reverse map because one normalized character may originate
+        # from multiple raw code points (for example decomposed Vietnamese Unicode)
+        # or an entire typo-replacement span.
+        raw_indices = [
+            raw_index
+            for raw_index, mapped_norm_index in enumerate(self.raw_to_norm_map)
+            if norm_start <= mapped_norm_index < norm_end
+        ]
+        if raw_indices:
+            raw_start = min(raw_indices)
+            raw_end = max(raw_indices) + 1
+        else:
+            mapped_indices = self.norm_to_raw_map[norm_start:norm_end]
+            if not mapped_indices:
+                return None
+            raw_start = min(mapped_indices)
+            raw_end = max(mapped_indices) + 1
 
-        raw_start = min(mapped_indices)
-        raw_end = max(mapped_indices) + 1
         if raw_start < 0 or raw_end > len(self.raw_text) or raw_start >= raw_end:
             return None
-
         return raw_start, raw_end
 
     def recover_raw_text_from_normalized_match(self, norm_start: int, norm_end: int) -> Optional[str]:

@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import List, Dict
 from src.models import ClinicalDocument, EntityOutput
-from src.normalization import normalize_with_mapping
+from src.preprocessing import preprocess_text
 
 
 def validate_input_structure(input_dir: str) -> bool:
@@ -57,14 +57,19 @@ def load_single_file(filepath: str) -> ClinicalDocument:
     with open(filepath, 'r', encoding='utf-8') as f:
         raw_text = f.read()
     
-    normalized_text, norm_to_raw_map, raw_to_norm_map = normalize_with_mapping(raw_text, for_matching=True)
+    views = preprocess_text(raw_text)
 
     doc = ClinicalDocument(
         file_id=file_id,
         raw_text=raw_text,
-        normalized_text=normalized_text,
-        norm_to_raw_map=norm_to_raw_map,
-        raw_to_norm_map=raw_to_norm_map,
+        normalized_text=views.normalized_lookup_text,
+        norm_to_raw_map=views.norm_to_raw_map,
+        raw_to_norm_map=views.raw_to_norm_map,
+        line_windows=views.line_windows,
+        sentence_windows=views.sentence_windows,
+        model_windows=views.model_windows,
+        token_offsets=views.token_offsets,
+        metadata={"offset_convention": "half-open"},
     )
     
     return doc
