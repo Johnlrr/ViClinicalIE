@@ -1,7 +1,7 @@
 # PROGRESS: ViClinicalIE implementation state
 
 **Last updated:** 2026-07-10  
-**Current implementation phase:** Phase 3 complete — section detection baseline  
+**Current implementation phase:** Phase 4 baseline complete — span extraction baseline  
 **Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
 
 ---
@@ -63,8 +63,8 @@ Implemented foundation files include:
     - `VALID_ENTITY_TYPES`
     - `VALID_ASSERTIONS`
 - `configs/default.yaml`
-  - Current `project.phase` is `phase_3_section_detection`.
-  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, and section detection config.
+  - Current `project.phase` is `phase_4_span_extraction_baseline`.
+  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, and Phase 4 extractor enable/threshold config.
 - `configs/paths.yaml`
   - Canonical paths for raw input, terminology files, processed indices, golden data, predictions, reports, and submissions.
 
@@ -337,9 +337,100 @@ Important caveat:
 
 ---
 
+## 3.5 Phase 4 — span extraction baseline
+
+**Status:** Baseline implemented and smoke-tested.
+
+Phase 4 adds the first extractor layer. It does **not** yet produce final competition JSON and does **not** yet perform final type resolution, assertion detection, overlap merging, or ICD/RxNorm final candidate selection. Its purpose is to emit raw-offset-safe `SpanCandidate` objects for later phases.
+
+Implemented files:
+
+- `configs/entity_rules.yaml`
+  - Initial configurable rule lists for drug units/routes/frequencies, qualitative lab results, symptom heads, and disease heads.
+- `data/dictionaries/lab_tests.csv`
+  - Baseline lab/test aliases such as WBC, RBC, HGB, kali, creatinine, troponin, INR, UA, cấy máu, cấy nước tiểu.
+- `data/dictionaries/symptoms_vi.csv`
+  - Baseline symptom aliases such as đau bụng, đau ngực, khó thở, ho, sốt, buồn nôn, chóng mặt, mệt mỏi, phù, mất ngủ, lú lẫn.
+- `src/extractors/base.py`
+  - `ExtractionContext` and `BaseExtractor` interface.
+- `src/extractors/utils.py`
+  - Shared candidate construction, raw-span validation, context extraction, candidate deduplication, phrase matching, punctuation trimming, and overlap helpers.
+- `src/extractors/dictionary_extractor.py`
+  - Conservative exact/no-diacritics dictionary matcher.
+  - Includes a guard against short accent-insensitive false positives such as matching `phù` to `phụ`.
+- `src/extractors/drug_extractor.py`
+  - RxNorm/manual alias based baseline drug extractor.
+  - Expands adjacent dose/route/frequency tokens.
+  - Handles sentence-final punctuation during alias prefiltering, e.g. `atenolol.`.
+- `src/extractors/lab_extractor.py`
+  - Lab/test alias matcher.
+  - Emits separate `TÊN_XÉT_NGHIỆM` and `KẾT_QUẢ_XÉT_NGHIỆM` candidates when simple value/result patterns are found.
+- `src/extractors/imaging_extractor.py`
+  - Baseline cận lâm sàng/imaging test extractor for X-ray, CT, MRI, ultrasound, ECG/EKG, Holter, xạ hình, etc.
+- `src/extractors/problem_extractor.py`
+  - Baseline symptom/disease-head extractor emitting provisional `TRIỆU_CHỨNG` or `CHẨN_ĐOÁN` candidates.
+- `src/extractors/ner_extractor.py`
+  - No-op NER extractor interface, disabled by default.
+- `src/extractors/__init__.py`
+  - `build_default_extractors(config)` factory.
+- `scripts/run_phase4_smoke.py`
+  - Runs preprocess → section detection → enabled extractors → raw-offset validation.
+- Tests added:
+  - `tests/test_extractor_base.py`
+  - `tests/test_dictionary_extractor.py`
+  - `tests/test_drug_extractor.py`
+  - `tests/test_lab_extractor.py`
+  - `tests/test_imaging_extractor.py`
+  - `tests/test_problem_extractor.py`
+
+Manual validation in the current environment:
+
+```text
+python -m compileall -q src\extractors scripts\run_phase4_smoke.py
+manual_tests_passed 11
+```
+
+`pytest` is still unavailable in the active interpreter, so extractor tests were executed manually by importing each `test_*` function.
+
+Phase 4 smoke on 20 golden input files:
+
+```text
+Phase 4 smoke checks completed.
+files_checked: 20
+chunks_checked: 700
+total_candidates: 667
+candidate_count_by_source: {
+  'dictionary': 134,
+  'drug_rule': 23,
+  'imaging_rule': 55,
+  'lab_result_rule': 5,
+  'lab_rule': 15,
+  'problem_rule': 435
+}
+candidate_count_by_raw_type: {
+  'CHẨN_ĐOÁN': 212,
+  'KẾT_QUẢ_XÉT_NGHIỆM': 5,
+  'THUỐC': 23,
+  'TRIỆU_CHỨNG': 357,
+  'TÊN_XÉT_NGHIỆM': 70
+}
+offset_error_count: 0
+```
+
+Known Phase 4 caveats:
+
+- This is a **candidate generation baseline**, not a calibrated final extractor.
+- `problem_extractor.py` is intentionally recall-oriented and can over-extend spans; Phase 5 type resolution and Phase 10 merge/postprocess must clean this up.
+- `drug_extractor.py` uses broad RxNorm aliases and may detect non-medication substance mentions such as `caffeine`; later type/context filtering should reduce false positives.
+- `imaging_extractor.py` can over-extend imaging test spans, e.g. including temporal/context words after `siêu âm tim`; later span-boundary tuning is needed.
+- `lab_extractor.py` currently catches only simple adjacent result patterns; recall for lab values remains low.
+- No final entity merging/deduplication across extractor sources yet.
+
+---
+
 ## 4. Validation and command reference
 
-### 4.1 Commands that passed in the current session
+### 4.1 Commands that passed in this project state
 
 Use Windows `cmd` command chaining in this environment instead of relying on PowerShell `&&` behavior:
 
@@ -371,6 +462,19 @@ offset_error_count: 0
 invalid_section_count: 0
 ```
 
+Phase 4 validation commands passed:
+
+```cmd
+python -m compileall -q src\extractors scripts\run_phase4_smoke.py
+python scripts\run_phase4_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
+```
+
+Manual extractor tests passed by importing and running each `test_*` function because `pytest` is not installed in the active interpreter:
+
+```text
+manual_tests_passed 11
+```
+
 ### 4.2 Pytest status
 
 Attempted command:
@@ -396,18 +500,19 @@ If multiple Python installations/venvs exist, ensure the same interpreter is use
 
 ---
 
-## 5. Known limitations as of Phase 3
+## 5. Known limitations as of Phase 4
 
-The repo is not yet an end-to-end information extraction system.
+The repo is still not an end-to-end competition output system.
+
+Implemented now:
+
+- extractor interfaces and baseline candidate generators under `src/extractors/`;
+- baseline dictionaries and entity rules;
+- Phase 4 smoke script;
+- extractor tests.
 
 Not implemented yet:
 
-- `src/extractors/`
-  - drug extractor
-  - lab/test extractor
-  - problem/symptom/diagnosis extractor
-  - dictionary extractor
-  - NER extractor interface/model integration
 - `src/type_resolution/`
 - `src/assertion/`
 - final `src/linking/icd10_linker.py` / `rxnorm_linker.py` wrappers
@@ -432,116 +537,70 @@ Not implemented yet:
 - Streamlit validation UI beyond placeholder folder:
   - `streamlit_app/.gitkeep` exists, but no app yet.
 
-Current code provides the foundation needed for Phase 4, but does not yet produce competition-format `output/{id}.json` predictions.
+Current code produces `SpanCandidate` objects, not final `FinalEntity` objects or competition-format `output/{id}.json` predictions.
 
 ---
 
 ## 6. Current git/worktree notes
 
-At the time this progress file was drafted, `git status --short` showed Phase 3-related changes not yet committed:
+Phase 4 added/modified a significant set of files:
 
 ```text
-M configs/default.yaml
-M src/data_types.py
- M src/preprocess/normalizer.py
- M tests/test_normalizer.py
-?? configs/section_patterns.yaml
-?? scripts/audit_phase2_phase3.py
-?? scripts/run_phase3_smoke.py
-?? src/section/
-?? tests/test_section_detector.py
+configs/default.yaml
+configs/paths.yaml
+configs/entity_rules.yaml
+data/dictionaries/lab_tests.csv
+data/dictionaries/symptoms_vi.csv
+src/extractors/
+scripts/run_phase4_smoke.py
+tests/test_extractor_base.py
+tests/test_dictionary_extractor.py
+tests/test_drug_extractor.py
+tests/test_lab_extractor.py
+tests/test_imaging_extractor.py
+tests/test_problem_extractor.py
+PROGRESS.md
 ```
 
-Before starting major Phase 4 work, consider:
+Before starting major Phase 5 work, consider:
 
-1. Install dependencies and run full tests.
-2. Review/commit Phase 3 changes.
-3. Update `README.md` to reflect Phase 1–3 progress.
+1. Install dependencies and run full `pytest`.
+2. Review/commit Phase 4 changes.
+3. Update `README.md` to reflect Phase 1–4 progress.
 
 ---
 
-## 7. Recommended next work: Phase 4 span extraction baseline
+## 7. Recommended next work: Phase 5 type resolution
 
-The next implementation target should be **Phase 4 — Span extraction baseline**, following `Implementation Plan.md` section 10.
+The next implementation target should be **Phase 5 — Type resolution**, following `Implementation Plan.md` section 11.
 
-Recommended order:
+Goal: convert potentially overlapping/raw extractor candidates into coherent provisional typed entities while preserving offsets and logging conflicts.
 
-### 7.1 Create extractor package and base interface
-
-Add:
+Recommended Phase 5 deliverables:
 
 ```text
-src/extractors/
+src/type_resolution/
   __init__.py
-  base.py
-  drug_extractor.py
-  lab_extractor.py
-  problem_extractor.py
-  dictionary_extractor.py
-  imaging_extractor.py
-  ner_extractor.py
+  features.py
+  resolver.py
+tests/test_type_resolver.py
+scripts/run_phase5_smoke.py
 ```
 
-The extractor interface should return `list[SpanCandidate]` with raw offsets and source/provenance metadata.
+Initial resolver policy:
 
-### 7.2 Implement drug extractor first
+1. `lab_result_rule` → `KẾT_QUẢ_XÉT_NGHIỆM`.
+2. `lab_rule` / `imaging_rule` → `TÊN_XÉT_NGHIỆM`.
+3. `drug_rule` → `THUỐC`, unless obvious non-medication context indicates otherwise.
+4. `problem_rule` disease-head → `CHẨN_ĐOÁN`.
+5. `problem_rule` symptom-head and symptom dictionary → `TRIỆU_CHỨNG`.
+6. If same span has multiple candidate types, choose by priority and score, then log the conflict.
 
-Why first:
+Important Phase 5 caveats:
 
-- Drug spans are strongly supported by RxNorm aliases and medication patterns.
-- RxNorm candidate score is important for the final metric.
-
-Initial features:
-
-- RxNorm alias exact/fuzzy lookup.
-- Manual drug alias table support.
-- Regex for dose, unit, route, frequency.
-- Span expansion to include nearby dose/route/frequency.
-- Conservative fuzzy splitting for dính chữ cases, where offset alignment is reliable.
-
-### 7.3 Implement lab/test extractor
-
-Initial features:
-
-- `data/dictionaries/lab_tests.csv` if not already present.
-- Test-value patterns:
-  - `<test> là <value>`
-  - `<test>: <value>`
-  - `<test> <value>`
-  - `<test> âm tính/dương tính/bình thường`
-- Emit separate `TÊN_XÉT_NGHIỆM` and `KẾT_QUẢ_XÉT_NGHIỆM` spans.
-
-### 7.4 Implement problem extractor
-
-Initial features:
-
-- Symptom-head rules.
-- Disease-head rules.
-- Dictionary aliases.
-- ICD alias lookup as a feature, not as final type decision.
-- Conservative span boundary rules that avoid negation triggers and section headings.
-
-### 7.5 Add tests before tuning
-
-Create/extend tests for:
-
-```text
-tests/test_drug_extractor.py
-tests/test_lab_extractor.py
-tests/test_problem_extractor.py
-```
-
-Minimum test examples should include:
-
-- `metoprolol 25mg po bid`
-- `aspirin 325mg x 1`
-- `troponin 0.01`
-- `kali là 6.3`
-- `tổng phân tích nước tiểu bình thường`
-- `đau bụng vùng hạ sườn phải`
-- `khó thở khi gắng sức`
-- `viêm túi mật cấp`
-- `rung nhĩ kèm đáp ứng thất nhanh`
+- Do not let ICD-linkability automatically convert every symptom into `CHẨN_ĐOÁN`.
+- Do not finalize assertions or candidates yet; those belong to Phase 6–8.
+- Keep `raw_text[start:end] == text` as a hard invariant for all provisional entities.
 
 ---
 
@@ -588,9 +647,10 @@ python scripts\run_phase1_smoke.py --config configs\default.yaml
 python scripts\run_phase2_smoke.py --config configs\default.yaml --max-files 6
 python scripts\run_phase3_smoke.py --config configs\default.yaml --max-files 6
 python scripts\audit_phase2_phase3.py --config configs\default.yaml --max-unmatched 20
+python scripts\run_phase4_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
 ```
 
-Then proceed with Phase 4 implementation.
+Then proceed with Phase 5 type resolution implementation.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -599,18 +659,20 @@ assert raw_text[candidate.start:candidate.end] == candidate.text
 assert candidate.start < candidate.end
 ```
 
-Every extractor should log or expose enough provenance to debug later in the Streamlit UI and evaluator.
+Every resolver/postprocess component should preserve enough provenance to debug later in the Streamlit UI and evaluator.
 
 ---
 
 ## 10. Summary
 
-The repository currently has a solid foundation through Phase 3:
+The repository currently has a solid foundation through Phase 4:
 
 - canonical config/data layout;
 - ICD/RxNorm terminology parsing and sparse retrieval artifacts;
 - raw-preserving preprocessing and offset maps;
 - chunking with zero observed audit offset errors;
 - section detection with pattern config, carry-forward behavior, smoke tests, and audit reporting.
+- baseline span extraction package with dictionary, drug, lab, imaging, problem, and no-op NER extractors;
+- Phase 4 smoke validation on 20 golden files with zero offset errors.
 
-The next major milestone is to implement Phase 4 span extractors while preserving offsets and producing `SpanCandidate` objects that can later feed type resolution, assertions, linking, merge, formatting, validation, and evaluation.
+The next major milestone is to implement Phase 5 type resolution, converting `SpanCandidate` objects into coherent provisional typed entities while preserving offsets and logging conflicts.

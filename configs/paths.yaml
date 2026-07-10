@@ -5,6 +5,9 @@ processed_dir: data/processed
 dictionary_dir: data/dictionaries
 diagnosis_aliases_csv: data/dictionaries/diagnosis_aliases.csv
 drug_aliases_csv: data/dictionaries/drug_aliases.csv
+lab_tests_csv: data/dictionaries/lab_tests.csv
+symptoms_csv: data/dictionaries/symptoms_vi.csv
+entity_rules_yaml: configs/entity_rules.yaml
 vector_index_dir: data/processed/vector_indices
 golden_input_dir: data/golden/input
 golden_gold_dir: data/golden/gold

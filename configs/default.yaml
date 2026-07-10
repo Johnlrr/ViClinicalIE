@@ -1,6 +1,6 @@
 project:
   name: ViClinicalIE
-  phase: phase_3_section_detection
+  phase: phase_4_span_extraction_baseline
 paths_config: paths.yaml
 encoding: utf-8
 seed: 42
@@ -111,4 +111,27 @@ section_detection:
   detect_inline_headings: true
   inline_heading_max_prefix_chars: 80
   carried_confidence: 0.30
+
+entity_rules_config: entity_rules.yaml
+
+extractors:
+  dictionary:
+    enabled: true
+    min_alias_length: 3
+    max_alias_length: 80
+  drug:
+    enabled: true
+    min_alias_length: 3
+    max_alias_length: 80
+    max_aliases_per_first_token: 250
+  lab:
+    enabled: true
+    max_result_lookahead_chars: 60
+  imaging:
+    enabled: true
+  problem:
+    enabled: true
+    max_tail_tokens: 8
+  ner:
+    enabled: false
 

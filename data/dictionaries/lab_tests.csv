@@ -1,0 +1,41 @@
+alias,canonical,category,requires_context
+wbc,bạch cầu,lab,true
+bạch cầu,bạch cầu,lab,false
+rbc,hồng cầu,lab,true
+hồng cầu,hồng cầu,lab,false
+hgb,hemoglobin,lab,true
+hemoglobin,hemoglobin,lab,false
+huyết sắc tố,hemoglobin,lab,false
+hct,hematocrit,lab,true
+hematocrit,hematocrit,lab,false
+plt,tiểu cầu,lab,true
+tiểu cầu,tiểu cầu,lab,false
+na,natri,lab,true
+natri,natri,lab,false
+k,kali,lab,true
+kali,kali,lab,false
+cl,chloride,lab,true
+chloride,chloride,lab,false
+bun,ure,lab,true
+ure,ure,lab,false
+cr,creatinine,lab,true
+creatinine,creatinine,lab,false
+ast,aspartate aminotransferase,lab,true
+alt,alanine aminotransferase,lab,true
+alp,phosphatase kiềm,lab,true
+bilirubin,bilirubin,lab,false
+inr,inr,lab,false
+pt,pt,lab,true
+aptt,aptt,lab,true
+troponin,troponin,lab,false
+bnp,bnp,lab,false
+lactate,lactate,lab,false
+glucose,glucose,lab,false
+đường huyết,glucose,lab,false
+hba1c,hba1c,lab,false
+ua,tổng phân tích nước tiểu,lab,true
+tổng phân tích nước tiểu,tổng phân tích nước tiểu,lab,false
+phân tích nước tiểu,tổng phân tích nước tiểu,lab,false
+cấy máu,cấy máu,microbiology,false
+cấy nước tiểu,cấy nước tiểu,microbiology,false
+nitrite,nitrite,lab,false

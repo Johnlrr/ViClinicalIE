@@ -1,0 +1,93 @@
+drug:
+  dose_units:
+    - mg
+    - mcg
+    - g
+    - gram
+    - ml
+    - mg/ml
+    - units
+    - unit
+    - đơn vị
+    - "%"
+  routes:
+    - po
+    - iv
+    - im
+    - sc
+    - oral
+    - uống
+    - tiêm
+    - truyền
+    - neb
+    - nebs
+    - nebulizer
+  frequencies:
+    - daily
+    - bid
+    - tid
+    - qid
+    - prn
+    - qam
+    - qhs
+    - ngày
+    - lần/ngày
+
+lab:
+  qualitative_results:
+    - âm tính
+    - dương tính
+    - bình thường
+    - tăng
+    - giảm
+    - cao
+    - thấp
+
+problem:
+  symptom_heads:
+    - đau
+    - khó thở
+    - ho
+    - sốt
+    - buồn nôn
+    - nôn
+    - tiêu chảy
+    - táo bón
+    - chóng mặt
+    - mệt mỏi
+    - yếu
+    - ngất
+    - phù
+    - sưng
+    - chảy máu
+    - khó nuốt
+    - khò khè
+    - lo âu
+    - mất ngủ
+    - ảo giác
+    - lú lẫn
+    - nhìn mờ
+    - đau rát
+  disease_heads:
+    - viêm
+    - ung thư
+    - u ác
+    - u tuyến
+    - suy
+    - xơ gan
+    - rung nhĩ
+    - nhồi máu
+    - thuyên tắc
+    - xuất huyết
+    - hẹp
+    - tắc
+    - bóc tách
+    - gãy
+    - áp xe
+    - nhiễm khuẩn
+    - nhiễm trùng
+    - bệnh
+    - hội chứng
+    - loét
+    - tràn dịch
+    - phình động mạch
