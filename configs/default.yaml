@@ -1,6 +1,6 @@
 project:
   name: ViClinicalIE
-  phase: phase_1_terminology_indices
+  phase: phase_2_preprocessing_offset_mapping
 paths_config: paths.yaml
 encoding: utf-8
 seed: 42
@@ -84,4 +84,21 @@ sparse:
   bm25:
     k1: 1.5
     b: 0.75
+
+preprocess:
+  unicode_form: NFC
+  lowercase_normalized: true
+  collapse_whitespace: true
+  build_no_diacritics_view: true
+  preserve_raw: true
+
+chunking:
+  split_on_newlines: true
+  split_on_sentence_punctuation: true
+  max_chunk_chars: 500
+  min_split_fraction: 0.4
+  bullet_patterns:
+    - '^\s*[-*•]\s+'
+    - '^\s*\d+[.)]\s+'
+    - '^\s*[a-zA-Z][.)]\s+'
 

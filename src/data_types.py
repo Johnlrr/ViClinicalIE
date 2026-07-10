@@ -30,6 +30,35 @@ VALID_ASSERTIONS: set[str] = {
 
 
 @dataclass(slots=True)
+class TextViews:
+    raw: str
+    normalized: str
+    search: str
+    no_diacritics: str
+    norm_to_raw: list[int]
+    search_to_raw: list[int]
+    no_diacritics_to_raw: list[int] = field(default_factory=list)
+
+
+@dataclass(slots=True)
+class Chunk:
+    text: str
+    start: int
+    end: int
+    section: str | None = None
+    subsection: str | None = None
+    line_id: int | None = None
+    bullet_level: int | None = None
+
+
+@dataclass(slots=True)
+class PreprocessOutput:
+    raw_text: str
+    views: TextViews
+    chunks: list[Chunk]
+
+
+@dataclass(slots=True)
 class SpanCandidate:
     text: str
     start: int
