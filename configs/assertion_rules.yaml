@@ -1,0 +1,89 @@
+negation_pre:
+  - không có
+  - không thấy
+  - không ghi nhận
+  - chưa ghi nhận
+  - chưa phát hiện
+  - phủ nhận
+  - loại trừ
+  - không
+
+negation_post:
+  - không ghi nhận bất thường
+  - không bất thường
+  - âm tính
+  - bình thường
+
+pseudo_negation:
+  - không loại trừ
+  - không rõ
+  - không chắc
+  - chưa rõ
+
+scope_terminators:
+  - nhưng
+  - tuy nhiên
+  - song
+  - .
+  - ;
+  - "\n"
+
+historical_cues:
+  - thuốc trước khi nhập viện
+  - trước khi nhập viện
+  - tiền sử
+  - trước đây
+  - đã từng
+  - mạn tính
+  - tại nhà
+  - đang dùng tại nhà
+  - đã ngừng
+  - ngừng uống
+  - cách nhập viện
+  - lần nhập viện trước
+
+current_event_overrides:
+  - lý do nhập viện
+  - hiện tại
+  - lúc vào viện
+  - khi nhập viện
+  - được chỉ định
+  - được cho dùng
+  - được cho
+  - bắt đầu
+  - điều trị tại bệnh viện
+  - phát hiện mới
+  - tại cấp cứu
+
+family_members:
+  - nhiều thành viên trong gia đình
+  - thành viên trong gia đình
+  - người nhà
+  - gia đình
+  - bố
+  - mẹ
+  - cha
+  - anh
+  - chị
+  - em
+  - con
+  - vợ
+  - chồng
+
+family_experiencer_verbs:
+  - mắc
+  - có
+  - bị
+  - bệnh
+  - triệu chứng
+  - tương tự
+
+reporter_verbs:
+  - phát hiện
+  - nhận thấy
+  - đưa
+  - kể
+  - báo
+  - cho biết
+  - gọi
+  - cung cấp

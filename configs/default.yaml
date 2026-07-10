@@ -1,6 +1,6 @@
 project:
   name: ViClinicalIE
-  phase: phase_5_type_resolution
+  phase: phase_6_assertion_detection
 paths_config: paths.yaml
 encoding: utf-8
 seed: 42
@@ -164,5 +164,26 @@ type_resolution:
     problem_symptom_head: 0.78
     dictionary: 0.70
     ner_fallback: 0.65
+
+assertion_detection:
+  enabled: true
+  rules_config: assertion_rules.yaml
+  assertable_types:
+    - TRIỆU_CHỨNG
+    - CHẨN_ĐOÁN
+    - THUỐC
+  window_chars_left: 160
+  window_chars_right: 160
+  thresholds:
+    isNegated: 0.55
+    isHistorical: 0.60
+    isFamily: 0.80
+  section_priors:
+    PAST_HISTORY:
+      isHistorical: 0.25
+    PAST_MEDICAL_HISTORY:
+      isHistorical: 0.30
+    PRE_ADMISSION_MEDICATION:
+      isHistorical: 0.35
 
 

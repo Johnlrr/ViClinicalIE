@@ -1,7 +1,7 @@
 # PROGRESS: ViClinicalIE implementation state
 
 **Last updated:** 2026-07-10  
-**Current implementation phase:** Phase 5 complete — deterministic type resolution baseline  
+**Current implementation phase:** Phase 6 complete — deterministic assertion detection baseline  
 **Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
 
 ---
@@ -63,8 +63,8 @@ Implemented foundation files include:
     - `VALID_ENTITY_TYPES`
     - `VALID_ASSERTIONS`
 - `configs/default.yaml`
-  - Current `project.phase` is `phase_5_type_resolution`.
-  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor enable/threshold config, and Phase 5 type-resolution config.
+  - Current `project.phase` is `phase_6_assertion_detection`.
+  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, and Phase 6 assertion-detection config.
 - `configs/paths.yaml`
   - Canonical paths for raw input, terminology files, processed indices, golden data, predictions, reports, and submissions.
 
@@ -103,7 +103,7 @@ Implemented:
 
 Known caveat:
 
-- `README.md` still describes the project as Phase 0 only. It should be updated after Phase 3/Phase 4 documentation stabilizes.
+- `README.md` still describes the project as Phase 0 only. It should be updated after Phase 6 documentation stabilizes.
 
 ---
 
@@ -530,7 +530,120 @@ Known Phase 5 caveats:
 - Many Phase 4 problem spans are still over-extended. Phase 5 preserves them because global span selection and trimming belong mostly to Phase 10.
 - Overlap logs show expected cases like dictionary symptom spans contained in longer problem-rule spans.
 - Some Phase 4 false positives remain, e.g. broad drug aliases such as `caffeine`; Phase 5 keeps these with confidence/provenance warnings rather than dropping them prematurely.
-- No assertion detection, ICD/RxNorm linker wrappers, final postprocess merge, or JSON formatter/validator has been implemented yet.
+- No ICD/RxNorm linker wrappers, final postprocess merge, or JSON formatter/validator has been implemented yet.
+
+---
+
+## 3.7 Phase 6 — assertion detection
+
+**Status:** Implemented and smoke-tested.
+
+Phase 6 consumes Phase 5 provisional `FinalEntity` objects and assigns mention-level assertions for assertable entity types only:
+
+```text
+TRIỆU_CHỨNG / CHẨN_ĐOÁN / THUỐC
+→ isNegated / isHistorical / isFamily
+```
+
+It does **not** change spans, does **not** assign assertions to lab/test/result entities, does **not** run ICD/RxNorm linking, and does **not** perform global merge or final JSON formatting.
+
+Implemented files:
+
+- `configs/assertion_rules.yaml`
+  - Config-driven cue lists for:
+    - pre/post negation;
+    - pseudo-negation;
+    - scope terminators;
+    - historical cues;
+    - current-event overrides;
+    - family members;
+    - family experiencer verbs;
+    - reporter verbs.
+- `src/assertion/context_rules.py`
+  - Shared assertion dataclasses and utilities:
+    - `ContextWindow`
+    - `CueMatch`
+    - `AssertionEvidence`
+    - `AssertionDecision`
+  - Cue loading/config merging.
+  - Context-window extraction and cue matching with raw offsets.
+- `src/assertion/negation.py`
+  - Pre-negation scope detection.
+  - Post-negation cue detection.
+  - Pseudo-negation guard, e.g. `không loại trừ viêm phổi` is not treated as negated.
+- `src/assertion/historical.py`
+  - Historical cue detection.
+  - Current-event override handling.
+  - Drug-specific historical handling for pre-admission/home-med contexts.
+  - Guard so drug/pre-admission medication headings do not automatically mark non-drug problems historical.
+- `src/assertion/family.py`
+  - High-precision family experiencer detection.
+  - Reporter guard for cases like `vợ nhận thấy bệnh nhân ảo giác`.
+- `src/assertion/assertion_detector.py`
+  - Main `AssertionDetector` class.
+  - Applies assertion detectors only to assertable types.
+  - Returns new `FinalEntity` objects with updated `assertions` and `provenance["assertion"]`.
+- `src/assertion/__init__.py`
+- `tests/test_assertion.py`
+- `scripts/run_phase6_smoke.py`
+  - Runs preprocess → section detection → Phase 4 extractors → Phase 5 type resolver → Phase 6 assertion detector.
+  - Prints entity counts, assertable entity count, assertion counts, asserted entities by type, offset errors, and sample asserted entities with evidence.
+- `configs/default.yaml`
+  - `project.phase: phase_6_assertion_detection`.
+  - `assertion_detection` config with rules config path, assertable types, context windows, thresholds, and section priors.
+
+Current assertion policy:
+
+1. Assertions are applied only to `TRIỆU_CHỨNG`, `CHẨN_ĐOÁN`, and `THUỐC`.
+2. `isNegated` uses cue + scope, including list scopes.
+3. `isHistorical` uses nearby temporal/status cues, current-event overrides, and cautious drug-specific section priors.
+4. `isFamily` requires family-member experiencer evidence and avoids reporter-only contexts.
+5. Assertion evidence and scores are stored in provenance for debugging.
+
+Manual validation in the current environment:
+
+```text
+python -m compileall -q src\assertion scripts\run_phase6_smoke.py
+manual_assertion_tests_passed 12
+```
+
+`pytest` remains unavailable in the active interpreter, so assertion tests were executed manually by importing each `test_*` function.
+
+Phase 6 smoke on 20 golden input files:
+
+```text
+Phase 6 smoke checks completed.
+files_checked: 20
+chunks_checked: 700
+span_candidates: 667
+final_entities: 610
+assertable_entities: 535
+entities_by_type: {
+  'CHẨN_ĐOÁN': 212,
+  'KẾT_QUẢ_XÉT_NGHIỆM': 5,
+  'THUỐC': 23,
+  'TRIỆU_CHỨNG': 300,
+  'TÊN_XÉT_NGHIỆM': 70
+}
+assertion_counts: {
+  'isFamily': 6,
+  'isHistorical': 104,
+  'isNegated': 144
+}
+asserted_entities_by_type: {
+  'CHẨN_ĐOÁN': 101,
+  'THUỐC': 13,
+  'TRIỆU_CHỨNG': 140
+}
+offset_error_count: 0
+```
+
+Known Phase 6 caveats:
+
+- Assertion quality is a deterministic baseline and has not yet been calibrated against official/golden metrics.
+- Some assertion false positives can come from Phase 4 over-extended or false-positive spans; Phase 10 merge/postprocess and later golden evaluation will help reduce these.
+- Historical detection is intentionally conservative for drug-specific cues, but generic cues like `tiền sử` can still apply within a local window and may need tuning after evaluator/UI review.
+- Family detection is high precision but likely lower recall until more family experiencer patterns are added.
 
 ---
 
@@ -594,6 +707,19 @@ Manual type resolver tests passed by importing and running each `test_*` functio
 manual_type_resolver_tests_passed 10
 ```
 
+Phase 6 validation commands passed:
+
+```cmd
+python -m compileall -q src\assertion scripts\run_phase6_smoke.py
+python scripts\run_phase6_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 10
+```
+
+Manual assertion tests passed by importing and running each `test_*` function because `pytest` is not installed in the active interpreter:
+
+```text
+manual_assertion_tests_passed 12
+```
+
 ### 4.2 Pytest status
 
 Attempted command:
@@ -619,7 +745,7 @@ If multiple Python installations/venvs exist, ensure the same interpreter is use
 
 ---
 
-## 5. Known limitations as of Phase 4
+## 5. Known limitations as of Phase 6
 
 The repo is still not an end-to-end competition output system.
 
@@ -632,10 +758,12 @@ Implemented now:
 - deterministic Phase 5 type-resolution package under `src/type_resolution/`;
 - Phase 5 smoke script;
 - type resolver tests.
+- deterministic Phase 6 assertion-detection package under `src/assertion/`;
+- Phase 6 smoke script;
+- assertion tests.
 
 Not implemented yet:
 
-- `src/assertion/`
 - final `src/linking/icd10_linker.py` / `rxnorm_linker.py` wrappers
 - deterministic reranker module beyond sparse retrieval primitives
 - `src/postprocess/`
@@ -658,7 +786,7 @@ Not implemented yet:
 - Streamlit validation UI beyond placeholder folder:
   - `streamlit_app/.gitkeep` exists, but no app yet.
 
-Current code can produce Phase 4 `SpanCandidate` objects and Phase 5 provisional `FinalEntity` objects. It still does **not** produce final competition-format `output/{id}.json` predictions.
+Current code can produce Phase 4 `SpanCandidate` objects, Phase 5 provisional typed `FinalEntity` objects, and Phase 6 asserted `FinalEntity` objects. It still does **not** produce final competition-format `output/{id}.json` predictions.
 
 ---
 
@@ -695,78 +823,88 @@ tests/test_type_resolver.py
 PROGRESS.md
 ```
 
-Before starting major Phase 6 work, consider:
+Phase 6 added/modified:
+
+```text
+configs/default.yaml
+configs/assertion_rules.yaml
+src/assertion/__init__.py
+src/assertion/context_rules.py
+src/assertion/negation.py
+src/assertion/historical.py
+src/assertion/family.py
+src/assertion/assertion_detector.py
+scripts/run_phase6_smoke.py
+tests/test_assertion.py
+PROGRESS.md
+```
+
+Before starting major Phase 7/8 work, consider:
 
 1. Install dependencies and run full `pytest`.
-2. Review/commit Phase 4–5 changes.
-3. Update `README.md` to reflect Phase 1–5 progress.
+2. Review/commit Phase 4–6 changes.
+3. Update `README.md` to reflect Phase 1–6 progress.
 
 ---
 
-## 7. Recommended next work: Phase 6 assertion detection
+## 7. Recommended next work: Phase 7/8 ICD-10 and RxNorm linker wrappers
 
-The next implementation target should be **Phase 6 — Assertion detection**, following `Implementation Plan.md` section 12.
+The next implementation target should be **Phase 7/8 — ICD-10 and RxNorm candidate generation**, following `Implementation Plan.md` sections 13 and 14.
 
-Goal: assign mention-level assertions to Phase 5 `FinalEntity` objects for clinical problem/drug types while preserving offsets and avoiding section-hardcoded behavior.
+Goal: attach candidate codes to asserted Phase 6 `FinalEntity` objects without inventing spans or changing entity offsets.
 
-Recommended Phase 6 deliverables:
+Recommended Phase 7/8 deliverables:
 
 ```text
-src/assertion/
-  __init__.py
-  context_rules.py
-  negation.py
-  historical.py
-  family.py
-  assertion_detector.py
-tests/test_assertion.py
-scripts/run_phase6_smoke.py
+src/linking/
+  icd10_linker.py
+  rxnorm_linker.py
+  drug_parser.py
+  candidate_selector.py
+tests/test_linking.py
+tests/test_icd10_linker.py
+tests/test_rxnorm_linker.py
+scripts/run_phase7_8_smoke.py
 ```
 
-Initial assertion policy:
+Initial linking policy:
 
-1. Apply assertions only to `TRIỆU_CHỨNG`, `CHẨN_ĐOÁN`, and `THUỐC`.
-2. Detect negation with cue + scope, including list scopes.
-3. Detect historical status at mention level using temporal/status cues and current-event overrides.
-4. Detect family assertions with high precision, requiring the family member to be the experiencer rather than only the reporter.
-5. Keep assertion scores/provenance internally for debugging.
+1. Link only `CHẨN_ĐOÁN` to ICD-10.
+2. Link only `THUỐC` to RxNorm.
+3. Use existing Phase 1 sparse retrieval resources.
+4. Keep candidate count conservative.
+5. Do not return codes outside terminology indices.
+6. Preserve linker scores/provenance for later reranking and error analysis.
 
-Important Phase 6 caveats:
+Important Phase 7/8 caveats:
 
-- Do not assign assertions to lab/test/result types.
-- Do not make historical decisions from section label alone.
-- Do not mark `isFamily` when a family member is only the observer/reporter.
-- Preserve `raw_text[entity.start:entity.end] == entity.text` for all entities.
+- Linking must not create, remove, or move spans.
+- ICD/RxNorm linkability must not retroactively override Phase 5 type resolution in this phase.
+- Candidate precision matters; avoid arbitrary top-k output.
 
 ---
 
 ## 8. Later phases after extraction baseline
 
-After Phase 4, continue in this order:
+After Phase 6, continue in this order:
 
-1. **Phase 5 — Type resolution**
-   - Resolve conflicts among drug/lab/problem/NER/dictionary candidates.
-   - Especially separate `TRIỆU_CHỨNG` vs `CHẨN_ĐOÁN`.
-2. **Phase 6 — Assertion detection**
-   - ConText-style negation, historical, and family detection.
-   - Mention-level, not section-hardcoded.
-3. **Phase 7/8 — ICD-10 and RxNorm linker wrappers**
+1. **Phase 7/8 — ICD-10 and RxNorm linker wrappers**
    - Use existing Phase 1 sparse retrievers.
    - Add candidate thresholding and score logs.
-4. **Phase 9 — Reranking**
+2. **Phase 9 — Reranking**
    - Start deterministic; dense/cross-encoder later if needed.
-5. **Phase 10 — Merge and postprocess**
+3. **Phase 10 — Merge and postprocess**
    - Deduplication and overlap conflict handling.
-6. **Phase 11 — JSON formatter and validator**
+4. **Phase 11 — JSON formatter and validator**
    - Enforce schema and `raw_text[start:end] == text`.
-7. **Phase 12 — Golden evaluation loop**
+5. **Phase 12 — Golden evaluation loop**
    - Validate 20 gold files.
    - Run approximate local metrics and error reports.
-8. **Phase 13 — Streamlit UI**
+6. **Phase 13 — Streamlit UI**
    - Highlight raw text, predictions, gold, and diffs.
-9. **Phase 14/15 — NER and dense retrieval/reranker**
+7. **Phase 14/15 — NER and dense retrieval/reranker**
    - Only after rule baseline and evaluator are stable.
-10. **Phase 16/17 — End-to-end inference and packaging**
+8. **Phase 16/17 — End-to-end inference and packaging**
    - `run_inference.py`, `run_validate.py`, `make_submission_zip.py`, README rebuild instructions.
 
 ---
@@ -784,10 +922,11 @@ python scripts\run_phase2_smoke.py --config configs\default.yaml --max-files 6
 python scripts\run_phase3_smoke.py --config configs\default.yaml --max-files 6
 python scripts\audit_phase2_phase3.py --config configs\default.yaml --max-unmatched 20
 python scripts\run_phase4_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
+python scripts\run_phase5_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
+python scripts\run_phase6_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
 ```
 
-Then proceed with Phase 5 type resolution implementation.
-Then proceed with Phase 6 assertion detection implementation.
+Then proceed with Phase 7/8 ICD-10 and RxNorm linker wrapper implementation.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -802,7 +941,7 @@ Every resolver/postprocess component should preserve enough provenance to debug 
 
 ## 10. Summary
 
-The repository currently has a solid foundation through Phase 4:
+The repository currently has a solid foundation through Phase 6:
 
 - canonical config/data layout;
 - ICD/RxNorm terminology parsing and sparse retrieval artifacts;
@@ -813,5 +952,7 @@ The repository currently has a solid foundation through Phase 4:
 - Phase 4 smoke validation on 20 golden files with zero offset errors.
 - deterministic Phase 5 type resolution producing provisional `FinalEntity` objects;
 - Phase 5 smoke validation on 20 golden files with zero offset errors.
+- deterministic Phase 6 assertion detection producing asserted `FinalEntity` objects;
+- Phase 6 smoke validation on 20 golden files with zero offset errors.
 
-The next major milestone is to implement Phase 6 assertion detection, assigning negation, historical, and family assertions at mention level while preserving offsets.
+The next major milestone is to implement Phase 7/8 linker wrappers, attaching ICD-10 candidates to `CHẨN_ĐOÁN` entities and RxNorm candidates to `THUỐC` entities while preserving offsets and keeping candidate output conservative.
