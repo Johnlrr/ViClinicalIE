@@ -2,7 +2,12 @@ from __future__ import annotations
 
 import pandas as pd
 
-from src.linking.sparse_retriever import SparseAliasRetriever, build_tfidf_artifacts
+from src.linking.sparse_retriever import (
+    BM25AliasRetriever,
+    SparseAliasRetriever,
+    build_bm25_artifacts,
+    build_tfidf_artifacts,
+)
 
 
 def test_build_tfidf_artifacts_and_query_icd(tmp_path) -> None:
@@ -75,3 +80,77 @@ def test_build_tfidf_artifacts_and_query_rxnorm(tmp_path) -> None:
     assert results
     assert results[0].code == "123"
     assert results[0].terminology == "RXNORM"
+
+
+def test_build_bm25_artifacts_and_query_icd(tmp_path) -> None:
+    aliases = pd.DataFrame(
+        [
+            {
+                "code": "J44.9",
+                "canonical_name_vi": "Bệnh phổi tắc nghẽn mạn tính, không xác định",
+                "canonical_name_en": "Chronic obstructive pulmonary disease, unspecified",
+                "alias": "COPD",
+                "alias_norm": "copd",
+                "alias_no_diacritics": "copd",
+                "alias_source": "manual",
+            },
+            {
+                "code": "A00",
+                "canonical_name_vi": "Bệnh tả",
+                "canonical_name_en": "Cholera",
+                "alias": "cholera",
+                "alias_norm": "cholera",
+                "alias_no_diacritics": "cholera",
+                "alias_source": "disease_name_en",
+            },
+        ]
+    )
+    summary = build_bm25_artifacts(aliases, tmp_path, "icd")
+    retriever = BM25AliasRetriever(
+        aliases,
+        summary["icd_bm25_path"],
+        terminology="ICD10",
+    )
+
+    results = retriever.query("COPD", top_k=1)
+    assert results
+    assert results[0].code == "J44.9"
+
+
+def test_build_bm25_artifacts_and_query_rxnorm_strength(tmp_path) -> None:
+    aliases = pd.DataFrame(
+        [
+            {
+                "rxcui": "ingredient",
+                "tty": "IN",
+                "alias": "metoprolol",
+                "alias_norm": "metoprolol",
+                "alias_no_diacritics": "metoprolol",
+                "alias_source": "rxnorm_str",
+                "strength_value": None,
+                "strength_unit": "",
+                "is_clinical_drug": False,
+            },
+            {
+                "rxcui": "clinical_25",
+                "tty": "SCD",
+                "alias": "metoprolol 25 MG Oral Tablet",
+                "alias_norm": "metoprolol 25 mg oral tablet",
+                "alias_no_diacritics": "metoprolol 25 mg oral tablet",
+                "alias_source": "rxnorm_str",
+                "strength_value": 25.0,
+                "strength_unit": "MG",
+                "is_clinical_drug": True,
+            },
+        ]
+    )
+    summary = build_bm25_artifacts(aliases, tmp_path, "rx")
+    retriever = BM25AliasRetriever(
+        aliases,
+        summary["rx_bm25_path"],
+        terminology="RXNORM",
+    )
+
+    results = retriever.query("metoprolol 25mg", top_k=1)
+    assert results
+    assert results[0].code == "clinical_25"

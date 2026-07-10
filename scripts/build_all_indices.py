@@ -81,6 +81,8 @@ def main() -> int:
     if not args.skip_sparse:
         print(f"icd_tfidf_shape: {summary['icd_tfidf_shape']}")
         print(f"rx_tfidf_shape: {summary['rx_tfidf_shape']}")
+        print(f"icd_bm25_shape: {summary['icd_bm25_shape']}")
+        print(f"rx_bm25_shape: {summary['rx_bm25_shape']}")
     print(f"report_dir: {report_dir}")
     return 0
 

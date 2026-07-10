@@ -13,7 +13,7 @@ import pandas as pd
 from src.config import load_config
 from src.linking.icd10_index import build_icd10_aliases, build_icd10_index, read_icd10_csv
 from src.linking.rxnorm_index import build_rxnorm_aliases, build_rxnorm_index, parse_strength, read_rxnorm_rrf
-from src.linking.sparse_retriever import SparseAliasRetriever
+from src.linking.sparse_retriever import BM25AliasRetriever, SparseAliasRetriever
 
 
 def main() -> int:
@@ -98,6 +98,8 @@ def _check_sparse_retrieval(config) -> None:
         processed / "vector_indices" / "icd_tfidf_matrix.npz",
         processed / "vector_indices" / "rx_tfidf.pkl",
         processed / "vector_indices" / "rx_tfidf_matrix.npz",
+        processed / "vector_indices" / "icd_bm25.pkl",
+        processed / "vector_indices" / "rx_bm25.pkl",
     ]
     missing = [path for path in required if not path.exists()]
     if missing:
@@ -109,6 +111,13 @@ def _check_sparse_retrieval(config) -> None:
     metoprolol = rx.query("metoprolol 25 mg", top_k=3)
     assert metoprolol
     assert any("25" in result.metadata.get("alias", "") for result in metoprolol)
+
+    icd_bm25 = BM25AliasRetriever.from_processed(processed, kind="icd")
+    rx_bm25 = BM25AliasRetriever.from_processed(processed, kind="rx")
+    assert icd_bm25.query("COPD", top_k=1)[0].code == "J44.9"
+    bm25_metoprolol = rx_bm25.query("metoprolol 25 mg", top_k=3)
+    assert bm25_metoprolol
+    assert any("25" in result.metadata.get("alias", "") for result in bm25_metoprolol)
 
 
 if __name__ == "__main__":
