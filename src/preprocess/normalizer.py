@@ -37,14 +37,15 @@ def build_text_views(raw_text: str, config: Mapping[str, Any] | None = None) -> 
         collapse_whitespace=bool(cfg.get("collapse_whitespace", True)),
         no_diacritics=False,
     )
-    # Search is currently the same safe normalized view. Future extractor-level
-    # expansion can add non-offset-mappable variants separately.
+    # Search is accent-insensitive but still one-to-one mappable. Future
+    # extractor-level expansion can add non-offset-mappable abbreviation
+    # variants separately (e.g. ct -> chụp cắt lớp vi tính).
     search, search_to_raw = _build_mapped_view(
         raw_text,
         unicode_form=str(cfg.get("unicode_form", "NFC")),
         lowercase=True,
         collapse_whitespace=bool(cfg.get("collapse_whitespace", True)),
-        no_diacritics=False,
+        no_diacritics=True,
     )
     if bool(cfg.get("build_no_diacritics_view", True)):
         no_diacritics, no_diacritics_to_raw = _build_mapped_view(

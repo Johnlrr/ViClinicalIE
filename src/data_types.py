@@ -49,6 +49,8 @@ class Chunk:
     subsection: str | None = None
     line_id: int | None = None
     bullet_level: int | None = None
+    section_confidence: float = 0.0
+    section_source: str | None = None
 
 
 @dataclass(slots=True)

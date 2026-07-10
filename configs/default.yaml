@@ -1,6 +1,6 @@
 project:
   name: ViClinicalIE
-  phase: phase_2_preprocessing_offset_mapping
+  phase: phase_3_section_detection
 paths_config: paths.yaml
 encoding: utf-8
 seed: 42
@@ -101,4 +101,14 @@ chunking:
     - '^\s*[-*•]\s+'
     - '^\s*\d+[.)]\s+'
     - '^\s*[a-zA-Z][.)]\s+'
+
+section_detection:
+  patterns_config: section_patterns.yaml
+  default_section: UNKNOWN
+  heading_max_chars: 160
+  min_heading_confidence: 0.55
+  carry_forward_section: true
+  detect_inline_headings: true
+  inline_heading_max_prefix_chars: 80
+  carried_confidence: 0.30
 

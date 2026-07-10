@@ -9,6 +9,7 @@ def test_build_text_views_preserves_raw_and_maps_lengths() -> None:
 
     assert views.raw == raw
     assert views.normalized == "bệnh nhân ho sốt"
+    assert views.search == "benh nhan ho sot"
     assert len(views.normalized) == len(views.norm_to_raw)
     assert len(views.search) == len(views.search_to_raw)
     assert len(views.no_diacritics) == len(views.no_diacritics_to_raw)
