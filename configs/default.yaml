@@ -1,6 +1,6 @@
 project:
   name: ViClinicalIE
-  phase: phase_4_span_extraction_baseline
+  phase: phase_5_type_resolution
 paths_config: paths.yaml
 encoding: utf-8
 seed: 42
@@ -134,4 +134,35 @@ extractors:
     max_tail_tokens: 8
   ner:
     enabled: false
+
+type_resolution:
+  enabled: true
+  resolve_exact_span_conflicts: true
+  keep_unresolved: false
+  enable_linkability_features: false
+  source_priority:
+    lab_result_rule: 100
+    lab_rule: 95
+    imaging_rule: 90
+    drug_rule: 85
+    problem_rule: 70
+    dictionary: 60
+    ner: 50
+  type_priority:
+    KẾT_QUẢ_XÉT_NGHIỆM: 100
+    TÊN_XÉT_NGHIỆM: 90
+    THUỐC: 85
+    CHẨN_ĐOÁN: 70
+    TRIỆU_CHỨNG: 65
+  confidence:
+    lab_result_rule: 0.95
+    lab_rule: 0.92
+    imaging_rule: 0.88
+    drug_rule_with_context: 0.90
+    drug_rule_without_context: 0.78
+    problem_disease_head: 0.78
+    problem_symptom_head: 0.78
+    dictionary: 0.70
+    ner_fallback: 0.65
+
 

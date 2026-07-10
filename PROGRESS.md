@@ -1,7 +1,7 @@
 # PROGRESS: ViClinicalIE implementation state
 
 **Last updated:** 2026-07-10  
-**Current implementation phase:** Phase 4 baseline complete — span extraction baseline  
+**Current implementation phase:** Phase 5 complete — deterministic type resolution baseline  
 **Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
 
 ---
@@ -63,8 +63,8 @@ Implemented foundation files include:
     - `VALID_ENTITY_TYPES`
     - `VALID_ASSERTIONS`
 - `configs/default.yaml`
-  - Current `project.phase` is `phase_4_span_extraction_baseline`.
-  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, and Phase 4 extractor enable/threshold config.
+  - Current `project.phase` is `phase_5_type_resolution`.
+  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor enable/threshold config, and Phase 5 type-resolution config.
 - `configs/paths.yaml`
   - Canonical paths for raw input, terminology files, processed indices, golden data, predictions, reports, and submissions.
 
@@ -428,6 +428,112 @@ Known Phase 4 caveats:
 
 ---
 
+## 3.6 Phase 5 — type resolution
+
+**Status:** Implemented and smoke-tested.
+
+Phase 5 converts exact-offset-safe `SpanCandidate` objects from Phase 4 into provisional `FinalEntity` objects. It remains intentionally narrow: it does **not** assign assertions, does **not** call ICD/RxNorm linkers, does **not** perform global overlap merge, and does **not** format final competition JSON.
+
+Implemented files:
+
+- `src/type_resolution/features.py`
+  - `TypeFeatures` deterministic feature dataclass.
+  - Feature builders for source, raw type, section, score, lab/drug/imaging evidence, drug context, symptom heads, disease heads, dictionary symptom evidence, and placeholder linkability scores.
+  - Explicit helper functions:
+    - `build_type_features(...)`
+    - `has_drug_context(...)`
+    - `has_symptom_head(...)`
+    - `has_disease_head(...)`
+- `src/type_resolution/resolver.py`
+  - `TypeResolver` deterministic resolver.
+  - `ResolvedCandidate`, `TypeConflict`, and `TypeOverlap` debug dataclasses.
+  - Exact same-span grouping and single provisional entity selection.
+  - Explicit type priority and source priority.
+  - Same-type exact-span duplicate tracking separate from true type conflicts.
+  - Non-destructive overlap logging for Phase 10 analysis.
+  - Provenance payloads with chosen source, confidence, priorities, type features, warnings, and all exact-span source candidates.
+- `src/type_resolution/__init__.py`
+- `tests/test_type_resolver.py`
+- `scripts/run_phase5_smoke.py`
+  - Runs preprocess → section detection → Phase 4 extractors → Phase 5 resolver.
+  - Prints entity counts, true type conflicts, same-type exact duplicates, overlaps, unresolved count, offset errors, and sample entities/debug records.
+- `configs/default.yaml`
+  - `project.phase: phase_5_type_resolution`.
+  - `type_resolution` config with source priorities, type priorities, confidence defaults, and flags.
+
+Current resolver policy:
+
+1. `lab_result_rule` → `KẾT_QUẢ_XÉT_NGHIỆM`.
+2. `lab_rule` / `imaging_rule` → `TÊN_XÉT_NGHIỆM`.
+3. `drug_rule` → `THUỐC` with lower confidence and `drug_without_context` warning if no medication context is detected.
+4. `dictionary` with valid schema type → its raw type.
+5. `problem_rule` disease-head evidence → `CHẨN_ĐOÁN`.
+6. `problem_rule` symptom-head evidence → `TRIỆU_CHỨNG`.
+7. `ner` fallback if enabled later.
+8. Controlled fallback to valid raw type; otherwise unresolved log entry.
+
+Exact same-span selection sorts by:
+
+1. type priority;
+2. confidence;
+3. original candidate score;
+4. source priority.
+
+Important Phase 5 design choices:
+
+- Phase 5 does not call ICD/RxNorm retrieval and does not let linkability override type decisions.
+- `raw_type` is preserved and can be used as fallback evidence, but high-priority lab/drug evidence is source-driven.
+- Same-type duplicate exact spans are not counted as `TypeConflict`; they are retained in provenance and counted as `duplicate_exact_span_count`.
+- Different-span overlaps are kept in output and logged as `TypeOverlap` for later Phase 10 merge/postprocess work.
+
+Manual validation in the current environment:
+
+```text
+python -m compileall -q src\type_resolution scripts\run_phase5_smoke.py
+manual_type_resolver_tests_passed 10
+```
+
+`pytest` remains unavailable in the active interpreter, so resolver tests were also executed manually by importing each `test_*` function.
+
+Phase 5 smoke on 20 golden input files:
+
+```text
+Phase 5 smoke checks completed.
+files_checked: 20
+chunks_checked: 700
+span_candidates: 667
+final_entities: 610
+candidate_count_by_source: {
+  'dictionary': 134,
+  'drug_rule': 23,
+  'imaging_rule': 55,
+  'lab_result_rule': 5,
+  'lab_rule': 15,
+  'problem_rule': 435
+}
+entities_by_type: {
+  'CHẨN_ĐOÁN': 212,
+  'KẾT_QUẢ_XÉT_NGHIỆM': 5,
+  'THUỐC': 23,
+  'TRIỆU_CHỨNG': 300,
+  'TÊN_XÉT_NGHIỆM': 70
+}
+conflict_count: 0
+duplicate_exact_span_count: 57
+overlap_count: 93
+unresolved_count: 0
+offset_error_count: 0
+```
+
+Known Phase 5 caveats:
+
+- Many Phase 4 problem spans are still over-extended. Phase 5 preserves them because global span selection and trimming belong mostly to Phase 10.
+- Overlap logs show expected cases like dictionary symptom spans contained in longer problem-rule spans.
+- Some Phase 4 false positives remain, e.g. broad drug aliases such as `caffeine`; Phase 5 keeps these with confidence/provenance warnings rather than dropping them prematurely.
+- No assertion detection, ICD/RxNorm linker wrappers, final postprocess merge, or JSON formatter/validator has been implemented yet.
+
+---
+
 ## 4. Validation and command reference
 
 ### 4.1 Commands that passed in this project state
@@ -475,6 +581,19 @@ Manual extractor tests passed by importing and running each `test_*` function be
 manual_tests_passed 11
 ```
 
+Phase 5 validation commands passed:
+
+```cmd
+python -m compileall -q src\type_resolution scripts\run_phase5_smoke.py
+python scripts\run_phase5_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 10
+```
+
+Manual type resolver tests passed by importing and running each `test_*` function because `pytest` is not installed in the active interpreter:
+
+```text
+manual_type_resolver_tests_passed 10
+```
+
 ### 4.2 Pytest status
 
 Attempted command:
@@ -510,10 +629,12 @@ Implemented now:
 - baseline dictionaries and entity rules;
 - Phase 4 smoke script;
 - extractor tests.
+- deterministic Phase 5 type-resolution package under `src/type_resolution/`;
+- Phase 5 smoke script;
+- type resolver tests.
 
 Not implemented yet:
 
-- `src/type_resolution/`
 - `src/assertion/`
 - final `src/linking/icd10_linker.py` / `rxnorm_linker.py` wrappers
 - deterministic reranker module beyond sparse retrieval primitives
@@ -537,7 +658,7 @@ Not implemented yet:
 - Streamlit validation UI beyond placeholder folder:
   - `streamlit_app/.gitkeep` exists, but no app yet.
 
-Current code produces `SpanCandidate` objects, not final `FinalEntity` objects or competition-format `output/{id}.json` predictions.
+Current code can produce Phase 4 `SpanCandidate` objects and Phase 5 provisional `FinalEntity` objects. It still does **not** produce final competition-format `output/{id}.json` predictions.
 
 ---
 
@@ -562,45 +683,60 @@ tests/test_problem_extractor.py
 PROGRESS.md
 ```
 
-Before starting major Phase 5 work, consider:
+Phase 5 added/modified:
+
+```text
+configs/default.yaml
+src/type_resolution/__init__.py
+src/type_resolution/features.py
+src/type_resolution/resolver.py
+scripts/run_phase5_smoke.py
+tests/test_type_resolver.py
+PROGRESS.md
+```
+
+Before starting major Phase 6 work, consider:
 
 1. Install dependencies and run full `pytest`.
-2. Review/commit Phase 4 changes.
-3. Update `README.md` to reflect Phase 1–4 progress.
+2. Review/commit Phase 4–5 changes.
+3. Update `README.md` to reflect Phase 1–5 progress.
 
 ---
 
-## 7. Recommended next work: Phase 5 type resolution
+## 7. Recommended next work: Phase 6 assertion detection
 
-The next implementation target should be **Phase 5 — Type resolution**, following `Implementation Plan.md` section 11.
+The next implementation target should be **Phase 6 — Assertion detection**, following `Implementation Plan.md` section 12.
 
-Goal: convert potentially overlapping/raw extractor candidates into coherent provisional typed entities while preserving offsets and logging conflicts.
+Goal: assign mention-level assertions to Phase 5 `FinalEntity` objects for clinical problem/drug types while preserving offsets and avoiding section-hardcoded behavior.
 
-Recommended Phase 5 deliverables:
+Recommended Phase 6 deliverables:
 
 ```text
-src/type_resolution/
+src/assertion/
   __init__.py
-  features.py
-  resolver.py
-tests/test_type_resolver.py
-scripts/run_phase5_smoke.py
+  context_rules.py
+  negation.py
+  historical.py
+  family.py
+  assertion_detector.py
+tests/test_assertion.py
+scripts/run_phase6_smoke.py
 ```
 
-Initial resolver policy:
+Initial assertion policy:
 
-1. `lab_result_rule` → `KẾT_QUẢ_XÉT_NGHIỆM`.
-2. `lab_rule` / `imaging_rule` → `TÊN_XÉT_NGHIỆM`.
-3. `drug_rule` → `THUỐC`, unless obvious non-medication context indicates otherwise.
-4. `problem_rule` disease-head → `CHẨN_ĐOÁN`.
-5. `problem_rule` symptom-head and symptom dictionary → `TRIỆU_CHỨNG`.
-6. If same span has multiple candidate types, choose by priority and score, then log the conflict.
+1. Apply assertions only to `TRIỆU_CHỨNG`, `CHẨN_ĐOÁN`, and `THUỐC`.
+2. Detect negation with cue + scope, including list scopes.
+3. Detect historical status at mention level using temporal/status cues and current-event overrides.
+4. Detect family assertions with high precision, requiring the family member to be the experiencer rather than only the reporter.
+5. Keep assertion scores/provenance internally for debugging.
 
-Important Phase 5 caveats:
+Important Phase 6 caveats:
 
-- Do not let ICD-linkability automatically convert every symptom into `CHẨN_ĐOÁN`.
-- Do not finalize assertions or candidates yet; those belong to Phase 6–8.
-- Keep `raw_text[start:end] == text` as a hard invariant for all provisional entities.
+- Do not assign assertions to lab/test/result types.
+- Do not make historical decisions from section label alone.
+- Do not mark `isFamily` when a family member is only the observer/reporter.
+- Preserve `raw_text[entity.start:entity.end] == entity.text` for all entities.
 
 ---
 
@@ -651,6 +787,7 @@ python scripts\run_phase4_smoke.py --config configs\default.yaml --max-files 20 
 ```
 
 Then proceed with Phase 5 type resolution implementation.
+Then proceed with Phase 6 assertion detection implementation.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -674,5 +811,7 @@ The repository currently has a solid foundation through Phase 4:
 - section detection with pattern config, carry-forward behavior, smoke tests, and audit reporting.
 - baseline span extraction package with dictionary, drug, lab, imaging, problem, and no-op NER extractors;
 - Phase 4 smoke validation on 20 golden files with zero offset errors.
+- deterministic Phase 5 type resolution producing provisional `FinalEntity` objects;
+- Phase 5 smoke validation on 20 golden files with zero offset errors.
 
-The next major milestone is to implement Phase 5 type resolution, converting `SpanCandidate` objects into coherent provisional typed entities while preserving offsets and logging conflicts.
+The next major milestone is to implement Phase 6 assertion detection, assigning negation, historical, and family assertions at mention level while preserving offsets.
