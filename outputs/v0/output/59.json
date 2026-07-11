@@ -1,5 +1,35 @@
 [
   {
+    "text": "não úng thuỷ khác từ thời kỳ sơ sinh",
+    "position": [
+      388,
+      424
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "đau đầu kéo dài kèm theo mờ mắt",
+    "position": [
+      703,
+      734
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhìn mờ tiến triển trong 2 tuần qua",
+    "position": [
+      772,
+      807
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "phù",
     "position": [
       1192,
@@ -9,6 +39,69 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "đau đầu kéo dài",
+    "position": [
+      1411,
+      1426
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhìn mờ ở cả hai mắt",
+    "position": [
+      1433,
+      1453
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "bên trái nặng hơn bên phải",
+    "position": [
+      1455,
+      1481
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cơn  đau đầu nhiều hơn",
+    "position": [
+      1489,
+      1511
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tiến triển trong 2 tuần qua",
+    "position": [
+      1552,
+      1579
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "bên trái nặng hơn bên phải",
+    "position": [
+      1581,
+      1607
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhiều hơn",
+    "position": [
+      1623,
+      1632
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "phù",
@@ -27,5 +120,25 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "Tăng nhãn áp so với chụp cắt lớp vi tính (ct) đầu từ [Date] (từ lần nhập viện trước)",
+    "position": [
+      1987,
+      2071
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Phù gai thị (theo báo cáo của bác sĩ nhãn khoa)",
+    "position": [
+      2078,
+      2125
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
   }
 ]

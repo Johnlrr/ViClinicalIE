@@ -12,6 +12,18 @@
     "candidates": []
   },
   {
+    "text": "fulvestrant",
+    "position": [
+      114,
+      125
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "đau bụng vùng hạ sườn phải ngày càng tăng",
     "position": [
       181,
@@ -100,5 +112,70 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "130/76 mmHg",
+    "position": [
+      656,
+      667
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "93 l/p",
+    "position": [
+      674,
+      680
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "36.3 độ C",
+    "position": [
+      692,
+      701
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "14 l/p",
+    "position": [
+      712,
+      718
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "99 %",
+    "position": [
+      726,
+      730
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "compazine",
+    "position": [
+      764,
+      773
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "lorazepam",
+    "position": [
+      829,
+      838
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
   }
 ]

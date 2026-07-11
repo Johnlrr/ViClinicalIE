@@ -90,10 +90,37 @@
     "assertions": []
   },
   {
+    "text": "yếu sức",
+    "position": [
+      841,
+      848
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "khó thở khi gắng sức",
     "position": [
       851,
       871
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ngứa toàn thân",
+    "position": [
+      874,
+      888
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Vài lần tiểu ra máu không đau",
+    "position": [
+      891,
+      920
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -142,6 +169,69 @@
     "candidates": []
   },
   {
+    "text": "làm hỏng dạ dày của cô ấy bằng cách uống 2 chai thuốc an thần trong quá khứ",
+    "position": [
+      1205,
+      1280
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ast 421",
+    "position": [
+      1349,
+      1356
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "alt 336",
+    "position": [
+      1358,
+      1365
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "alp 185",
+    "position": [
+      1367,
+      1374
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "bilirubin toàn phần 0.9",
+    "position": [
+      1376,
+      1399
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "âm tính siêu âm bụng có doppler",
+    "position": [
+      1402,
+      1433
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "âm tính chụp hida",
+    "position": [
+      1436,
+      1453
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "acetaminophen",
     "position": [
       1485,
@@ -154,6 +244,24 @@
     "candidates": []
   },
   {
+    "text": "Chưa từng dùng nac",
+    "position": [
+      1501,
+      1519
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Chuyển tạm thời để thực hiện ercp",
+    "position": [
+      1522,
+      1555
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       1614,
@@ -163,6 +271,24 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "Chuyển lại bệnh viện OSH và được cho là đã tống ra một viên sỏi mật",
+    "position": [
+      1634,
+      1701
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tăng bilirubin máu và tăng men gan kéo dài",
+    "position": [
+      1739,
+      1781
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "ast",
@@ -201,6 +327,15 @@
     "assertions": []
   },
   {
+    "text": "alp 185",
+    "position": [
+      1850,
+      1857
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
     "text": "bilirubin",
     "position": [
       1860,
@@ -217,5 +352,97 @@
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
     "assertions": []
+  },
+  {
+    "text": "total bili bắt đầu tăng lên đạt đỉnh 6.7",
+    "position": [
+      1886,
+      1926
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "bảng xét nghiệm viêm gan virus là âm tính",
+    "position": [
+      1929,
+      1970
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "ferritin là bình thường",
+    "position": [
+      1973,
+      1996
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "k",
+    "position": [
+      2026,
+      2027
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "đang chờ",
+    "position": [
+      2034,
+      2042
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "siêu âm bụng có doppler âm tính âm tính",
+    "position": [
+      2106,
+      2145
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "âm tính chụp hida",
+    "position": [
+      2148,
+      2165
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "ercp cho thấy túi mật giãn nở rõ rệt túi mật giãn nhưng không có sỏi hoặc bệnh lý giải phẫu bệnh khác",
+    "position": [
+      2168,
+      2269
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "tăng men gan",
+    "position": [
+      2327,
+      2339
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "tăng bilirubin máu",
+    "position": [
+      2342,
+      2360
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
   }
 ]

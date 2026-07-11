@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "text": "đau vùng hạ sườn phải",
+    "position": [
+      156,
+      177
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "siêu âm cho thấy sỏi mật",
+    "position": [
+      220,
+      244
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ",
+    "position": [
+      251,
+      328
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "siêu âm cho thấy sỏi mật",
+    "position": [
+      389,
+      413
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  }
+]

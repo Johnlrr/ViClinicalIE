@@ -12,6 +12,15 @@
     "candidates": []
   },
   {
+    "text": "Đêm trước khi nhập viện",
+    "position": [
+      351,
+      374
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "sốt",
     "position": [
       413,
@@ -34,6 +43,34 @@
     "position": [
       493,
       496
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện",
+    "position": [
+      548,
+      607
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Augmentin",
+    "position": [
+      630,
+      639
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện",
+    "position": [
+      672,
+      728
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []

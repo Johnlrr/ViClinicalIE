@@ -1,10 +1,10 @@
 # Validation V0
 
 Status: PASS
-Total entities: 854
-By type: {'THUỐC': 69, 'TRIỆU_CHỨNG': 508, 'CHẨN_ĐOÁN': 181, 'TÊN_XÉT_NGHIỆM': 49, 'KẾT_QUẢ_XÉT_NGHIỆM': 47}
-By assertion: {'isHistorical': 175, 'isNegated': 142, 'isFamily': 3}
-Empty files: ['6', '15', '25', '29', '57', '62', '67', '79', '80', '81', '89', '90', '92']
+Total entities: 1998
+By type: {'THUỐC': 206, 'TRIỆU_CHỨNG': 1110, 'CHẨN_ĐOÁN': 354, 'TÊN_XÉT_NGHIỆM': 250, 'KẾT_QUẢ_XÉT_NGHIỆM': 78}
+By assertion: {'isHistorical': 351, 'isNegated': 175, 'isFamily': 4}
+Empty files: []
 
 ## Error Counts
 

@@ -72,6 +72,15 @@
     "assertions": []
   },
   {
+    "text": "cảm giác thắt chặt ngực vùng trước tim (khởi phát lúc 17 giờ)",
+    "position": [
+      714,
+      775
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "đánh trống ngực",
     "position": [
       787,
@@ -135,6 +144,15 @@
     "assertions": []
   },
   {
+    "text": "Nhẹ",
+    "position": [
+      1130,
+      1133
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "đánh trống ngực",
     "position": [
       1149,
@@ -153,6 +171,42 @@
     "assertions": []
   },
   {
+    "text": "Trung tâm",
+    "position": [
+      1242,
+      1251
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khởi phát lúc 17 giờ",
+    "position": [
+      1253,
+      1273
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "kéo dài 20 giây",
+    "position": [
+      1275,
+      1290
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không có khó chịu vùng ngực khi đến tầng",
+    "position": [
+      1292,
+      1332
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "khó thở",
     "position": [
       1339,
@@ -166,6 +220,24 @@
     "position": [
       1362,
       1377
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khởi phát lúc 17 giờ",
+    "position": [
+      1379,
+      1399
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "kéo dài 20 giây",
+    "position": [
+      1401,
+      1416
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -204,6 +276,15 @@
     ]
   },
   {
+    "text": "monitor holter cho thấy Nhịp xoang chiếm ưu thế. Ghi nhận ngoại tâm thu nhĩ và ngoại tâm thu thất xuất hiện thường xuyên",
+    "position": [
+      1631,
+      1751
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "metoprolol 25mg po bid",
     "position": [
       1772,
@@ -224,6 +305,33 @@
       "isHistorical"
     ],
     "candidates": []
+  },
+  {
+    "text": "Ngày hôm nay khoảng Lúc 17 giờ",
+    "position": [
+      1975,
+      2005
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khi đang mang đồ tạp hóa ra xe",
+    "position": [
+      2008,
+      2038
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "xuất hiện cảm giác thắt chặt ngực vùng trước tim",
+    "position": [
+      2040,
+      2088
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "đánh trống ngực",
@@ -261,5 +369,73 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "VS98.3 12987 56 18 99RA",
+    "position": [
+      2482,
+      2505
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Khi được chuyển vào khoa điều trị",
+    "position": [
+      2512,
+      2545
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "bệnh nhân không còn cảm giáckhó chịu vùng ngực",
+    "position": [
+      2547,
+      2593
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "phân tích nước tiểu không có gì đáng chú ý",
+    "position": [
+      2618,
+      2660
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chụp x-quang ngực không có gì đáng chú ý",
+    "position": [
+      2693,
+      2733
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "điện tâm đồ là không ghi nhận gì bất thường",
+    "position": [
+      2771,
+      2814
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "monitor holter cho thấy Nhịp xoang chiếm ưu thế. Ghi nhận ngoại tâm thu nhĩ và ngoại tâm thu thất xuất hiện thường xuyên",
+    "position": [
+      2821,
+      2941
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
   }
 ]

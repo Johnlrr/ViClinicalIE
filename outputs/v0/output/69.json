@@ -33,10 +33,48 @@
     "assertions": []
   },
   {
+    "text": "guaiac",
+    "position": [
+      268,
+      274
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "mệt mỏi",
     "position": [
       322,
       329
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "thiếu máu",
+    "position": [
+      336,
+      345
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "guaiac",
+    "position": [
+      360,
+      366
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Nội soi đại tràng sau xuất viện cho thấy một khối ở chỗ uốn gan",
+    "position": [
+      421,
+      484
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -52,6 +90,25 @@
     "candidates": []
   },
   {
+    "text": "thiếu máu",
+    "position": [
+      597,
+      606
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "khối ở chỗ uốn gan",
+    "position": [
+      824,
+      842
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "ung thư",
     "position": [
       849,
@@ -59,6 +116,18 @@
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "tiền sử khối u thận",
+    "position": [
+      893,
+      912
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
     "candidates": []
   },
   {

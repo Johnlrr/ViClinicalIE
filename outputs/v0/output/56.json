@@ -48,6 +48,33 @@
     "candidates": []
   },
   {
+    "text": "xét nghiệm gắng sức bất thường",
+    "position": [
+      172,
+      202
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Hôm qua",
+    "position": [
+      236,
+      243
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khó chịu vùng ngực gián đoạn",
+    "position": [
+      294,
+      322
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "chóng mặt",
     "position": [
       325,
@@ -75,10 +102,37 @@
     "assertions": []
   },
   {
+    "text": "đổ mồ hôi",
+    "position": [
+      357,
+      366
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Không rõ",
+    "position": [
+      515,
+      523
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "Ho",
     "position": [
       552,
       554
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Nghỉ ngơi",
+    "position": [
+      598,
+      607
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -97,6 +151,15 @@
     "position": [
       648,
       655
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "xét nghiệm gắng sức bất thường",
+    "position": [
+      700,
+      730
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []

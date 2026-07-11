@@ -30,6 +30,26 @@ TARGET_ENTITY_TYPES = {
     ENTITY_SYMPTOM,
 }
 
+# Reliability tiers (Section 5 of 2_dictionary_rules.md)
+RELIABILITY_EXACT_CURATED_ALIAS = "exact_curated_alias"
+RELIABILITY_SPECIALIZED_PARSER = "specialized_parser"
+RELIABILITY_SEMANTIC_NER = "semantic_ner"
+RELIABILITY_STRUCTURED_PATTERN = "structured_pattern"
+RELIABILITY_CONTEXTUAL_DICTIONARY = "contextual_dictionary_match"
+RELIABILITY_SUBSTRING_MATCH = "substring_match"
+RELIABILITY_STRUCTURAL_FALLBACK = "structural_fallback"
+
+# Rule IDs for trace metadata
+RULE_DIAGNOSIS_DICTIONARY = "diagnosis_dictionary_context_match"
+RULE_SYMPTOM_DICTIONARY = "symptom_dictionary_context_match"
+RULE_DRUG_BASELINE = "drug_dictionary_baseline"
+RULE_DRUG_PATTERN = "drug_structured_pattern"
+RULE_LAB_BASELINE = "lab_dictionary_baseline"
+RULE_LAB_PATTERN = "lab_value_pattern"
+RULE_STRUCTURAL_BULLET = "structural_bullet_harvest"
+RULE_STRUCTURAL_KEY_VALUE = "structural_key_value_harvest"
+RULE_NON_TARGET = "non_target_rejection"
+
 LAB_SUBSECTIONS = {"LAB_RESULT_SECTION"}
 DRUG_SUBSECTIONS = {"MEDICATION_HISTORY", "MEDICATION_ADMINISTERED"}
 DIAGNOSIS_SUBSECTIONS = {
@@ -176,6 +196,35 @@ def is_word_boundary(raw_text: str, start: int, end: int) -> bool:
     return True
 
 
+def _make_rule_trace(
+    rule_id: str,
+    reliability_tier: str,
+    dictionary_term: str,
+    raw_span: Tuple[int, int],
+    context_role: Optional[str] = None,
+    evidence: Optional[List[str]] = None,
+    normalized_span: Optional[Tuple[int, int]] = None,
+) -> str:
+    """Build a JSON trace string for Dictionary/Rules candidate notes.
+
+    Follows Section 12 of ``2_dictionary_rules.md`` — provides structured
+    trace metadata analogous to ``DrugParseTrace`` / ``LabParseTrace``.
+    """
+    trace: Dict[str, object] = {
+        "rule_id": rule_id,
+        "reliability_tier": reliability_tier,
+        "dictionary_term": dictionary_term,
+        "raw_span": [raw_span[0], raw_span[1]],
+    }
+    if context_role is not None:
+        trace["context_role"] = context_role
+    if evidence is not None:
+        trace["evidence"] = evidence
+    if normalized_span is not None:
+        trace["normalized_span"] = [normalized_span[0], normalized_span[1]]
+    return json.dumps(trace, ensure_ascii=False, sort_keys=True)
+
+
 def make_candidate(
     doc: ClinicalDocument,
     line: Line,
@@ -186,8 +235,18 @@ def make_candidate(
     confidence: float,
     should_output: bool = True,
     reject_reason: Optional[str] = None,
+    *,
+    rule_id: Optional[str] = None,
+    reliability_tier: Optional[str] = None,
+    dictionary_term: Optional[str] = None,
+    evidence: Optional[List[str]] = None,
 ) -> Optional[SpanCandidate]:
-    """Create a validated SpanCandidate from raw offsets."""
+    """Create a validated SpanCandidate from raw offsets.
+
+    When *rule_id* is provided, a JSON trace is written to ``notes`` so
+    the resolver / merge layer can distinguish reliability tiers and
+    source types (Section 5, 12 of ``2_dictionary_rules.md``).
+    """
     start, end = trim_span(doc.raw_text, start, end)
     if start >= end:
         return None
@@ -197,6 +256,21 @@ def make_candidate(
         return None
 
     left_context, right_context = line_context(line)
+
+    # Build trace notes when rule_id is supplied.
+    notes = ""
+    if rule_id is not None and reliability_tier is not None:
+        raw_span = (start, end)
+        term = dictionary_term or text
+        notes = _make_rule_trace(
+            rule_id=rule_id,
+            reliability_tier=reliability_tier,
+            dictionary_term=term,
+            raw_span=raw_span,
+            context_role=f"{line.section_type}/{line.subsection_type}" if line.subsection_type else line.section_type,
+            evidence=evidence,
+        )
+
     return SpanCandidate(
         file_id=doc.file_id,
         text=text,
@@ -214,6 +288,7 @@ def make_candidate(
         should_output=should_output,
         span_status="candidate" if should_output else "rejected",
         reject_reason=reject_reason,
+        notes=notes,
     )
 
 
@@ -325,6 +400,10 @@ def extract_lab_candidates(doc: ClinicalDocument, lab_terms: Sequence[str]) -> L
                     ENTITY_LAB_NAME,
                     ["lab_regex", "lab_dictionary"],
                     0.86,
+                    rule_id=RULE_LAB_BASELINE,
+                    reliability_tier=RELIABILITY_EXACT_CURATED_ALIAS if in_lab_context else RELIABILITY_SUBSTRING_MATCH,
+                    dictionary_term=term,
+                    evidence=["lab_dictionary", "lab_regex"],
                 )
                 value_candidate = make_candidate(
                     doc,
@@ -334,6 +413,10 @@ def extract_lab_candidates(doc: ClinicalDocument, lab_terms: Sequence[str]) -> L
                     ENTITY_LAB_RESULT,
                     ["lab_regex"],
                     0.84,
+                    rule_id=RULE_LAB_PATTERN,
+                    reliability_tier=RELIABILITY_STRUCTURED_PATTERN,
+                    dictionary_term="VALUE_PATTERN",
+                    evidence=["lab_regex", "value_pattern"],
                 )
                 if test_candidate:
                     candidates.append(test_candidate)
@@ -353,6 +436,12 @@ def extract_drug_candidates(doc: ClinicalDocument, drug_terms: Sequence[str]) ->
                 continue
             span_start, span_end = extend_drug_span(doc.raw_text, raw_start, raw_end, line.end)
             confidence = 0.90 if line.subsection_type in DRUG_SUBSECTIONS else 0.78
+            has_context = line.subsection_type in DRUG_SUBSECTIONS
+            tier = RELIABILITY_CONTEXTUAL_DICTIONARY if has_context else RELIABILITY_EXACT_CURATED_ALIAS
+            evidence = ["drug_dictionary", "dose_parser"]
+            if has_context:
+                evidence.append("drug_context_section")
+
             candidate = make_candidate(
                 doc,
                 line,
@@ -361,6 +450,10 @@ def extract_drug_candidates(doc: ClinicalDocument, drug_terms: Sequence[str]) ->
                 ENTITY_DRUG,
                 ["drug_dictionary", "dose_parser"],
                 confidence,
+                rule_id=RULE_DRUG_BASELINE,
+                reliability_tier=tier,
+                dictionary_term=term,
+                evidence=evidence,
             )
             if candidate:
                 candidates.append(candidate)
@@ -385,6 +478,10 @@ def reject_non_target_candidates(doc: ClinicalDocument, non_target_terms: Sequen
                 0.95,
                 should_output=False,
                 reject_reason="procedure_or_imaging_method",
+                rule_id=RULE_NON_TARGET,
+                reliability_tier=RELIABILITY_EXACT_CURATED_ALIAS,
+                dictionary_term=term,
+                evidence=["non_target_dictionary"],
             )
             if candidate:
                 candidates.append(candidate)
@@ -434,6 +531,12 @@ def extract_diagnosis_candidates(
             if not strong_context and line.line_kind not in {"bullet", "key_value"}:
                 continue
 
+            tier = RELIABILITY_CONTEXTUAL_DICTIONARY if strong_context else RELIABILITY_EXACT_CURATED_ALIAS
+            conf = 0.86 if strong_context else 0.72
+            evidence = ["diagnosis_dictionary", "section_rule"]
+            if strong_context:
+                evidence.append("diagnosis_context")
+
             candidate = make_candidate(
                 doc,
                 line,
@@ -441,7 +544,11 @@ def extract_diagnosis_candidates(
                 raw_end,
                 ENTITY_DIAGNOSIS,
                 ["diagnosis_dictionary", "section_rule"],
-                0.86 if strong_context else 0.72,
+                conf,
+                rule_id=RULE_DIAGNOSIS_DICTIONARY,
+                reliability_tier=tier,
+                dictionary_term=term,
+                evidence=evidence,
             )
             if candidate:
                 candidates.append(candidate)
@@ -474,6 +581,12 @@ def extract_symptom_candidates(doc: ClinicalDocument, symptom_terms: Sequence[st
             if not in_symptom_context and line.section_type != "CURRENT_HISTORY":
                 continue
             span_start, span_end = expand_symptom_span(doc.raw_text, raw_start, raw_end, line)
+            tier = RELIABILITY_CONTEXTUAL_DICTIONARY if in_symptom_context else RELIABILITY_EXACT_CURATED_ALIAS
+            conf = 0.84 if in_symptom_context else 0.70
+            evidence = ["symptom_dictionary", "section_rule"]
+            if in_symptom_context:
+                evidence.append("symptom_context")
+
             candidate = make_candidate(
                 doc,
                 line,
@@ -481,7 +594,11 @@ def extract_symptom_candidates(doc: ClinicalDocument, symptom_terms: Sequence[st
                 span_end,
                 ENTITY_SYMPTOM,
                 ["symptom_dictionary", "section_rule"],
-                0.84 if in_symptom_context else 0.70,
+                conf,
+                rule_id=RULE_SYMPTOM_DICTIONARY,
+                reliability_tier=tier,
+                dictionary_term=term,
+                evidence=evidence,
             )
             if candidate:
                 candidates.append(candidate)
@@ -592,6 +709,14 @@ def make_structural_candidate(
         return None
 
     left_context, right_context = line_context(line)
+    notes = _make_rule_trace(
+        rule_id=RULE_STRUCTURAL_BULLET if line.line_kind == "bullet" else RULE_STRUCTURAL_KEY_VALUE,
+        reliability_tier=RELIABILITY_STRUCTURAL_FALLBACK,
+        dictionary_term=text,
+        raw_span=(start, end),
+        context_role=f"{line.section_type}/{line.subsection_type}" if line.subsection_type else line.section_type,
+        evidence=["structural_fallback"],
+    )
     return SpanCandidate(
         file_id=doc.file_id,
         text=text,
@@ -608,6 +733,7 @@ def make_structural_candidate(
         confidence=STRUCTURAL_CONFIDENCE,
         should_output=True,
         span_status="candidate",
+        notes=notes,
     )
 
 

@@ -1,9 +1,54 @@
 [
   {
+    "text": "Tái khám vì đau đầu gối phải",
+    "position": [
+      190,
+      218
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cách đây vài tháng",
+    "position": [
+      282,
+      300
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Không ghi rõ",
+    "position": [
+      365,
+      377
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       536,
       538
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Không ghi rõ",
+    "position": [
+      570,
+      582
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau đầu gối phải",
+    "position": [
+      609,
+      625
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -15,6 +60,24 @@
       846
     ],
     "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "x-quang vào thời điểm đó cho thấy những thay đổi thoái hóa nghiêm trọng của khớp bánh chè đùi phải",
+    "position": [
+      1043,
+      1141
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chụp cắt lớp vi tính kể từ lần khám cuối cùng cho thấy góc tăng lên",
+    "position": [
+      1148,
+      1215
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

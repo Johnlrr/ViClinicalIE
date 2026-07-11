@@ -1,5 +1,23 @@
 [
   {
+    "text": "Khối sa âm đạo gây khó chịu",
+    "position": [
+      53,
+      80
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "được bác sĩ giới thiệu khám chuyên khoa",
+    "position": [
+      82,
+      121
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "tiểu buốt",
     "position": [
       373,
@@ -90,10 +108,73 @@
     "assertions": []
   },
   {
+    "text": "bệnh nhân được khám  niệu sản khoa khoảng năm trước",
+    "position": [
+      826,
+      877
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Vòng pessary bị rơi ra",
+    "position": [
+      934,
+      956
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Không tái khám để đánh giá thêm",
+    "position": [
+      960,
+      991
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Thỉnh thoảng tự đẩy khối lồi âm đạo vào bên trong âm đạo",
+    "position": [
+      995,
+      1051
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       1077,
       1079
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Không sử dụng băng vệ tinh",
+    "position": [
+      1102,
+      1128
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không đau khi đi tiểu",
+    "position": [
+      1132,
+      1153
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Phủ nhận tiểu máu",
+    "position": [
+      1157,
+      1174
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -109,6 +190,26 @@
       "isNegated"
     ],
     "candidates": []
+  },
+  {
+    "text": "vị trí không xác định",
+    "position": [
+      1213,
+      1234
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "không sỏi thận",
+    "position": [
+      1238,
+      1252
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "viêm bể thận",

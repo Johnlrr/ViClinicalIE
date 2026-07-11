@@ -17,5 +17,50 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "triệu chứng trào ngược",
+    "position": [
+      528,
+      550
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Kêt quả không cho thấy thoát vị hoành cách đây một năm",
+    "position": [
+      615,
+      669
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Phát hiện có một thoát vị cạnh thực quản khá lớn",
+    "position": [
+      677,
+      725
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực",
+    "position": [
+      733,
+      814
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường",
+    "position": [
+      822,
+      877
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
   }
 ]

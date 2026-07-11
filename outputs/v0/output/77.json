@@ -1,5 +1,123 @@
 [
   {
+    "text": "Rối loạn cảm xúc",
+    "position": [
+      195,
+      211
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Rối loạn lưỡng cực",
+    "position": [
+      219,
+      237
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "rối loạn lo âu",
+    "position": [
+      244,
+      258
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Thuốc kê đơn (tên không được chỉ định)",
+    "position": [
+      315,
+      353
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "klonopinclonidine (được kê đơn)",
+    "position": [
+      360,
+      391
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "clonidine",
+    "position": [
+      398,
+      407
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "suboxone",
+    "position": [
+      435,
+      443
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "không dùng đều 5-6 ngày",
+    "position": [
+      468,
+      491
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "dừng thuốc trước nhập viện 01 ngày",
+    "position": [
+      493,
+      527
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isNegated",
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "i ý định tự tử và ý nghĩ tự bắn vào đầu",
+    "position": [
+      658,
+      697
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       821,
@@ -9,10 +127,79 @@
     "assertions": []
   },
   {
+    "text": "suboxone",
+    "position": [
+      957,
+      965
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isNegated"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "suboxone",
+    "position": [
+      1000,
+      1008
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isNegated"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "ý nghĩ tự tử",
+    "position": [
+      1057,
+      1069
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "có nghĩ tự bắn vào đầu",
+    "position": [
+      1071,
+      1093
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "lo âu",
+    "position": [
+      1100,
+      1105
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       1106,
       1108
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "hoang tưởng như đang chiếm khí oxy của người khác",
+    "position": [
+      1121,
+      1170
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Hiện đang được chăm sóc tâm thần bởi bác sĩ",
+    "position": [
+      1187,
+      1230
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []

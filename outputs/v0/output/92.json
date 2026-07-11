@@ -1,1 +1,94 @@
-[]
+[
+  {
+    "text": "theo dõi đại tràng giãn",
+    "position": [
+      129,
+      152
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "k",
+    "position": [
+      190,
+      191
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "tăng",
+    "position": [
+      243,
+      247
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp",
+    "position": [
+      292,
+      357
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "vào viện",
+    "position": [
+      360,
+      368
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "K",
+    "position": [
+      452,
+      453
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Bạch cầu",
+    "position": [
+      472,
+      480
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "tăng",
+    "position": [
+      481,
+      485
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chụp ctchưa phát hiện bất thường trên phim chụp",
+    "position": [
+      518,
+      565
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Theo dõi đại tràng giãn",
+    "position": [
+      589,
+      612
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  }
+]

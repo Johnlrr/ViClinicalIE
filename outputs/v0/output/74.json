@@ -1,5 +1,17 @@
 [
   {
+    "text": "cipro",
+    "position": [
+      165,
+      170
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "bactrim",
     "position": [
       177,
@@ -28,6 +40,15 @@
     "position": [
       360,
       368
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "7 ngày",
+    "position": [
+      411,
+      417
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -63,12 +84,58 @@
     "assertions": []
   },
   {
+    "text": "ớn lạnh",
+    "position": [
+      720,
+      727
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khó chịu khi đi tiểu",
+    "position": [
+      734,
+      754
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khó chịu khi đại tiện",
+    "position": [
+      761,
+      782
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "nhiễm khuẩn đường tiết niệu",
     "position": [
       895,
       922
     ],
     "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Đi khám lại bác sĩ chăm sóc chính vào hôm qua",
+    "position": [
+      952,
+      997
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cipro",
+    "position": [
+      1012,
+      1017
+    ],
+    "type": "THUỐC",
     "assertions": [],
     "candidates": []
   },
@@ -83,10 +150,57 @@
     "candidates": []
   },
   {
+    "text": "đau tiến triển và lan vào sườn trái và LLQ",
+    "position": [
+      1075,
+      1117
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau liên tục",
+    "position": [
+      1124,
+      1136
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "lan tỏa ra lưng và có tính chất kéo",
+    "position": [
+      1138,
+      1173
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Đồng ý ớn lạnh và một số khó chịu khi đi tiểu và đại tiện",
+    "position": [
+      1180,
+      1237
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       1268,
       1270
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "đau đớn khi đi tiểu",
+    "position": [
+      1284,
+      1303
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": [
@@ -149,6 +263,48 @@
     ]
   },
   {
+    "text": "VB (chảy máu âm đạo)",
+    "position": [
+      1416,
+      1436
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "khí hư bất thường",
+    "position": [
+      1438,
+      1455
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "thay đổi cân nặng",
+    "position": [
+      1457,
+      1474
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "K",
+    "position": [
+      1507,
+      1508
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
     "text": "công thức máu",
     "position": [
       1527,
@@ -174,5 +330,15 @@
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
     "assertions": []
+  },
+  {
+    "text": "Lo ngại về áp xe",
+    "position": [
+      1757,
+      1773
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
   }
 ]

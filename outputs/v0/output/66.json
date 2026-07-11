@@ -36,6 +36,18 @@
     "candidates": []
   },
   {
+    "text": "không đặc hiệu",
+    "position": [
+      129,
+      143
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "béo phì",
     "position": [
       150,
@@ -60,6 +72,45 @@
     "candidates": []
   },
   {
+    "text": "vị trí không xác định",
+    "position": [
+      237,
+      258
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "đau bàn chân phải",
+    "position": [
+      307,
+      324
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau bàn chân phải",
+    "position": [
+      360,
+      377
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "mất thăng bằng khi đi lại",
+    "position": [
+      384,
+      409
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "viêm bể thận",
     "position": [
       473,
@@ -70,10 +121,47 @@
     "candidates": []
   },
   {
+    "text": "Xuất viện về nhà ngày hôm qua",
+    "position": [
+      509,
+      538
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ertapenem",
+    "position": [
+      587,
+      596
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "ho",
     "position": [
       664,
       666
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cảm thấy tốt hơn",
+    "position": [
+      684,
+      700
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Vẫn cảm thấy không vững khi đứng",
+    "position": [
+      707,
+      739
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -94,6 +182,42 @@
       830
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "tiểu cầu (platelets) 478",
+    "position": [
+      839,
+      863
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "hco3- (bicarbonate) 20",
+    "position": [
+      870,
+      892
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "ag (anion gap) 13",
+    "position": [
+      899,
+      916
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "bun/creatinine (ure/creatinine)",
+    "position": [
+      923,
+      954
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   },
   {
@@ -133,6 +257,15 @@
     "assertions": []
   },
   {
+    "text": "K",
+    "position": [
+      1025,
+      1026
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
     "text": "ua",
     "position": [
       1033,
@@ -148,6 +281,78 @@
       1079
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "bạch cầu",
+    "position": [
+      1080,
+      1088
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "không vi khuẩn",
+    "position": [
+      1090,
+      1104
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "1",
+    "position": [
+      1106,
+      1107
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "âm tính nitrite",
+    "position": [
+      1118,
+      1133
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chụp x-quang ngực cho thấy dòng picc đã đặt",
+    "position": [
+      1190,
+      1233
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "không có quá trình bệnh lý tim phổi cấp tính",
+    "position": [
+      1235,
+      1279
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy",
+    "position": [
+      1286,
+      1358
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
+    "position": [
+      1365,
+      1416
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

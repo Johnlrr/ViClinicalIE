@@ -135,10 +135,58 @@
     "candidates": []
   },
   {
+    "text": "Nhập viện gần đây vì Đã tử vong (dced)",
+    "position": [
+      596,
+      634
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "aspirin 81mg",
     "position": [
       760,
       772
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "clopidogrel",
+    "position": [
+      787,
+      798
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "prasugrel",
+    "position": [
+      800,
+      809
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "clopidogrel",
+    "position": [
+      822,
+      833
     ],
     "type": "THUỐC",
     "assertions": [
@@ -159,10 +207,67 @@
     "candidates": []
   },
   {
+    "text": "lasix 40mg daily",
+    "position": [
+      911,
+      927
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "atorvastatin 80mg daily",
+    "position": [
+      946,
+      969
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "lisinopril 2.5mg daily",
+    "position": [
+      986,
+      1008
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "ranexa 500mg daily",
+    "position": [
+      1025,
+      1043
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "đau ngực",
     "position": [
       1103,
       1111
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Lần cuối",
+    "position": [
+      1149,
+      1157
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -217,5 +322,23 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "tổng trạng thái ổn",
+    "position": [
+      1615,
+      1633
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Ngủ kê cao đầu bằng 2 gối vào ban đêm",
+    "position": [
+      1641,
+      1678
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   }
 ]

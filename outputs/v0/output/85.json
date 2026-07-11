@@ -12,10 +12,34 @@
     "candidates": []
   },
   {
+    "text": "bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành",
+    "position": [
+      86,
+      147
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "suy tim",
     "position": [
       154,
       161
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "bệnh mạch máu ngoại biên",
+    "position": [
+      168,
+      192
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [
@@ -36,10 +60,34 @@
     "candidates": []
   },
   {
+    "text": "Ngưng thở khi ngủ do tắc nghẽn đang dùng BiPAP",
+    "position": [
+      234,
+      280
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "Ung thư",
     "position": [
       287,
       294
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "sau cắt bao quy đầu với bờ diện cắt dương tính",
+    "position": [
+      350,
+      396
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [

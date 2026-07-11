@@ -1,5 +1,17 @@
 [
   {
+    "text": "bệnh mạch máu",
+    "position": [
+      34,
+      47
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "aspirin 325mg",
     "position": [
       75,

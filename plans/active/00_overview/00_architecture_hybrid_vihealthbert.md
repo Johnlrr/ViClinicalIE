@@ -373,6 +373,8 @@ Drug candidate có confidence cao khi đồng thời có nhiều bằng chứng:
 
 ## 6.4 Lab parser
 
+> Trạng thái 2026-07-11: Từ điển metadata hóa v2 đã triển khai và kiểm thử thành công. Parser dùng `LabTermEntry` từ `lab_terms_curated.csv` với `canonical_key`, context gate cho alias mơ hồ (K, Ca, Na, cr, pt, CK...), phân giải overlap (bilirubin toàn phần thắng bilirubin), expanded units (IU/L, ng/L, pmol/L, FL...), và canonical metadata trong `LabParseTrace`. 38/38 tests pass (19 v1 + 19 v2). Chi tiết xem tại [implementation log](../03_rules_parsers/05_lab_parser_update.md).
+
 ### Mục tiêu
 
 Tách riêng:
@@ -406,6 +408,8 @@ Parser cần xử lý:
 ViHealthBERT hỗ trợ nhận tên xét nghiệm trong prose hoặc ngoài dictionary, nhưng parser cục bộ là thành phần chính để xử lý cấu trúc tên-kết quả.
 
 ## 6.5 Dictionary và rule chính xác cao
+
+> Trạng thái 2026-07-11: Dictionary/Rules đã được cập nhật thành candidate/evidence provider thay vì precedence source. Rule extractor hiện ghi `rule_id` và `reliability_tier` vào `SpanCandidate.notes` cho diagnosis/symptom/drug/lab/structural fallback; resolver có thể phân biệt `contextual_dictionary_match`, `exact_curated_alias`, `structured_pattern`, `semantic_ner`, `specialized_parser`, và `structural_fallback`. 14/14 rule extractor tests pass. Chi tiết implementation xem [`../03_rules_parsers/04_dictionary_rules.md`](../03_rules_parsers/04_dictionary_rules.md), Section 18.
 
 Dictionary/rule có ba vai trò:
 
@@ -516,6 +520,8 @@ Ontology evidence là tín hiệu hỗ trợ, không phải hard requirement tuy
 ---
 
 ## 7. Type-aware candidate resolver
+
+> Trạng thái 2026-07-11: baseline source-aware resolver đã triển khai và kiểm thử. Resolver không còn dùng precedence cứng; thay vào đó dùng `SOURCE_RELIABILITY_RANK` và `RELIABILITY_TIER_RANK`, merge exact duplicate cùng `(file_id, start, end, type)`, giữ parser trace khi parser overlap rule baseline, ưu tiên NER hơn dictionary cho symptom/diagnosis, và loại structural fallback khi có parser/NER tốt hơn. 12/12 merge tests pass. Chi tiết xem [`../03_rules_parsers/04_dictionary_rules.md`](../03_rules_parsers/04_dictionary_rules.md), Section 18.3–18.5.
 
 ## 7.1 Mục tiêu
 

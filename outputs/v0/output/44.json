@@ -36,6 +36,18 @@
     "candidates": []
   },
   {
+    "text": "không đặc hiệu",
+    "position": [
+      75,
+      89
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "béo phì",
     "position": [
       92,
@@ -70,6 +82,15 @@
     "position": [
       169,
       177
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "bắt đầu từ tối qua",
+    "position": [
+      211,
+      229
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -156,6 +177,33 @@
     "assertions": []
   },
   {
+    "text": "giảm khả năng quan hệ tình dục với bạn tình",
+    "position": [
+      564,
+      607
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Đau buốt khi đi tiểu",
+    "position": [
+      610,
+      630
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "chán ăn",
+    "position": [
+      633,
+      640
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "nôn từng đợt sau khi ăn",
     "position": [
       643,
@@ -214,10 +262,58 @@
     ]
   },
   {
+    "text": "lasix",
+    "position": [
+      1440,
+      1445
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Bệnh nhân không được chăm sóc y tế thường xuyên trong những tháng gần đây",
+    "position": [
+      1475,
+      1548
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "bác sĩ chăm sóc chính của anh ấy từ trần và anh ấy chưa theo dõi với ai khác",
+    "position": [
+      1550,
+      1626
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "lasix iv",
+    "position": [
+      1720,
+      1728
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "morphine",
     "position": [
       1740,
       1748
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "dilaudid",
+    "position": [
+      1760,
+      1768
     ],
     "type": "THUỐC",
     "assertions": [],
@@ -230,6 +326,46 @@
       1793
     ],
     "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "diltiazem",
+    "position": [
+      1813,
+      1822
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Với ntg khó thở cải thiện nhưng đau ngực vẫn còn",
+    "position": [
+      1854,
+      1902
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Với ntg khó thở cải thiện nhưng đau ngực vẫn còn",
+    "position": [
+      1905,
+      1953
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "nhịp tim cải thiện thành",
+    "position": [
+      1956,
+      1980
+    ],
+    "type": "CHẨN_ĐOÁN",
     "assertions": [],
     "candidates": []
   }

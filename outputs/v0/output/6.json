@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "text": "Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng",
+    "position": [
+      302,
+      365
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tỷ số PSV/EDV > 7",
+    "position": [
+      367,
+      384
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "vận tốc dòng chảy tăng rõ",
+    "position": [
+      386,
+      411
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị",
+    "position": [
+      458,
+      556
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  }
+]

@@ -18,5 +18,23 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "siêu âm tim cho thấy hở van hai lá nặng",
+    "position": [
+      247,
+      286
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Chụp động mạch vành cho thấy không có bệnh động mạch vành",
+    "position": [
+      289,
+      346
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
   }
 ]

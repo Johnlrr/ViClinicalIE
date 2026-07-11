@@ -36,10 +36,31 @@
     "candidates": []
   },
   {
+    "text": "u ác của tuyến tiền liệt điều trị bằng xạ trị cấy hạt",
+    "position": [
+      114,
+      167
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "mệt mỏi",
     "position": [
       387,
       394
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "mất trí nhớ chi tiết",
+    "position": [
+      396,
+      416
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -92,6 +113,33 @@
     "assertions": []
   },
   {
+    "text": "Ăn không ngon miệng",
+    "position": [
+      648,
+      667
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Ngứa da toàn thân nhiều",
+    "position": [
+      674,
+      697
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "mất trí nhớ chi tiết",
+    "position": [
+      704,
+      724
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "khó thở khi gắng sức",
     "position": [
       731,
@@ -116,6 +164,15 @@
       774
     ],
     "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "K",
+    "position": [
+      795,
+      796
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   },
   {

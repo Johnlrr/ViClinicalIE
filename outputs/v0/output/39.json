@@ -9,6 +9,15 @@
     "assertions": []
   },
   {
+    "text": "vài ngày",
+    "position": [
+      86,
+      94
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "đau bụng",
     "position": [
       118,
@@ -22,6 +31,24 @@
     "position": [
       136,
       147
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ớn lạnh",
+    "position": [
+      150,
+      157
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "mất ăn ngon",
+    "position": [
+      160,
+      171
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -78,6 +105,15 @@
     "assertions": []
   },
   {
+    "text": "nhịp tim nhanh",
+    "position": [
+      418,
+      432
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "công thức máu",
     "position": [
       454,
@@ -104,5 +140,14 @@
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
     "candidates": []
+  },
+  {
+    "text": "bất thường điện giải",
+    "position": [
+      491,
+      511
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
   }
 ]

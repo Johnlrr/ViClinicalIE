@@ -1,5 +1,17 @@
 [
   {
+    "text": "methadone",
+    "position": [
+      162,
+      171
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "phù",
     "position": [
       229,
@@ -18,6 +30,15 @@
     "assertions": []
   },
   {
+    "text": "và đau tăng dần khi đi lại",
+    "position": [
+      259,
+      285
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "phù",
     "position": [
       321,
@@ -27,10 +48,46 @@
     "assertions": []
   },
   {
+    "text": "ban đỏ",
+    "position": [
+      339,
+      345
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "RL",
+    "position": [
+      347,
+      349
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "sốt",
     "position": [
       365,
       368
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ớn lạnh",
+    "position": [
+      375,
+      382
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau tăng dần khi đi lại",
+    "position": [
+      389,
+      412
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -52,6 +109,17 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "lơ mơ khi đến tầng và không thể tỉnh táo đủ lâu để cung cấp tiền sử",
+    "position": [
+      713,
+      780
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isHistorical"
+    ]
   },
   {
     "text": "phù",

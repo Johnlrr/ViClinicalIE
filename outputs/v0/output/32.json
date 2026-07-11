@@ -1,5 +1,17 @@
 [
   {
+    "text": "ho Bệnh bạch cầu dòng tủy mãn tính",
+    "position": [
+      43,
+      77
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "Tăng huyết áp",
     "position": [
       80,
@@ -48,10 +60,31 @@
     "candidates": []
   },
   {
+    "text": "không đặc hiệu",
+    "position": [
+      171,
+      185
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "Khó thở",
     "position": [
       222,
       229
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "diễn tiến nặng hơn từ sáng ngày nhập viện",
+    "position": [
+      240,
+      281
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -113,6 +146,16 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "albuterol",
+    "position": [
+      1465,
+      1474
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
   },
   {
     "text": "guaifenesin",

@@ -1,7 +1,7 @@
 # Implementation log — Offset-preserving pre-processing
 
 Ngày thực hiện: 2026-07-10  
-Phạm vi: layer `6.1 Offset-preserving preprocessing` trong `10_7_architecture.md`.
+Phạm vi: layer `6.1 Offset-preserving preprocessing` trong `../00_overview/00_architecture_hybrid_vihealthbert.md`.
 
 ## 1. Mục tiêu đã triển khai
 

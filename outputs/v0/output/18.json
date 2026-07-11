@@ -1,9 +1,42 @@
 [
   {
+    "text": "nữ",
+    "position": [
+      49,
+      51
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+    "position": [
+      53,
+      108
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "đau ngực",
     "position": [
       156,
       164
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cấp tính",
+    "position": [
+      252,
+      260
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -18,6 +51,24 @@
     "assertions": []
   },
   {
+    "text": "đau sau xương ức",
+    "position": [
+      312,
+      328
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau lan ra sau lưng",
+    "position": [
+      335,
+      354
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "đau ngực",
     "position": [
       404,
@@ -25,5 +76,15 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "bóc tách động mạch chủ loại B",
+    "position": [
+      804,
+      833
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
   }
 ]

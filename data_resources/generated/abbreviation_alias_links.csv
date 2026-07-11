@@ -1,0 +1,163 @@
+abbr,gloss,canonical_key,decision
+ABG,khí máu động mạch,khi_mau,accept
+ACE,men chuyển angiotensin,,reject_non_lab
+ACTH,hoóc môn hướng vỏ thượng thận,acth,accept
+ADH,hoóc môn chống lợi tiểu,,reject_non_lab
+AIDS,hội chứng suy giảm miễn dịch mắc phải,,reject_non_lab
+ALT,alanine aminotransferase (tên gọi trước đây là SGPT),,defer_guideline_check
+AST,aspartate aminotransferase (tên gọi trước đây là SGOT),,defer_guideline_check
+ATP,adenosine triphosphate,,reject_non_lab
+BCG,bacille Calmette-Guérin,,reject_non_lab
+bid,2 lần mỗi ngày,,reject_non_lab
+BMR,tốc độ chuyển hóa cơ bản,,reject_non_lab
+BP,huyết áp,,reject_non_lab
+BSA,diện tích bề mặt cơ thể,,reject_non_lab
+BUN,urea nitrogen trong máu,ure,accept
+C,độ C; độ bách phân; bổ thể,,defer_guideline_check
+Ca,can xi,calci,accept
+cAMP,adenosine monophosphate vòng,,reject_non_lab
+CBC,công thức máu,cong_thuc_mau,defer_guideline_check
+cGy,centigray,,reject_unit
+Ci,curie,,reject_non_lab
+CK,creatine kinase,ck,accept
+Cl,clo; clo,clo,accept
+cm,xăng-ti-mét,,reject_unit
+CNS,hệ thần kinh trung ương,,reject_non_lab
+CO2,khí cácbônic,co2,accept
+COPD,bệnh phổi tắc nghẽn mạn tính,,reject_non_lab
+CK,creatine kinase,ck,accept
+CK-MB,isoenzyme creatine kinase dải cơ,ck_mb,accept
+CPR,hồi sức tim phổi,,reject_non_lab
+CSF,dịch não tủy,,defer_guideline_check
+CT,chụp cắt lớp vi tính,,reject_non_lab
+cu,bậc ba,,reject_non_lab
+D,& C nong và nạo,,defer_guideline_check
+dL,đề-xi-lít (= 100 mL),,reject_unit
+DNA,deoxyribonucleic acid,,reject_non_lab
+DTP,bạch hầu uốn ván ho gà (giảm độc lực/vắc xin),,reject_non_lab
+D/W,hoặc D dextrose trong nước,,reject_non_lab
+ECF,dịch ngoại bào,,reject_non_lab
+ECG,điện tâm đồ,,reject_non_lab
+EEG,điện não đồ,,reject_non_lab
+ENT,"tai, mũi và họng",,reject_non_lab
+ERCP,nội soi chụp tụy mật ngược dòng,,reject_non_lab
+ESR,tốc độ máu lắng,mau_lang,accept
+F,Độ F,,reject_non_lab
+FDA,Cục Quản lý Thực phẩm và Dược phẩm Hoa Kỳ,,reject_non_lab
+ft,foot; feet (đo),,reject_non_lab
+FUO,số không rõ nguyên nhân,,reject_non_lab
+g,gram,,reject_unit
+GFR,tốc độ lọc cầu thận,,reject_non_lab
+GI,tiêu hóa,,reject_non_lab
+G6PD,glucose-6-phosphate dehydrogenase,g6pd,accept
+GU,niệu sinh dục,,reject_non_lab
+Gy,gray,,defer_guideline_check
+h,giờ,,reject_unit
+Hb,hemoglobin,hemoglobin,accept
+HCl,acit clohidric; hydrochloride,,reject_non_lab
+HCO3,bicarbonate,bicarbonate,accept
+Hct,hematocrit,hematocrit,accept
+Hg,thủy ngân,,reject_non_lab
+HIV,vi rút gây suy giảm miễn dịch ở người,,reject_non_lab
+HLA,kháng nguyên bạch cầu người,,reject_non_lab
+HMG-CoA,hydroxymethyl glutaryl coenzyme A,,reject_non_lab
+Hz,hertz (chu kì/thứ hai),,reject_non_lab
+ICF,dịch nội bào,,reject_non_lab
+ICU,khoa hồi sức tích cực,,reject_non_lab
+"IgA,","v.v. globin miễn dịch A, v.v.",,defer_guideline_check
+IL,interleukin,,reject_non_lab
+IM,trong cơ,,reject_non_lab
+INR,tỉ lệ chuẩn hóa quốc tế,inr,defer_guideline_check
+IPPB,hô hấp với áp lực dương ngắt quãng,,reject_non_lab
+IU,khoa quốc tế,,reject_unit
+IV,đường tĩnh mạch,,reject_non_lab
+IVU,chụp X-quang hệ tiết niệu bằng đường tĩnh mạch,,reject_non_lab
+K,kali,kali,defer_guideline_check
+kcal,kilo calo (calo từ thức ăn),,reject_non_lab
+kg,ki-lô-gam,,reject_unit
+L,lít,,reject_unit
+lb,pao,,reject_non_lab
+LDH,lactic dehydrogenase,ldh,accept
+M,răng hàm,,reject_non_lab
+m,mét,,reject_non_lab
+MCH,lượng huyết sắc tố trung bình trong một hồng cầu,mch,accept
+MCHC,nồng độ huyết sắc tố trung bình trong một hồng cầu,mchc,accept
+mCi,millicurie,,reject_unit
+MCV,thể tích trung bình hồng cầu,mcv,accept
+mEq,mi-li đương lượng,,reject_unit
+Mg,magiê,,reject_unit
+mg,mi-li-gam,,reject_unit
+MI,nhồi máu cơ tim,,reject_non_lab
+MIC,nồng độ ức chế tối thiểu,,reject_non_lab
+mIU,mi-li đơn vị quốc tế,,reject_unit
+mL,mi-li-lít,,reject_unit
+mm,mi-li-mét,,reject_unit
+mmol,milimol,,reject_unit
+mo,tháng,,reject_non_lab
+mol,wt trọng lượng phân tử,,defer_guideline_check
+mOsm,milliosmole,,reject_non_lab
+MRI,chụp cộng hưởng từ,,reject_non_lab
+N,ni-tơ; bình thường (hàm lượng của dung dịch),,reject_non_lab
+Na,natri,natri,accept
+NaCl,Clorua natri,,reject_non_lab
+ng,nanogram (= mi-li-microgram),,reject_unit
+nm,nanometer (= mi-li-micron),,reject_unit
+nmol,nanomol,,reject_unit
+npo,không được ăn uống gì,,reject_non_lab
+NSAID,thuốc chống viêm không có steroid,,reject_non_lab
+O2,ô-xi,,defer_guideline_check
+OTC,không cần đơn (dược phẩm),,reject_non_lab
+oz,ao-xơ,,reject_non_lab
+P,phốt pho; áp suất/áp lực,,defer_guideline_check
+PAco2,áp lực riêng phần khí CO2 ở phế nang,,reject_non_lab
+PAco2,áp lực riêng phần khí CO2 ở động mạch,,reject_non_lab
+PAo2,áp lực riêng phần khí O2 ở phế nang,,reject_non_lab
+Pao2áp,lực riêng phần khí O2 ở động mạch,,defer_guideline_check
+PAS,nhuộm acid-Schiff định kỳ,,reject_non_lab
+Pco2,áp lực (lực ép) riêng phần khí CO2,,reject_non_lab
+PCR,phản ứng chuỗi polymerase,,reject_non_lab
+PET,chụp cắt lớp phát xạ positron,,reject_non_lab
+pg,picogram (= micromicrogram),,reject_unit
+pH,nồng độ hydrogen ion,ph,accept
+PMN,bạch cầu đa nhân,pmn,accept
+po,đường uống,,reject_non_lab
+Po2,áp lực (lực ép) riêng phần khí ô-xi,,reject_non_lab
+PPD,dẫn xuất protein tinh khiết (tuberculin),,reject_non_lab
+ppm,các phần trong mỗi một triệu,,reject_unit
+prn,khi cần,,reject_non_lab
+PT,thời gian prothrombin,pt,accept
+PTT,thời gian thromboplastin riêng phần,aptt,accept
+q,mỗi,,reject_non_lab
+qid,4 lần mỗi ngày,,reject_non_lab
+RA,viêm khớp dạng thấp,,reject_non_lab
+RBC,hồng cầu,hong_cau,defer_guideline_check
+RNA,ribonucleic acid,,reject_non_lab
+Sao2,độ bão hòa ô-xi động mạch,sao2,accept
+SBE,viêm nội tâm mạc bán cấp do vi khuẩn,,reject_non_lab
+sc,dưới da,,reject_non_lab
+SI,Hệ thống đơn vị quốc tế,,reject_non_lab
+SIDS,hội chứng tử vong đột ngột ở trẻ sơ sinh,,reject_non_lab
+SLE,lupus ban đỏ hệ thống,,reject_non_lab
+soln,dung dịch,,reject_non_lab
+sp,loài (số ít),,reject_non_lab
+spp,loài (số nhiều),,reject_non_lab
+sp,gr trọng lượng riêng,,reject_non_lab
+sq,bình phương,,reject_non_lab
+SSRI,thuốc ức chế tái hấp thu chọn lọc serotonin,,reject_non_lab
+STS,xét nghiệm huyết thanh học về giang mai,,reject_non_lab
+TB,bệnh lao,,reject_non_lab
+qid,3 lần mỗi ngày,,reject_non_lab
+TPN,dinh dưỡng ngoài đường ruột hoàn toàn,,reject_non_lab
+URI,nhiễm trùng đường hô hấp trên,,reject_non_lab
+UTI,nhiễm trùng đường tiểu,,reject_non_lab
+WBC,bạch cầu,bach_cau,defer_guideline_check
+WHO,Tổ chức Y tế Thế giới,,reject_non_lab
+wt,cân nặng,,reject_non_lab
+μ,micro-; micron,,defer_guideline_check
+μ,Ci microcurie,,defer_guideline_check
+μ,g mi-crô-gam,,defer_guideline_check
+μ,L mi-crô-lít,,defer_guideline_check
+μ,m mi-crô-mét (= micron),,defer_guideline_check
+μ,mol micromol,,defer_guideline_check
+μ,Osm micro-osmol,,defer_guideline_check
+m,μ millimicron (= nanometer),,reject_non_lab

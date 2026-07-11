@@ -1,5 +1,29 @@
 [
   {
+    "text": "hội chứng turner",
+    "position": [
+      48,
+      64
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      66,
+      80
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "Tăng huyết áp",
     "position": [
       87,
@@ -78,6 +102,15 @@
     "assertions": []
   },
   {
+    "text": "Cảm giác có đờm ở cổ họng",
+    "position": [
+      470,
+      495
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       511,
@@ -96,6 +129,15 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "Không ớn lạnh",
+    "position": [
+      542,
+      555
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "đau ngực",
@@ -118,6 +160,15 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "Không  thay đổi tính chất cơn đau khi thay đổi tư thế",
+    "position": [
+      603,
+      656
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "khó thở khi gắng sức",
@@ -164,6 +215,34 @@
     ]
   },
   {
+    "text": "Gần đây nhập viện để đánh giá tổng quát về tiêu hóa",
+    "position": [
+      843,
+      894
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đánh giá tổng quát về tiêu hóa vì cảm thấy  khó nuốt",
+    "position": [
+      901,
+      953
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "albuterolipratropium",
+    "position": [
+      1018,
+      1038
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "metoprolol 5mg iv x2",
     "position": [
       1053,
@@ -174,12 +253,42 @@
     "candidates": []
   },
   {
+    "text": "Các chỉ số ban đầu vs là tc 37 độ c hr 88 bp 13482 rr 14 spo2 100ra",
+    "position": [
+      1113,
+      1180
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Bị kích hoạt để hr 140 khoảng một giờ sau khi dùng ống xịt thứ hai",
+    "position": [
+      1187,
+      1253
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "metoprolol",
     "position": [
       1298,
       1308
     ],
     "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Bệnh nhân cho biết  cảm thấy khỏe khi đến phòng khám",
+    "position": [
+      1315,
+      1367
+    ],
+    "type": "CHẨN_ĐOÁN",
     "assertions": [],
     "candidates": []
   }

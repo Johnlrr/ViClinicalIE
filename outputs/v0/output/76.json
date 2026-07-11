@@ -24,12 +24,36 @@
     "candidates": []
   },
   {
+    "text": "bệnh động mạch vành",
+    "position": [
+      91,
+      110
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "Nhồi máu cơ tim",
     "position": [
       118,
       133
     ],
     "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "plavix",
+    "position": [
+      355,
+      361
+    ],
+    "type": "THUỐC",
     "assertions": [
       "isHistorical"
     ],
@@ -45,6 +69,16 @@
     "assertions": []
   },
   {
+    "text": "nitroglycerin",
+    "position": [
+      631,
+      644
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "Đau ngực",
     "position": [
       798,
@@ -54,10 +88,55 @@
     "assertions": []
   },
   {
+    "text": "đau kiểu bóp nghẹt",
+    "position": [
+      828,
+      846
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "lan lên hàm và cánh tay trái",
+    "position": [
+      848,
+      876
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "VAS 7/10",
+    "position": [
+      878,
+      886
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau trong 1.5h liên lục",
+    "position": [
+      888,
+      911
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "khó thở",
     "position": [
       918,
       925
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "vã mồ hôi",
+    "position": [
+      932,
+      941
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -81,6 +160,25 @@
     "assertions": []
   },
   {
+    "text": "tiêu chảy",
+    "position": [
+      973,
+      982
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "heparin",
+    "position": [
+      1006,
+      1013
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "đau ngực",
     "position": [
       1014,
@@ -88,6 +186,16 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "dilaudid 3mg",
+    "position": [
+      1050,
+      1062
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
   },
   {
     "text": "troponin",
@@ -123,6 +231,51 @@
       1136
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "k",
+    "position": [
+      1150,
+      1151
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "kali",
+    "position": [
+      1153,
+      1157
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "5.4",
+    "position": [
+      1162,
+      1165
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "phosphate là 5.6",
+    "position": [
+      1172,
+      1188
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "điện tâm đồ (ekg) là bình thường",
+    "position": [
+      1221,
+      1253
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

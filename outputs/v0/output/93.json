@@ -29,5 +29,17 @@
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
     "candidates": []
+  },
+  {
+    "text": "talc",
+    "position": [
+      368,
+      372
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isNegated"
+    ],
+    "candidates": []
   }
 ]

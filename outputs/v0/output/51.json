@@ -24,6 +24,42 @@
     "candidates": []
   },
   {
+    "text": "5 ngày qua",
+    "position": [
+      163,
+      173
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cảm thấy khó chịu chung",
+    "position": [
+      205,
+      228
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nghẹt mũi nhiều hơn",
+    "position": [
+      235,
+      254
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau đầu bên trái",
+    "position": [
+      261,
+      277
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "mệt mỏi",
     "position": [
       284,
@@ -31,6 +67,62 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "tiêu chảy",
+    "position": [
+      298,
+      307
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "vài tuần tiêu chảy bùng nổ",
+    "position": [
+      350,
+      376
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "vài lần mỗi ngày",
+    "position": [
+      378,
+      394
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "chủ yếu là phân",
+    "position": [
+      396,
+      411
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không thấy  phân đen",
+    "position": [
+      429,
+      449
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhầy",
+    "position": [
+      451,
+      455
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
   },
   {
     "text": "ho",
@@ -42,5 +134,135 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "Khám tại phòng khám vào ngày",
+    "position": [
+      522,
+      550
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "kali",
+    "position": [
+      583,
+      587
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "2.4",
+    "position": [
+      591,
+      594
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Quay lại để làm lại xét nghiệm vào ngày",
+    "position": [
+      644,
+      683
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "kali",
+    "position": [
+      718,
+      722
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "giảm",
+    "position": [
+      727,
+      731
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "azithromycin",
+    "position": [
+      795,
+      807
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "kali",
+    "position": [
+      1032,
+      1036
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "2.4",
+    "position": [
+      1040,
+      1043
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "kali",
+    "position": [
+      1050,
+      1054
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "giảm",
+    "position": [
+      1059,
+      1063
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "kali",
+    "position": [
+      1080,
+      1084
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "2.2",
+    "position": [
+      1094,
+      1097
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "không xác định",
+    "position": [
+      1297,
+      1311
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isFamily"
+    ],
+    "candidates": []
   }
 ]

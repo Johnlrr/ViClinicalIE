@@ -12,6 +12,18 @@
     "candidates": []
   },
   {
+    "text": "hội chứng ruột kích thích",
+    "position": [
+      226,
+      251
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "omeprazole",
     "position": [
       625,
@@ -52,6 +64,15 @@
     "candidates": []
   },
   {
+    "text": "Tiếp tục khó khăn khi ăn uống qua đường miệng",
+    "position": [
+      890,
+      935
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "buồn nôn",
     "position": [
       937,
@@ -71,14 +92,13 @@
     "candidates": []
   },
   {
-    "text": "viêm dạ dày",
+    "text": "Nôn ra máu (2 tuần sau tập viêm dạ dày ruột do virus",
     "position": [
-      1035,
-      1046
+      1008,
+      1060
     ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": [],
-    "candidates": []
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "Nôn ra máu (trong 2 ngày qua",
@@ -118,6 +138,33 @@
     "assertions": []
   },
   {
+    "text": "chẩn đoán hội chứng ruột kích thích",
+    "position": [
+      1267,
+      1302
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "phát hiện loét tá tràng khi nội soi",
+    "position": [
+      1304,
+      1339
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không thể giữ được bất cứ thứ gì",
+    "position": [
+      1362,
+      1394
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "viêm dạ dày",
     "position": [
       1406,
@@ -130,10 +177,28 @@
     "candidates": []
   },
   {
+    "text": "tiếp tục khó khăn khi ăn uống qua đường miệng",
+    "position": [
+      1487,
+      1532
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "buồn nôn",
     "position": [
       1534,
       1542
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tiêu chảy",
+    "position": [
+      1544,
+      1553
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -204,6 +269,42 @@
     "assertions": []
   },
   {
+    "text": "Ăn uống kém",
+    "position": [
+      1911,
+      1922
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nausea",
+    "position": [
+      1930,
+      1936
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "diarrhea",
+    "position": [
+      1943,
+      1951
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "abdominal pain",
+    "position": [
+      1958,
+      1972
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "viêm dạ dày",
     "position": [
       2025,
@@ -212,6 +313,15 @@
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
     "candidates": []
+  },
+  {
+    "text": "Tiếp tục khó khăn khi ăn uống qua đường miệng",
+    "position": [
+      2073,
+      2118
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "buồn nôn",
@@ -317,6 +427,36 @@
       2886
     ],
     "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Viêm thực quản độ C ở thực quản dưới",
+    "position": [
+      3180,
+      3216
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Loét loét thực quản 6 mm có điểm sắc tố",
+    "position": [
+      3223,
+      3262
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Nhiều loét sạch đáy loét ở tá tràng kéo dài từ hành tá tràng đến hồi tràng sớm",
+    "position": [
+      3269,
+      3347
+    ],
+    "type": "CHẨN_ĐOÁN",
     "assertions": [],
     "candidates": []
   }

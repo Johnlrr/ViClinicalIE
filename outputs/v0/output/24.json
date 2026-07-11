@@ -24,10 +24,56 @@
     "candidates": []
   },
   {
+    "text": "sau khi xuất viện",
+    "position": [
+      342,
+      359
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ống dẫn lưu JP được rút vào ngày DD MM",
+    "position": [
+      366,
+      404
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cephalexin",
+    "position": [
+      714,
+      724
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "chóng mặt",
     "position": [
       792,
       801
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật",
+    "position": [
+      938,
+      980
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau khi sờ nắn vùng mổ",
+    "position": [
+      987,
+      1009
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -53,6 +99,33 @@
     ]
   },
   {
+    "text": "hiện tại chưa phát hiện các triệu chứng toàn thân khác",
+    "position": [
+      1048,
+      1102
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ban đỏ ở vị trí phẫu thuật",
+    "position": [
+      1154,
+      1180
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau ấn vùng mổ",
+    "position": [
+      1187,
+      1201
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "sốt",
     "position": [
       1214,
@@ -62,6 +135,15 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "chưa phát hiện các triệu chứng toàn thân khác",
+    "position": [
+      1224,
+      1269
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "vancomycin",

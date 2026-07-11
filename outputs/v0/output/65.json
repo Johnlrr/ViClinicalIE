@@ -1,9 +1,30 @@
 [
   {
+    "text": "chỉ dùng để chống đông máu",
+    "position": [
+      27,
+      53
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "đại tiện ra máu đỏ tươi gián đoạn",
     "position": [
       99,
       132
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "3 ngày",
+    "position": [
+      166,
+      172
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -27,10 +48,55 @@
     "assertions": []
   },
   {
+    "text": "đỏ tươi",
+    "position": [
+      302,
+      309
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "chóng mặt",
     "position": [
       334,
       343
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Bệnh nhân được khám tại phòng cấp cứu",
+    "position": [
+      378,
+      415
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "inr là 2.0",
+    "position": [
+      418,
+      428
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhập viện để đánh giá rối loạn đông máu",
+    "position": [
+      467,
+      506
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhập viện để đánh giá tăng Cr theo phòng cấp cứu",
+    "position": [
+      509,
+      557
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -51,6 +117,15 @@
       616
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "tăng Cr theo phòng cấp cứu",
+    "position": [
+      619,
+      645
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

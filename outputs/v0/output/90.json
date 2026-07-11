@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "text": "giọng khàn do tổn thương dây thanh quản",
+    "position": [
+      37,
+      76
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "giọng khàn",
+    "position": [
+      100,
+      110
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tổn thương dây thanh quản thật sự",
+    "position": [
+      113,
+      146
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  }
+]

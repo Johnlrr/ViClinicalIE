@@ -9,10 +9,28 @@
     "assertions": []
   },
   {
+    "text": "đau quanh vết mổ",
+    "position": [
+      47,
+      63
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "sốt",
     "position": [
       87,
       90
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau quanh vết mổ",
+    "position": [
+      93,
+      109
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []

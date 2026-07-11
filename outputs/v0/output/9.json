@@ -1,11 +1,254 @@
 [
   {
+    "text": "u cơ trơn tử cung",
+    "position": [
+      39,
+      56
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      58,
+      72
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "iron",
+    "position": [
+      104,
+      108
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "đau bụng",
     "position": [
       165,
       173
     ],
     "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "lower abdominal pain",
+    "position": [
+      228,
+      248
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "chảy máu nhiều",
+    "position": [
+      255,
+      269
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "siêu âm được thực hiện vào [Date",
+    "position": [
+      312,
+      344
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "huyết cầu tố là 26.1 vào thời điểm đó",
+    "position": [
+      352,
+      389
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "điều trị bảo tồn",
+    "position": [
+      433,
+      449
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "điều trị nội khoa",
+    "position": [
+      451,
+      468
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "can thiệp x-quang và điều trị ngoại khoa",
+    "position": [
+      470,
+      510
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Bệnh nhân yêu cầu cắt bỏ u xơ tử cung qua đường bụng",
+    "position": [
+      517,
+      569
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Tất cả các giấy tờ đồng ý đã được ký trước khi vào phòng mổ",
+    "position": [
+      576,
+      635
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "K",
+    "position": [
+      668,
+      669
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "26.1",
+    "position": [
+      707,
+      711
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Tử cung đo 14",
+    "position": [
+      792,
+      805
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "2 x 8",
+    "position": [
+      806,
+      811
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "8 x 7",
+    "position": [
+      812,
+      817
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "5 cm",
+    "position": [
+      818,
+      822
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "U cơ trơn lớn nhất ở đoạn dưới của tử cung đo 4",
+    "position": [
+      829,
+      876
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "1 x 4",
+    "position": [
+      877,
+      882
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "8 x 4",
+    "position": [
+      883,
+      888
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "1 cm",
+    "position": [
+      889,
+      893
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Dải nội mạc tử cung không thể xác định được",
+    "position": [
+      900,
+      943
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Cả hai buồng trứng đều có vẻ bình thường",
+    "position": [
+      950,
+      990
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Không thấy dịch tự do trong túi cùng Douglas",
+    "position": [
+      997,
+      1041
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Không có giãn bể thận",
+    "position": [
+      1048,
+      1069
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

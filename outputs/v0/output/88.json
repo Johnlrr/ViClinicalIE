@@ -24,6 +24,42 @@
     "candidates": []
   },
   {
+    "text": "Tăng áp động mạch phổi mức độ trung bình",
+    "position": [
+      143,
+      183
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "U lympho không hodgkin tế bàoB lớn lan toả)",
+    "position": [
+      189,
+      232
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "lasix",
+    "position": [
+      383,
+      388
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "Phù",
     "position": [
       453,
@@ -40,6 +76,26 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "Lasix",
+    "position": [
+      604,
+      609
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "lasix",
+    "position": [
+      664,
+      669
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
   },
   {
     "text": "phù",
@@ -82,6 +138,15 @@
     "position": [
       889,
       891
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Theo dõiLoét bàn chân nhiễm trùng",
+    "position": [
+      930,
+      963
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []

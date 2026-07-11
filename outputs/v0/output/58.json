@@ -1,5 +1,17 @@
 [
   {
+    "text": "bệnh Graves",
+    "position": [
+      48,
+      59
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "tăng lipid máu",
     "position": [
       66,
@@ -10,6 +22,81 @@
       "isHistorical"
     ],
     "candidates": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      82,
+      96
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "yếu sức nửa người bên phải",
+    "position": [
+      150,
+      176
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tình trạng tri giác giảm sút",
+    "position": [
+      183,
+      211
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhìn song thị",
+    "position": [
+      218,
+      231
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khoảng 11:00 sáng",
+    "position": [
+      285,
+      302
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Không ghi rõ",
+    "position": [
+      339,
+      351
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "00 sáng",
+    "position": [
+      423,
+      430
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nằm sải trên sàn",
+    "position": [
+      432,
+      448
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "ho",
@@ -36,10 +123,46 @@
     ]
   },
   {
+    "text": "yếu sức nửa người bên phải",
+    "position": [
+      1378,
+      1404
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tình trạng tri giác giảm sút",
+    "position": [
+      1411,
+      1439
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhìn song thị",
+    "position": [
+      1446,
+      1459
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "mệt mỏi",
     "position": [
       1466,
       1473
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Không ghi rõ",
+    "position": [
+      1730,
+      1742
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -51,6 +174,235 @@
       1779
     ],
     "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Than phiền về yếu sức chân phải",
+    "position": [
+      1861,
+      1892
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Tiến hành chọc dò dịch não tủy",
+    "position": [
+      1951,
+      1981
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Bị nhịp tim chậm nặng và hạ huyết áp",
+    "position": [
+      1989,
+      2025
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      2027,
+      2041
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Cơn bệnh tự khỏi sau khi dùng intravenous fluids",
+    "position": [
+      2049,
+      2097
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Chụp lại chụp ct sọ não",
+    "position": [
+      2105,
+      2128
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "kết quả âm tính",
+    "position": [
+      2130,
+      2145
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Nằm sải trên sàn",
+    "position": [
+      2266,
+      2282
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không thể tự đứng dậy do yếu sức chân phải",
+    "position": [
+      2290,
+      2332
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không thể chịu lực ở chân phải",
+    "position": [
+      2340,
+      2370
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "liên tục khuỵu chân",
+    "position": [
+      2372,
+      2391
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "tỉnh chậm",
+    "position": [
+      2399,
+      2408
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "phản xạ kém",
+    "position": [
+      2410,
+      2421
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "yếu nửa người bên phải",
+    "position": [
+      2479,
+      2501
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "suy giảm tri giác",
+    "position": [
+      2508,
+      2525
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhìn song thị",
+    "position": [
+      2532,
+      2545
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nhịp tim chậm",
+    "position": [
+      2552,
+      2565
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "hạ huyết áp",
+    "position": [
+      2572,
+      2583
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      2585,
+      2599
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không nhấc chân phải khỏi mặt giường",
+    "position": [
+      2606,
+      2642
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "chân phải liên tục khuỵ xuống",
+    "position": [
+      2649,
+      2678
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tỉnh chậm",
+    "position": [
+      2685,
+      2694
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "phản xạ kém",
+    "position": [
+      2696,
+      2707
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "âm tính",
+    "position": [
+      2778,
+      2785
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "âm tính",
+    "position": [
+      2817,
+      2824
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

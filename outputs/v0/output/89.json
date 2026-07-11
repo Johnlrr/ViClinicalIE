@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "text": "octreotide",
+    "position": [
+      206,
+      216
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "flagyl",
+    "position": [
+      223,
+      229
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Tuột sonde dẫn lưu ổ bụng",
+    "position": [
+      346,
+      371
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "flagyl",
+    "position": [
+      742,
+      748
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isNegated"
+    ],
+    "candidates": []
+  }
+]

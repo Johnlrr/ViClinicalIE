@@ -1,5 +1,29 @@
 [
   {
+    "text": "Viêm nội tâm mạc",
+    "position": [
+      48,
+      64
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "rối loạn chức năng tâm thất phải",
+    "position": [
+      68,
+      100
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "rung nhĩ",
     "position": [
       102,
@@ -24,6 +48,42 @@
     "candidates": []
   },
   {
+    "text": "thứ 6",
+    "position": [
+      226,
+      231
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "chủ nhật",
+    "position": [
+      233,
+      241
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "sau khi ghép thận thất bại",
+    "position": [
+      243,
+      269
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "coumadin 3.0 mg",
     "position": [
       401,
@@ -34,6 +94,42 @@
       "isHistorical"
     ],
     "candidates": []
+  },
+  {
+    "text": "INR dưới ngưỡng điều trị",
+    "position": [
+      462,
+      486
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "k",
+    "position": [
+      506,
+      507
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "01",
+    "position": [
+      559,
+      561
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "k",
+    "position": [
+      661,
+      662
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
   },
   {
     "text": "INR",
@@ -109,6 +205,15 @@
     ]
   },
   {
+    "text": "K",
+    "position": [
+      1055,
+      1056
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
     "text": "INR",
     "position": [
       1075,
@@ -125,5 +230,15 @@
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
     "assertions": []
+  },
+  {
+    "text": "heparin",
+    "position": [
+      1130,
+      1137
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
   }
 ]

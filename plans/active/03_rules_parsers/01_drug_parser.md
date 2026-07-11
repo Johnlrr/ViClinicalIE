@@ -1,26 +1,26 @@
 # Drug Parser — Implementation, workflow và trace
 
-Tài liệu này là tài liệu hợp nhất cho **Drug parser layer** đã triển khai trong [`src/drug_parser.py`](../../src/drug_parser.py:1), theo đúng mục 6.3 của [`10_7_architecture.md`](10_7_architecture.md:334). Module nhận drug-core seed từ **3 nguồn**: curated dictionary (nay đã bao gồm toàn bộ RxNorm IN/PIN/MIN/BN atoms từ [#alias-expansion](#7-rxnorm-alias-expansion-2026-07-10)), ViHealthBERT NER candidate, và RxNorm/RXNCONSO catalog (deprecated — giữ lại cho backward-compatibility); sau đó mở rộng boundary sang strength/dose/route/form/frequency/PRN, gắn local-role evidence và tuỳ chọn preliminary RxNorm evidence, rồi trả về `SpanCandidate` cho `THUỐC`. Module **không** quyết định entity canonical cuối, không chạy assertion và không tự loại candidate dựa trên section cứng.
+Tài liệu này là tài liệu hợp nhất cho **Drug parser layer** đã triển khai trong [`src/drug_parser.py`](../../../src/drug_parser.py:1), theo đúng mục 6.3 của [`../00_overview/00_architecture_hybrid_vihealthbert.md`](../00_overview/00_architecture_hybrid_vihealthbert.md:334). Module nhận drug-core seed từ **3 nguồn**: curated dictionary (nay đã bao gồm toàn bộ RxNorm IN/PIN/MIN/BN atoms từ [#alias-expansion](#7-rxnorm-alias-expansion-2026-07-10)), ViHealthBERT NER candidate, và RxNorm/RXNCONSO catalog (deprecated — giữ lại cho backward-compatibility); sau đó mở rộng boundary sang strength/dose/route/form/frequency/PRN, gắn local-role evidence và tuỳ chọn preliminary RxNorm evidence, rồi trả về `SpanCandidate` cho `THUỐC`. Module **không** quyết định entity canonical cuối, không chạy assertion và không tự loại candidate dựa trên section cứng.
 
 ## 1. Trạng thái triển khai
 
-Các thành phần đã có trong [`src/drug_parser.py`](../../src/drug_parser.py:1):
+Các thành phần đã có trong [`src/drug_parser.py`](../../../src/drug_parser.py:1):
 
 - `DrugCoreSeed`: dataclass chuẩn hoá mọi core seed trước khi composition (`start`, `end`, `seed_source`, `seed_term`, `seed_confidence`).
-- [`DrugComponents`](../../src/drug_parser.py:87): dataclass giữ các thành phần đã tách ra khỏi một medication mention (`strength`, `dose`, `form`, `route`, `frequency`, `prn`).
-- [`DrugParseTrace`](../../src/drug_parser.py:102): trace debug đầy đủ (rule id, local role, seed source/confidence, dictionary/seed term, core span, expanded span, components, evidence, RxNorm source/confidence), được serialize vào `SpanCandidate.notes` dạng JSON.
+- [`DrugComponents`](../../../src/drug_parser.py:87): dataclass giữ các thành phần đã tách ra khỏi một medication mention (`strength`, `dose`, `form`, `route`, `frequency`, `prn`).
+- [`DrugParseTrace`](../../../src/drug_parser.py:102): trace debug đầy đủ (rule id, local role, seed source/confidence, dictionary/seed term, core span, expanded span, components, evidence, RxNorm source/confidence), được serialize vào `SpanCandidate.notes` dạng JSON.
 - `_rxnorm_catalog_seed_terms()`: (deprecated từ [#alias-expansion](#7-rxnorm-alias-expansion-2026-07-10)) lọc catalog RxNorm/RXNCONSO theo TTY `IN/PIN/MIN/BN`, chỉ giữ atom có xuất hiện trong document normalized text. Không còn cần thiết vì [`drug_aliases.csv`](../../data_resources/drug_aliases.csv:1) đã chứa toàn bộ IN/PIN/MIN/BN atoms; giữ lại cho API backward-compatibility.
 - `_ner_core_seeds()`: nhận `SpanCandidate` từ ViHealthBERT NER, chỉ dùng candidate `type_candidate="THUỐC"` và offset/text round-trip hợp lệ làm seed.
-- [`classify_medication_line()`](../../src/drug_parser.py:284): gắn local role cho dòng chứa candidate (`medication_subsection_item`, `medication_bullet_item`, `medication_numbered_item`, `medication_context_line`, `medication_like_line`, `negative_medication_context`, `neutral_line`).
-- [`compose_medication_boundary()`](../../src/drug_parser.py:320): mở rộng span từ drug core sang full medication mention trong cùng dòng, dừng lại ở dấu `;`, newline, hoặc khi không còn token strength/dose/route/form/frequency/PRN hợp lệ.
-- [`parse_drug_candidates()`](../../src/drug_parser.py:410): hàm pipeline chính — gom seed từ dictionary/RxNorm/NER, dedupe theo span với priority curated dictionary > ViHealthBERT NER > RxNorm catalog, gọi boundary composition, tính confidence theo evidence, tuỳ chọn gọi RxNorm linker, và trả `SpanCandidate[]`.
+- [`classify_medication_line()`](../../../src/drug_parser.py:284): gắn local role cho dòng chứa candidate (`medication_subsection_item`, `medication_bullet_item`, `medication_numbered_item`, `medication_context_line`, `medication_like_line`, `negative_medication_context`, `neutral_line`).
+- [`compose_medication_boundary()`](../../../src/drug_parser.py:320): mở rộng span từ drug core sang full medication mention trong cùng dòng, dừng lại ở dấu `;`, newline, hoặc khi không còn token strength/dose/route/form/frequency/PRN hợp lệ.
+- [`parse_drug_candidates()`](../../../src/drug_parser.py:410): hàm pipeline chính — gom seed từ dictionary/RxNorm/NER, dedupe theo span với priority curated dictionary > ViHealthBERT NER > RxNorm catalog, gọi boundary composition, tính confidence theo evidence, tuỳ chọn gọi RxNorm linker, và trả `SpanCandidate[]`.
 - `DrugLinker` protocol: interface tối giản `link(text, top_k) -> MappingResult-like`, tương thích trực tiếp với [`RxNormLinker`](../../src/linking/rxnorm_linker.py:28) hiện có, không tạo phụ thuộc cứng.
 
 Quy tắc offset cốt lõi (giống các layer khác trong pipeline):
 
 - Core được tìm trên `normalized_text`, sau đó map ngược raw offset qua `OffsetMapper` — không bao giờ suy ra `text`/`position` từ chuỗi normalized.
 - Boundary composition chỉ mở rộng trên `raw_text`, không bao giờ chỉnh sửa nội dung.
-- Mọi candidate bị loại nếu `raw_text[start:end] != text` (kiểm tra tường minh trong [`parse_drug_candidates()`](../../src/drug_parser.py:283)).
+- Mọi candidate bị loại nếu `raw_text[start:end] != text` (kiểm tra tường minh trong [`parse_drug_candidates()`](../../../src/drug_parser.py:283)).
 - Mọi span dùng quy ước half-open `[start, end)`, đồng nhất với toàn bộ codebase.
 
 ## 2. Workflow tổng quát
@@ -120,7 +120,7 @@ doc.raw_text[core_start:core_end]  # không đổi nội dung, chỉ là raw sli
 - Từ `core_end`, quét tối đa `max_extension_chars` ký tự (mặc định 96) hoặc tới cuối dòng (`line.end`), tuỳ giới hạn nào nhỏ hơn.
 - Dừng ngay khi gặp `;`, `\n`, `\r` — tránh nuốt entity thuốc kế tiếp trên cùng dòng có phân tách `;`.
 - Dùng `COMPONENT_TOKEN_PATTERN` để khớp lần lượt: strength (`10 mg`, `25mg`), dose theo đơn vị đếm (`2 viên`, `1 ống`), route (`po`, `uống`, `iv`, ...), form (`tablet`, `viên`, `xl`, ...), frequency (`bid`, `daily`, `mỗi 6 giờ`, `2 lần/ngày`, ...), PRN (`prn`, `khi cần`).
-- Mỗi token khớp được phân loại vào đúng bucket qua [`_component_bucket()`](../../src/drug_parser.py:196) và gom vào [`DrugComponents`](../../src/drug_parser.py:71).
+- Mỗi token khớp được phân loại vào đúng bucket qua [`_component_bucket()`](../../../src/drug_parser.py:196) và gom vào [`DrugComponents`](../../../src/drug_parser.py:71).
 - Trim lại span cuối bằng `_trim_span` để không để dư khoảng trắng/dấu câu ở biên.
 
 ### Ví dụ
@@ -294,7 +294,7 @@ Kết quả (3 candidate, đã verify offset round-trip trong test):
 3) text="metoprolol 25mg po bid"            [146, 168) conf=0.92  role=medication_like_line
 ```
 
-Mỗi candidate có `notes` chứa `DrugParseTrace` JSON đầy đủ (rule_id, local_role, dictionary_term/seed term, seed_source, seed_confidence, core_span, expanded_span, components, evidence, rxnorm_source, rxnorm_confidence) — dùng để debug hoặc feed feature cho type-aware resolver ở [`10_7_architecture.md`](10_7_architecture.md:516) mục 7.
+Mỗi candidate có `notes` chứa `DrugParseTrace` JSON đầy đủ (rule_id, local_role, dictionary_term/seed term, seed_source, seed_confidence, core_span, expanded_span, components, evidence, rxnorm_source, rxnorm_confidence) — dùng để debug hoặc feed feature cho type-aware resolver ở [`../00_overview/00_architecture_hybrid_vihealthbert.md`](../00_overview/00_architecture_hybrid_vihealthbert.md:516) mục 7.
 
 ---
 
@@ -329,7 +329,7 @@ cd ViClinicalIE && python3 -m pytest tests/test_drug_parser.py -q
 ## 6. Giới hạn hiện tại và hướng mở rộng
 
 - Composition hiện chỉ mở rộng **về phía sau** core (`core_end -> line_end`), chưa xử lý strength xuất hiện trước tên thuốc (ví dụ `"5mg warfarin"` — hiếm trong dữ liệu tiếng Việt nhưng có thể cần bổ sung nếu xuất hiện).
-- `COMPONENT_TOKEN_PATTERN` là whitelist regex tĩnh; khi bổ sung route/frequency mới cần cập nhật `ROUTES`/`FREQUENCIES`/`FORMS`/`PRN` trong [`src/drug_parser.py`](../../src/drug_parser.py:26).
+- `COMPONENT_TOKEN_PATTERN` là whitelist regex tĩnh; khi bổ sung route/frequency mới cần cập nhật `ROUTES`/`FREQUENCIES`/`FORMS`/`PRN` trong [`src/drug_parser.py`](../../../src/drug_parser.py:26).
 - Confidence formula là heuristic tay (Phase 1 theo mục 7.2 kiến trúc); khi có dev set đủ lớn nên thay bằng calibrated logistic/gradient-boosting theo đúng roadmap Milestone 4.
 - Module đã nhận ViHealthBERT NER candidate làm seed, nhưng chưa tự chạy Hugging Face backend; caller/pipeline chịu trách nhiệm gọi [`src/vihealthbert_ner.py`](../../src/vihealthbert_ner.py:1) với pretrained/fine-tuned checkpoint rồi truyền `ner_candidates` vào parser.
 - Module hiện chưa tự thực hiện overlap resolution với `extract_drug_candidates` cũ trong [`rule_extractors.py`](../../src/rule_extractors.py:346) — việc gộp candidate từ nhiều nguồn là trách nhiệm của resolver/`merge.py`, không phải của parser này (đúng nguyên tắc "candidate generation tách biệt candidate resolution" ở mục 4.2).

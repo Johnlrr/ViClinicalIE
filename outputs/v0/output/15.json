@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "text": "xuất huyết nội sọ không do chấn thương",
+    "position": [
+      37,
+      75
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      77,
+      91
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "xuất huyết nội sọ không do chấn thương",
+    "position": [
+      205,
+      243
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      245,
+      259
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isNegated"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Điều trị chống đông",
+    "position": [
+      262,
+      281
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  }
+]

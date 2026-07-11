@@ -36,6 +36,18 @@
     "candidates": []
   },
   {
+    "text": "không đặc hiệu",
+    "position": [
+      122,
+      136
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "ung thư",
     "position": [
       143,
@@ -66,6 +78,30 @@
       197
     ],
     "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "cổ trướng và tràn dịch màng phổi",
+    "position": [
+      235,
+      267
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "liệu pháp lợi tiểu",
+    "position": [
+      308,
+      326
+    ],
+    "type": "THUỐC",
     "assertions": [
       "isHistorical"
     ],

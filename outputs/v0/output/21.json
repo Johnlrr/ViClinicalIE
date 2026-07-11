@@ -24,10 +24,34 @@
     "candidates": []
   },
   {
+    "text": "không đặc hiệu",
+    "position": [
+      77,
+      91
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "bệnh thận mạn",
     "position": [
       98,
       111
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      113,
+      127
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [

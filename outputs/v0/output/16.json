@@ -24,6 +24,18 @@
     "candidates": []
   },
   {
+    "text": "không xác định",
+    "position": [
+      103,
+      117
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "Đái tháo đường",
     "position": [
       120,
@@ -120,6 +132,24 @@
     "assertions": []
   },
   {
+    "text": "hạ huyết áp",
+    "position": [
+      991,
+      1002
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      1004,
+      1018
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "mệt mỏi",
     "position": [
       1021,
@@ -133,6 +163,15 @@
     "position": [
       1031,
       1038
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khó khăn khi ra khỏi giường",
+    "position": [
+      1041,
+      1068
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -165,6 +204,15 @@
     "assertions": [
       "isHistorical"
     ]
+  },
+  {
+    "text": "chán ăn trong vài tháng",
+    "position": [
+      1147,
+      1170
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "đau bụng",
@@ -299,6 +347,34 @@
     ]
   },
   {
+    "text": "guaiac",
+    "position": [
+      1578,
+      1584
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "hạ huyết áp",
+    "position": [
+      1732,
+      1743
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      1745,
+      1759
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "mệt mỏi",
     "position": [
       1762,
@@ -337,6 +413,15 @@
     ]
   },
   {
+    "text": "ran",
+    "position": [
+      1837,
+      1840
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "phù",
     "position": [
       1843,
@@ -353,6 +438,80 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "dịch thanh dịch lẫn máu từ vết mổ",
+    "position": [
+      1853,
+      1886
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "guaiac",
+    "position": [
+      1909,
+      1915
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "K",
+    "position": [
+      1916,
+      1917
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "huyết khối",
+    "position": [
+      1936,
+      1946
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "26.3",
+    "position": [
+      1947,
+      1951
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "giảm so với hôm qua",
+    "position": [
+      1953,
+      1972
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "nhưng ổn định ở mức 28 hậu phẫu tuần trước",
+    "position": [
+      1974,
+      2016
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Viêm phổi bệnh viện",
+    "position": [
+      2231,
+      2250
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
   },
   {
     "text": "Rung nhĩ",

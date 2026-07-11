@@ -12,6 +12,15 @@
     "candidates": []
   },
   {
+    "text": "Đến hôm nay để đặt stent thành vách vĩnh viễn",
+    "position": [
+      331,
+      376
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       617,
@@ -130,10 +139,37 @@
     ]
   },
   {
+    "text": "ăn uống bình thường",
+    "position": [
+      1786,
+      1805
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cân nặng đã cải thiện",
+    "position": [
+      1807,
+      1828
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       1842,
       1844
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Có ống dẫn mật xuyên gan tại chỗ",
+    "position": [
+      1881,
+      1913
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -172,6 +208,17 @@
     ]
   },
   {
+    "text": "ớn lạnh",
+    "position": [
+      1950,
+      1957
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
     "text": "ho",
     "position": [
       1959,
@@ -181,6 +228,15 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "Ống dẫn mật được tăng kích cỡ từ 8.5fr lên 10.2 fr vào thời điểm đó",
+    "position": [
+      2140,
+      2207
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "ung thư",
@@ -193,6 +249,15 @@
     "candidates": []
   },
   {
+    "text": "Thảo luận tại cuộc họp [Tên cuộc họp] vào ngày [Ngày] và quyết định rằng bệnh nhân nên được đặt stent thành vách vĩnh viễn",
+    "position": [
+      2391,
+      2513
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ung thư",
     "position": [
       2751,
@@ -201,5 +266,14 @@
     "type": "CHẨN_ĐOÁN",
     "assertions": [],
     "candidates": []
+  },
+  {
+    "text": "ảnh hưởng đến ống dẫn trước và sau bên phải",
+    "position": [
+      2883,
+      2926
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
   }
 ]

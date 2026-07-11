@@ -36,10 +36,34 @@
     "candidates": []
   },
   {
+    "text": "ngưng thở khi ngủ do tắc nghẽn",
+    "position": [
+      109,
+      139
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "tylenol",
     "position": [
       176,
       183
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "mucinex",
+    "position": [
+      190,
+      197
     ],
     "type": "THUỐC",
     "assertions": [
@@ -57,10 +81,37 @@
     "assertions": []
   },
   {
+    "text": "thiếu oxy",
+    "position": [
+      302,
+      311
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "1 tuần trước khi nhập viện",
+    "position": [
+      349,
+      375
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       407,
       409
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nghẹt ngực",
+    "position": [
+      416,
+      426
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -97,6 +148,33 @@
     "position": [
       504,
       507
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "thỉnh thoảng tiêu chảy các thuốc của ông ấy",
+    "position": [
+      526,
+      569
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đi tiểu nhiều lần vào ban đêm",
+    "position": [
+      576,
+      605
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không có đau buốt khi đi tiểu",
+    "position": [
+      607,
+      636
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -193,6 +271,34 @@
     ]
   },
   {
+    "text": "Vợ có các triệu chứng tương tự 3 tuần trước",
+    "position": [
+      1112,
+      1155
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "được chẩn đoán là giãn phế quản",
+    "position": [
+      1157,
+      1188
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "azithromycin",
+    "position": [
+      1207,
+      1219
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "tylenol",
     "position": [
       1243,
@@ -201,6 +307,79 @@
     "type": "THUỐC",
     "assertions": [],
     "candidates": []
+  },
+  {
+    "text": "mucinex",
+    "position": [
+      1254,
+      1261
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Đi khám bác sĩ chăm sóc chính (PCP) vào buổi sáng ngày nhập viện",
+    "position": [
+      1270,
+      1334
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Bác sĩ PCP ghi nhận spo2 là 90-92% spo2 khi thở khí trời",
+    "position": [
+      1341,
+      1397
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "93% khi không dùng oxy",
+    "position": [
+      1399,
+      1421
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Bác sĩ PCP đã gửi bệnh nhân  đến phòng cấp cứu",
+    "position": [
+      1428,
+      1474
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "bạch cầu",
+    "position": [
+      1541,
+      1549
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "12.5",
+    "position": [
+      1553,
+      1557
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "tổng phân tích nước tiểu đáng chú ý chỉ có vếtvết protein niệu",
+    "position": [
+      1564,
+      1626
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
   },
   {
     "text": "troponin",
@@ -218,6 +397,15 @@
       1652
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chụp x-quang ngực được cho là viêm phổi thùy dưới phải",
+    "position": [
+      1688,
+      1742
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

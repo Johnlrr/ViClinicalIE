@@ -36,10 +36,46 @@
     "candidates": []
   },
   {
+    "text": "đau họng",
+    "position": [
+      261,
+      269
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "5 ngày trước khi nhập viện",
+    "position": [
+      307,
+      333
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau họng kèm theo nuốt vướng",
+    "position": [
+      369,
+      397
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "buồn nôn",
     "position": [
       404,
       412
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Tăng tăng cân 3 pound trong 7 ngày qua",
+    "position": [
+      419,
+      457
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -94,6 +130,33 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "Chưa kiểm tra đường huyết",
+    "position": [
+      782,
+      807
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "k",
+    "position": [
+      855,
+      856
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "âm tính",
+    "position": [
+      903,
+      910
+    ],
+    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
   },
   {
     "text": "glucose",
@@ -165,6 +228,24 @@
       1083
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "ag (anion gap) 17",
+    "position": [
+      1090,
+      1107
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "ag (anion gap) đóng",
+    "position": [
+      1114,
+      1133
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

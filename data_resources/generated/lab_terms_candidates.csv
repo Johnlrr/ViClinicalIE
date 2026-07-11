@@ -1,0 +1,485 @@
+term,canonical_key,canonical_name,source,source_detail,category,specimen,requires_context,priority,notes
+APTT,aptt,APTT,manual_curation,plan_section_9,coagulation,blood,false,5,manual_curation
+PTT,aptt,APTT,manual_curation,plan_section_9,coagulation,blood,false,5,manual_curation
+HCO3,bicarbonate,Bicarbonate,manual_curation,plan_section_9,blood_gas,blood,true,5,manual_curation
+bicarbonate,bicarbonate,Bicarbonate,manual_curation,plan_section_9,blood_gas,blood,false,5,manual_curation
+CO2,co2,CO2,manual_curation,plan_section_9,blood_gas,blood,true,5,manual_curation
+fibrinogen,fibrinogen,Fibrinogen,manual_curation,plan_section_9,coagulation,blood,false,5,manual_curation
+Hct,hematocrit,Hematocrit,manual_curation,plan_section_9,hematology,blood,true,5,manual_curation
+hematocrit,hematocrit,Hematocrit,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+HGB,hemoglobin,Hemoglobin,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+Hb,hemoglobin,Hemoglobin,manual_curation,plan_section_9,hematology,blood,true,5,manual_curation
+hemoglobin,hemoglobin,Hemoglobin,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+huyết đồ,huyet_do,Huyết đồ,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+Mg,magie,Magiê,manual_curation,plan_section_9,chemistry,blood,true,5,manual_curation
+magie,magie,Magiê,manual_curation,plan_section_9,chemistry,blood,false,5,manual_curation
+ESR,mau_lang,Máu lắng,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+máu lắng,mau_lang,Máu lắng,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+tốc độ máu lắng,mau_lang,Máu lắng,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+MCH,mch,MCH,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+MCHC,mchc,MCHC,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+MCV,mcv,MCV,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+Na,natri,Natri,manual_curation,plan_section_9,chemistry,blood,true,5,manual_curation
+natri,natri,Natri,manual_curation,plan_section_9,chemistry,blood,false,5,manual_curation
+pH,ph,pH,manual_curation,plan_section_9,blood_gas,blood,true,5,manual_curation
+PMN,pmn,Bạch cầu đa nhân,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+bạch cầu đa nhân,pmn,Bạch cầu đa nhân,manual_curation,plan_section_9,hematology,blood,false,5,manual_curation
+PT,pt,PT (thời gian prothrombin),manual_curation,plan_section_9,coagulation,blood,true,5,manual_curation
+thời gian prothrombin,pt,PT (thời gian prothrombin),manual_curation,plan_section_9,coagulation,blood,false,5,manual_curation
+SaO2,sao2,SaO2,manual_curation,plan_section_9,blood_gas,blood,false,5,manual_curation
+TT,tt,TT (thời gian thrombin),manual_curation,plan_section_9,coagulation,blood,true,5,manual_curation
+WBC,bach_cau,Bạch cầu,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+bạch cầu,bach_cau,Bạch cầu,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+bilirubin,bilirubin_toan_phan,Bilirubin toàn phần,current_seed,lab_seed_terms.csv,chemistry,blood,false,4,carried_from_current_seed
+xét nghiệm chức năng gan,chuc_nang_gan,Xét nghiệm chức năng gan,current_seed,lab_seed_terms.csv,chemistry,blood,false,4,carried_from_current_seed
+CBC,cong_thuc_mau,Công thức máu,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+công thức máu,cong_thuc_mau,Công thức máu,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+creatinine,creatinine,Creatinin,current_seed,lab_seed_terms.csv,chemistry,blood,false,4,carried_from_current_seed
+RBC,hong_cau,Hồng cầu,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+huyết khối,huyet_khoi,Huyết khối,current_seed,lab_seed_terms.csv,coagulation,blood,false,4,carried_from_current_seed
+INR,inr,INR,current_seed,lab_seed_terms.csv,coagulation,blood,false,4,carried_from_current_seed
+k,kali,Kali,current_seed,lab_seed_terms.csv,chemistry,blood,true,4,carried_from_current_seed
+kali,kali,Kali,current_seed,lab_seed_terms.csv,chemistry,blood,false,4,carried_from_current_seed
+lactate,lactat,Lactat,current_seed,lab_seed_terms.csv,chemistry,blood,false,4,carried_from_current_seed
+LYMPH%,lymphocyte,Lymphocyte %,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+LYPH%,lymphocyte,Lymphocyte %,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+NEUT%,neutrophil,Neutrophil %,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+PLT,tieu_cau,Tiểu cầu,current_seed,lab_seed_terms.csv,hematology,blood,false,4,carried_from_current_seed
+UA,tong_phan_tich_nuoc_tieu,Tổng phân tích nước tiểu,current_seed,lab_seed_terms.csv,urinalysis,urine,false,4,carried_from_current_seed
+troponin,troponin_t,Troponin T,current_seed,lab_seed_terms.csv,chemistry,blood,false,4,carried_from_current_seed
+25OH Vitamin D,25oh_vitamin_d,25OH Vitamin D,combined_lab_catalog,lab_med_ministry_pdf#3:55,chemistry,blood,false,3,pdf_core_or_paren_alias
+25OH Vitamin D (D3),25oh_vitamin_d,25OH Vitamin D,combined_lab_catalog,lab_med_ministry_pdf#3:55,chemistry,blood,false,3,pdf_core_or_paren_alias
+D3,25oh_vitamin_d,25OH Vitamin D,combined_lab_catalog,lab_med_ministry_pdf#3:55,chemistry,blood,false,3,pdf_core_or_paren_alias
+Acid Uric,acid_uric,Acid Uric,combined_lab_catalog,both#2:3,urinalysis,blood,false,3,pdf_core_or_paren_alias
+Acid uric máu,acid_uric,Acid Uric,combined_lab_catalog,both#2:3,urinalysis,blood,false,3,pdf_core_or_paren_alias
+Acid uric niệu,acid_uric_nieu,Acid uric niệu,combined_lab_catalog,lab_list_pdf#7:107,chemistry,blood,false,3,pdf_core_or_paren_alias
+ACP,acp,ACP,combined_lab_catalog,lab_med_ministry_pdf#2:1,chemistry,blood,false,3,pdf_core_or_paren_alias
+ACP (Phosphatase Acid),acp,ACP,combined_lab_catalog,lab_med_ministry_pdf#2:1,chemistry,blood,false,3,pdf_core_or_paren_alias
+Phosphatase Acid,acp,ACP,combined_lab_catalog,lab_med_ministry_pdf#2:1,chemistry,blood,false,3,pdf_core_or_paren_alias
+ACTH,acth,ACTH,combined_lab_catalog,both#2:2,endocrine,blood,false,3,pdf_core_or_paren_alias
+ADH,adh,ADH,combined_lab_catalog,lab_med_ministry_pdf#2:4,chemistry,blood,false,3,pdf_core_or_paren_alias
+ADH (Anti Diuretic Hormone),adh,ADH,combined_lab_catalog,lab_med_ministry_pdf#2:4,chemistry,blood,false,3,pdf_core_or_paren_alias
+Anti Diuretic Hormone,adh,ADH,combined_lab_catalog,lab_med_ministry_pdf#2:4,chemistry,blood,false,3,pdf_core_or_paren_alias
+Adiponectin,adiponectin,Adiponectin,combined_lab_catalog,lab_med_ministry_pdf#2:5,chemistry,blood,false,3,pdf_core_or_paren_alias
+AFB trực tiếp nhuộm Ziehl- Neelsen,afb_truc_tiep_nhuom_ziehl_neelsen,AFB trực tiếp nhuộm Ziehl- Neelsen,combined_lab_catalog,lab_list_pdf#8:9,microbiology,unknown,false,3,pdf_core_or_paren_alias
+AFP,afp,AFP,combined_lab_catalog,both#2:18,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+AFP (Alpha Fetoproteine),afp,AFP,combined_lab_catalog,both#2:18,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Alpha Fetoproteine,afp,AFP,combined_lab_catalog,both#2:18,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Albumin,albumin,Albumin,combined_lab_catalog,lab_med_ministry_pdf#2:7,chemistry,blood,false,3,pdf_core_or_paren_alias
+Albumin máu,albumin_mau,Albumin máu,combined_lab_catalog,lab_list_pdf#1:6,chemistry,blood,false,3,pdf_core_or_paren_alias
+Aldosteron,aldosteron,Aldosteron,combined_lab_catalog,lab_med_ministry_pdf#2:6,chemistry,blood,false,3,pdf_core_or_paren_alias
+ALP,alp,ALP,combined_lab_catalog,both#2:9,chemistry,blood,false,3,pdf_core_or_paren_alias
+ALP (Alkalin Phosphatase),alp,ALP,combined_lab_catalog,both#2:9,chemistry,blood,false,3,pdf_core_or_paren_alias
+Alkalin Phosphatase,alp,ALP,combined_lab_catalog,both#2:9,chemistry,blood,false,3,pdf_core_or_paren_alias
+Alpha1 Antitrypsin,alpha1_antitrypsin,Alpha1 Antitrypsin,combined_lab_catalog,lab_med_ministry_pdf#2:8,chemistry,blood,false,3,pdf_core_or_paren_alias
+alpha 1 Acid Glycoprotein,alpha_1_acid_glycoprotein,alpha 1 Acid Glycoprotein,combined_lab_catalog,lab_med_ministry_pdf#2:21,chemistry,blood,false,3,pdf_core_or_paren_alias
+alpha -amylase máu,alpha_amylase_mau,alpha -amylase máu,combined_lab_catalog,lab_list_pdf#2:23,chemistry,blood,false,3,pdf_core_or_paren_alias
+alpha -amylase niệu,alpha_amylase_nieu,alpha -amylase niệu,combined_lab_catalog,lab_list_pdf#7:106,chemistry,blood,false,3,pdf_core_or_paren_alias
+ALT,alt,ALT,combined_lab_catalog,both#2:19,chemistry,blood,false,3,pdf_core_or_paren_alias
+ALT (GPT),alt,ALT,combined_lab_catalog,both#2:19,chemistry,blood,false,3,pdf_core_or_paren_alias
+GPT,alt,ALT,combined_lab_catalog,both#2:19,chemistry,blood,false,3,pdf_core_or_paren_alias
+AMH,amh,AMH,combined_lab_catalog,lab_med_ministry_pdf#2:12,chemistry,blood,false,3,pdf_core_or_paren_alias
+AMH ( Anti- Mullerian Hormone),amh,AMH,combined_lab_catalog,lab_med_ministry_pdf#2:12,chemistry,blood,false,3,pdf_core_or_paren_alias
+Anti- Mullerian Hormone,amh,AMH,combined_lab_catalog,lab_med_ministry_pdf#2:12,chemistry,blood,false,3,pdf_core_or_paren_alias
+Amoniac,amoniac,Amoniac,combined_lab_catalog,lab_med_ministry_pdf#2:11,chemistry,blood,false,3,pdf_core_or_paren_alias
+Amoniac ( NH3),amoniac,Amoniac,combined_lab_catalog,lab_med_ministry_pdf#2:11,chemistry,blood,false,3,pdf_core_or_paren_alias
+NH3,amoniac,Amoniac,combined_lab_catalog,lab_med_ministry_pdf#2:11,chemistry,blood,false,3,pdf_core_or_paren_alias
+Amphetamin,amphetamin,Amphetamin,combined_lab_catalog,lab_med_ministry_pdf#6:173,urinalysis,urine,false,3,pdf_core_or_paren_alias
+Amylase,amylase,Amylase,combined_lab_catalog,lab_med_ministry_pdf#2:10,urinalysis,blood,false,3,pdf_core_or_paren_alias
+Anti-CCP,anti_ccp,Anti-CCP,combined_lab_catalog,both#5:84,immunology,blood,false,3,pdf_core_or_paren_alias
+Anti-HBc IgM,anti_hbc_igm,Anti-HBc IgM,combined_lab_catalog,lab_list_pdf#5:79,chemistry,blood,false,3,pdf_core_or_paren_alias
+Anti-HBeAg,anti_hbeag,Anti-HBeAg,combined_lab_catalog,lab_list_pdf#5:77,chemistry,blood,false,3,pdf_core_or_paren_alias
+Anti-HBsAg,anti_hbsag,Anti-HBsAg,combined_lab_catalog,lab_list_pdf#5:76,immunology,blood,false,3,pdf_core_or_paren_alias
+Anti-HCV,anti_hcv,Anti-HCV,combined_lab_catalog,lab_list_pdf#5:78,immunology,blood,false,3,pdf_core_or_paren_alias
+Anti-TG,anti_tg,Anti-Tg,combined_lab_catalog,both#2:14,chemistry,blood,false,3,pdf_core_or_paren_alias
+Anti-Tg (Antibody- Thyroglobulin),anti_tg,Anti-Tg,combined_lab_catalog,both#2:14,chemistry,blood,false,3,pdf_core_or_paren_alias
+Antibody- Thyroglobulin,anti_tg,Anti-Tg,combined_lab_catalog,both#2:14,chemistry,blood,false,3,pdf_core_or_paren_alias
+Anti - TPO,anti_tpo,Anti - TPO,combined_lab_catalog,lab_med_ministry_pdf#2:15,chemistry,blood,false,3,pdf_core_or_paren_alias
+Anti - TPO (Anti- thyroid Peroxidase antibodies),anti_tpo,Anti - TPO,combined_lab_catalog,lab_med_ministry_pdf#2:15,chemistry,blood,false,3,pdf_core_or_paren_alias
+Apo A1,apo_a1,Apo A1,combined_lab_catalog,lab_med_ministry_pdf#2:16,chemistry,blood,false,3,pdf_core_or_paren_alias
+Apo A1 (Apolipoprotein A1),apo_a1,Apo A1,combined_lab_catalog,lab_med_ministry_pdf#2:16,chemistry,blood,false,3,pdf_core_or_paren_alias
+Apolipoprotein A1,apo_a1,Apo A1,combined_lab_catalog,lab_med_ministry_pdf#2:16,chemistry,blood,false,3,pdf_core_or_paren_alias
+Apo B,apo_b,Apo B,combined_lab_catalog,lab_med_ministry_pdf#2:17,chemistry,blood,false,3,pdf_core_or_paren_alias
+Apo B (Apolipoprotein B),apo_b,Apo B,combined_lab_catalog,lab_med_ministry_pdf#2:17,chemistry,blood,false,3,pdf_core_or_paren_alias
+Apolipoprotein B,apo_b,Apo B,combined_lab_catalog,lab_med_ministry_pdf#2:17,chemistry,blood,false,3,pdf_core_or_paren_alias
+ASLO,aslo,ASLO,combined_lab_catalog,lab_list_pdf#2:31,immunology,blood,false,3,pdf_core_or_paren_alias
+AST,ast,AST,combined_lab_catalog,both#2:20,chemistry,blood,false,3,pdf_core_or_paren_alias
+AST (GOT),ast,AST,combined_lab_catalog,both#2:20,chemistry,blood,false,3,pdf_core_or_paren_alias
+GOT,ast,AST,combined_lab_catalog,both#2:20,chemistry,blood,false,3,pdf_core_or_paren_alias
+Barbiturates,barbiturates,Barbiturates,combined_lab_catalog,lab_med_ministry_pdf#6:177,urinalysis,urine,false,3,pdf_core_or_paren_alias
+Benzodiazepin,benzodiazepin,Benzodiazepin,combined_lab_catalog,lab_med_ministry_pdf#6:178,urinalysis,urine,false,3,pdf_core_or_paren_alias
+beta 2 microglobulin,beta_2_microglobulin,beta 2 microglobulin,combined_lab_catalog,both#2:22,chemistry,blood,false,3,pdf_core_or_paren_alias
+beta 2-microglobulin,beta_2_microglobulin,beta 2 microglobulin,combined_lab_catalog,both#2:22,chemistry,blood,false,3,pdf_core_or_paren_alias
+Beta Crosslap,beta_crosslap,Beta Crosslap,combined_lab_catalog,lab_med_ministry_pdf#2:23,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+beta -HCG,beta_hcg,beta HCG,combined_lab_catalog,both#6:179,endocrine,urine,false,3,pdf_core_or_paren_alias
+beta HCG,beta_hcg,beta HCG,combined_lab_catalog,both#6:179,endocrine,urine,false,3,pdf_core_or_paren_alias
+Bilirubin gián tiếp,bilirubin_gian_tiep,Bilirubin gián tiếp,combined_lab_catalog,lab_med_ministry_pdf#2:26,chemistry,blood,false,3,pdf_core_or_paren_alias
+Bilirubin toàn phần,bilirubin_toan_phan,Bilirubin toàn phần,combined_lab_catalog,both#2:27,chemistry,blood,false,3,pdf_core_or_paren_alias
+Bilirubin trực tiếp,bilirubin_truc_tiep,Bilirubin trực tiếp,combined_lab_catalog,both#2:25,chemistry,blood,false,3,pdf_core_or_paren_alias
+BNP,bnp,BNP,combined_lab_catalog,lab_med_ministry_pdf#2:28,chemistry,blood,false,3,pdf_core_or_paren_alias
+BNP (B- Type Natriuretic Peptide),bnp,BNP,combined_lab_catalog,lab_med_ministry_pdf#2:28,chemistry,blood,false,3,pdf_core_or_paren_alias
+bổ thể C3,bo_the_c3,bổ thể C3,combined_lab_catalog,lab_med_ministry_pdf#3:48,chemistry,blood,false,3,pdf_core_or_paren_alias
+bổ thể C4,bo_the_c4,bổ thể C4,combined_lab_catalog,lab_med_ministry_pdf#3:49,chemistry,blood,false,3,pdf_core_or_paren_alias
+C-Peptid,c_peptid,C-Peptid,combined_lab_catalog,lab_med_ministry_pdf#3:45,coagulation,blood,false,3,pdf_core_or_paren_alias
+CA 125,ca_125,CA 125,combined_lab_catalog,both#2:32,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 125 (cancer antigen 125),ca_125,CA 125,combined_lab_catalog,both#2:32,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+cancer antigen 125,ca_125,CA 125,combined_lab_catalog,both#2:32,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 15 - 3,ca_15_3,CA 15 - 3,combined_lab_catalog,both#3:34,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 15 - 3 (cancer antigen 15- 3),ca_15_3,CA 15 - 3,combined_lab_catalog,both#3:34,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 15-3,ca_15_3,CA 15 - 3,combined_lab_catalog,both#3:34,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+cancer antigen 15- 3,ca_15_3,CA 15 - 3,combined_lab_catalog,both#3:34,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 19 - 9,ca_19_9,CA 19 - 9,combined_lab_catalog,both#3:33,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 19 - 9 (carbohydrate antigen 19-9),ca_19_9,CA 19 - 9,combined_lab_catalog,both#3:33,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 19-9,ca_19_9,CA 19 - 9,combined_lab_catalog,both#3:33,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 72 - 4,ca_72_4,CA 72 - 4,combined_lab_catalog,both#3:35,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 72 - 4 (cancer antigen 72- 4),ca_72_4,CA 72 - 4,combined_lab_catalog,both#3:35,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CA 72-4,ca_72_4,CA 72 - 4,combined_lab_catalog,both#3:35,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+cancer antigen 72- 4,ca_72_4,CA 72 - 4,combined_lab_catalog,both#3:35,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+"Na, K, Cl",cac_chat_ien_giai,các chất điện giải,combined_lab_catalog,lab_med_ministry_pdf#3:58,urinalysis,blood,false,3,pdf_core_or_paren_alias
+"các chất điện giải (Na, K, Cl)",cac_chat_ien_giai,các chất điện giải,combined_lab_catalog,lab_med_ministry_pdf#3:58,urinalysis,blood,false,3,pdf_core_or_paren_alias
+Các chất điện giải máu,cac_chat_ien_giai_mau,Các chất điện giải máu,combined_lab_catalog,lab_list_pdf#3:36,chemistry,blood,false,3,pdf_core_or_paren_alias
+"Na, K, Cl",cac_chat_ien_giai_mau,Các chất điện giải máu,combined_lab_catalog,lab_list_pdf#3:36,chemistry,blood,false,3,pdf_core_or_paren_alias
+Calci toàn phần,calci,Calci toàn phần,combined_lab_catalog,both#2:29,urinalysis,blood,false,3,pdf_core_or_paren_alias
+calci,calci,Calci toàn phần,combined_lab_catalog,both#2:29,urinalysis,blood,false,3,pdf_core_or_paren_alias
+canxi,calci,Calci toàn phần,combined_lab_catalog,both#2:29,urinalysis,blood,false,3,orthographic_variant
+canxi toàn phần,calci,Calci toàn phần,combined_lab_catalog,both#2:29,urinalysis,blood,false,3,orthographic_variant
+calci ion hóa,calci_ion_hoa,Calci ion hoá,combined_lab_catalog,both#2:30,chemistry,blood,false,3,pdf_core_or_paren_alias
+canxi ion hóa,calci_ion_hoa,Calci ion hoá,combined_lab_catalog,both#2:30,chemistry,blood,false,3,orthographic_variant
+Calcitonin,calcitonin,Calcitonin,combined_lab_catalog,lab_med_ministry_pdf#3:36,chemistry,blood,false,3,pdf_core_or_paren_alias
+canxitonin,calcitonin,Calcitonin,combined_lab_catalog,lab_med_ministry_pdf#3:36,chemistry,blood,false,3,orthographic_variant
+canci ion hóa bằng điện cực chọn lọc,canci_ion_hoa_bang_ien_cuc_chon_loc,canci ion hóa bằng điện cực chọn lọc,combined_lab_catalog,lab_med_ministry_pdf#2:31,chemistry,blood,false,3,pdf_core_or_paren_alias
+Cancitonil,cancitonil,Cancitonil,combined_lab_catalog,lab_list_pdf#5:85,chemistry,blood,false,3,pdf_core_or_paren_alias
+Carbamazepin,carbamazepin,Carbamazepin,combined_lab_catalog,lab_med_ministry_pdf#3:37,chemistry,blood,false,3,pdf_core_or_paren_alias
+Catecholamin,catecholamin,Catecholamin,combined_lab_catalog,lab_med_ministry_pdf#6:181,urinalysis,urine,false,3,pdf_core_or_paren_alias
+CEA,cea,CEA,combined_lab_catalog,both#3:39,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+CEA (carcino embryonic antigen),cea,CEA,combined_lab_catalog,both#3:39,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Ceruloplasmin,ceruloplasmin,Ceruloplasmin,combined_lab_catalog,lab_med_ministry_pdf#3:38,chemistry,blood,false,3,pdf_core_or_paren_alias
+CHE,che,CHE,combined_lab_catalog,lab_list_pdf#2:20,chemistry,blood,false,3,pdf_core_or_paren_alias
+Cholesterol,cholesterol,Cholesterol,combined_lab_catalog,lab_list_pdf#1:8,chemistry,blood,false,3,pdf_core_or_paren_alias
+Cholesterol toàn phần,cholesterol_toan_phan,Cholesterol toàn phần,combined_lab_catalog,lab_med_ministry_pdf#3:41,chemistry,blood,false,3,pdf_core_or_paren_alias
+ChE,cholinesterase,Cholinesterase,combined_lab_catalog,lab_med_ministry_pdf#3:40,chemistry,blood,false,3,pdf_core_or_paren_alias
+Cholinesterase,cholinesterase,Cholinesterase,combined_lab_catalog,lab_med_ministry_pdf#3:40,chemistry,blood,false,3,pdf_core_or_paren_alias
+Cholinesterase (ChE),cholinesterase,Cholinesterase,combined_lab_catalog,lab_med_ministry_pdf#3:40,chemistry,blood,false,3,pdf_core_or_paren_alias
+CK,ck,CK,combined_lab_catalog,both#3:42,chemistry,blood,true,3,pdf_core_or_paren_alias
+CK (Creatine kinase),ck,CK,combined_lab_catalog,both#3:42,chemistry,blood,false,3,pdf_core_or_paren_alias
+CPK,ck,CK,combined_lab_catalog,both#3:42,chemistry,blood,false,3,pdf_core_or_paren_alias
+Creatine kinase,ck,CK,combined_lab_catalog,both#3:42,chemistry,blood,false,3,pdf_core_or_paren_alias
+CK-MB,ck_mb,CK-MB,combined_lab_catalog,both#3:43,chemistry,blood,false,3,pdf_core_or_paren_alias
+CK-MB (Isozym MB of Creatine kinase),ck_mb,CK-MB,combined_lab_catalog,both#3:43,chemistry,blood,false,3,pdf_core_or_paren_alias
+Clo,clo,Clo,combined_lab_catalog,lab_med_ministry_pdf#7:204,chemistry,csf,false,3,pdf_core_or_paren_alias
+Clo dịch não tủy,clo_dich_nao_tuy,Clo dịch não tủy,combined_lab_catalog,lab_list_pdf#7:112,chemistry,blood,false,3,pdf_core_or_paren_alias
+CMV Real-time PCR,cmv_real_time_pcr,CMV Real-time PCR,combined_lab_catalog,lab_list_pdf#9:27,microbiology,blood,false,3,pdf_core_or_paren_alias
+Cocain,cocain,Cocain,combined_lab_catalog,lab_med_ministry_pdf#6:182,urinalysis,urine,false,3,pdf_core_or_paren_alias
+Cortisol,cortisol,Cortisol,combined_lab_catalog,both#3:46,endocrine,blood,false,3,pdf_core_or_paren_alias
+Creatinin máu,creatinine,Creatinin niệu,combined_lab_catalog,both#7:109,urinalysis,blood,false,3,pdf_core_or_paren_alias
+Creatinin niệu,creatinine,Creatinin niệu,combined_lab_catalog,both#7:109,urinalysis,blood,false,3,pdf_core_or_paren_alias
+creatinine máu,creatinine,Creatinin niệu,combined_lab_catalog,both#7:109,urinalysis,blood,false,3,orthographic_variant
+creatinine niệu,creatinine,Creatinin niệu,combined_lab_catalog,both#7:109,urinalysis,blood,false,3,orthographic_variant
+CRP,crp,CRP,combined_lab_catalog,lab_list_pdf#2:27,immunology,blood,false,3,pdf_core_or_paren_alias
+CRP hs (C-reactive protein high sesitivity),crp_hs,CRP hs,combined_lab_catalog,both#3:50,immunology,blood,false,3,pdf_core_or_paren_alias
+CRPhs,crp_hs,CRP hs,combined_lab_catalog,both#3:50,immunology,blood,false,3,pdf_core_or_paren_alias
+crp hs,crp_hs,CRP hs,combined_lab_catalog,both#3:50,immunology,blood,false,3,orthographic_variant
+crphs (c-reactive protein high sesitivity),crp_hs,CRP hs,combined_lab_catalog,both#3:50,immunology,blood,false,3,orthographic_variant
+cyclosphorin,cyclosphorin,cyclosphorin,combined_lab_catalog,lab_med_ministry_pdf#3:53,chemistry,blood,false,3,pdf_core_or_paren_alias
+Cyfra 21- 1,cyfra_21_1,Cyfra 21- 1,combined_lab_catalog,both#3:52,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Cyfra 21-1,cyfra_21_1,Cyfra 21- 1,combined_lab_catalog,both#3:52,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Cystatine C,cystatine_c,Cystatine C,combined_lab_catalog,lab_med_ministry_pdf#3:47,chemistry,blood,false,3,pdf_core_or_paren_alias
+D-Dimer,d_dimer,D-Dimer,combined_lab_catalog,both#4:62,coagulation,blood,false,3,pdf_core_or_paren_alias
+d dimer,d_dimer,D-Dimer,combined_lab_catalog,both#4:62,coagulation,blood,false,3,orthographic_variant
+Dengue virus NS1Ag/IgM - IgG test nhanh,dengue_virus_ns1ag_igm_igg_test_nhanh,Dengue virus NS1Ag/IgM - IgG test nhanh,combined_lab_catalog,lab_list_pdf#9:26,chemistry,blood,false,3,pdf_core_or_paren_alias
+dịch chọc dò,dich_choc_do,dịch chọc dò,combined_lab_catalog,lab_med_ministry_pdf#7:219,chemistry,puncture_fluid,false,3,pdf_core_or_paren_alias
+Digitoxin,digitoxin,Digitoxin,combined_lab_catalog,lab_med_ministry_pdf#3:57,chemistry,blood,false,3,pdf_core_or_paren_alias
+Digoxin,digoxin,Digoxin,combined_lab_catalog,lab_med_ministry_pdf#3:56,chemistry,blood,false,3,pdf_core_or_paren_alias
+E3 không liên hợp,e3_khong_lien_hop,E3 không liên hợp,combined_lab_catalog,lab_med_ministry_pdf#3:62,chemistry,blood,false,3,pdf_core_or_paren_alias
+E3 không liên hợp (Unconjugated Estriol),e3_khong_lien_hop,E3 không liên hợp,combined_lab_catalog,lab_med_ministry_pdf#3:62,chemistry,blood,false,3,pdf_core_or_paren_alias
+Unconjugated Estriol,e3_khong_lien_hop,E3 không liên hợp,combined_lab_catalog,lab_med_ministry_pdf#3:62,chemistry,blood,false,3,pdf_core_or_paren_alias
+Estradiol,estradiol,Estradiol,combined_lab_catalog,both#3:61,endocrine,blood,false,3,pdf_core_or_paren_alias
+Ethanol,ethanol,Ethanol,combined_lab_catalog,both#3:60,chemistry,blood,false,3,pdf_core_or_paren_alias
+Ethanol (cồn),ethanol,Ethanol,combined_lab_catalog,both#3:60,chemistry,blood,false,3,pdf_core_or_paren_alias
+cồn,ethanol,Ethanol,combined_lab_catalog,both#3:60,chemistry,blood,false,3,pdf_core_or_paren_alias
+FABD,fabd,FABD,combined_lab_catalog,lab_med_ministry_pdf#3:59,chemistry,blood,false,3,pdf_core_or_paren_alias
+FABD (Fatty acid binding protein),fabd,FABD,combined_lab_catalog,lab_med_ministry_pdf#3:59,chemistry,blood,false,3,pdf_core_or_paren_alias
+Feritin,ferritin,Feritin,combined_lab_catalog,both#4:66,chemistry,blood,false,3,pdf_core_or_paren_alias
+ferritin,ferritin,Feritin,combined_lab_catalog,both#4:66,chemistry,blood,false,3,orthographic_variant
+Folate,folate,Folate,combined_lab_catalog,lab_med_ministry_pdf#3:67,chemistry,blood,false,3,pdf_core_or_paren_alias
+free HCG,free_hcg,free HCG,combined_lab_catalog,lab_med_ministry_pdf#3:66,endocrine,blood,false,3,pdf_core_or_paren_alias
+free HCG (Free Beta Human chorionic gonadotropin),free_hcg,free HCG,combined_lab_catalog,lab_med_ministry_pdf#3:66,endocrine,blood,false,3,pdf_core_or_paren_alias
+Fructosamin,fructosamin,Fructosamin,combined_lab_catalog,lab_med_ministry_pdf#3:64,chemistry,blood,false,3,pdf_core_or_paren_alias
+FSH,fsh,FSH,combined_lab_catalog,both#3:65,endocrine,blood,false,3,pdf_core_or_paren_alias
+FSH (Follicular stimulating hormone),fsh,FSH,combined_lab_catalog,both#3:65,endocrine,blood,false,3,pdf_core_or_paren_alias
+FT,ft,FT,combined_lab_catalog,lab_med_ministry_pdf#3:68,chemistry,blood,false,3,pdf_core_or_paren_alias
+FT (Free Triiodothyronine),ft,FT,combined_lab_catalog,lab_med_ministry_pdf#3:68,chemistry,blood,false,3,pdf_core_or_paren_alias
+Free Triiodothyronine,ft,FT,combined_lab_catalog,lab_med_ministry_pdf#3:68,chemistry,blood,false,3,pdf_core_or_paren_alias
+FT3,ft3,FT3,combined_lab_catalog,lab_list_pdf#3:40,endocrine,blood,false,3,pdf_core_or_paren_alias
+FT4,ft4,FT4,combined_lab_catalog,lab_list_pdf#3:41,endocrine,blood,false,3,pdf_core_or_paren_alias
+G6PD,g6pd,G6PD,combined_lab_catalog,lab_med_ministry_pdf#3:72,hematology,blood,false,3,pdf_core_or_paren_alias
+G6PD (Glucose -6 phosphat dehydrogenase),g6pd,G6PD,combined_lab_catalog,lab_med_ministry_pdf#3:72,hematology,blood,false,3,pdf_core_or_paren_alias
+Galectin 3,galectin_3,Galectin 3,combined_lab_catalog,lab_med_ministry_pdf#3:70,chemistry,blood,false,3,pdf_core_or_paren_alias
+Gastrin,gastrin,Gastrin,combined_lab_catalog,lab_med_ministry_pdf#3:71,chemistry,blood,false,3,pdf_core_or_paren_alias
+Gentamicin,gentamicin,Gentamicin,combined_lab_catalog,lab_med_ministry_pdf#4:79,chemistry,blood,false,3,pdf_core_or_paren_alias
+GGT,ggt,GGT,combined_lab_catalog,both#4:77,chemistry,blood,false,3,pdf_core_or_paren_alias
+GGT (Gama Glutamyl Transferase),ggt,GGT,combined_lab_catalog,both#4:77,chemistry,blood,false,3,pdf_core_or_paren_alias
+GH,gh,GH,combined_lab_catalog,lab_med_ministry_pdf#4:73,chemistry,blood,false,3,pdf_core_or_paren_alias
+GH (Growth Hormone),gh,GH,combined_lab_catalog,lab_med_ministry_pdf#4:73,chemistry,blood,false,3,pdf_core_or_paren_alias
+Growth Hormone,gh,GH,combined_lab_catalog,lab_med_ministry_pdf#4:73,chemistry,blood,false,3,pdf_core_or_paren_alias
+GLDH,gldh,GLDH,combined_lab_catalog,lab_med_ministry_pdf#4:74,chemistry,blood,false,3,pdf_core_or_paren_alias
+GLDH (Glutamat dehydrogenase),gldh,GLDH,combined_lab_catalog,lab_med_ministry_pdf#4:74,chemistry,blood,false,3,pdf_core_or_paren_alias
+Glutamat dehydrogenase,gldh,GLDH,combined_lab_catalog,lab_med_ministry_pdf#4:74,chemistry,blood,false,3,pdf_core_or_paren_alias
+Globulin,globulin,Globulin,combined_lab_catalog,both#4:76,chemistry,blood,false,3,pdf_core_or_paren_alias
+GLP-1,glp_1,GLP-1,combined_lab_catalog,lab_med_ministry_pdf#4:78,chemistry,blood,false,3,pdf_core_or_paren_alias
+Glucose,glucose,Glucose,combined_lab_catalog,both#4:75,chemistry,blood,false,3,pdf_core_or_paren_alias
+Glucose máu,glucose,Glucose,combined_lab_catalog,both#4:75,chemistry,blood,false,3,pdf_core_or_paren_alias
+Haptoglobulin,haptoglobulin,Haptoglobulin,combined_lab_catalog,lab_med_ministry_pdf#4:80,coagulation,blood,false,3,pdf_core_or_paren_alias
+HbA1C,hba1c,HbA1c,combined_lab_catalog,both#4:83,chemistry,blood,false,3,pdf_core_or_paren_alias
+HBDH,hbdh,HBDH,combined_lab_catalog,lab_med_ministry_pdf#4:82,chemistry,blood,false,3,pdf_core_or_paren_alias
+HBDH (Hydroxy butyrat dehydrogenase),hbdh,HBDH,combined_lab_catalog,lab_med_ministry_pdf#4:82,chemistry,blood,false,3,pdf_core_or_paren_alias
+HBeAg miễn dịch tự động,hbeag_mien_dich_tu_ong,HBeAg miễn dịch tự động,combined_lab_catalog,lab_list_pdf#5:75,chemistry,blood,false,3,pdf_core_or_paren_alias
+HBeAg test nhanh,hbeag_test_nhanh,HBeAg test nhanh,combined_lab_catalog,lab_list_pdf#8:18,chemistry,unknown,false,3,pdf_core_or_paren_alias
+CMI / ECLI,hbs_g,HBs g,combined_lab_catalog,lab_med_ministry_pdf#4:81,immunology,blood,false,3,pdf_core_or_paren_alias
+HBs g,hbs_g,HBs g,combined_lab_catalog,lab_med_ministry_pdf#4:81,immunology,blood,false,3,pdf_core_or_paren_alias
+HBs g (HBs g Quantitative) ( CMI / ECLI ),hbs_g,HBs g,combined_lab_catalog,lab_med_ministry_pdf#4:81,immunology,blood,false,3,pdf_core_or_paren_alias
+HBs g Quantitative,hbs_g,HBs g,combined_lab_catalog,lab_med_ministry_pdf#4:81,immunology,blood,false,3,pdf_core_or_paren_alias
+HBsAg miễn dịch tự,hbsag_mien_dich_tu,HBsAg miễn dịch tự,combined_lab_catalog,lab_list_pdf#4:74,immunology,blood,false,3,pdf_core_or_paren_alias
+HBsAg Quant,hbsag_quant,HBsAg Quant,combined_lab_catalog,lab_list_pdf#4:73,immunology,blood,false,3,pdf_core_or_paren_alias
+HbsAg định lượng,hbsag_quant,HBsAg Quant,combined_lab_catalog,lab_list_pdf#4:73,immunology,blood,false,3,pdf_core_or_paren_alias
+HBV đo tải lượng hệ thống tự động,hbv_o_tai_luong_he_thong_tu_ong,HBV đo tải lượng hệ thống tự động,combined_lab_catalog,lab_list_pdf#9:20,chemistry,blood,false,3,pdf_core_or_paren_alias
+HBV đo tải lượng Real-time PCR,hbv_o_tai_luong_real_time_pcr,HBV đo tải lượng Real-time PCR,combined_lab_catalog,lab_list_pdf#8:19,microbiology,unknown,false,3,pdf_core_or_paren_alias
+hCG,hcg,hCG,combined_lab_catalog,lab_med_ministry_pdf#2:24,endocrine,blood,false,3,pdf_core_or_paren_alias
+hCG (Beta human Chorionic gonadotropins),hcg,hCG,combined_lab_catalog,lab_med_ministry_pdf#2:24,endocrine,blood,false,3,pdf_core_or_paren_alias
+HCV genotype Real-time PCR,hcv_genotype_real_time_pcr,HCV genotype Real-time PCR,combined_lab_catalog,lab_list_pdf#9:23,microbiology,blood,false,3,pdf_core_or_paren_alias
+HCV đo tải lượng hệ thống tự động,hcv_o_tai_luong_he_thong_tu_ong,HCV đo tải lượng hệ thống tự động,combined_lab_catalog,lab_list_pdf#9:22,chemistry,blood,false,3,pdf_core_or_paren_alias
+HCV đo tải lượng Real-time PCR,hcv_o_tai_luong_real_time_pcr,HCV đo tải lượng Real-time PCR,combined_lab_catalog,lab_list_pdf#9:21,microbiology,blood,false,3,pdf_core_or_paren_alias
+HDL,hdl,HDL,combined_lab_catalog,lab_list_pdf#1:9,chemistry,blood,false,3,pdf_core_or_paren_alias
+HDL-C,hdl_c,HDL-C,combined_lab_catalog,lab_med_ministry_pdf#4:84,chemistry,blood,false,3,pdf_core_or_paren_alias
+HDL-C (High density lipoprotein Cholesterol),hdl_c,HDL-C,combined_lab_catalog,lab_med_ministry_pdf#4:84,chemistry,blood,false,3,pdf_core_or_paren_alias
+HE4,he4,HE4,combined_lab_catalog,both#4:85,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Homocystein,homocystein,Homocystein,combined_lab_catalog,lab_med_ministry_pdf#4:86,chemistry,blood,false,3,pdf_core_or_paren_alias
+"Hồng cầu, bạch cầu trong phân soi tươi",hong_cau_bach_cau_trong_phan_soi_tuoi,"Hồng cầu, bạch cầu trong phân soi tươi",combined_lab_catalog,lab_list_pdf#9:29,hematology,blood,false,3,pdf_core_or_paren_alias
+HSV Real-time PCR,hsv_real_time_pcr,HSV Real-time PCR,combined_lab_catalog,lab_list_pdf#9:28,microbiology,blood,false,3,pdf_core_or_paren_alias
+Điện giải niệu,ien_giai_nieu,Điện giải niệu,combined_lab_catalog,lab_list_pdf#7:113,chemistry,blood,false,3,pdf_core_or_paren_alias
+IgA,iga,IgA,combined_lab_catalog,lab_med_ministry_pdf#4:94,chemistry,blood,false,3,pdf_core_or_paren_alias
+IgA (Immunoglobuline A),iga,IgA,combined_lab_catalog,lab_med_ministry_pdf#4:94,chemistry,blood,false,3,pdf_core_or_paren_alias
+Immunoglobuline A,iga,IgA,combined_lab_catalog,lab_med_ministry_pdf#4:94,chemistry,blood,false,3,pdf_core_or_paren_alias
+IgE,ige,IgE,combined_lab_catalog,lab_med_ministry_pdf#4:92,chemistry,blood,false,3,pdf_core_or_paren_alias
+IgE (bằng phương pháp ELIS ),ige,IgE,combined_lab_catalog,lab_med_ministry_pdf#4:92,chemistry,blood,false,3,pdf_core_or_paren_alias
+bằng phương pháp ELIS,ige,IgE,combined_lab_catalog,lab_med_ministry_pdf#4:92,chemistry,blood,false,3,pdf_core_or_paren_alias
+IGFBP-3,igfbp_3,IGFBP-3,combined_lab_catalog,lab_med_ministry_pdf#4:97,chemistry,blood,false,3,pdf_core_or_paren_alias
+IGFBP-3 ( Insulin like growth factor binding protein 3),igfbp_3,IGFBP-3,combined_lab_catalog,lab_med_ministry_pdf#4:97,chemistry,blood,false,3,pdf_core_or_paren_alias
+IgG,igg,IgG,combined_lab_catalog,lab_med_ministry_pdf#4:95,chemistry,blood,false,3,pdf_core_or_paren_alias
+IgG (Immunoglobuline G),igg,IgG,combined_lab_catalog,lab_med_ministry_pdf#4:95,chemistry,blood,false,3,pdf_core_or_paren_alias
+Immunoglobuline G,igg,IgG,combined_lab_catalog,lab_med_ministry_pdf#4:95,chemistry,blood,false,3,pdf_core_or_paren_alias
+IgM,igm,IgM,combined_lab_catalog,lab_med_ministry_pdf#4:96,chemistry,blood,false,3,pdf_core_or_paren_alias
+IgM (Immunoglobuline M),igm,IgM,combined_lab_catalog,lab_med_ministry_pdf#4:96,chemistry,blood,false,3,pdf_core_or_paren_alias
+Immunoglobuline M,igm,IgM,combined_lab_catalog,lab_med_ministry_pdf#4:96,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL-10,il_10,IL-10,combined_lab_catalog,lab_med_ministry_pdf#4:91,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL-10 (Interleukin 10),il_10,IL-10,combined_lab_catalog,lab_med_ministry_pdf#4:91,chemistry,blood,false,3,pdf_core_or_paren_alias
+Interleukin 10,il_10,IL-10,combined_lab_catalog,lab_med_ministry_pdf#4:91,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL-1alpha,il_1alpha,IL-1alpha,combined_lab_catalog,lab_med_ministry_pdf#4:87,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL-1alpha (Interleukin 1alpha ),il_1alpha,IL-1alpha,combined_lab_catalog,lab_med_ministry_pdf#4:87,chemistry,blood,false,3,pdf_core_or_paren_alias
+Interleukin 1alpha,il_1alpha,IL-1alpha,combined_lab_catalog,lab_med_ministry_pdf#4:87,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL -1beta,il_1beta,IL -1beta,combined_lab_catalog,lab_med_ministry_pdf#4:88,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL -1beta (Interleukin 1beta ),il_1beta,IL -1beta,combined_lab_catalog,lab_med_ministry_pdf#4:88,chemistry,blood,false,3,pdf_core_or_paren_alias
+Interleukin 1beta,il_1beta,IL -1beta,combined_lab_catalog,lab_med_ministry_pdf#4:88,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL-6,il_6,IL-6,combined_lab_catalog,lab_med_ministry_pdf#4:89,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL-6 ( Interleukin 6),il_6,IL-6,combined_lab_catalog,lab_med_ministry_pdf#4:89,chemistry,blood,false,3,pdf_core_or_paren_alias
+Interleukin 6,il_6,IL-6,combined_lab_catalog,lab_med_ministry_pdf#4:89,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL-8,il_8,IL-8,combined_lab_catalog,lab_med_ministry_pdf#4:90,chemistry,blood,false,3,pdf_core_or_paren_alias
+IL-8 (Interleukin 8),il_8,IL-8,combined_lab_catalog,lab_med_ministry_pdf#4:90,chemistry,blood,false,3,pdf_core_or_paren_alias
+Interleukin 8,il_8,IL-8,combined_lab_catalog,lab_med_ministry_pdf#4:90,chemistry,blood,false,3,pdf_core_or_paren_alias
+IMA,ima,IMA,combined_lab_catalog,lab_med_ministry_pdf#4:100,chemistry,blood,false,3,pdf_core_or_paren_alias
+IMA (Ischemia Modified Albumin),ima,IMA,combined_lab_catalog,lab_med_ministry_pdf#4:100,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định lượng protein dịch não tủy,inh_luong_protein_dich_nao_tuy,Định lượng protein dịch não tủy,combined_lab_catalog,lab_list_pdf#7:102,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định lượng thuốc Tacrolimus,inh_luong_thuoc_tacrolimus,Định lượng thuốc Tacrolimus,combined_lab_catalog,lab_list_pdf#5:81,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định tính amphetamin niệu,inh_tinh_amphetamin_nieu,Định tính amphetamin niệu,combined_lab_catalog,lab_list_pdf#6:90,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định tính beta -HCG niệu,inh_tinh_beta_hcg_nieu,Định tính beta -HCG niệu,combined_lab_catalog,lab_list_pdf#6:96,endocrine,blood,false,3,pdf_core_or_paren_alias
+Định tính IgG-HP bằng test nhanh,inh_tinh_igg_hp_bang_test_nhanh,Định tính IgG-HP bằng test nhanh,combined_lab_catalog,lab_list_pdf#7:105,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định tính IgM-HAV bằng test nhanh,inh_tinh_igm_hav_bang_test_nhanh,Định tính IgM-HAV bằng test nhanh,combined_lab_catalog,lab_list_pdf#7:103,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định tính IgM-HEV bằng test nhanh,inh_tinh_igm_hev_bang_test_nhanh,Định tính IgM-HEV bằng test nhanh,combined_lab_catalog,lab_list_pdf#7:104,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định tính marijuana niệu,inh_tinh_marijuana_nieu,Định tính marijuana niệu,combined_lab_catalog,lab_list_pdf#6:91,immunology,blood,false,3,pdf_core_or_paren_alias
+Định tính Methamphetamin,inh_tinh_methamphetamin,Định tính Methamphetamin,combined_lab_catalog,lab_list_pdf#6:92,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định tính morphin niệu,inh_tinh_morphin_nieu,Định tính morphin niệu,combined_lab_catalog,lab_list_pdf#6:89,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định tính paraquat niệu,inh_tinh_paraquat_nieu,Định tính paraquat niệu,combined_lab_catalog,lab_list_pdf#6:101,chemistry,blood,false,3,pdf_core_or_paren_alias
+Định tính protein niệu,inh_tinh_protein_nieu,Định tính protein niệu,combined_lab_catalog,lab_list_pdf#6:98,chemistry,blood,false,3,pdf_core_or_paren_alias
+Insulin,insulin,Insulin,combined_lab_catalog,lab_med_ministry_pdf#4:98,endocrine,blood,false,3,pdf_core_or_paren_alias
+Isozym - LDH,isozym_ldh,Isozym - LDH,combined_lab_catalog,lab_med_ministry_pdf#4:99,chemistry,blood,false,3,pdf_core_or_paren_alias
+Kappa,kappa,Kappa,combined_lab_catalog,lab_med_ministry_pdf#4:101,chemistry,blood,false,3,pdf_core_or_paren_alias
+Free kappa,kappa_tu_do,Kappa tự do,combined_lab_catalog,lab_med_ministry_pdf#4:102,chemistry,blood,false,3,pdf_core_or_paren_alias
+Kappa tự do,kappa_tu_do,Kappa tự do,combined_lab_catalog,lab_med_ministry_pdf#4:102,chemistry,blood,false,3,pdf_core_or_paren_alias
+Kappa tự do (Free kappa),kappa_tu_do,Kappa tự do,combined_lab_catalog,lab_med_ministry_pdf#4:102,chemistry,blood,false,3,pdf_core_or_paren_alias
+Khí máu,khi_mau,Khí máu,combined_lab_catalog,lab_med_ministry_pdf#4:103,blood_gas,blood,false,3,pdf_core_or_paren_alias
+Khí máu động mạch,khi_mau_ong_mach,Khí máu động mạch,combined_lab_catalog,lab_list_pdf#3:37,blood_gas,blood,false,3,pdf_core_or_paren_alias
+Acid Lactic,lactat,Lactat,combined_lab_catalog,lab_med_ministry_pdf#4:104,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lactat,lactat,Lactat,combined_lab_catalog,lab_med_ministry_pdf#4:104,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lactat (Acid Lactic),lactat,Lactat,combined_lab_catalog,lab_med_ministry_pdf#4:104,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lambda,lambda,Lambda,combined_lab_catalog,lab_med_ministry_pdf#4:105,chemistry,blood,false,3,pdf_core_or_paren_alias
+Free Lambda,lambda_tu_do,Lambda tự do,combined_lab_catalog,lab_med_ministry_pdf#4:106,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lambda tự do,lambda_tu_do,Lambda tự do,combined_lab_catalog,lab_med_ministry_pdf#4:106,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lambda tự do (Free Lambda),lambda_tu_do,Lambda tự do,combined_lab_catalog,lab_med_ministry_pdf#4:106,chemistry,blood,false,3,pdf_core_or_paren_alias
+LDH,ldh,LDH,combined_lab_catalog,both#4:111,chemistry,blood,false,3,pdf_core_or_paren_alias
+LDH ( Lactat dehydrogenase),ldh,LDH,combined_lab_catalog,both#4:111,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lactat dehydrogenase,ldh,LDH,combined_lab_catalog,both#4:111,chemistry,blood,false,3,pdf_core_or_paren_alias
+LDL,ldl,LDL,combined_lab_catalog,lab_list_pdf#1:10,chemistry,blood,false,3,pdf_core_or_paren_alias
+LDL - C,ldl_c,LDL - C,combined_lab_catalog,lab_med_ministry_pdf#4:112,chemistry,blood,false,3,pdf_core_or_paren_alias
+LDL - C (Low density lipoprotein Cholesterol),ldl_c,LDL - C,combined_lab_catalog,lab_med_ministry_pdf#4:112,chemistry,blood,false,3,pdf_core_or_paren_alias
+LDL/HDL cholesterol,ldl_hdl_cholesterol,LDL/HDL cholesterol,combined_lab_catalog,lab_med_ministry_pdf#4:108,chemistry,blood,false,3,pdf_core_or_paren_alias
+Leptin human,leptin_human,Leptin human,combined_lab_catalog,lab_med_ministry_pdf#4:107,coagulation,blood,false,3,pdf_core_or_paren_alias
+LH,lh,LH,combined_lab_catalog,both#4:110,endocrine,blood,false,3,pdf_core_or_paren_alias
+LH (Luteinizing hormone),lh,LH,combined_lab_catalog,both#4:110,endocrine,blood,false,3,pdf_core_or_paren_alias
+Luteinizing hormone,lh,LH,combined_lab_catalog,both#4:110,endocrine,blood,false,3,pdf_core_or_paren_alias
+Lipase,lipase,Lipase,combined_lab_catalog,lab_med_ministry_pdf#4:109,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lipase máu,lipase_mau,Lipase máu,combined_lab_catalog,lab_list_pdf#2:24,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lipoprotein,lipoprotein,Lipoprotein,combined_lab_catalog,lab_med_ministry_pdf#5:113,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lp-PLA2,lp_pla2,Lp-PLA2,combined_lab_catalog,lab_med_ministry_pdf#5:114,chemistry,blood,false,3,pdf_core_or_paren_alias
+Lp-PLA2 (Lipoprotein Associated Phospholipase A2),lp_pla2,Lp-PLA2,combined_lab_catalog,lab_med_ministry_pdf#5:114,chemistry,blood,false,3,pdf_core_or_paren_alias
+lp-pla2 (lipoprotein associated photpholipase a2),lp_pla2,Lp-PLA2,combined_lab_catalog,lab_med_ministry_pdf#5:114,chemistry,blood,false,3,orthographic_variant
+MDA,malondialdehyd,Malondialdehyd,combined_lab_catalog,lab_med_ministry_pdf#5:115,chemistry,blood,false,3,pdf_core_or_paren_alias
+Malondialdehyd,malondialdehyd,Malondialdehyd,combined_lab_catalog,lab_med_ministry_pdf#5:115,chemistry,blood,false,3,pdf_core_or_paren_alias
+Malondialdehyd (MDA),malondialdehyd,Malondialdehyd,combined_lab_catalog,lab_med_ministry_pdf#5:115,chemistry,blood,false,3,pdf_core_or_paren_alias
+Mg,mg,Mg,combined_lab_catalog,lab_med_ministry_pdf#5:118,chemistry,blood,true,3,pdf_core_or_paren_alias
+Microalbumin niệu,microalbumin_nieu,Microalbumin niệu,combined_lab_catalog,lab_list_pdf#6:97,chemistry,blood,false,3,pdf_core_or_paren_alias
+MPO,mpo,MPO,combined_lab_catalog,lab_med_ministry_pdf#5:116,chemistry,blood,false,3,pdf_core_or_paren_alias
+Mycobacterium tuberculosis Real-time PCR,mycobacterium_tuberculosis_real_time_pcr,Mycobacterium tuberculosis Real-time PCR,combined_lab_catalog,lab_list_pdf#9:25,microbiology,blood,false,3,pdf_core_or_paren_alias
+Myoglobin,myoglobin,Myoglobin,combined_lab_catalog,lab_med_ministry_pdf#5:117,chemistry,blood,false,3,pdf_core_or_paren_alias
+N-MID Osteocalcin,n_mid_osteocalcin,N-MID Osteocalcin,combined_lab_catalog,lab_med_ministry_pdf#5:119,chemistry,blood,false,3,pdf_core_or_paren_alias
+n-mid osteocanxin,n_mid_osteocalcin,N-MID Osteocalcin,combined_lab_catalog,lab_med_ministry_pdf#5:119,chemistry,blood,false,3,orthographic_variant
+Neisseria gonorrhoeae nhuộm soi,neisseria_gonorrhoeae_nhuom_soi,Neisseria gonorrhoeae nhuộm soi,combined_lab_catalog,lab_list_pdf#8:13,microbiology,unknown,false,3,pdf_core_or_paren_alias
+Neisseria meningitides nhuộm soi,neisseria_meningitides_nhuom_soi,Neisseria meningitides nhuộm soi,combined_lab_catalog,lab_list_pdf#8:15,microbiology,unknown,false,3,pdf_core_or_paren_alias
+NH máu 3,nh_mau_3,NH máu 3,combined_lab_catalog,lab_list_pdf#2:21,chemistry,blood,false,3,pdf_core_or_paren_alias
+NSE,nse,NSE,combined_lab_catalog,both#5:120,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+NSE (Neuron Specific Enolase),nse,NSE,combined_lab_catalog,both#5:120,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Neuron Specific Enolase,nse,NSE,combined_lab_catalog,both#5:120,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+NT-proBNP,nt_probnp,NT-proBNP,combined_lab_catalog,lab_med_ministry_pdf#5:121,chemistry,blood,false,3,pdf_core_or_paren_alias
+nt probnp,nt_probnp,NT-proBNP,combined_lab_catalog,lab_med_ministry_pdf#5:121,chemistry,blood,false,3,orthographic_variant
+NUMA,numa,NUMA,combined_lab_catalog,lab_list_pdf#5:86,chemistry,blood,false,3,pdf_core_or_paren_alias
+bằng máy tự động,nuoc_tieu,nước tiểu,combined_lab_catalog,lab_med_ministry_pdf#7:203,urinalysis,urine,false,3,pdf_core_or_paren_alias
+nước tiểu (bằng máy tự động),nuoc_tieu,nước tiểu,combined_lab_catalog,lab_med_ministry_pdf#7:203,urinalysis,urine,false,3,pdf_core_or_paren_alias
+Đơn bào đường ruột nhuộm soi,on_bao_uong_ruot_nhuom_soi,Đơn bào đường ruột nhuộm soi,combined_lab_catalog,lab_list_pdf#9:31,microbiology,blood,false,3,pdf_core_or_paren_alias
+Đơn bào đường ruột soi tươi,on_bao_uong_ruot_soi_tuoi,Đơn bào đường ruột soi tươi,combined_lab_catalog,lab_list_pdf#9:30,chemistry,blood,false,3,pdf_core_or_paren_alias
+P-Amylase,p_amylase,P-Amylase,combined_lab_catalog,lab_med_ministry_pdf#5:122,chemistry,blood,false,3,pdf_core_or_paren_alias
+Pandy,pandy,Pandy,combined_lab_catalog,lab_med_ministry_pdf#7:206,chemistry,csf,false,3,pdf_core_or_paren_alias
+PAPP-A,papp_a,PAPP-A,combined_lab_catalog,lab_med_ministry_pdf#5:123,chemistry,blood,false,3,pdf_core_or_paren_alias
+PCT,pct,PCT,combined_lab_catalog,lab_list_pdf#4:59,immunology,blood,false,3,pdf_core_or_paren_alias
+Pepsinogen I,pepsinogen_i,Pepsinogen I,combined_lab_catalog,lab_med_ministry_pdf#5:124,chemistry,blood,false,3,pdf_core_or_paren_alias
+Pepsinogen II,pepsinogen_ii,Pepsinogen II,combined_lab_catalog,lab_med_ministry_pdf#5:125,chemistry,blood,false,3,pdf_core_or_paren_alias
+Phản ứng pandy,phan_ung_pandy,Phản ứng pandy,combined_lab_catalog,lab_list_pdf#6:100,chemistry,blood,false,3,pdf_core_or_paren_alias
+Phản ứng rivalta,phan_ung_rivalta,Phản ứng rivalta,combined_lab_catalog,lab_list_pdf#6:99,chemistry,blood,false,3,pdf_core_or_paren_alias
+Phenobarbital,phenobarbital,Phenobarbital,combined_lab_catalog,lab_med_ministry_pdf#5:126,chemistry,blood,false,3,pdf_core_or_paren_alias
+Phenytoin,phenytoin,Phenytoin,combined_lab_catalog,lab_med_ministry_pdf#5:127,chemistry,blood,false,3,pdf_core_or_paren_alias
+Phospho,phospho,Phospho,combined_lab_catalog,both#5:128,urinalysis,blood,false,3,pdf_core_or_paren_alias
+photpho,phospho,Phospho,combined_lab_catalog,both#5:128,urinalysis,blood,false,3,orthographic_variant
+phospho hữu cơ,phospho_huu_co,phospho hữu cơ,combined_lab_catalog,lab_med_ministry_pdf#7:195,urinalysis,urine,false,3,pdf_core_or_paren_alias
+photpho hữu cơ,phospho_huu_co,phospho hữu cơ,combined_lab_catalog,lab_med_ministry_pdf#7:195,urinalysis,urine,false,3,orthographic_variant
+Phthirus pubis soi tươi,phthirus_pubis_soi_tuoi,Phthirus pubis soi tươi,combined_lab_catalog,lab_list_pdf#9:40,chemistry,blood,false,3,pdf_core_or_paren_alias
+Rận mu,phthirus_pubis_soi_tuoi,Phthirus pubis soi tươi,combined_lab_catalog,lab_list_pdf#9:40,chemistry,blood,false,3,pdf_core_or_paren_alias
+PLGF,plgf,PLGF,combined_lab_catalog,lab_med_ministry_pdf#6:170,chemistry,blood,false,3,pdf_core_or_paren_alias
+PLGF (Placental Growth Factor- yếu tố tân tạo mạch máu),plgf,PLGF,combined_lab_catalog,lab_med_ministry_pdf#6:170,chemistry,blood,false,3,pdf_core_or_paren_alias
+Porphyrin,porphyrin,Porphyrin,combined_lab_catalog,lab_med_ministry_pdf#7:196,urinalysis,urine,false,3,pdf_core_or_paren_alias
+Pre-albumin,pre_albumin,Pre-albumin,combined_lab_catalog,lab_med_ministry_pdf#5:129,chemistry,blood,false,3,pdf_core_or_paren_alias
+Pro BNP,pro_bnp,Pro BNP,combined_lab_catalog,lab_list_pdf#4:60,chemistry,blood,false,3,pdf_core_or_paren_alias
+Pro-calcitonin,pro_calcitonin,Pro-calcitonin,combined_lab_catalog,lab_med_ministry_pdf#5:130,chemistry,blood,false,3,pdf_core_or_paren_alias
+pro-canxitonin,pro_calcitonin,Pro-calcitonin,combined_lab_catalog,lab_med_ministry_pdf#5:130,chemistry,blood,false,3,orthographic_variant
+Pro-GRP,pro_grp,Pro-GRP,combined_lab_catalog,lab_med_ministry_pdf#5:137,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Pro-GRP ( Pro- Gastrin-releasing peptide),pro_grp,Pro-GRP,combined_lab_catalog,lab_med_ministry_pdf#5:137,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Procainnamid,procainnamid,Procainnamid,combined_lab_catalog,lab_med_ministry_pdf#5:135,chemistry,blood,false,3,pdf_core_or_paren_alias
+Progesterol,progesterol,Progesterol,combined_lab_catalog,lab_list_pdf#4:70,chemistry,blood,false,3,pdf_core_or_paren_alias
+Progesteron,progesteron,Progesteron,combined_lab_catalog,lab_med_ministry_pdf#5:134,endocrine,blood,false,3,pdf_core_or_paren_alias
+ProGRP,progrp,ProGRP,combined_lab_catalog,lab_list_pdf#4:61,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+Prolactin,prolactin,Prolactin,combined_lab_catalog,lab_med_ministry_pdf#5:131,endocrine,blood,false,3,pdf_core_or_paren_alias
+protein,protein,protein,combined_lab_catalog,lab_med_ministry_pdf#5:132,urinalysis,blood,false,3,pdf_core_or_paren_alias
+Protein Bence -jones,protein_bence_jones,Protein Bence -jones,combined_lab_catalog,lab_med_ministry_pdf#7:199,urinalysis,urine,false,3,pdf_core_or_paren_alias
+Protein dịch chọc dò,protein_dich_choc_do,Protein dịch chọc dò,combined_lab_catalog,lab_list_pdf#7:110,chemistry,blood,false,3,pdf_core_or_paren_alias
+protein S100,protein_s100,protein S100,combined_lab_catalog,lab_med_ministry_pdf#5:136,chemistry,blood,false,3,pdf_core_or_paren_alias
+Proteid máu,protein_toan_phan,Protein toàn phần,combined_lab_catalog,both#5:133,chemistry,blood,false,3,pdf_core_or_paren_alias
+Protein toàn phần,protein_toan_phan,Protein toàn phần,combined_lab_catalog,both#5:133,chemistry,blood,false,3,pdf_core_or_paren_alias
+PSA toàn phần,psa_toan_phan,PSA toàn phần,combined_lab_catalog,both#5:139,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+PSA toàn phần (Total prostate-specific antigen),psa_toan_phan,PSA toàn phần,combined_lab_catalog,both#5:139,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+PSA tự do,psa_tu_do,PSA tự do,combined_lab_catalog,both#5:138,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+PSA tự do (Free prostate-specific antigen),psa_tu_do,PSA tự do,combined_lab_catalog,both#5:138,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+PT (thời gian prothrombin),pt,PT (thời gian prothrombin),combined_lab_catalog,manual_curation#0:,coagulation,blood,false,3,pdf_core_or_paren_alias
+PTH,pth,PTH,combined_lab_catalog,both#5:140,coagulation,blood,false,3,pdf_core_or_paren_alias
+PTH (Parathyroid hormon),pth,PTH,combined_lab_catalog,both#5:140,coagulation,blood,false,3,pdf_core_or_paren_alias
+Parathyroid hormon,pth,PTH,combined_lab_catalog,both#5:140,coagulation,blood,false,3,pdf_core_or_paren_alias
+Renin activity,renin_activity,Renin activity,combined_lab_catalog,lab_med_ministry_pdf#5:141,chemistry,blood,false,3,pdf_core_or_paren_alias
+RF,rf,RF,combined_lab_catalog,both#5:142,immunology,blood,true,3,pdf_core_or_paren_alias
+RF (Reumatoid factor),rf,RF,combined_lab_catalog,both#5:142,immunology,blood,false,3,pdf_core_or_paren_alias
+Reumatoid factor,rf,RF,combined_lab_catalog,both#5:142,immunology,blood,false,3,pdf_core_or_paren_alias
+Rivalta,rivalta,Rivalta,combined_lab_catalog,lab_med_ministry_pdf#7:217,chemistry,puncture_fluid,false,3,pdf_core_or_paren_alias
+Rotundin,rotundin,Rotundin,combined_lab_catalog,lab_med_ministry_pdf#7:200,urinalysis,urine,false,3,pdf_core_or_paren_alias
+s TfR,s_tfr,s TfR,combined_lab_catalog,lab_med_ministry_pdf#5:149,chemistry,blood,false,3,pdf_core_or_paren_alias
+s TfR (solube transferin receptor),s_tfr,s TfR,combined_lab_catalog,lab_med_ministry_pdf#5:149,chemistry,blood,false,3,pdf_core_or_paren_alias
+Sàng lọc 36 dị nguyên,sang_loc_36_di_nguyen,Sàng lọc 36 dị nguyên,combined_lab_catalog,lab_list_pdf#7:114,chemistry,blood,false,3,pdf_core_or_paren_alias
+Ghẻ,sarcoptes_scabieshominis,Sarcoptes scabieshominis,combined_lab_catalog,lab_list_pdf#9:42,coagulation,blood,false,3,pdf_core_or_paren_alias
+Sarcoptes scabieshominis,sarcoptes_scabieshominis,Sarcoptes scabieshominis,combined_lab_catalog,lab_list_pdf#9:42,coagulation,blood,false,3,pdf_core_or_paren_alias
+Ghẻ,sarcoptes_scabieshominis_soi_tuoi,Sarcoptes scabieshominis soi tươi,combined_lab_catalog,lab_list_pdf#9:41,coagulation,blood,false,3,pdf_core_or_paren_alias
+Sarcoptes scabieshominis soi tươi,sarcoptes_scabieshominis_soi_tuoi,Sarcoptes scabieshominis soi tươi,combined_lab_catalog,lab_list_pdf#9:41,coagulation,blood,false,3,pdf_core_or_paren_alias
+Sắt,sat,Sắt,combined_lab_catalog,both#5:143,chemistry,blood,false,3,pdf_core_or_paren_alias
+SCC,scc,SCC,combined_lab_catalog,both#5:144,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+SCC (squamous cell carcinoma antigen),scc,SCC,combined_lab_catalog,both#5:144,tumor_marker,blood,false,3,pdf_core_or_paren_alias
+sFlt-1,sflt_1,sFlt-1,combined_lab_catalog,lab_med_ministry_pdf#6:171,chemistry,blood,false,3,pdf_core_or_paren_alias
+sFlt-1 (yếu tố kháng tân tạo mạch máu),sflt_1,sFlt-1,combined_lab_catalog,lab_med_ministry_pdf#6:171,chemistry,blood,false,3,pdf_core_or_paren_alias
+SHBG,shbg,SHBG,combined_lab_catalog,lab_med_ministry_pdf#5:145,chemistry,blood,false,3,pdf_core_or_paren_alias
+SHBG (Sex hormon binding globulin),shbg,SHBG,combined_lab_catalog,lab_med_ministry_pdf#5:145,chemistry,blood,false,3,pdf_core_or_paren_alias
+Soi cặn nước tiểu bằng kính hiển vi,soi_can_nuoc_tieu_bang_kinh_hien_vi,Soi cặn nước tiểu bằng kính hiển vi,combined_lab_catalog,lab_list_pdf#5:88,chemistry,blood,false,3,pdf_core_or_paren_alias
+Sperm Antibody,sperm_antibody,Sperm Antibody,combined_lab_catalog,lab_med_ministry_pdf#5:146,chemistry,blood,false,3,pdf_core_or_paren_alias
+T (Tri iodothyronine),t,T,combined_lab_catalog,lab_med_ministry_pdf#5:147,chemistry,blood,false,3,pdf_core_or_paren_alias
+Tri iodothyronine,t,T,combined_lab_catalog,lab_med_ministry_pdf#5:147,chemistry,blood,false,3,pdf_core_or_paren_alias
+T3,t3,T3,combined_lab_catalog,lab_list_pdf#3:38,endocrine,blood,false,3,pdf_core_or_paren_alias
+T4,t4,T4,combined_lab_catalog,lab_list_pdf#3:39,endocrine,blood,false,3,pdf_core_or_paren_alias
+T-uptake,t_uptake,T-uptake,combined_lab_catalog,lab_med_ministry_pdf#6:165,coagulation,blood,false,3,pdf_core_or_paren_alias
+Tacrolimus,tacrolimus,Tacrolimus,combined_lab_catalog,lab_med_ministry_pdf#5:150,chemistry,blood,false,3,pdf_core_or_paren_alias
+Sándây,taenia_soi_tuoi_inh_danh,Taenia soi tươi định danh,combined_lab_catalog,lab_list_pdf#10:43,chemistry,blood,false,3,pdf_core_or_paren_alias
+Taenia soi tươi định danh,taenia_soi_tuoi_inh_danh,Taenia soi tươi định danh,combined_lab_catalog,lab_list_pdf#10:43,chemistry,blood,false,3,pdf_core_or_paren_alias
+Testosterol,testosterol,Testosterol,combined_lab_catalog,both#5:151,endocrine,blood,false,3,pdf_core_or_paren_alias
+TG,tg,Tg,combined_lab_catalog,both#6:154,chemistry,blood,false,3,pdf_core_or_paren_alias
+Tg (Thyroglobulin),tg,Tg,combined_lab_catalog,both#6:154,chemistry,blood,false,3,pdf_core_or_paren_alias
+Thyroglobulin,tg,Tg,combined_lab_catalog,both#6:154,chemistry,blood,false,3,pdf_core_or_paren_alias
+TGF beta 1,tgf_beta_1,TGF beta 1,combined_lab_catalog,lab_med_ministry_pdf#5:152,chemistry,blood,false,3,pdf_core_or_paren_alias
+TGF beta 1( Transforming Growth Factor Beta 1),tgf_beta_1,TGF beta 1,combined_lab_catalog,lab_med_ministry_pdf#5:152,chemistry,blood,false,3,pdf_core_or_paren_alias
+TGF beta 2,tgf_beta_2,TGF beta 2,combined_lab_catalog,lab_med_ministry_pdf#6:153,chemistry,blood,false,3,pdf_core_or_paren_alias
+TGF beta 2( Transforming Growth Factor Beta 2),tgf_beta_2,TGF beta 2,combined_lab_catalog,lab_med_ministry_pdf#6:153,chemistry,blood,false,3,pdf_core_or_paren_alias
+Canabionids,thc,THC,combined_lab_catalog,lab_med_ministry_pdf#7:201,urinalysis,urine,false,3,pdf_core_or_paren_alias
+THC,thc,THC,combined_lab_catalog,lab_med_ministry_pdf#7:201,urinalysis,urine,false,3,pdf_core_or_paren_alias
+THC (Canabionids),thc,THC,combined_lab_catalog,lab_med_ministry_pdf#7:201,urinalysis,urine,false,3,pdf_core_or_paren_alias
+Theophylline,theophylline,Theophylline,combined_lab_catalog,lab_med_ministry_pdf#6:155,chemistry,blood,false,3,pdf_core_or_paren_alias
+Tìm ấu trùng giun chỉ trong máu,tim_au_trung_giun_chi_trong_mau,Tìm ấu trùng giun chỉ trong máu,combined_lab_catalog,lab_list_pdf#9:38,chemistry,blood,false,3,pdf_core_or_paren_alias
+Tìm ấu trùng giun lươn trong phân,tim_au_trung_giun_luon_trong_phan,Tìm ấu trùng giun lươn trong phân,combined_lab_catalog,lab_list_pdf#9:34,chemistry,blood,false,3,pdf_core_or_paren_alias
+Tobramycin,tobramycin,Tobramycin,combined_lab_catalog,lab_med_ministry_pdf#6:163,chemistry,blood,false,3,pdf_core_or_paren_alias
+Total p1NP,total_p1np,Total p1NP,combined_lab_catalog,lab_med_ministry_pdf#6:164,chemistry,blood,false,3,pdf_core_or_paren_alias
+TPT nước tiểu,tpt_nuoc_tieu,TPT nước tiểu,combined_lab_catalog,lab_list_pdf#5:87,coagulation,blood,false,3,pdf_core_or_paren_alias
+TRAb,trab,TRAb,combined_lab_catalog,lab_med_ministry_pdf#6:156,chemistry,blood,false,3,pdf_core_or_paren_alias
+TRAb (TSH Receptor Antibodies),trab,TRAb,combined_lab_catalog,lab_med_ministry_pdf#6:156,chemistry,blood,false,3,pdf_core_or_paren_alias
+TSH Receptor Antibodies,trab,TRAb,combined_lab_catalog,lab_med_ministry_pdf#6:156,chemistry,blood,false,3,pdf_core_or_paren_alias
+Transferin,transferin,Transferin,combined_lab_catalog,lab_med_ministry_pdf#6:157,chemistry,blood,false,3,pdf_core_or_paren_alias
+Treponemapallidum test nhanh,treponemapallidum_test_nhanh,Treponemapallidum test nhanh,combined_lab_catalog,lab_list_pdf#8:17,chemistry,unknown,false,3,pdf_core_or_paren_alias
+Trichomonasvaginalis soi tươi,trichomonasvaginalis_soi_tuoi,Trichomonasvaginalis soi tươi,combined_lab_catalog,lab_list_pdf#10:44,chemistry,blood,false,3,pdf_core_or_paren_alias
+Triglycerid,triglycerid,Triglycerid,combined_lab_catalog,both#6:158,chemistry,blood,false,3,pdf_core_or_paren_alias
+Troponin I,troponin_i,Troponin I,combined_lab_catalog,both#6:161,chemistry,blood,false,3,pdf_core_or_paren_alias
+Troponin T,troponin_t,Troponin T,combined_lab_catalog,lab_med_ministry_pdf#6:159,chemistry,blood,false,3,pdf_core_or_paren_alias
+Troponin T hs,troponin_t_hs,Troponin T hs,combined_lab_catalog,both#6:160,chemistry,blood,false,3,pdf_core_or_paren_alias
+"Trứng giun, sán soi tươi",trung_giun_san_soi_tuoi,"Trứng giun, sán soi tươi",combined_lab_catalog,lab_list_pdf#9:32,chemistry,blood,false,3,pdf_core_or_paren_alias
+Trứng giun soi tập trung,trung_giun_soi_tap_trung,Trứng giun soi tập trung,combined_lab_catalog,lab_list_pdf#9:33,chemistry,blood,false,3,pdf_core_or_paren_alias
+TSH,tsh,TSH,combined_lab_catalog,both#6:162,endocrine,blood,false,3,pdf_core_or_paren_alias
+TSH (Thyroid Stimulating hormone),tsh,TSH,combined_lab_catalog,both#6:162,endocrine,blood,false,3,pdf_core_or_paren_alias
+TT (thời gian thrombin),tt,TT (thời gian thrombin),combined_lab_catalog,manual_curation#0:,coagulation,blood,false,3,pdf_core_or_paren_alias
+thời gian thrombin,tt,TT (thời gian thrombin),combined_lab_catalog,manual_curation#0:,coagulation,blood,false,3,pdf_core_or_paren_alias
+Đường dịch não tủy,uong_dich_nao_tuy,Đường dịch não tủy,combined_lab_catalog,lab_list_pdf#7:111,chemistry,blood,false,3,pdf_core_or_paren_alias
+Ure máu,ure,Ure niệu,combined_lab_catalog,both#7:108,urinalysis,blood,false,3,pdf_core_or_paren_alias
+Ure niệu,ure,Ure niệu,combined_lab_catalog,both#7:108,urinalysis,blood,false,3,pdf_core_or_paren_alias
+Valproic acid,valproic_acid,Valproic acid,combined_lab_catalog,lab_med_ministry_pdf#6:167,chemistry,blood,false,3,pdf_core_or_paren_alias
+Vancomycin,vancomycin,Vancomycin,combined_lab_catalog,lab_med_ministry_pdf#6:168,chemistry,blood,false,3,pdf_core_or_paren_alias
+Vi hệ đường ruột,vi_he_uong_ruot,Vi hệ đường ruột,combined_lab_catalog,lab_list_pdf#8:8,chemistry,unknown,false,3,pdf_core_or_paren_alias
+Vi khuẩn khẳng định,vi_khuan_khang_inh,Vi khuẩn khẳng định,combined_lab_catalog,lab_list_pdf#8:7,chemistry,unknown,false,3,pdf_core_or_paren_alias
+Vi khuẩn kháng thuốc hệ thống tự động,vi_khuan_khang_thuoc_he_thong_tu_ong,Vi khuẩn kháng thuốc hệ thống tự động,combined_lab_catalog,lab_list_pdf#8:4,chemistry,unknown,false,3,pdf_core_or_paren_alias
+Vi khuẩn kháng thuốc định tính,vi_khuan_khang_thuoc_inh_tinh,Vi khuẩn kháng thuốc định tính,combined_lab_catalog,lab_list_pdf#8:3,chemistry,unknown,false,3,pdf_core_or_paren_alias
+Vi khuẩn nhuộm soi,vi_khuan_nhuom_soi,Vi khuẩn nhuộm soi,combined_lab_catalog,lab_list_pdf#8:1,microbiology,unknown,false,3,pdf_core_or_paren_alias
+Vi nấm nhuộm soi,vi_nam_nhuom_soi,Vi nấm nhuộm soi,combined_lab_catalog,lab_list_pdf#10:46,microbiology,blood,false,3,pdf_core_or_paren_alias
+Vi nấm soi tươi,vi_nam_soi_tuoi,Vi nấm soi tươi,combined_lab_catalog,lab_list_pdf#10:45,chemistry,blood,false,3,pdf_core_or_paren_alias
+Vibrio cholera nhuộm soi,vibrio_cholera_nhuom_soi,Vibrio cholera nhuộm soi,combined_lab_catalog,lab_list_pdf#8:11,microbiology,unknown,false,3,pdf_core_or_paren_alias
+Vibrio cholera soi tươi,vibrio_cholera_soi_tuoi,Vibrio cholera soi tươi,combined_lab_catalog,lab_list_pdf#8:10,chemistry,unknown,false,3,pdf_core_or_paren_alias
+Vitamin B12,vitamin_b12,Vitamin B12,combined_lab_catalog,lab_med_ministry_pdf#6:169,chemistry,blood,false,3,pdf_core_or_paren_alias
+Xác định tên vi khuẩn,xac_inh_ten_vi_khuan,Xác định tên vi khuẩn,combined_lab_catalog,lab_list_pdf#8:6,chemistry,unknown,false,3,pdf_core_or_paren_alias
+Xác định vi khuẩn lao,xac_inh_vi_khuan_lao,Xác định vi khuẩn lao,combined_lab_catalog,lab_list_pdf#9:24,chemistry,blood,false,3,pdf_core_or_paren_alias
+Ca,calci,Calci toàn phần,abbreviation_txt_alias,abbreviation.txt:Ca,urinalysis,blood,true,2,gloss=can xi
+Cl,clo,Clo,abbreviation_txt_alias,abbreviation.txt:Cl,chemistry,csf,true,2,gloss=clo; clo
+ABG,khi_mau,Khí máu,abbreviation_txt_alias,abbreviation.txt:ABG,blood_gas,blood,false,2,gloss=khí máu động mạch
+BUN,ure,Ure niệu,abbreviation_txt_alias,abbreviation.txt:BUN,urinalysis,blood,false,2,gloss=urea nitrogen trong máu

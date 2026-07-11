@@ -1,0 +1,292 @@
+source_pdf,source_page,source_item,raw_name,normalized_name,canonical_key,canonical_name,category,specimen,official_name,local_name,notes
+lab_med_ministry_pdf,3,55,Định lượng 25OH Vitamin D (D3),25OH Vitamin D (D3),25oh_vitamin_d,25OH Vitamin D,chemistry,blood,25OH Vitamin D (D3),,
+both,2,3,Định lượng Acid Uric,Acid Uric,acid_uric,Acid Uric,urinalysis,blood,Acid Uric,Acid uric máu,lab_list_pdf#1:12; lab_med_ministry_pdf#2:3
+lab_list_pdf,7,107,Acid uric niệu,Acid uric niệu,acid_uric_nieu,Acid uric niệu,chemistry,blood,,Acid uric niệu,
+lab_med_ministry_pdf,2,1,Đo hoạt độ ACP (Phosphatase Acid),ACP (Phosphatase Acid),acp,ACP,chemistry,blood,ACP (Phosphatase Acid),,
+both,2,2,Định lượng ACTH,ACTH,acth,ACTH,endocrine,blood,ACTH,ACTH,lab_list_pdf#4:63; lab_med_ministry_pdf#2:2
+lab_med_ministry_pdf,2,4,Định lượng ADH (Anti Diuretic Hormone),ADH (Anti Diuretic Hormone),adh,ADH,chemistry,blood,ADH (Anti Diuretic Hormone),,
+lab_med_ministry_pdf,2,5,Định lượng Adiponectin,Adiponectin,adiponectin,Adiponectin,chemistry,blood,Adiponectin,,
+both,2,18,Định lượng AFP (Alpha Fetoproteine),AFP (Alpha Fetoproteine),afp,AFP,tumor_marker,blood,AFP (Alpha Fetoproteine),AFP,lab_list_pdf#3:43; lab_med_ministry_pdf#2:18
+lab_med_ministry_pdf,2,7,Định lượng Albumin,Albumin,albumin,Albumin,chemistry,blood,Albumin,,lab_med_ministry_pdf#2:7; lab_med_ministry_pdf#7:208
+lab_list_pdf,1,6,Albumin máu,Albumin máu,albumin_mau,Albumin máu,chemistry,blood,,Albumin máu,
+lab_med_ministry_pdf,2,6,Định lượng Aldosteron,Aldosteron,aldosteron,Aldosteron,chemistry,blood,Aldosteron,,
+both,2,9,Đo hoạt độ ALP (Alkalin Phosphatase),ALP (Alkalin Phosphatase),alp,ALP,chemistry,blood,ALP (Alkalin Phosphatase),ALP,lab_list_pdf#2:18; lab_med_ministry_pdf#2:9
+lab_med_ministry_pdf,2,8,Định lượng Alpha1 Antitrypsin,Alpha1 Antitrypsin,alpha1_antitrypsin,Alpha1 Antitrypsin,chemistry,blood,Alpha1 Antitrypsin,,
+lab_med_ministry_pdf,2,21,Định lượng alpha 1 Acid Glycoprotein,alpha 1 Acid Glycoprotein,alpha_1_acid_glycoprotein,alpha 1 Acid Glycoprotein,chemistry,blood,alpha 1 Acid Glycoprotein,,
+lab_list_pdf,2,23,alpha -amylase máu,alpha -amylase máu,alpha_amylase_mau,alpha -amylase máu,chemistry,blood,,alpha -amylase máu,
+lab_list_pdf,7,106,alpha -amylase niệu,alpha -amylase niệu,alpha_amylase_nieu,alpha -amylase niệu,chemistry,blood,,alpha -amylase niệu,
+both,2,19,Đo hoạt độ ALT (GPT),ALT (GPT),alt,ALT,chemistry,blood,ALT (GPT),ALT,lab_list_pdf#2:16; lab_med_ministry_pdf#2:19
+lab_med_ministry_pdf,2,12,Định lượng AMH ( Anti- Mullerian Hormone),AMH ( Anti- Mullerian Hormone),amh,AMH,chemistry,blood,AMH ( Anti- Mullerian Hormone),,
+lab_med_ministry_pdf,2,11,Định lượng Amoniac ( NH3),Amoniac ( NH3),amoniac,Amoniac,chemistry,blood,Amoniac ( NH3),,
+lab_med_ministry_pdf,2,10,Đo hoạt độ Amylase,Amylase,amylase,Amylase,urinalysis,blood,Amylase,,lab_med_ministry_pdf#2:10; lab_med_ministry_pdf#7:210
+both,5,84,Anti-CCP,Anti-CCP,anti_ccp,Anti-CCP,immunology,blood,Anti CCP,Anti-CCP,both#2:13; lab_list_pdf#5:84
+lab_list_pdf,5,79,Anti-HBc IgM,Anti-HBc IgM,anti_hbc_igm,Anti-HBc IgM,chemistry,blood,,Anti-HBc IgM,
+lab_list_pdf,5,77,Anti-HBeAg,Anti-HBeAg,anti_hbeag,Anti-HBeAg,chemistry,blood,,Anti-HBeAg,
+lab_list_pdf,5,76,Anti-HBsAg,Anti-HBsAg,anti_hbsag,Anti-HBsAg,immunology,blood,,Anti-HBsAg,
+lab_list_pdf,5,78,Anti-HCV,Anti-HCV,anti_hcv,Anti-HCV,immunology,blood,,Anti-HCV,
+both,2,14,Định lượng Anti-Tg (Antibody- Thyroglobulin),Anti-Tg (Antibody- Thyroglobulin),anti_tg,Anti-Tg,chemistry,blood,Anti-Tg (Antibody- Thyroglobulin),Anti-TG,lab_list_pdf#5:83; lab_med_ministry_pdf#2:14
+lab_med_ministry_pdf,2,15,Định lượng Anti - TPO (Anti- thyroid Peroxidase antibodies),Anti - TPO (Anti- thyroid Peroxidase antibodies),anti_tpo,Anti - TPO,chemistry,blood,Anti - TPO (Anti- thyroid Peroxidase antibodies),,
+lab_med_ministry_pdf,2,16,Định lượng Apo A1 (Apolipoprotein A1),Apo A1 (Apolipoprotein A1),apo_a1,Apo A1,chemistry,blood,Apo A1 (Apolipoprotein A1),,
+lab_med_ministry_pdf,2,17,Định lượng Apo B (Apolipoprotein B),Apo B (Apolipoprotein B),apo_b,Apo B,chemistry,blood,Apo B (Apolipoprotein B),,
+manual_curation,0,,APTT,APTT,aptt,APTT,coagulation,blood,,,manual_curation (plan section 9)
+lab_list_pdf,2,31,ASLO,ASLO,aslo,ASLO,immunology,blood,,ASLO,
+both,2,20,Đo hoạt độ AST (GOT),AST (GOT),ast,AST,chemistry,blood,AST (GOT),AST,lab_list_pdf#2:15; lab_med_ministry_pdf#2:20
+both,2,22,Định lượng beta 2 microglobulin,beta 2 microglobulin,beta_2_microglobulin,beta 2 microglobulin,chemistry,blood,beta 2 microglobulin,beta 2-microglobulin,lab_list_pdf#5:80; lab_med_ministry_pdf#2:22
+lab_med_ministry_pdf,2,23,Định lượng Beta Crosslap,Beta Crosslap,beta_crosslap,Beta Crosslap,tumor_marker,blood,Beta Crosslap,,
+manual_curation,0,,Bicarbonate,Bicarbonate,bicarbonate,Bicarbonate,blood_gas,blood,,,manual_curation (plan section 9)
+lab_med_ministry_pdf,2,26,Định lượng Bilirubin gián tiếp,Bilirubin gián tiếp,bilirubin_gian_tiep,Bilirubin gián tiếp,chemistry,blood,Bilirubin gián tiếp,,
+both,2,27,Định lượng Bilirubin toàn phần,Bilirubin toàn phần,bilirubin_toan_phan,Bilirubin toàn phần,chemistry,blood,Bilirubin toàn phần,Bilirubin toàn phần,lab_list_pdf#1:13; lab_med_ministry_pdf#2:27
+both,2,25,Định lượng Bilirubin trực tiếp,Bilirubin trực tiếp,bilirubin_truc_tiep,Bilirubin trực tiếp,chemistry,blood,Bilirubin trực tiếp,Bilirubin trực tiếp,lab_list_pdf#1:14; lab_med_ministry_pdf#2:25
+lab_med_ministry_pdf,2,28,Định lượng BNP (B- Type Natriuretic Peptide),BNP (B- Type Natriuretic Peptide),bnp,BNP,chemistry,blood,BNP (B- Type Natriuretic Peptide),,
+lab_med_ministry_pdf,3,48,Định lượng bổ thể C3,bổ thể C3,bo_the_c3,bổ thể C3,chemistry,blood,bổ thể C3,,
+lab_med_ministry_pdf,3,49,Định lượng bổ thể C4,bổ thể C4,bo_the_c4,bổ thể C4,chemistry,blood,bổ thể C4,,
+lab_med_ministry_pdf,3,45,Định lượng C-Peptid,C-Peptid,c_peptid,C-Peptid,coagulation,blood,C-Peptid,,
+both,2,32,Định lượng CA 125 (cancer antigen 125),CA 125 (cancer antigen 125),ca_125,CA 125,tumor_marker,blood,CA 125 (cancer antigen 125),CA 125,lab_list_pdf#3:48; lab_med_ministry_pdf#2:32
+both,3,34,Định lượng CA 15 - 3 (cancer antigen 15- 3),CA 15 - 3 (cancer antigen 15- 3),ca_15_3,CA 15 - 3,tumor_marker,blood,CA 15 - 3 (cancer antigen 15- 3),CA 15-3,lab_list_pdf#3:47; lab_med_ministry_pdf#3:34
+both,3,33,Định lượng CA 19 - 9 (carbohydrate antigen 19-9),CA 19 - 9 (carbohydrate antigen 19-9),ca_19_9,CA 19 - 9,tumor_marker,blood,CA 19 - 9 (carbohydrate antigen 19-9),CA 19-9,lab_list_pdf#3:45; lab_med_ministry_pdf#3:33
+both,3,35,Định lượng CA 72 - 4 (cancer antigen 72- 4),CA 72 - 4 (cancer antigen 72- 4),ca_72_4,CA 72 - 4,tumor_marker,blood,CA 72 - 4 (cancer antigen 72- 4),CA 72-4,lab_list_pdf#3:46; lab_med_ministry_pdf#3:35
+lab_med_ministry_pdf,3,58,"Định lượng các chất điện giải (Na, K, Cl)","các chất điện giải (Na, K, Cl)",cac_chat_ien_giai,các chất điện giải,urinalysis,blood,"các chất điện giải (Na, K, Cl)",,lab_med_ministry_pdf#3:58; lab_med_ministry_pdf#6:172
+lab_list_pdf,3,36,"Các chất điện giải máu (Na, K, Cl)",Các chất điện giải máu,cac_chat_ien_giai_mau,Các chất điện giải máu,chemistry,blood,,"Các chất điện giải máu (Na, K, Cl)",
+both,2,29,Định lượng Calci toàn phần,Calci toàn phần,calci,Calci toàn phần,urinalysis,blood,Calci toàn phần,calci,lab_list_pdf#3:34; lab_med_ministry_pdf#2:29
+both,2,30,Định lượng Calci ion hoá,Calci ion hoá,calci_ion_hoa,Calci ion hoá,chemistry,blood,Calci ion hoá,calci ion hóa,lab_list_pdf#3:35; lab_med_ministry_pdf#2:30
+lab_med_ministry_pdf,3,36,Định lượng Calcitonin,Calcitonin,calcitonin,Calcitonin,chemistry,blood,Calcitonin,,
+lab_med_ministry_pdf,2,31,Định lượng canci ion hóa bằng điện cực chọn lọc,canci ion hóa bằng điện cực chọn lọc,canci_ion_hoa_bang_ien_cuc_chon_loc,canci ion hóa bằng điện cực chọn lọc,chemistry,blood,canci ion hóa bằng điện cực chọn lọc,,
+lab_list_pdf,5,85,Cancitonil,Cancitonil,cancitonil,Cancitonil,chemistry,blood,,Cancitonil,
+lab_med_ministry_pdf,3,37,Định lượng Carbamazepin,Carbamazepin,carbamazepin,Carbamazepin,chemistry,blood,Carbamazepin,,
+both,3,39,Định lượng CEA (carcino embryonic antigen),CEA (carcino embryonic antigen),cea,CEA,tumor_marker,blood,CEA (carcino embryonic antigen),CEA,lab_list_pdf#3:44; lab_med_ministry_pdf#3:39
+lab_med_ministry_pdf,3,38,Định lượng Ceruloplasmin,Ceruloplasmin,ceruloplasmin,Ceruloplasmin,chemistry,blood,Ceruloplasmin,,
+lab_list_pdf,2,20,CHE,CHE,che,CHE,chemistry,blood,,CHE,
+lab_list_pdf,1,8,Cholesterol,Cholesterol,cholesterol,Cholesterol,chemistry,blood,,Cholesterol,
+lab_med_ministry_pdf,3,41,Định lượng Cholesterol toàn phần,Cholesterol toàn phần,cholesterol_toan_phan,Cholesterol toàn phần,chemistry,blood,Cholesterol toàn phần,,lab_med_ministry_pdf#3:41; lab_med_ministry_pdf#7:212
+lab_med_ministry_pdf,3,40,Đo hoạt độ Cholinesterase (ChE),Cholinesterase (ChE),cholinesterase,Cholinesterase,chemistry,blood,Cholinesterase (ChE),,
+both,3,42,Đo hoạt độ CK (Creatine kinase),CK (Creatine kinase),ck,CK,chemistry,blood,CK (Creatine kinase),CPK,lab_list_pdf#2:25; lab_med_ministry_pdf#3:42
+both,3,43,Đo hoạt độ CK-MB (Isozym MB of Creatine kinase),CK-MB (Isozym MB of Creatine kinase),ck_mb,CK-MB,chemistry,blood,CK-MB (Isozym MB of Creatine kinase),CK-MB,lab_list_pdf#2:26; lab_med_ministry_pdf#3:43
+lab_list_pdf,7,112,Clo dịch não tủy,Clo dịch não tủy,clo_dich_nao_tuy,Clo dịch não tủy,chemistry,blood,,Clo dịch não tủy,
+lab_list_pdf,9,27,CMV Real-time PCR,CMV Real-time PCR,cmv_real_time_pcr,CMV Real-time PCR,microbiology,blood,,CMV Real-time PCR,
+manual_curation,0,,CO2,CO2,co2,CO2,blood_gas,blood,,,manual_curation (plan section 9)
+both,3,46,Định lượng Cortisol,Cortisol,cortisol,Cortisol,endocrine,blood,Cortisol,Cortisol,lab_list_pdf#4:64; lab_med_ministry_pdf#3:46
+both,7,109,Creatinin niệu,Creatinin niệu,creatinine,Creatinin niệu,urinalysis,blood,Creatinin,Creatinin máu,both#3:51; lab_list_pdf#7:109
+lab_list_pdf,2,27,CRP,CRP,crp,CRP,immunology,blood,,CRP,
+both,3,50,Định lượng CRP hs (C-reactive protein high sesitivity),CRP hs (C-reactive protein high sesitivity),crp_hs,CRP hs,immunology,blood,CRP hs (C-reactive protein high sesitivity),CRPhs,lab_list_pdf#2:28; lab_med_ministry_pdf#3:50
+lab_med_ministry_pdf,3,53,Định lượng cyclosphorin,cyclosphorin,cyclosphorin,cyclosphorin,chemistry,blood,cyclosphorin,,
+both,3,52,Định lượng Cyfra 21- 1,Cyfra 21- 1,cyfra_21_1,Cyfra 21- 1,tumor_marker,blood,Cyfra 21- 1,Cyfra 21-1,lab_list_pdf#3:51; lab_med_ministry_pdf#3:52
+lab_med_ministry_pdf,3,47,Định lượng Cystatine C,Cystatine C,cystatine_c,Cystatine C,chemistry,blood,Cystatine C,,
+both,4,62,D-Dimer,D-Dimer,d_dimer,D-Dimer,coagulation,blood,D-Dimer,D-Dimer,both#3:54; lab_list_pdf#4:62
+lab_list_pdf,9,26,Dengue virus NS1Ag/IgM - IgG test nhanh,Dengue virus NS1Ag/IgM - IgG test nhanh,dengue_virus_ns1ag_igm_igg_test_nhanh,Dengue virus NS1Ag/IgM - IgG test nhanh,chemistry,blood,,Dengue virus NS1Ag/IgM - IgG test nhanh,
+lab_med_ministry_pdf,3,57,Định lượng Digitoxin,Digitoxin,digitoxin,Digitoxin,chemistry,blood,Digitoxin,,
+lab_med_ministry_pdf,3,56,Định lượng Digoxin,Digoxin,digoxin,Digoxin,chemistry,blood,Digoxin,,
+lab_med_ministry_pdf,3,62,Định lượng E3 không liên hợp (Unconjugated Estriol),E3 không liên hợp (Unconjugated Estriol),e3_khong_lien_hop,E3 không liên hợp,chemistry,blood,E3 không liên hợp (Unconjugated Estriol),,
+both,3,61,Định lượng Estradiol,Estradiol,estradiol,Estradiol,endocrine,blood,Estradiol,Estradiol,lab_list_pdf#4:69; lab_med_ministry_pdf#3:61
+both,3,60,Định lượng Ethanol (cồn),Ethanol (cồn),ethanol,Ethanol,chemistry,blood,Ethanol (cồn),Ethanol,lab_list_pdf#2:22; lab_med_ministry_pdf#3:60
+lab_med_ministry_pdf,3,59,Định lượng FABD (Fatty acid binding protein),FABD (Fatty acid binding protein),fabd,FABD,chemistry,blood,FABD (Fatty acid binding protein),,
+both,4,66,Feritin,Feritin,ferritin,Feritin,chemistry,blood,Ferritin,Feritin,both#3:63; lab_list_pdf#4:66
+manual_curation,0,,Fibrinogen,Fibrinogen,fibrinogen,Fibrinogen,coagulation,blood,,,manual_curation (plan section 9)
+lab_med_ministry_pdf,3,67,Định lượng Folate,Folate,folate,Folate,chemistry,blood,Folate,,
+lab_med_ministry_pdf,3,66,Định lượng free HCG (Free Beta Human chorionic gonadotropin),free HCG (Free Beta Human chorionic gonadotropin),free_hcg,free HCG,endocrine,blood,free HCG (Free Beta Human chorionic gonadotropin),,
+lab_med_ministry_pdf,3,64,Định lượng Fructosamin,Fructosamin,fructosamin,Fructosamin,chemistry,blood,Fructosamin,,
+both,3,65,Định lượng FSH (Follicular stimulating hormone),FSH (Follicular stimulating hormone),fsh,FSH,endocrine,blood,FSH (Follicular stimulating hormone),FSH,lab_list_pdf#4:68; lab_med_ministry_pdf#3:65
+lab_med_ministry_pdf,3,68,Định lượng FT (Free Triiodothyronine),FT (Free Triiodothyronine),ft,FT,chemistry,blood,FT (Free Triiodothyronine),,lab_med_ministry_pdf#3:68; lab_med_ministry_pdf#3:69
+lab_list_pdf,3,40,FT3,FT3,ft3,FT3,endocrine,blood,,FT3,
+lab_list_pdf,3,41,FT4,FT4,ft4,FT4,endocrine,blood,,FT4,
+lab_med_ministry_pdf,3,72,Đo hoạt độ G6PD (Glucose -6 phosphat dehydrogenase),G6PD (Glucose -6 phosphat dehydrogenase),g6pd,G6PD,hematology,blood,G6PD (Glucose -6 phosphat dehydrogenase),,
+lab_med_ministry_pdf,3,70,Định lượng Galectin 3,Galectin 3,galectin_3,Galectin 3,chemistry,blood,Galectin 3,,
+lab_med_ministry_pdf,3,71,Định lượng Gastrin,Gastrin,gastrin,Gastrin,chemistry,blood,Gastrin,,
+lab_med_ministry_pdf,4,79,Định lượng Gentamicin,Gentamicin,gentamicin,Gentamicin,chemistry,blood,Gentamicin,,
+both,4,77,Đo hoạt độ GGT (Gama Glutamyl Transferase),GGT (Gama Glutamyl Transferase),ggt,GGT,chemistry,blood,GGT (Gama Glutamyl Transferase),GGT,lab_list_pdf#2:17; lab_med_ministry_pdf#4:77
+lab_med_ministry_pdf,4,73,Định lượng GH (Growth Hormone),GH (Growth Hormone),gh,GH,chemistry,blood,GH (Growth Hormone),,
+lab_med_ministry_pdf,4,74,Đo hoạt độ GLDH (Glutamat dehydrogenase),GLDH (Glutamat dehydrogenase),gldh,GLDH,chemistry,blood,GLDH (Glutamat dehydrogenase),,
+both,4,76,Định lượng Globulin,Globulin,globulin,Globulin,chemistry,blood,Globulin,Globulin,lab_list_pdf#1:7; lab_med_ministry_pdf#4:76
+lab_med_ministry_pdf,4,78,Định lượng GLP-1,GLP-1,glp_1,GLP-1,chemistry,blood,GLP-1,,
+both,4,75,Định lượng Glucose,Glucose,glucose,Glucose,chemistry,blood,Glucose,Glucose máu,lab_list_pdf#1:3; lab_med_ministry_pdf#4:75
+lab_med_ministry_pdf,4,80,Định lượng Haptoglobulin,Haptoglobulin,haptoglobulin,Haptoglobulin,coagulation,blood,Haptoglobulin,,
+both,4,83,Định lượng HbA1c,HbA1c,hba1c,HbA1c,chemistry,blood,HbA1c,HbA1C,lab_list_pdf#1:4; lab_med_ministry_pdf#4:83
+lab_med_ministry_pdf,4,82,Đo hoạt độ HBDH (Hydroxy butyrat dehydrogenase),HBDH (Hydroxy butyrat dehydrogenase),hbdh,HBDH,chemistry,blood,HBDH (Hydroxy butyrat dehydrogenase),,
+lab_list_pdf,5,75,HBeAg miễn dịch tự động,HBeAg miễn dịch tự động,hbeag_mien_dich_tu_ong,HBeAg miễn dịch tự động,chemistry,blood,,HBeAg miễn dịch tự động,
+lab_med_ministry_pdf,4,81,Định lượng HBs g (HBs g Quantitative) ( CMI / ECLI ),HBs g (HBs g Quantitative) ( CMI / ECLI ),hbs_g,HBs g,immunology,blood,HBs g (HBs g Quantitative) ( CMI / ECLI ),,
+lab_list_pdf,4,74,HBsAg miễn dịch tự,HBsAg miễn dịch tự,hbsag_mien_dich_tu,HBsAg miễn dịch tự,immunology,blood,,HBsAg miễn dịch tự,
+lab_list_pdf,4,73,HBsAg Quant (HbsAg định lượng),HBsAg Quant,hbsag_quant,HBsAg Quant,immunology,blood,,HBsAg Quant (HbsAg định lượng),
+lab_list_pdf,9,20,HBV đo tải lượng hệ thống tự động,HBV đo tải lượng hệ thống tự động,hbv_o_tai_luong_he_thong_tu_ong,HBV đo tải lượng hệ thống tự động,chemistry,blood,,HBV đo tải lượng hệ thống tự động,
+lab_med_ministry_pdf,2,24,Định lượng hCG (Beta human Chorionic gonadotropins),hCG (Beta human Chorionic gonadotropins),hcg,hCG,endocrine,blood,hCG (Beta human Chorionic gonadotropins),,
+lab_list_pdf,9,23,HCV genotype Real-time PCR,HCV genotype Real-time PCR,hcv_genotype_real_time_pcr,HCV genotype Real-time PCR,microbiology,blood,,HCV genotype Real-time PCR,
+lab_list_pdf,9,22,HCV đo tải lượng hệ thống tự động,HCV đo tải lượng hệ thống tự động,hcv_o_tai_luong_he_thong_tu_ong,HCV đo tải lượng hệ thống tự động,chemistry,blood,,HCV đo tải lượng hệ thống tự động,
+lab_list_pdf,9,21,HCV đo tải lượng Real-time PCR,HCV đo tải lượng Real-time PCR,hcv_o_tai_luong_real_time_pcr,HCV đo tải lượng Real-time PCR,microbiology,blood,,HCV đo tải lượng Real-time PCR,
+lab_list_pdf,1,9,HDL,HDL,hdl,HDL,chemistry,blood,,HDL,
+lab_med_ministry_pdf,4,84,Định lượng HDL-C (High density lipoprotein Cholesterol),HDL-C (High density lipoprotein Cholesterol),hdl_c,HDL-C,chemistry,blood,HDL-C (High density lipoprotein Cholesterol),,
+both,4,85,Định lượng HE4,HE4,he4,HE4,tumor_marker,blood,HE4,HE4,lab_list_pdf#3:53; lab_med_ministry_pdf#4:85
+manual_curation,0,,Hematocrit,Hematocrit,hematocrit,Hematocrit,hematology,blood,,,manual_curation (plan section 9)
+manual_curation,0,,Hemoglobin,Hemoglobin,hemoglobin,Hemoglobin,hematology,blood,,,manual_curation (plan section 9)
+lab_med_ministry_pdf,4,86,Định lượng Homocystein,Homocystein,homocystein,Homocystein,chemistry,blood,Homocystein,,
+lab_list_pdf,9,29,"Hồng cầu, bạch cầu trong phân soi tươi","Hồng cầu, bạch cầu trong phân soi tươi",hong_cau_bach_cau_trong_phan_soi_tuoi,"Hồng cầu, bạch cầu trong phân soi tươi",hematology,blood,,"Hồng cầu, bạch cầu trong phân soi tươi",
+lab_list_pdf,9,28,HSV Real-time PCR,HSV Real-time PCR,hsv_real_time_pcr,HSV Real-time PCR,microbiology,blood,,HSV Real-time PCR,
+manual_curation,0,,Huyết đồ,Huyết đồ,huyet_do,Huyết đồ,hematology,blood,,,manual_curation (plan section 9)
+lab_list_pdf,7,113,Điện giải niệu,Điện giải niệu,ien_giai_nieu,Điện giải niệu,chemistry,blood,,Điện giải niệu,
+lab_med_ministry_pdf,4,94,Định lượng IgA (Immunoglobuline A),IgA (Immunoglobuline A),iga,IgA,chemistry,blood,IgA (Immunoglobuline A),,
+lab_med_ministry_pdf,4,92,Định lượng IgE (bằng phương pháp ELIS ),IgE (bằng phương pháp ELIS ),ige,IgE,chemistry,blood,IgE (bằng phương pháp ELIS ),,lab_med_ministry_pdf#4:92; lab_med_ministry_pdf#4:93
+lab_med_ministry_pdf,4,97,Định lượng IGFBP-3 ( Insulin like growth factor binding protein 3),IGFBP-3 ( Insulin like growth factor binding protein 3),igfbp_3,IGFBP-3,chemistry,blood,IGFBP-3 ( Insulin like growth factor binding protein 3),,
+lab_med_ministry_pdf,4,95,Định lượng IgG (Immunoglobuline G),IgG (Immunoglobuline G),igg,IgG,chemistry,blood,IgG (Immunoglobuline G),,
+lab_med_ministry_pdf,4,96,Định lượng IgM (Immunoglobuline M),IgM (Immunoglobuline M),igm,IgM,chemistry,blood,IgM (Immunoglobuline M),,
+lab_med_ministry_pdf,4,91,Định lượng IL-10 (Interleukin 10),IL-10 (Interleukin 10),il_10,IL-10,chemistry,blood,IL-10 (Interleukin 10),,
+lab_med_ministry_pdf,4,87,Định lượng IL-1alpha (Interleukin 1alpha ),IL-1alpha (Interleukin 1alpha ),il_1alpha,IL-1alpha,chemistry,blood,IL-1alpha (Interleukin 1alpha ),,
+lab_med_ministry_pdf,4,88,Định lượng IL -1beta (Interleukin 1beta ),IL -1beta (Interleukin 1beta ),il_1beta,IL -1beta,chemistry,blood,IL -1beta (Interleukin 1beta ),,
+lab_med_ministry_pdf,4,89,Định lượng IL-6 ( Interleukin 6),IL-6 ( Interleukin 6),il_6,IL-6,chemistry,blood,IL-6 ( Interleukin 6),,
+lab_med_ministry_pdf,4,90,Định lượng IL-8 (Interleukin 8),IL-8 (Interleukin 8),il_8,IL-8,chemistry,blood,IL-8 (Interleukin 8),,
+lab_med_ministry_pdf,4,100,Định lượng IMA (Ischemia Modified Albumin),IMA (Ischemia Modified Albumin),ima,IMA,chemistry,blood,IMA (Ischemia Modified Albumin),,
+lab_list_pdf,7,102,Định lượng protein dịch não tủy,Định lượng protein dịch não tủy,inh_luong_protein_dich_nao_tuy,Định lượng protein dịch não tủy,chemistry,blood,,Định lượng protein dịch não tủy,
+lab_list_pdf,5,81,Định lượng thuốc Tacrolimus,Định lượng thuốc Tacrolimus,inh_luong_thuoc_tacrolimus,Định lượng thuốc Tacrolimus,chemistry,blood,,Định lượng thuốc Tacrolimus,
+lab_list_pdf,6,90,Định tính amphetamin niệu,Định tính amphetamin niệu,inh_tinh_amphetamin_nieu,Định tính amphetamin niệu,chemistry,blood,,Định tính amphetamin niệu,
+lab_list_pdf,6,96,Định tính beta -HCG niệu,Định tính beta -HCG niệu,inh_tinh_beta_hcg_nieu,Định tính beta -HCG niệu,endocrine,blood,,Định tính beta -HCG niệu,
+lab_list_pdf,7,105,Định tính IgG-HP bằng test nhanh,Định tính IgG-HP bằng test nhanh,inh_tinh_igg_hp_bang_test_nhanh,Định tính IgG-HP bằng test nhanh,chemistry,blood,,Định tính IgG-HP bằng test nhanh,
+lab_list_pdf,7,103,Định tính IgM-HAV bằng test nhanh,Định tính IgM-HAV bằng test nhanh,inh_tinh_igm_hav_bang_test_nhanh,Định tính IgM-HAV bằng test nhanh,chemistry,blood,,Định tính IgM-HAV bằng test nhanh,
+lab_list_pdf,7,104,Định tính IgM-HEV bằng test nhanh,Định tính IgM-HEV bằng test nhanh,inh_tinh_igm_hev_bang_test_nhanh,Định tính IgM-HEV bằng test nhanh,chemistry,blood,,Định tính IgM-HEV bằng test nhanh,
+lab_list_pdf,6,91,Định tính marijuana niệu,Định tính marijuana niệu,inh_tinh_marijuana_nieu,Định tính marijuana niệu,immunology,blood,,Định tính marijuana niệu,
+lab_list_pdf,6,92,Định tính Methamphetamin,Định tính Methamphetamin,inh_tinh_methamphetamin,Định tính Methamphetamin,chemistry,blood,,Định tính Methamphetamin,
+lab_list_pdf,6,89,Định tính morphin niệu,Định tính morphin niệu,inh_tinh_morphin_nieu,Định tính morphin niệu,chemistry,blood,,Định tính morphin niệu,
+lab_list_pdf,6,101,Định tính paraquat niệu,Định tính paraquat niệu,inh_tinh_paraquat_nieu,Định tính paraquat niệu,chemistry,blood,,Định tính paraquat niệu,
+lab_list_pdf,6,98,Định tính protein niệu,Định tính protein niệu,inh_tinh_protein_nieu,Định tính protein niệu,chemistry,blood,,Định tính protein niệu,
+lab_med_ministry_pdf,4,98,Định lượng Insulin,Insulin,insulin,Insulin,endocrine,blood,Insulin,,
+lab_med_ministry_pdf,4,99,Điện di Isozym - LDH,Isozym - LDH,isozym_ldh,Isozym - LDH,chemistry,blood,Isozym - LDH,,
+lab_med_ministry_pdf,4,101,Định lượng Kappa,Kappa,kappa,Kappa,chemistry,blood,Kappa,,
+lab_med_ministry_pdf,4,102,Định lượng Kappa tự do (Free kappa),Kappa tự do (Free kappa),kappa_tu_do,Kappa tự do,chemistry,blood,Kappa tự do (Free kappa),,
+lab_med_ministry_pdf,4,103,Xét nghiệm Khí máu,Khí máu,khi_mau,Khí máu,blood_gas,blood,Khí máu,,
+lab_list_pdf,3,37,Khí máu động mạch,Khí máu động mạch,khi_mau_ong_mach,Khí máu động mạch,blood_gas,blood,,Khí máu động mạch,
+lab_med_ministry_pdf,4,104,Định lượng Lactat (Acid Lactic),Lactat (Acid Lactic),lactat,Lactat,chemistry,blood,Lactat (Acid Lactic),,
+lab_med_ministry_pdf,4,105,Định lượng Lambda,Lambda,lambda,Lambda,chemistry,blood,Lambda,,
+lab_med_ministry_pdf,4,106,Định lượng Lambda tự do (Free Lambda),Lambda tự do (Free Lambda),lambda_tu_do,Lambda tự do,chemistry,blood,Lambda tự do (Free Lambda),,
+both,4,111,Đo hoạt độ LDH ( Lactat dehydrogenase),LDH ( Lactat dehydrogenase),ldh,LDH,chemistry,blood,LDH ( Lactat dehydrogenase),LDH,lab_list_pdf#2:19; lab_med_ministry_pdf#4:111
+lab_list_pdf,1,10,LDL,LDL,ldl,LDL,chemistry,blood,,LDL,
+lab_med_ministry_pdf,4,112,Định lượng LDL - C (Low density lipoprotein Cholesterol),LDL - C (Low density lipoprotein Cholesterol),ldl_c,LDL - C,chemistry,blood,LDL - C (Low density lipoprotein Cholesterol),,
+lab_med_ministry_pdf,4,108,Điện di LDL/HDL cholesterol,LDL/HDL cholesterol,ldl_hdl_cholesterol,LDL/HDL cholesterol,chemistry,blood,LDL/HDL cholesterol,,
+lab_med_ministry_pdf,4,107,Định lượng Leptin human,Leptin human,leptin_human,Leptin human,coagulation,blood,Leptin human,,
+both,4,110,Định lượng LH (Luteinizing hormone),LH (Luteinizing hormone),lh,LH,endocrine,blood,LH (Luteinizing hormone),LH,lab_list_pdf#4:67; lab_med_ministry_pdf#4:110
+lab_med_ministry_pdf,4,109,Đo hoạt độ Lipase,Lipase,lipase,Lipase,chemistry,blood,Lipase,,
+lab_list_pdf,2,24,Lipase máu,Lipase máu,lipase_mau,Lipase máu,chemistry,blood,,Lipase máu,
+lab_med_ministry_pdf,5,113,Điện di Lipoprotein,Lipoprotein,lipoprotein,Lipoprotein,chemistry,blood,Lipoprotein,,
+lab_med_ministry_pdf,5,114,Định lượng Lp-PLA2 (Lipoprotein Associated Phospholipase A2),Lp-PLA2 (Lipoprotein Associated Phospholipase A2),lp_pla2,Lp-PLA2,chemistry,blood,Lp-PLA2 (Lipoprotein Associated Phospholipase A2),,
+manual_curation,0,,Magiê,Magiê,magie,Magiê,chemistry,blood,,,manual_curation (plan section 9)
+lab_med_ministry_pdf,5,115,Định lượng Malondialdehyd (MDA),Malondialdehyd (MDA),malondialdehyd,Malondialdehyd,chemistry,blood,Malondialdehyd (MDA),,
+manual_curation,0,,Máu lắng,Máu lắng,mau_lang,Máu lắng,hematology,blood,,,manual_curation (plan section 9)
+manual_curation,0,,MCH,MCH,mch,MCH,hematology,blood,,,manual_curation (plan section 9)
+manual_curation,0,,MCHC,MCHC,mchc,MCHC,hematology,blood,,,manual_curation (plan section 9)
+manual_curation,0,,MCV,MCV,mcv,MCV,hematology,blood,,,manual_curation (plan section 9)
+lab_med_ministry_pdf,5,118,Định lượng Mg,Mg,mg,Mg,chemistry,blood,Mg,,
+lab_list_pdf,6,97,Microalbumin niệu,Microalbumin niệu,microalbumin_nieu,Microalbumin niệu,chemistry,blood,,Microalbumin niệu,
+lab_med_ministry_pdf,5,116,Đo hoạt độ MPO,MPO,mpo,MPO,chemistry,blood,MPO,,
+lab_list_pdf,9,25,Mycobacterium tuberculosis Real-time PCR,Mycobacterium tuberculosis Real-time PCR,mycobacterium_tuberculosis_real_time_pcr,Mycobacterium tuberculosis Real-time PCR,microbiology,blood,,Mycobacterium tuberculosis Real-time PCR,
+lab_med_ministry_pdf,5,117,Định lượng Myoglobin,Myoglobin,myoglobin,Myoglobin,chemistry,blood,Myoglobin,,
+lab_med_ministry_pdf,5,119,Định lượng N-MID Osteocalcin,N-MID Osteocalcin,n_mid_osteocalcin,N-MID Osteocalcin,chemistry,blood,N-MID Osteocalcin,,
+manual_curation,0,,Natri,Natri,natri,Natri,chemistry,blood,,,manual_curation (plan section 9)
+lab_list_pdf,2,21,NH máu 3,NH máu 3,nh_mau_3,NH máu 3,chemistry,blood,,NH máu 3,
+both,5,120,Định lượng NSE (Neuron Specific Enolase),NSE (Neuron Specific Enolase),nse,NSE,tumor_marker,blood,NSE (Neuron Specific Enolase),NSE,lab_list_pdf#3:52; lab_med_ministry_pdf#5:120
+lab_med_ministry_pdf,5,121,Định lượng NT-proBNP,NT-proBNP,nt_probnp,NT-proBNP,chemistry,blood,NT-proBNP,,
+lab_list_pdf,5,86,NUMA,NUMA,numa,NUMA,chemistry,blood,,NUMA,
+lab_list_pdf,9,31,Đơn bào đường ruột nhuộm soi,Đơn bào đường ruột nhuộm soi,on_bao_uong_ruot_nhuom_soi,Đơn bào đường ruột nhuộm soi,microbiology,blood,,Đơn bào đường ruột nhuộm soi,
+lab_list_pdf,9,30,Đơn bào đường ruột soi tươi,Đơn bào đường ruột soi tươi,on_bao_uong_ruot_soi_tuoi,Đơn bào đường ruột soi tươi,chemistry,blood,,Đơn bào đường ruột soi tươi,
+lab_med_ministry_pdf,5,122,Đo hoạt độ P-Amylase,P-Amylase,p_amylase,P-Amylase,chemistry,blood,P-Amylase,,
+lab_med_ministry_pdf,5,123,Định lượng PAPP-A,PAPP-A,papp_a,PAPP-A,chemistry,blood,PAPP-A,,
+lab_list_pdf,4,59,PCT,PCT,pct,PCT,immunology,blood,,PCT,
+lab_med_ministry_pdf,5,124,Định lượng Pepsinogen I,Pepsinogen I,pepsinogen_i,Pepsinogen I,chemistry,blood,Pepsinogen I,,
+lab_med_ministry_pdf,5,125,Định lượng Pepsinogen II,Pepsinogen II,pepsinogen_ii,Pepsinogen II,chemistry,blood,Pepsinogen II,,
+manual_curation,0,,pH,pH,ph,pH,blood_gas,blood,,,manual_curation (plan section 9)
+lab_list_pdf,6,100,Phản ứng pandy,Phản ứng pandy,phan_ung_pandy,Phản ứng pandy,chemistry,blood,,Phản ứng pandy,
+lab_list_pdf,6,99,Phản ứng rivalta,Phản ứng rivalta,phan_ung_rivalta,Phản ứng rivalta,chemistry,blood,,Phản ứng rivalta,
+lab_med_ministry_pdf,5,126,Định lượng Phenobarbital,Phenobarbital,phenobarbital,Phenobarbital,chemistry,blood,Phenobarbital,,
+lab_med_ministry_pdf,5,127,Định lượng Phenytoin,Phenytoin,phenytoin,Phenytoin,chemistry,blood,Phenytoin,,
+both,5,128,Định lượng Phospho,Phospho,phospho,Phospho,urinalysis,blood,Phospho,Phospho,lab_list_pdf#3:33; lab_med_ministry_pdf#5:128
+lab_list_pdf,9,40,Phthirus pubis (Rận mu) soi tươi,Phthirus pubis soi tươi,phthirus_pubis_soi_tuoi,Phthirus pubis soi tươi,chemistry,blood,,Phthirus pubis (Rận mu) soi tươi,
+lab_med_ministry_pdf,6,170,Định lượng PLGF (Placental Growth Factor- yếu tố tân tạo mạch máu),PLGF (Placental Growth Factor- yếu tố tân tạo mạch máu),plgf,PLGF,chemistry,blood,PLGF (Placental Growth Factor- yếu tố tân tạo mạch máu),,
+manual_curation,0,,Bạch cầu đa nhân,Bạch cầu đa nhân,pmn,Bạch cầu đa nhân,hematology,blood,,,manual_curation (plan section 9)
+lab_med_ministry_pdf,5,129,Định lượng Pre-albumin,Pre-albumin,pre_albumin,Pre-albumin,chemistry,blood,Pre-albumin,,
+lab_list_pdf,4,60,Pro BNP,Pro BNP,pro_bnp,Pro BNP,chemistry,blood,,Pro BNP,
+lab_med_ministry_pdf,5,130,Định tính Pro-calcitonin,Pro-calcitonin,pro_calcitonin,Pro-calcitonin,chemistry,blood,Pro-calcitonin,,
+lab_med_ministry_pdf,5,137,Định lượng Pro-GRP ( Pro- Gastrin-releasing peptide),Pro-GRP ( Pro- Gastrin-releasing peptide),pro_grp,Pro-GRP,tumor_marker,blood,Pro-GRP ( Pro- Gastrin-releasing peptide),,
+lab_med_ministry_pdf,5,135,Định lượng Procainnamid,Procainnamid,procainnamid,Procainnamid,chemistry,blood,Procainnamid,,
+lab_list_pdf,4,70,Progesterol,Progesterol,progesterol,Progesterol,chemistry,blood,,Progesterol,
+lab_med_ministry_pdf,5,134,Định lượng Progesteron,Progesteron,progesteron,Progesteron,endocrine,blood,Progesteron,,
+lab_list_pdf,4,61,ProGRP,ProGRP,progrp,ProGRP,tumor_marker,blood,,ProGRP,
+lab_med_ministry_pdf,5,131,Định lượng Prolactin,Prolactin,prolactin,Prolactin,endocrine,blood,Prolactin,,
+lab_med_ministry_pdf,5,132,Điện di protein,protein,protein,protein,urinalysis,blood,protein,,lab_med_ministry_pdf#5:132; lab_med_ministry_pdf#7:207
+lab_list_pdf,7,110,Protein dịch chọc dò,Protein dịch chọc dò,protein_dich_choc_do,Protein dịch chọc dò,chemistry,blood,,Protein dịch chọc dò,
+lab_med_ministry_pdf,5,136,Định lượng protein S100,protein S100,protein_s100,protein S100,chemistry,blood,protein S100,,
+both,5,133,Định lượng Protein toàn phần,Protein toàn phần,protein_toan_phan,Protein toàn phần,chemistry,blood,Protein toàn phần,Proteid máu,lab_list_pdf#1:5; lab_med_ministry_pdf#5:133
+both,5,139,Định lượng PSA toàn phần (Total prostate-specific antigen),PSA toàn phần (Total prostate-specific antigen),psa_toan_phan,PSA toàn phần,tumor_marker,blood,PSA toàn phần (Total prostate-specific antigen),PSA toàn phần,lab_list_pdf#3:49; lab_med_ministry_pdf#5:139
+both,5,138,Định lượng PSA tự do (Free prostate-specific antigen),PSA tự do (Free prostate-specific antigen),psa_tu_do,PSA tự do,tumor_marker,blood,PSA tự do (Free prostate-specific antigen),PSA tự do,lab_list_pdf#3:50; lab_med_ministry_pdf#5:138
+manual_curation,0,,PT (thời gian prothrombin),PT (thời gian prothrombin),pt,PT (thời gian prothrombin),coagulation,blood,,,manual_curation (plan section 9)
+both,5,140,Định lượng PTH (Parathyroid hormon),PTH (Parathyroid hormon),pth,PTH,coagulation,blood,PTH (Parathyroid hormon),PTH,lab_list_pdf#4:72; lab_med_ministry_pdf#5:140
+lab_med_ministry_pdf,5,141,Định lượng Renin activity,Renin activity,renin_activity,Renin activity,chemistry,blood,Renin activity,,
+both,5,142,Định lượng RF (Reumatoid factor),RF (Reumatoid factor),rf,RF,immunology,blood,RF (Reumatoid factor),RF,lab_list_pdf#2:30; lab_med_ministry_pdf#5:142
+lab_med_ministry_pdf,5,149,Định lượng s TfR (solube transferin receptor),s TfR (solube transferin receptor),s_tfr,s TfR,chemistry,blood,s TfR (solube transferin receptor),,
+lab_list_pdf,7,114,Sàng lọc 36 dị nguyên,Sàng lọc 36 dị nguyên,sang_loc_36_di_nguyen,Sàng lọc 36 dị nguyên,chemistry,blood,,Sàng lọc 36 dị nguyên,
+manual_curation,0,,SaO2,SaO2,sao2,SaO2,blood_gas,blood,,,manual_curation (plan section 9)
+lab_list_pdf,9,42,Sarcoptes scabieshominis (Ghẻ),Sarcoptes scabieshominis,sarcoptes_scabieshominis,Sarcoptes scabieshominis,coagulation,blood,,Sarcoptes scabieshominis (Ghẻ),
+lab_list_pdf,9,41,Sarcoptes scabieshominis (Ghẻ) soi tươi,Sarcoptes scabieshominis soi tươi,sarcoptes_scabieshominis_soi_tuoi,Sarcoptes scabieshominis soi tươi,coagulation,blood,,Sarcoptes scabieshominis (Ghẻ) soi tươi,
+both,5,143,Định lượng Sắt,Sắt,sat,Sắt,chemistry,blood,Sắt,Sắt,lab_list_pdf#3:32; lab_med_ministry_pdf#5:143
+both,5,144,Định lượng SCC (squamous cell carcinoma antigen),SCC (squamous cell carcinoma antigen),scc,SCC,tumor_marker,blood,SCC (squamous cell carcinoma antigen),SCC,lab_list_pdf#3:54; lab_med_ministry_pdf#5:144
+lab_med_ministry_pdf,6,171,Định lượng sFlt-1 (yếu tố kháng tân tạo mạch máu),sFlt-1 (yếu tố kháng tân tạo mạch máu),sflt_1,sFlt-1,chemistry,blood,sFlt-1 (yếu tố kháng tân tạo mạch máu),,
+lab_med_ministry_pdf,5,145,Định lượng SHBG (Sex hormon binding globulin),SHBG (Sex hormon binding globulin),shbg,SHBG,chemistry,blood,SHBG (Sex hormon binding globulin),,
+lab_list_pdf,5,88,Soi cặn nước tiểu bằng kính hiển vi,Soi cặn nước tiểu bằng kính hiển vi,soi_can_nuoc_tieu_bang_kinh_hien_vi,Soi cặn nước tiểu bằng kính hiển vi,chemistry,blood,,Soi cặn nước tiểu bằng kính hiển vi,
+lab_med_ministry_pdf,5,146,Định lượng Sperm Antibody,Sperm Antibody,sperm_antibody,Sperm Antibody,chemistry,blood,Sperm Antibody,,
+lab_med_ministry_pdf,5,147,Định lượng T (Tri iodothyronine),T (Tri iodothyronine),t,T,chemistry,blood,T (Tri iodothyronine),,lab_med_ministry_pdf#5:147; lab_med_ministry_pdf#5:148
+lab_list_pdf,3,38,T3,T3,t3,T3,endocrine,blood,,T3,
+lab_list_pdf,3,39,T4,T4,t4,T4,endocrine,blood,,T4,
+lab_med_ministry_pdf,6,165,Định lượng T-uptake,T-uptake,t_uptake,T-uptake,coagulation,blood,T-uptake,,
+lab_med_ministry_pdf,5,150,Định lượng Tacrolimus,Tacrolimus,tacrolimus,Tacrolimus,chemistry,blood,Tacrolimus,,
+lab_list_pdf,10,43,Taenia (Sándây) soi tươi định danh,Taenia soi tươi định danh,taenia_soi_tuoi_inh_danh,Taenia soi tươi định danh,chemistry,blood,,Taenia (Sándây) soi tươi định danh,
+both,5,151,Định lượng Testosterol,Testosterol,testosterol,Testosterol,endocrine,blood,Testosterol,Testosterol,lab_list_pdf#4:71; lab_med_ministry_pdf#5:151
+both,6,154,Định lượng Tg (Thyroglobulin),Tg (Thyroglobulin),tg,Tg,chemistry,blood,Tg (Thyroglobulin),TG,lab_list_pdf#5:82; lab_med_ministry_pdf#6:154
+lab_med_ministry_pdf,5,152,Định lượng TGF beta 1( Transforming Growth Factor Beta 1),TGF beta 1( Transforming Growth Factor Beta 1),tgf_beta_1,TGF beta 1,chemistry,blood,TGF beta 1( Transforming Growth Factor Beta 1),,
+lab_med_ministry_pdf,6,153,Định lượng TGF beta 2( Transforming Growth Factor Beta 2),TGF beta 2( Transforming Growth Factor Beta 2),tgf_beta_2,TGF beta 2,chemistry,blood,TGF beta 2( Transforming Growth Factor Beta 2),,
+lab_med_ministry_pdf,6,155,Định lượng Theophylline,Theophylline,theophylline,Theophylline,chemistry,blood,Theophylline,,
+lab_list_pdf,9,38,Tìm ấu trùng giun chỉ trong máu,Tìm ấu trùng giun chỉ trong máu,tim_au_trung_giun_chi_trong_mau,Tìm ấu trùng giun chỉ trong máu,chemistry,blood,,Tìm ấu trùng giun chỉ trong máu,
+lab_list_pdf,9,34,Tìm ấu trùng giun lươn trong phân,Tìm ấu trùng giun lươn trong phân,tim_au_trung_giun_luon_trong_phan,Tìm ấu trùng giun lươn trong phân,chemistry,blood,,Tìm ấu trùng giun lươn trong phân,
+lab_med_ministry_pdf,6,163,Định lượng Tobramycin,Tobramycin,tobramycin,Tobramycin,chemistry,blood,Tobramycin,,
+lab_med_ministry_pdf,6,164,Định lượng Total p1NP,Total p1NP,total_p1np,Total p1NP,chemistry,blood,Total p1NP,,
+lab_list_pdf,5,87,TPT nước tiểu,TPT nước tiểu,tpt_nuoc_tieu,TPT nước tiểu,coagulation,blood,,TPT nước tiểu,
+lab_med_ministry_pdf,6,156,Định lượng TRAb (TSH Receptor Antibodies),TRAb (TSH Receptor Antibodies),trab,TRAb,chemistry,blood,TRAb (TSH Receptor Antibodies),,
+lab_med_ministry_pdf,6,157,Định lượng Transferin,Transferin,transferin,Transferin,chemistry,blood,Transferin,,
+lab_list_pdf,10,44,Trichomonasvaginalis soi tươi,Trichomonasvaginalis soi tươi,trichomonasvaginalis_soi_tuoi,Trichomonasvaginalis soi tươi,chemistry,blood,,Trichomonasvaginalis soi tươi,
+both,6,158,Định lượng Triglycerid,Triglycerid,triglycerid,Triglycerid,chemistry,blood,Triglycerid,Triglycerid,lab_list_pdf#1:11; lab_med_ministry_pdf#6:158
+both,6,161,Định lượng Troponin I,Troponin I,troponin_i,Troponin I,chemistry,blood,Troponin I,Troponin I,lab_list_pdf#4:57; lab_med_ministry_pdf#6:161
+lab_med_ministry_pdf,6,159,Định lượng Troponin T,Troponin T,troponin_t,Troponin T,chemistry,blood,Troponin T,,
+both,6,160,Định lượng Troponin T hs,Troponin T hs,troponin_t_hs,Troponin T hs,chemistry,blood,Troponin T hs,Troponin T hs,lab_list_pdf#4:58; lab_med_ministry_pdf#6:160
+lab_list_pdf,9,32,"Trứng giun, sán soi tươi","Trứng giun, sán soi tươi",trung_giun_san_soi_tuoi,"Trứng giun, sán soi tươi",chemistry,blood,,"Trứng giun, sán soi tươi",
+lab_list_pdf,9,33,Trứng giun soi tập trung,Trứng giun soi tập trung,trung_giun_soi_tap_trung,Trứng giun soi tập trung,chemistry,blood,,Trứng giun soi tập trung,
+both,6,162,Định lượng TSH (Thyroid Stimulating hormone),TSH (Thyroid Stimulating hormone),tsh,TSH,endocrine,blood,TSH (Thyroid Stimulating hormone),TSH,lab_list_pdf#3:42; lab_med_ministry_pdf#6:162
+manual_curation,0,,TT (thời gian thrombin),TT (thời gian thrombin),tt,TT (thời gian thrombin),coagulation,blood,,,manual_curation (plan section 9)
+lab_list_pdf,7,111,Đường dịch não tủy,Đường dịch não tủy,uong_dich_nao_tuy,Đường dịch não tủy,chemistry,blood,,Đường dịch não tủy,
+both,7,108,Ure niệu,Ure niệu,ure,Ure niệu,urinalysis,blood,Urê,Ure máu,both#6:166; lab_list_pdf#7:108
+lab_med_ministry_pdf,6,167,Định lượng Valproic acid,Valproic acid,valproic_acid,Valproic acid,chemistry,blood,Valproic acid,,
+lab_med_ministry_pdf,6,168,Định lượng Vancomycin,Vancomycin,vancomycin,Vancomycin,chemistry,blood,Vancomycin,,
+lab_list_pdf,10,46,Vi nấm nhuộm soi,Vi nấm nhuộm soi,vi_nam_nhuom_soi,Vi nấm nhuộm soi,microbiology,blood,,Vi nấm nhuộm soi,
+lab_list_pdf,10,45,Vi nấm soi tươi,Vi nấm soi tươi,vi_nam_soi_tuoi,Vi nấm soi tươi,chemistry,blood,,Vi nấm soi tươi,
+lab_med_ministry_pdf,6,169,Định lượng Vitamin B12,Vitamin B12,vitamin_b12,Vitamin B12,chemistry,blood,Vitamin B12,,
+lab_list_pdf,9,24,Xác định vi khuẩn lao,Xác định vi khuẩn lao,xac_inh_vi_khuan_lao,Xác định vi khuẩn lao,chemistry,blood,,Xác định vi khuẩn lao,
+lab_med_ministry_pdf,7,204,Định lượng Clo,Clo,clo,Clo,chemistry,csf,Clo,,
+lab_med_ministry_pdf,7,206,Phản ứng Pandy,Pandy,pandy,Pandy,chemistry,csf,Pandy,,
+lab_med_ministry_pdf,7,219,Đo tỷ trọng dịch chọc dò,dịch chọc dò,dich_choc_do,dịch chọc dò,chemistry,puncture_fluid,dịch chọc dò,,
+lab_med_ministry_pdf,7,217,Phản ứng Rivalta,Rivalta,rivalta,Rivalta,chemistry,puncture_fluid,Rivalta,,
+lab_list_pdf,8,9,AFB trực tiếp nhuộm Ziehl- Neelsen,AFB trực tiếp nhuộm Ziehl- Neelsen,afb_truc_tiep_nhuom_ziehl_neelsen,AFB trực tiếp nhuộm Ziehl- Neelsen,microbiology,unknown,,AFB trực tiếp nhuộm Ziehl- Neelsen,
+lab_list_pdf,8,18,HBeAg test nhanh,HBeAg test nhanh,hbeag_test_nhanh,HBeAg test nhanh,chemistry,unknown,,HBeAg test nhanh,
+lab_list_pdf,8,19,HBV đo tải lượng Real-time PCR,HBV đo tải lượng Real-time PCR,hbv_o_tai_luong_real_time_pcr,HBV đo tải lượng Real-time PCR,microbiology,unknown,,HBV đo tải lượng Real-time PCR,
+lab_list_pdf,8,13,Neisseria gonorrhoeae nhuộm soi,Neisseria gonorrhoeae nhuộm soi,neisseria_gonorrhoeae_nhuom_soi,Neisseria gonorrhoeae nhuộm soi,microbiology,unknown,,Neisseria gonorrhoeae nhuộm soi,
+lab_list_pdf,8,15,Neisseria meningitides nhuộm soi,Neisseria meningitides nhuộm soi,neisseria_meningitides_nhuom_soi,Neisseria meningitides nhuộm soi,microbiology,unknown,,Neisseria meningitides nhuộm soi,
+lab_list_pdf,8,17,Treponemapallidum test nhanh,Treponemapallidum test nhanh,treponemapallidum_test_nhanh,Treponemapallidum test nhanh,chemistry,unknown,,Treponemapallidum test nhanh,
+lab_list_pdf,8,8,Vi hệ đường ruột,Vi hệ đường ruột,vi_he_uong_ruot,Vi hệ đường ruột,chemistry,unknown,,Vi hệ đường ruột,
+lab_list_pdf,8,7,Vi khuẩn khẳng định,Vi khuẩn khẳng định,vi_khuan_khang_inh,Vi khuẩn khẳng định,chemistry,unknown,,Vi khuẩn khẳng định,
+lab_list_pdf,8,4,Vi khuẩn kháng thuốc hệ thống tự động,Vi khuẩn kháng thuốc hệ thống tự động,vi_khuan_khang_thuoc_he_thong_tu_ong,Vi khuẩn kháng thuốc hệ thống tự động,chemistry,unknown,,Vi khuẩn kháng thuốc hệ thống tự động,
+lab_list_pdf,8,3,Vi khuẩn kháng thuốc định tính,Vi khuẩn kháng thuốc định tính,vi_khuan_khang_thuoc_inh_tinh,Vi khuẩn kháng thuốc định tính,chemistry,unknown,,Vi khuẩn kháng thuốc định tính,
+lab_list_pdf,8,1,Vi khuẩn nhuộm soi,Vi khuẩn nhuộm soi,vi_khuan_nhuom_soi,Vi khuẩn nhuộm soi,microbiology,unknown,,Vi khuẩn nhuộm soi,
+lab_list_pdf,8,11,Vibrio cholera nhuộm soi,Vibrio cholera nhuộm soi,vibrio_cholera_nhuom_soi,Vibrio cholera nhuộm soi,microbiology,unknown,,Vibrio cholera nhuộm soi,
+lab_list_pdf,8,10,Vibrio cholera soi tươi,Vibrio cholera soi tươi,vibrio_cholera_soi_tuoi,Vibrio cholera soi tươi,chemistry,unknown,,Vibrio cholera soi tươi,
+lab_list_pdf,8,6,Xác định tên vi khuẩn,Xác định tên vi khuẩn,xac_inh_ten_vi_khuan,Xác định tên vi khuẩn,chemistry,unknown,,Xác định tên vi khuẩn,lab_list_pdf#8:2; lab_list_pdf#8:6
+lab_med_ministry_pdf,6,173,Định tính Amphetamin,Amphetamin,amphetamin,Amphetamin,urinalysis,urine,Amphetamin,,lab_med_ministry_pdf#6:173; lab_med_ministry_pdf#6:174
+lab_med_ministry_pdf,6,177,Định lượng Barbiturates,Barbiturates,barbiturates,Barbiturates,urinalysis,urine,Barbiturates,,
+lab_med_ministry_pdf,6,178,Định lượng Benzodiazepin,Benzodiazepin,benzodiazepin,Benzodiazepin,urinalysis,urine,Benzodiazepin,,
+both,6,179,Định tính beta HCG,beta HCG,beta_hcg,beta HCG,endocrine,urine,beta HCG,beta -HCG,lab_list_pdf#4:65; lab_med_ministry_pdf#6:179
+lab_med_ministry_pdf,6,181,Định lượng Catecholamin,Catecholamin,catecholamin,Catecholamin,urinalysis,urine,Catecholamin,,
+lab_med_ministry_pdf,6,182,Định lượng Cocain,Cocain,cocain,Cocain,urinalysis,urine,Cocain,,
+lab_med_ministry_pdf,7,203,Tổng phân tích nước tiểu (bằng máy tự động),nước tiểu (bằng máy tự động),nuoc_tieu,nước tiểu,urinalysis,urine,nước tiểu (bằng máy tự động),,
+lab_med_ministry_pdf,7,195,Định tính phospho hữu cơ,phospho hữu cơ,phospho_huu_co,phospho hữu cơ,urinalysis,urine,phospho hữu cơ,,
+lab_med_ministry_pdf,7,196,Định tính Porphyrin,Porphyrin,porphyrin,Porphyrin,urinalysis,urine,Porphyrin,,
+lab_med_ministry_pdf,7,199,Định tính Protein Bence -jones,Protein Bence -jones,protein_bence_jones,Protein Bence -jones,urinalysis,urine,Protein Bence -jones,,
+lab_med_ministry_pdf,7,200,Định tính Rotundin,Rotundin,rotundin,Rotundin,urinalysis,urine,Rotundin,,
+lab_med_ministry_pdf,7,201,Định lượng THC (Canabionids),THC (Canabionids),thc,THC,urinalysis,urine,THC (Canabionids),,

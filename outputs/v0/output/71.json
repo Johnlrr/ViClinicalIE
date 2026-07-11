@@ -60,12 +60,36 @@
     "candidates": []
   },
   {
+    "text": "không đặc hiệu hệ số tống máu 50 inch",
+    "position": [
+      149,
+      186
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "Tăng huyết áp",
     "position": [
       189,
       202
     ],
     "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "lasix",
+    "position": [
+      272,
+      277
+    ],
+    "type": "THUỐC",
     "assertions": [
       "isHistorical"
     ],
@@ -145,6 +169,16 @@
     "candidates": []
   },
   {
+    "text": "lasix",
+    "position": [
+      544,
+      549
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "mệt mỏi",
     "position": [
       592,
@@ -188,5 +222,75 @@
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
+  },
+  {
+    "text": "graft SVG bị tắc",
+    "position": [
+      812,
+      828
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "graft lima ổn định",
+    "position": [
+      831,
+      849
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Bệnh động mạch vành phải nặng hơn với 60 RPL và 40 mid RCA",
+    "position": [
+      852,
+      910
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Động mạch vành trái bình thường",
+    "position": [
+      913,
+      944
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "áp lực nạp tăng",
+    "position": [
+      947,
+      962
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "áp lực tâm thu phổi ở",
+    "position": [
+      965,
+      986
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "áp lực tĩnh mạch bít",
+    "position": [
+      989,
+      1009
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
   }
 ]

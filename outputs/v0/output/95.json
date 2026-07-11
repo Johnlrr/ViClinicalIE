@@ -1,9 +1,36 @@
 [
   {
+    "text": "đau âm ỉ vùng quanh rốn",
+    "position": [
+      120,
+      143
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "đau bụng âm ỉ quanh rốn sau khí uống sữa",
     "position": [
       207,
       247
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đau âm ỉ vùng quanh rốn",
+    "position": [
+      376,
+      399
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "hạ sườn trái từng cơni",
+    "position": [
+      401,
+      423
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -40,6 +67,35 @@
     ]
   },
   {
+    "text": "không  ớn lạnh",
+    "position": [
+      471,
+      485
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isNegated"
+    ]
+  },
+  {
+    "text": "Đại tiện bình thường",
+    "position": [
+      492,
+      512
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không có nhầy máu",
+    "position": [
+      514,
+      531
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "đau ngực",
     "position": [
       544,
@@ -60,5 +116,14 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "Khám cơ quan khác chưa phát hiện bất thường",
+    "position": [
+      603,
+      646
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   }
 ]

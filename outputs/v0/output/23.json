@@ -24,6 +24,24 @@
     "candidates": []
   },
   {
+    "text": "Cơn rối loạn ý thức thoáng qua",
+    "position": [
+      132,
+      162
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nghi ngờ cơn co giật",
+    "position": [
+      164,
+      184
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       499,
@@ -57,6 +75,15 @@
     "position": [
       2255,
       2257
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "ý thức trở về mức nền ban đầu",
+    "position": [
+      2266,
+      2295
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []

@@ -1,25 +1,25 @@
 # Lab Parser — Implementation, workflow và trace
 
-Tài liệu này là tài liệu hợp nhất cho **Lab parser layer** đã triển khai trong [`src/lab_parser.py`](../../src/lab_parser.py:1), theo đúng mục 6.4 của [`10_7_architecture.md`](10_7_architecture.md:374). Module nhận lab-name seed từ **2 nguồn**: curated dictionary (`lab_seed_terms.csv`) và ViHealthBERT NER candidate; sau đó mở rộng name span sang parenthetical alias, tìm kết quả (numeric/range/qualitative), gắn local-role evidence và nội bộ pairing name–result, rồi trả về `SpanCandidate` cho `TÊN_XÉT_NGHIỆM` và `KẾT_QUẢ_XÉT_NGHIỆM`. Module **không** quyết định entity canonical cuối, không chạy assertion và không phụ thuộc section cứng.
+Tài liệu này là tài liệu hợp nhất cho **Lab parser layer** đã triển khai trong [`src/lab_parser.py`](../../../src/lab_parser.py:1), theo đúng mục 6.4 của [`../00_overview/00_architecture_hybrid_vihealthbert.md`](../00_overview/00_architecture_hybrid_vihealthbert.md:374). Module nhận lab-name seed từ **2 nguồn**: curated dictionary (`lab_seed_terms.csv`) và ViHealthBERT NER candidate; sau đó mở rộng name span sang parenthetical alias, tìm kết quả (numeric/range/qualitative), gắn local-role evidence và nội bộ pairing name–result, rồi trả về `SpanCandidate` cho `TÊN_XÉT_NGHIỆM` và `KẾT_QUẢ_XÉT_NGHIỆM`. Module **không** quyết định entity canonical cuối, không chạy assertion và không phụ thuộc section cứng.
 
 ## 1. Trạng thái triển khai
 
-Các thành phần đã có trong [`src/lab_parser.py`](../../src/lab_parser.py:1):
+Các thành phần đã có trong [`src/lab_parser.py`](../../../src/lab_parser.py:1):
 
-- [`LabSeed`](../../src/lab_parser.py:132): dataclass chuẩn hoá mọi lab-name seed trước khi result pairing (`start`, `end`, `seed_source`, `seed_term`, `seed_confidence`).
-- [`LabPair`](../../src/lab_parser.py:144): dataclass giữ cặp name–result đã ghép (`name_start`, `name_end`, `name_text`, `result_start`, `result_end`, `result_text`, `result_kind`, `unit`).
-- [`LabParseTrace`](../../src/lab_parser.py:158): trace debug đầy đủ (rule id, local role, dictionary term, name span, result span, result kind, unit, evidence, seed source/confidence), được serialize vào `SpanCandidate.notes` dạng JSON.
-- [`_RESULT_VALUE_RE`](../../src/lab_parser.py:75): regex biên dịch trước, nhận diện ba dạng kết quả xét nghiệm:
+- [`LabSeed`](../../../src/lab_parser.py:132): dataclass chuẩn hoá mọi lab-name seed trước khi result pairing (`start`, `end`, `seed_source`, `seed_term`, `seed_confidence`).
+- [`LabPair`](../../../src/lab_parser.py:144): dataclass giữ cặp name–result đã ghép (`name_start`, `name_end`, `name_text`, `result_start`, `result_end`, `result_text`, `result_kind`, `unit`).
+- [`LabParseTrace`](../../../src/lab_parser.py:158): trace debug đầy đủ (rule id, local role, dictionary term, name span, result span, result kind, unit, evidence, seed source/confidence), được serialize vào `SpanCandidate.notes` dạng JSON.
+- [`_RESULT_VALUE_RE`](../../../src/lab_parser.py:75): regex biên dịch trước, nhận diện ba dạng kết quả xét nghiệm:
   - *Range/trend*: `2.0 -> 3.2`, `2.0–3.0`, `tăng từ 2.0 lên 3.2`, `đạt đỉnh 6.7`.
   - *Qualitative*: `âm tính`, `dương tính`, `bình thường`, `không có gì đáng chú ý`, `trong giới hạn bình thường`.
   - *Numeric*: số đơn giản, số + unit (`537 mg/dl`), số + `x1` modifier.
 - `_dictionary_lab_seeds()`: tạo seed từ curated terms trong [`lab_seed_terms.csv`](../../data_resources/lab_seed_terms.csv:1), mỗi term được tìm trên `normalized_text` rồi map ngược raw offset qua `OffsetMapper`.
 - `_ner_lab_seeds()`: nhận `SpanCandidate` từ ViHealthBERT NER, chỉ dùng candidate `type_candidate="TÊN_XÉT_NGHIỆM"` và offset/text round-trip hợp lệ làm seed.
-- [`_expand_lab_name()`](../../src/lab_parser.py:331): mở rộng span từ name core sang parenthetical alias, ví dụ `cea` → `cea (kháng nguyên ung thư phôi)`. Dùng whitespace‑only trim để giữ `)` trong span.
-- [`_find_result_for_name()`](../../src/lab_parser.py:393): tìm kết quả phù hợp ngay sau name end, giới hạn bởi next seed start hoặc line end. Thứ tự ưu tiên: numeric > range > qualitative.
-- [`classify_lab_line()`](../../src/lab_parser.py:445): gắn local role cho dòng chứa candidate (`lab_subsection_item`, `lab_bullet_item`, `lab_numbered_item`, `lab_section_header`, `lab_context_line`, `lab_like_line`, `neutral_line`).
-- [`parse_lab_candidates()`](../../src/lab_parser.py:588): hàm pipeline chính — gom seed từ dictionary/NER, dedupe theo span với priority dictionary > NER, expand name, pair result, tính confidence theo evidence, trả `SpanCandidate[]` gồm cả `TÊN_XÉT_NGHIỆM` và `KẾT_QUẢ_XÉT_NGHIỆM`.
-- [`LAB_UNITS`](../../src/lab_parser.py:37): danh sách unit xét nghiệm hỗ trợ (`mg/dl`, `mmol/l`, `g/dl`, `u/l`, `%`, …).
+- [`_expand_lab_name()`](../../../src/lab_parser.py:331): mở rộng span từ name core sang parenthetical alias, ví dụ `cea` → `cea (kháng nguyên ung thư phôi)`. Dùng whitespace‑only trim để giữ `)` trong span.
+- [`_find_result_for_name()`](../../../src/lab_parser.py:393): tìm kết quả phù hợp ngay sau name end, giới hạn bởi next seed start hoặc line end. Thứ tự ưu tiên: numeric > range > qualitative.
+- [`classify_lab_line()`](../../../src/lab_parser.py:445): gắn local role cho dòng chứa candidate (`lab_subsection_item`, `lab_bullet_item`, `lab_numbered_item`, `lab_section_header`, `lab_context_line`, `lab_like_line`, `neutral_line`).
+- [`parse_lab_candidates()`](../../../src/lab_parser.py:588): hàm pipeline chính — gom seed từ dictionary/NER, dedupe theo span với priority dictionary > NER, expand name, pair result, tính confidence theo evidence, trả `SpanCandidate[]` gồm cả `TÊN_XÉT_NGHIỆM` và `KẾT_QUẢ_XÉT_NGHIỆM`.
+- [`LAB_UNITS`](../../../src/lab_parser.py:37): danh sách unit xét nghiệm hỗ trợ (`mg/dl`, `mmol/l`, `g/dl`, `u/l`, `%`, …).
 
 Quy tắc offset cốt lõi (giống các layer khác trong pipeline):
 

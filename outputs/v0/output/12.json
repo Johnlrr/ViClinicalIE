@@ -1,5 +1,17 @@
 [
   {
+    "text": "U Sacoit tổn thương chủ yếu tại tim",
+    "position": [
+      48,
+      83
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "ho",
     "position": [
       133,
@@ -110,6 +122,15 @@
     "assertions": []
   },
   {
+    "text": "Đờm pha màu hồng",
+    "position": [
+      623,
+      639
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "sốt",
     "position": [
       663,
@@ -148,6 +169,15 @@
     "candidates": []
   },
   {
+    "text": "K",
+    "position": [
+      1015,
+      1016
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
     "text": "công thức máu",
     "position": [
       1035,
@@ -172,6 +202,15 @@
       1072
     ],
     "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chụp x-quang ngực không phát hiện viêm phổi hoặc phù phổi",
+    "position": [
+      1105,
+      1162
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

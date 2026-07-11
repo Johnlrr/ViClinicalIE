@@ -14,14 +14,22 @@ Key patterns supported:
 * ``name value reference-range unit`` (whitespace-separated)
 * Multiple name-value pairs on the same line (semicolon/comma delimited)
 * Table-like rows (bullet items, numbered items)
+
+Since v2 the parser loads a metadata-backed dictionary from
+``data_resources/lab_terms_curated.csv`` with canonical grouping from
+``data_resources/lab_canonical_map.csv``. Short/ambiguous aliases (e.g.
+``K``, ``Ca``, ``Na``, ``cr``) are context-gated via ``requires_context``.
+Backward-compatible bare ``Sequence[str]`` input is still accepted.
 """
 
 from __future__ import annotations
 
+import csv
 import json
 import re
 from dataclasses import asdict, dataclass, field
-from typing import Iterable, List, Optional, Sequence, Tuple
+from pathlib import Path
+from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 from src.models import ClinicalDocument, Line, SpanCandidate
 from src.normalization import normalize_for_matching
@@ -34,11 +42,15 @@ LAB_SUBSECTION = "LAB_RESULT_SECTION"
 SPAN_TRIM_CHARS = " \t\r\n,;:.()[]{}-*•+"
 BOUNDARY_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÀ-ỹ_"
 
+# Expanded unit set covering common chemistry, hematology, endocrine, ABG,
+# tumor-marker, and coagulation units observed in PDF-derived dictionary.
 LAB_UNITS = (
     r"mg/dl|mmol/l|g/dl|g/l|ng/ml|pg/ml|mcg/dl|μg/dl|μmol/l|"
     r"mEq/l|meq/l|u/l|ui/l|%|đơn\s*vị|unit|units|"
     r"ml|g|mg|mcg|μg|mmol|μmol|mEq|meq|iu|ui|"
-    r"fr|mm|cm|mm/h|mmhg"
+    r"fr|mm|cm|mm/h|mmhg|"
+    r"iu/l|miu/l|µiu/ml|ng/l|pmol/l|nmol/l|µmol/l|"
+    r"fl|pg|coi"
 )
 
 # Range/trend operators that appear between two numeric values.
@@ -124,14 +136,51 @@ LAB_LINE_MARKERS = (
     "kết quả", "xét nghiệm", "chỉ số", "nồng độ", "định lượng",
 )
 
+# Context gate markers: these marker phrases in the line or its section
+# satisfy the context requirement for ambiguous aliases like K, Na, Ca.
+_CONTEXT_GATE_LINE_MARKERS = (
+    "xét nghiệm", "cận lâm sàng", "kết quả", "điện giải",
+    "khí máu", "chem", "cbc", "đông máu", "huyết học",
+)
+
+_CONTEXT_GATE_SECTION_KEYWORDS = (
+    "cận lâm sàng", "kết quả xét nghiệm", "laboratory",
+    "lab_result_section",
+)
+
 
 # ---------------------------------------------------------------------------
 # Data classes
 # ---------------------------------------------------------------------------
 
 @dataclass(frozen=True)
+class LabTermEntry:
+    """Metadata-backed dictionary entry from ``lab_terms_curated.csv``.
+
+    Each entry exposes the surface *term* used for text matching plus
+    canonical identity, provenance, category/specimen, context-gate flag,
+    and matching priority.
+    """
+
+    term: str
+    canonical_key: str
+    canonical_name: str
+    source: str
+    source_detail: str
+    category: str
+    specimen: str
+    requires_context: bool
+    priority: int
+    notes: str = ""
+
+
+@dataclass(frozen=True)
 class LabSeed:
-    """One lab-name seed before name expansion and result pairing."""
+    """One lab-name seed before name expansion and result pairing.
+
+    Carries optional ``LabTermEntry`` metadata when sourced from the
+    curated dictionary; ``None`` for NER-only seeds.
+    """
 
     start: int
     end: int
@@ -139,6 +188,7 @@ class LabSeed:
     seed_source: str          # "lab_dictionary" | "vihealthbert_ner"
     seed_term: str            # original dictionary/alias term
     seed_confidence: float = 1.0
+    entry: Optional[LabTermEntry] = None  # metadata when dictionary-backed
 
 
 @dataclass(frozen=True)
@@ -157,7 +207,11 @@ class LabPair:
 
 @dataclass(frozen=True)
 class LabParseTrace:
-    """Trace metadata stored in ``SpanCandidate.notes`` for debugging."""
+    """Trace metadata stored in ``SpanCandidate.notes`` for debugging.
+
+    Since v2, carries canonical identity fields from the dictionary
+    entry when available.
+    """
 
     rule_id: str
     local_role: str
@@ -169,6 +223,12 @@ class LabParseTrace:
     evidence: List[str]
     seed_source: str = "lab_dictionary"
     seed_confidence: float = 1.0
+    canonical_key: Optional[str] = None
+    canonical_name: Optional[str] = None
+    source_detail: Optional[str] = None
+    category: Optional[str] = None
+    specimen: Optional[str] = None
+    requires_context: bool = False
 
 
 # ---------------------------------------------------------------------------
@@ -213,6 +273,160 @@ def _line_context(doc: ClinicalDocument, line: Line) -> Tuple[str, str]:
 
 
 # ---------------------------------------------------------------------------
+# Dictionary loader  (v2 metadata-backed entry loading)
+# ---------------------------------------------------------------------------
+
+def load_lab_dictionary(csv_path: str) -> List[LabTermEntry]:
+    """Load ``lab_terms_curated.csv`` into a list of ``LabTermEntry``.
+
+    Returns an empty list if the file cannot be read (e.g. not yet built),
+    so the parser degrades gracefully to bare-string usage.
+    """
+    path = Path(csv_path)
+    if not path.exists():
+        return []
+    entries: List[LabTermEntry] = []
+    with open(path, encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            term = row.get("term", "")
+            if not term:
+                continue
+            entries.append(LabTermEntry(
+                term=term,
+                canonical_key=row.get("canonical_key", ""),
+                canonical_name=row.get("canonical_name", ""),
+                source=row.get("source", ""),
+                source_detail=row.get("source_detail", ""),
+                category=row.get("category", ""),
+                specimen=row.get("specimen", ""),
+                requires_context=row.get("requires_context", "false").lower() == "true",
+                priority=int(row.get("priority", "0") or "0"),
+                notes=row.get("notes", ""),
+            ))
+    return entries
+
+
+def build_term_lookup(entries: Sequence[LabTermEntry]) -> Dict[str, LabTermEntry]:
+    """Build an alias-lookup dict keyed by *normalized* term string.
+
+    When multiple entries produce the same normalized key, the highest-priority
+    entry wins. Ties are broken by longer term text.
+    """
+    lookup: Dict[str, LabTermEntry] = {}
+    for entry in entries:
+        key = normalize_for_matching(entry.term)
+        if not key:
+            continue
+        existing = lookup.get(key)
+        if existing is None:
+            lookup[key] = entry
+        else:
+            if entry.priority > existing.priority:
+                lookup[key] = entry
+            elif entry.priority == existing.priority and len(entry.term) > len(existing.term):
+                lookup[key] = entry
+    return lookup
+
+
+# ---------------------------------------------------------------------------
+# Context gate  (v2 - for requires_context aliases)
+# ---------------------------------------------------------------------------
+
+def _has_lab_context(line: Line, doc: ClinicalDocument) -> bool:
+    """Check whether the line (or its section) provides lab context.
+
+    Used as a gate for ambiguous aliases with ``requires_context=true``.
+    """
+    # 1. Check section type / subsection type.
+    section_text = (line.section_type or "").lower()
+    subsection_text = (line.subsection_type or "").lower()
+    combined_sec = section_text + " " + subsection_text
+    for kw in _CONTEXT_GATE_SECTION_KEYWORDS:
+        if kw in combined_sec:
+            return True
+
+    # 2. Check line text for lab markers.
+    normalized = normalize_for_matching(line.text)
+    for marker in _CONTEXT_GATE_LINE_MARKERS:
+        if marker in normalized:
+            return True
+
+    # 3. Check left/right context for lab markers.
+    left, right = _line_context(doc, line)
+    combined = normalize_for_matching(left + " " + right)
+    for marker in _CONTEXT_GATE_LINE_MARKERS:
+        if marker in combined:
+            return True
+
+    return False
+
+
+# ---------------------------------------------------------------------------
+# Overlap resolution  (v2 - prefer longer / more specific alias)
+# ---------------------------------------------------------------------------
+
+def resolve_overlapping_aliases(
+    aliases: List[str],
+    lookup: Dict[str, LabTermEntry],
+) -> List[str]:
+    """Resolve overlapping alias spans by preferring longer, higher-priority terms.
+
+    Example: if ``bilirubin`` and ``bilirubin toàn phần`` both appear,
+    the longer *bilirubin toàn phần* wins when they share the same canonical key.
+    """
+    if not aliases or not lookup:
+        return aliases
+
+    sorted_aliases = sorted(
+        aliases,
+        key=lambda a: (
+            len(a),
+            getattr(lookup.get(normalize_for_matching(a)), "priority", 0),
+        ),
+        reverse=True,
+    )
+
+    resolved: List[str] = []
+    for alias in sorted_aliases:
+        key = normalize_for_matching(alias)
+        alias_lower = alias.lower().strip()
+        is_subsumed = False
+        alias_entry = lookup.get(key)
+        for existing in resolved:
+            existing_lower = existing.lower().strip()
+            existing_key = normalize_for_matching(existing)
+            existing_entry = lookup.get(existing_key)
+            if alias_lower in existing_lower and len(alias_lower) < len(existing_lower):
+                # Subume only if same canonical_key or no entry info.
+                if existing_entry and alias_entry:
+                    if existing_entry.canonical_key == alias_entry.canonical_key:
+                        is_subsumed = True
+                        break
+                else:
+                    is_subsumed = True
+                    break
+        if not is_subsumed:
+            resolved.append(alias)
+    return resolved
+
+
+def _make_dummy_entry(term: str) -> LabTermEntry:
+    """Create a minimal entry (priority 0) for bare strings that lack metadata."""
+    return LabTermEntry(
+        term=term,
+        canonical_key=normalize_for_matching(term),
+        canonical_name=term,
+        source="bare_string",
+        source_detail="",
+        category="",
+        specimen="",
+        requires_context=False,
+        priority=0,
+    )
+
+
+# ---------------------------------------------------------------------------
 # Seed discovery (dictionary + NER)
 # ---------------------------------------------------------------------------
 
@@ -248,11 +462,23 @@ def _find_spans_via_normalized(
 
 
 def _dictionary_lab_seeds(
-    doc: ClinicalDocument, terms: Sequence[str],
+    doc: ClinicalDocument,
+    terms: Sequence[str],
+    *,
+    lookup: Optional[Dict[str, LabTermEntry]] = None,
 ) -> List[LabSeed]:
-    """Create lab-name seeds from curated dictionary terms."""
+    """Create lab-name seeds from curated dictionary terms.
+
+    When *lookup* is provided, each seed is enriched with its
+    ``LabTermEntry`` metadata for canonical identity and context gates.
+    """
     seeds: List[LabSeed] = []
     for term in _unique_terms(terms):
+        entry = None
+        if lookup is not None:
+            entry = lookup.get(normalize_for_matching(term))
+            if entry is None:
+                entry = _make_dummy_entry(term)
         for seed_start, seed_end in _find_spans_via_normalized(doc, term):
             seeds.append(
                 LabSeed(
@@ -262,6 +488,7 @@ def _dictionary_lab_seeds(
                     seed_source="lab_dictionary",
                     seed_term=term,
                     seed_confidence=1.0,
+                    entry=entry,
                 )
             )
     return seeds
@@ -301,27 +528,56 @@ def _ner_lab_seeds(
 
 
 def _dedupe_lab_seeds(seeds: Sequence[LabSeed]) -> List[LabSeed]:
-    """Prefer dictionary over NER for identical core spans."""
-    priority = {"lab_dictionary": 2, "vihealthbert_ner": 1}
-    best: dict[Tuple[int, int], LabSeed] = {}
+    """Prefer dictionary over NER, and resolve overlapping aliases.
+
+    Phase 1: exact-span dedup (dictionary > NER).
+    Phase 2: overlap resolution — when a longer seed contains a shorter seed
+    and both map to the same canonical_key, keep the longer one.
+    """
+    # ---- Phase 1: exact-span dedup ----
+    source_rank = {"lab_dictionary": 2, "vihealthbert_ner": 1}
+    best: Dict[Tuple[int, int], LabSeed] = {}
     for seed in seeds:
         key = (seed.start, seed.end)
         previous = best.get(key)
         if previous is None:
             best[key] = seed
             continue
-        prev_rank = priority.get(previous.seed_source, 0)
-        seed_rank = priority.get(seed.seed_source, 0)
-        if (seed_rank, seed.seed_confidence, len(seed.seed_term)) > (
+        prev_rank = source_rank.get(previous.seed_source, 0)
+        seed_rank_val = source_rank.get(seed.seed_source, 0)
+        if (seed_rank_val, seed.seed_confidence, len(seed.seed_term)) > (
             prev_rank,
             previous.seed_confidence,
-            previous.seed_term,
+            len(previous.seed_term),
         ):
             best[key] = seed
-    return sorted(
+
+    exact_deduped = sorted(
         best.values(),
         key=lambda item: (item.start, item.end, -item.seed_confidence),
     )
+
+    # ---- Phase 2: overlap resolution (nested aliases from same canonical family) ----
+    if len(exact_deduped) <= 1:
+        return exact_deduped
+
+    resolved: List[LabSeed] = []
+    for seed in exact_deduped:
+        is_subsumed = False
+        for existing in resolved:
+            # If existing contained this seed AND same canonical_key, subsume.
+            if existing.start <= seed.start and seed.end <= existing.end:
+                if existing.entry and seed.entry:
+                    if existing.entry.canonical_key == seed.entry.canonical_key:
+                        is_subsumed = True
+                        break
+                elif len(existing.text) > len(seed.text):
+                    # No entry info: prefer longer.
+                    is_subsumed = True
+                    break
+        if not is_subsumed:
+            resolved.append(seed)
+    return resolved
 
 
 # ---------------------------------------------------------------------------
@@ -598,6 +854,7 @@ def parse_lab_candidates(
     lab_terms: Sequence[str],
     *,
     ner_candidates: Optional[Sequence[SpanCandidate]] = None,
+    lab_entries: Optional[Sequence[LabTermEntry]] = None,
 ) -> List[SpanCandidate]:
     """Parse lab test names and results from dictionary and optional NER seeds.
 
@@ -612,6 +869,11 @@ def parse_lab_candidates(
         Optional ViHealthBERT ``TÊN_XÉT_NGHIỆM`` span candidates. They are
         treated as supplementary seeds for prose/narrative contexts where
         dictionary coverage may be incomplete.
+    lab_entries:
+        Optional metadata-backed ``LabTermEntry`` entries (e.g. loaded from
+        ``lab_terms_curated.csv``). When provided, the function builds a
+        normalized-term lookup for canonical identity, context gates, and
+        overlap resolution.
 
     Returns
     -------
@@ -619,28 +881,57 @@ def parse_lab_candidates(
         Candidates of type ``TÊN_XÉT_NGHIỆM`` and ``KẾT_QUẢ_XÉT_NGHIỆM``.
         Every candidate satisfies ``doc.raw_text[start:end] == text``.
     """
+    # Build the lookup from metadata entries when available.
+    lookup: Optional[Dict[str, LabTermEntry]] = None
+    if lab_entries is not None:
+        lookup = build_term_lookup(lab_entries)
+
     # ---- seed collection ---------------------------------------------------
     all_seeds: List[LabSeed] = []
-    all_seeds.extend(_dictionary_lab_seeds(doc, lab_terms))
+    all_seeds.extend(_dictionary_lab_seeds(doc, lab_terms, lookup=lookup))
     all_seeds.extend(_ner_lab_seeds(doc, ner_candidates))
     deduped_seeds = _dedupe_lab_seeds(all_seeds)
 
-    # ---- group seeds by line -----------------------------------------------
-    # Key: line.line_id -> (line, [seeds_on_that_line]).
-    # line_id is not necessarily the list index in doc.lines.
-    seeds_by_line: dict[int, Tuple[Line, List[LabSeed]]] = {}
+    # ---- apply context gates for requires_context aliases ------------------
+    gated_seeds: List[LabSeed] = []
     for seed in deduped_seeds:
+        if seed.entry and seed.entry.requires_context:
+            line = next(
+                (item for item in doc.lines
+                 if _span_in_line(seed.start, seed.end, item)),
+                None,
+            )
+            if line is not None and not _has_lab_context(line, doc):
+                continue  # skip unmatched context-required alias
+        gated_seeds.append(seed)
+
+    # ---- group seeds by line -----------------------------------------------
+    seeds_by_line: Dict[int, Tuple[Line, List[LabSeed]]] = {}
+    for seed in gated_seeds:
         line = next(
             (item for item in doc.lines if _span_in_line(seed.start, seed.end, item)),
             None,
         )
         if line is None:
             continue
-        entry = seeds_by_line.setdefault(line.line_id, (line, []))
-        entry[1].append(seed)
+        entry_ = seeds_by_line.setdefault(line.line_id, (line, []))
+        entry_[1].append(seed)
 
     candidates: List[SpanCandidate] = []
     seen_keys: set[Tuple[int, int, str]] = set()
+
+    # ---- helper: canonical trace extras from entry -------------------------
+    def _entry_trace_kwargs(seed: LabSeed) -> dict:
+        if seed.entry is None:
+            return {}
+        return {
+            "canonical_key": seed.entry.canonical_key,
+            "canonical_name": seed.entry.canonical_name,
+            "source_detail": seed.entry.source_detail,
+            "category": seed.entry.category,
+            "specimen": seed.entry.specimen,
+            "requires_context": seed.entry.requires_context,
+        }
 
     # ---- process each line -------------------------------------------------
     for _line_id, (line, line_seeds) in seeds_by_line.items():
@@ -696,6 +987,7 @@ def parse_lab_candidates(
                         evidence=name_ev,
                         seed_source=seed.seed_source,
                         seed_confidence=seed.seed_confidence,
+                        **_entry_trace_kwargs(seed),
                     )
                     candidates.append(
                         SpanCandidate(
@@ -745,6 +1037,7 @@ def parse_lab_candidates(
                         evidence=result_ev,
                         seed_source=seed.seed_source,
                         seed_confidence=seed.seed_confidence,
+                        **_entry_trace_kwargs(seed),
                     )
                     candidates.append(
                         SpanCandidate(
@@ -792,6 +1085,7 @@ def parse_lab_candidates(
                         evidence=name_ev,
                         seed_source=seed.seed_source,
                         seed_confidence=seed.seed_confidence,
+                        **_entry_trace_kwargs(seed),
                     )
                     candidates.append(
                         SpanCandidate(

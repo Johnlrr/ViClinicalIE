@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "text": "tách thành động mạch chủ  biến chứng bởi liệt hai chân",
+    "position": [
+      48,
+      102
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp",
+    "position": [
+      335,
+      386
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "hiện tăng kích thước so với các lần đánh giá trước",
+    "position": [
+      389,
+      439
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [],
+    "candidates": []
+  }
+]

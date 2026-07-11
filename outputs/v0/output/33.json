@@ -24,10 +24,34 @@
     "candidates": []
   },
   {
+    "text": "ngừng thở khi ngủ",
+    "position": [
+      113,
+      130
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "suy tim",
     "position": [
       154,
       161
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      163,
+      177
     ],
     "type": "CHẨN_ĐOÁN",
     "assertions": [
@@ -57,6 +81,17 @@
     "assertions": []
   },
   {
+    "text": "tiền sử trước vào viện  ba ngày",
+    "position": [
+      306,
+      337
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": [
+      "isHistorical"
+    ]
+  },
+  {
     "text": "khó thở khi xem TV lúc 11:00 sáng ba ngày trước",
     "position": [
       362,
@@ -70,6 +105,24 @@
     "position": [
       441,
       448
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khó nằm vào ban đêm để ngủ vì thở",
+    "position": [
+      455,
+      488
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "căng cứng vai trái (ngắt quãng, xảy ra vài lần mỗi ngày, kéo dài 5 phút)",
+    "position": [
+      495,
+      567
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -144,6 +197,42 @@
     ]
   },
   {
+    "text": "bỏ lỡ 3 ngày dùng một số thuốc vì quên đổ thuốc vào hộp (tuần qua)",
+    "position": [
+      972,
+      1038
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "EMS phát hiện bệnh nhân thiếu oxy với độ bão hòa oxy là 86 khi thở khí trời",
+    "position": [
+      1059,
+      1134
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "EMS cho bệnh nhân thở oxy qua mask không hồi phục (NRB)",
+    "position": [
+      1141,
+      1196
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "EMS đưa bệnh nhân đến khoa Cấp cứu",
+    "position": [
+      1203,
+      1237
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "bumetanide 2mg iv",
     "position": [
       1401,
@@ -178,6 +267,26 @@
     "position": [
       1504,
       1517
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "albuterolipratropium nebulizer",
+    "position": [
+      1533,
+      1563
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "methylprednisolone 125mg iv",
+    "position": [
+      1579,
+      1606
     ],
     "type": "THUỐC",
     "assertions": [],

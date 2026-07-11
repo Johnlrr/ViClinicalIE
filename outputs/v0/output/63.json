@@ -1,9 +1,54 @@
 [
   {
+    "text": "tiền sử Bệnh túi thừa ở cả ruột non và đại tràng",
+    "position": [
+      45,
+      93
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "chưa có biến chứng thủng hoặc áp xe",
+    "position": [
+      95,
+      130
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "colace",
+    "position": [
+      175,
+      181
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "đau bụng",
     "position": [
       230,
       238
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "khởi phát đột ngột đau hố chậu",
+    "position": [
+      276,
+      306
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -100,6 +145,70 @@
       1087
     ],
     "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "đau vẫn tiếp diễn",
+    "position": [
+      1137,
+      1154
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "thiếu máu hồng cầu nhỏ là 27.2",
+    "position": [
+      1366,
+      1396
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "bun/creatinine",
+    "position": [
+      1403,
+      1417
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chụp ct bụng",
+    "position": [
+      1450,
+      1462
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "chậu",
+    "position": [
+      1464,
+      1468
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "gợi ý viêm túi mật cấp tính không biến chứng",
+    "position": [
+      1561,
+      1605
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "viêm túi mật cấp tính không biến chứng",
+    "position": [
+      1638,
+      1676
+    ],
+    "type": "CHẨN_ĐOÁN",
     "assertions": [],
     "candidates": []
   }

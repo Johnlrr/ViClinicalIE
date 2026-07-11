@@ -1,5 +1,6 @@
 """Unit tests for V0 rule extractors."""
 
+import json
 import os
 import sys
 
@@ -198,6 +199,80 @@ def test_structural_current_history_event_bullets_recover_file6_shape():
     print("✓ test_structural_current_history_event_bullets_recover_file6_shape passed")
 
 
+def test_trace_metadata_in_diagnosis_candidate_notes():
+    """Diagnosis candidates must include rule_id, reliability_tier in notes."""
+    doc = make_doc("1. Tiền sử bệnh\nCác bệnh lý mãn tính\n- tăng huyết áp\n")
+    candidates = extract_diagnosis_candidates(doc, ["tăng huyết áp"], [])
+    candidate = next(c for c in candidates if c.type_candidate == ENTITY_DIAGNOSIS)
+
+    assert candidate.notes is not None and len(candidate.notes) > 0
+    trace = json.loads(candidate.notes)
+    assert trace["rule_id"] == "diagnosis_dictionary_context_match"
+    assert trace["reliability_tier"] == "contextual_dictionary_match"
+    assert trace["dictionary_term"] == "tăng huyết áp"
+    assert isinstance(trace["raw_span"], list) and len(trace["raw_span"]) == 2
+    assert trace["evidence"] == ["diagnosis_dictionary", "section_rule", "diagnosis_context"]
+
+    print("✓ test_trace_metadata_in_diagnosis_candidate_notes passed")
+
+
+def test_trace_metadata_in_symptom_candidate_notes():
+    """Symptom candidates must include rule_id, reliability_tier in notes."""
+    doc = make_doc("2. Bệnh sử hiện tại\nLý do nhập viện: đau ngực\n")
+    candidates = extract_symptom_candidates(doc, ["đau ngực"])
+    candidate = next(c for c in candidates if c.type_candidate == ENTITY_SYMPTOM)
+
+    assert candidate.notes is not None and len(candidate.notes) > 0
+    trace = json.loads(candidate.notes)
+    assert trace["rule_id"] == "symptom_dictionary_context_match"
+    assert trace["reliability_tier"] in ("contextual_dictionary_match", "exact_curated_alias")
+    assert trace["dictionary_term"] == "đau ngực"
+
+    print("✓ test_trace_metadata_in_symptom_candidate_notes passed")
+
+
+def test_trace_metadata_in_drug_candidate_notes():
+    """Drug baseline candidates must include rule_id, reliability_tier in notes."""
+    doc = make_doc("1. Tiền sử bệnh\nThuốc trước khi nhập viện\n- aspirin 81 mg\n")
+    candidates = extract_drug_candidates(doc, ["aspirin"])
+    candidate = next((c for c in candidates if c.type_candidate == ENTITY_DRUG), None)
+    assert candidate is not None, "No drug candidate produced"
+
+    assert candidate.notes is not None and len(candidate.notes) > 0
+    trace = json.loads(candidate.notes)
+    assert trace["rule_id"] == "drug_dictionary_baseline"
+    assert trace["reliability_tier"] == "contextual_dictionary_match"
+    assert trace["dictionary_term"] == "aspirin"
+
+    print("✓ test_trace_metadata_in_drug_candidate_notes passed")
+
+
+def test_trace_metadata_in_lab_candidate_notes():
+    """Lab baseline candidates must include rule_extractor rule_id in notes."""
+    doc = make_doc("3. Đánh giá tại bệnh viện\nKết quả xét nghiệm\nWBC:14,43\n")
+    candidates = extract_lab_candidates(doc, ["WBC"])
+    lab_name = next((c for c in candidates if c.type_candidate == ENTITY_LAB_NAME), None)
+    assert lab_name is not None and lab_name.notes is not None
+
+    trace = json.loads(lab_name.notes)
+    assert trace["rule_id"] == "lab_dictionary_baseline"
+    assert trace["dictionary_term"] == "WBC"
+
+    print("✓ test_trace_metadata_in_lab_candidate_notes passed")
+
+
+def test_trace_metadata_in_structural_fallback_notes():
+    """Structural fallback must include structural_fallback rule_id and tier."""
+    doc = make_doc("2. Bệnh sử hiện tại\nLý do nhập viện: đau đầu dữ dội (3 ngày)\n")
+    candidates = extract_structural_candidates(doc, [])
+    candidate = next((c for c in candidates if c.type_candidate == ENTITY_SYMPTOM), None)
+    assert candidate is not None and candidate.notes is not None
+
+    trace = json.loads(candidate.notes)
+    assert trace["reliability_tier"] == "structural_fallback"
+    assert trace["rule_id"] in ("structural_bullet_harvest", "structural_key_value_harvest")
+
+    print("✓ test_trace_metadata_in_structural_fallback_notes passed")
 def run_all_tests():
     """Run rule extractor tests without requiring pytest."""
     print("Running rule extractor tests...\n")
@@ -210,6 +285,11 @@ def run_all_tests():
     test_structural_key_value_harvest_strips_parenthetical_and_caps_long_values()
     test_structural_imaging_bullet_and_event_verb_guard()
     test_structural_current_history_event_bullets_recover_file6_shape()
+    test_trace_metadata_in_diagnosis_candidate_notes()
+    test_trace_metadata_in_symptom_candidate_notes()
+    test_trace_metadata_in_drug_candidate_notes()
+    test_trace_metadata_in_lab_candidate_notes()
+    test_trace_metadata_in_structural_fallback_notes()
     print("\n✓✓✓ All rule extractor tests passed! ✓✓✓")
 
 

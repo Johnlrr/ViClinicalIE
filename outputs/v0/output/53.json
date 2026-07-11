@@ -12,6 +12,30 @@
     "candidates": []
   },
   {
+    "text": "blốc nhĩ thất",
+    "position": [
+      171,
+      184
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "hoàn toàn sau khi đặt máy tạo nhịp (PPM)",
+    "position": [
+      186,
+      226
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "bệnh thận mạn",
     "position": [
       233,
@@ -22,6 +46,66 @@
       "isHistorical"
     ],
     "candidates": []
+  },
+  {
+    "text": "không đặc hiệu",
+    "position": [
+      248,
+      262
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Suy giảm nhận thức nhẹ suy giảm nhận thức",
+    "position": [
+      269,
+      310
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Các đợt Cảm giác thắt chặt ngực",
+    "position": [
+      443,
+      474
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "14 giờ",
+    "position": [
+      539,
+      545
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Cấp tính",
+    "position": [
+      582,
+      590
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Cảm giác thắt chặt ngực dưới xương ức nghiêm trọng",
+    "position": [
+      622,
+      672
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "khó thở",
@@ -37,6 +121,24 @@
     "position": [
       952,
       959
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Bệnh nhân ban đầu đến",
+    "position": [
+      998,
+      1019
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Chuyển đến vì lo ngại Cơn đau thắt ngực không ổn định cần can thiệp mạch vành",
+    "position": [
+      1026,
+      1103
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []

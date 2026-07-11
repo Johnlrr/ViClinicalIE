@@ -1,19 +1,32 @@
-"""Unit tests for the offset-safe lab parser."""
+"""Unit tests for the lab entity parser."""
 
 import json
 import os
 import sys
+from typing import Optional
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+import pytest
+
 from src.lab_parser import (
+    ENTITY_LAB_NAME,
+    ENTITY_LAB_RESULT,
     LabParseTrace,
+    LabSeed,
+    LabTermEntry,
+    Line,
+    SpanCandidate,
+    build_term_lookup,
     classify_lab_line,
+    load_lab_dictionary,
     parse_lab_candidates,
 )
-from src.models import ClinicalDocument, SpanCandidate
-from src.normalization import normalize_with_mapping
+from src.models import ClinicalDocument
+from src.normalization import normalize_for_matching, normalize_with_mapping
 from src.section_parser import parse_document_sections
+
+
 
 
 def make_doc(raw_text: str) -> ClinicalDocument:
@@ -510,6 +523,412 @@ def test_no_false_lab_from_non_lab_term():
     print("✓ test_no_false_lab_on_imaging_line passed")
 
 
+# ---------------------------------------------------------------------------
+# v2 tests: metadata-backed dictionary loading
+# ---------------------------------------------------------------------------
+
+def test_load_lab_dictionary_entries():
+    """Load lab_terms_curated.csv into LabTermEntry objects."""
+    path = os.path.join(
+        os.path.dirname(__file__), "..", "data_resources", "lab_terms_curated.csv",
+    )
+    entries = load_lab_dictionary(path)
+    assert len(entries) > 0, "Expected non-empty curated dictionary"
+    for entry in entries[:5]:
+        assert entry.term
+        assert entry.canonical_key
+        assert entry.source in {
+            "current_seed", "combined_lab_catalog", "abbreviation_txt_alias",
+            "manual_curation",
+        }
+    context_required = [e for e in entries if e.requires_context]
+    assert len(context_required) > 0, "Expected some context-required entries"
+    assert any(
+        e.canonical_key == "kali"
+        for e in entries if e.term in ("k", "K")
+    )
+    print("✓ test_load_lab_dictionary_entries passed")
+
+
+def test_build_term_lookup():
+    """Build normalized lookup from LabTermEntry list."""
+    entries = [
+        LabTermEntry(
+            term="creatinine", canonical_key="creatinine",
+            canonical_name="Creatinin",
+            source="current_seed", source_detail="", category="chemistry",
+            specimen="blood", requires_context=False, priority=4,
+        ),
+        LabTermEntry(
+            term="creatinin", canonical_key="creatinine",
+            canonical_name="Creatinin",
+            source="combined_lab_catalog", source_detail="", category="chemistry",
+            specimen="blood", requires_context=False, priority=3,
+        ),
+        LabTermEntry(
+            term="cr", canonical_key="creatinine",
+            canonical_name="Creatinin",
+            source="manual_curation", source_detail="", category="chemistry",
+            specimen="blood", requires_context=True, priority=5,
+        ),
+    ]
+    lookup = build_term_lookup(entries)
+    cr_entry = lookup.get(normalize_for_matching("cr"))
+    assert cr_entry is not None
+    assert cr_entry.canonical_key == "creatinine"
+    assert cr_entry.requires_context is True
+    assert cr_entry.priority == 5
+
+    creatin_entry = lookup.get(normalize_for_matching("creatinin"))
+    assert creatin_entry is not None
+    assert creatin_entry.priority == 3
+    print("✓ test_build_term_lookup passed")
+# ---------------------------------------------------------------------------
+# v2 tests: context-gated aliases
+# ---------------------------------------------------------------------------
+
+def test_context_gated_k_in_lab_section():
+    """k 5.4 in lab context -> accepted."""
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- k 5.4\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["k", "kali"],
+        lab_entries=[
+            LabTermEntry(
+                term="k", canonical_key="kali", canonical_name="Kali",
+                source="current_seed", source_detail="", category="chemistry",
+                specimen="blood", requires_context=True, priority=4,
+            ),
+        ],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 1
+    assert any("k" in c.text.lower() for c in names)
+    assert_offsets(doc, candidates)
+    print("✓ test_context_gated_k_in_lab_section passed")
+
+
+def test_context_gated_k_rejected_outside_lab():
+    """k in ordinary prose without lab context -> rejected."""
+    doc = make_doc(
+        "1. Hành chính\n"
+        "Bệnh nhân nữ, k nhà số 123\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["k"],
+        lab_entries=[
+            LabTermEntry(
+                term="k", canonical_key="kali", canonical_name="Kali",
+                source="current_seed", source_detail="", category="chemistry",
+                specimen="blood", requires_context=True, priority=4,
+            ),
+        ],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) == 0, "k should be rejected outside lab context"
+    print("✓ test_context_gated_k_rejected_outside_lab passed")
+
+
+def test_context_gated_cr_with_parenthetical_expansion():
+    """cr (creatinine) 1.2 in lab context -> accepted."""
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- cr (creatinine) 1.2\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["cr"],
+        lab_entries=[
+            LabTermEntry(
+                term="cr", canonical_key="creatinine",
+                canonical_name="Creatinin",
+                source="manual_curation", source_detail="", category="chemistry",
+                specimen="blood", requires_context=True, priority=5,
+            ),
+        ],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 1
+    assert any("cr" in c.text.lower() for c in names)
+    assert_offsets(doc, candidates)
+    print("✓ test_context_gated_cr_with_parenthetical_expansion passed")
+
+
+def test_context_gated_pt_rejected_english_word():
+    """pt in an English phrase without lab/result -> rejected."""
+    doc = make_doc(
+        "1. Hành chính\n"
+        "The patient was transferred to the emergency department.\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["pt"],
+        lab_entries=[
+            LabTermEntry(
+                term="pt", canonical_key="prothrombin",
+                canonical_name="Prothrombin time",
+                source="abbreviation_txt_alias", source_detail="",
+                category="coagulation", specimen="blood",
+                requires_context=True, priority=4,
+            ),
+        ],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) == 0, "pt in English prose should be rejected"
+    print("✓ test_context_gated_pt_rejected_english_word passed")
+
+
+def test_context_gated_na_inside_lab_with_result():
+    """Na: 138 in lab context -> accepted."""
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- điện giải: Na: 138, K: 4.2\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["na", "k", "natri", "kali"],
+        lab_entries=[
+            LabTermEntry(
+                term="na", canonical_key="natri", canonical_name="Natri",
+                source="abbreviation_txt_alias", source_detail="",
+                category="chemistry", specimen="blood",
+                requires_context=True, priority=4,
+            ),
+            LabTermEntry(
+                term="k", canonical_key="kali", canonical_name="Kali",
+                source="current_seed", source_detail="", category="chemistry",
+                specimen="blood", requires_context=True, priority=4,
+            ),
+        ],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 2
+    assert_offsets(doc, candidates)
+    print("✓ test_context_gated_na_inside_lab_with_result passed")
+
+
+# ---------------------------------------------------------------------------
+# v2 tests: overlap resolution
+# ---------------------------------------------------------------------------
+
+def test_overlap_bilirubin_prefers_bilirubin_toan_phan():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- bilirubin toàn phần 2.1\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["bilirubin", "bilirubin toàn phần"],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    long_names = [c for c in names if len(c.text) > 10]
+    assert len(long_names) >= 1
+    assert any("toàn phần" in c.text.lower() for c in long_names)
+    assert_offsets(doc, candidates)
+    print("✓ test_overlap_bilirubin_prefers_bilirubin_toan_phan passed")
+
+
+def test_overlap_canxi_prefers_canxi_ion_hoa():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- canxi ion hóa 6.8\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["canxi", "canxi ion hóa"],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    long_names = [c for c in names if len(c.text) > 8]
+    assert len(long_names) >= 1
+    assert_offsets(doc, candidates)
+    print("✓ test_overlap_canxi_prefers_canxi_ion_hoa passed")
+
+
+def test_overlap_crp_prefers_crp_hs():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- CRP 12.5, CRP hs 2.3\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["crp", "crp hs"],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 2
+    assert_offsets(doc, candidates)
+    print("✓ test_overlap_crp_prefers_crp_hs passed")
+
+
+# ---------------------------------------------------------------------------
+# v2 tests: unit recognition
+# ---------------------------------------------------------------------------
+
+def test_unit_iu_l():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- ALT: 45 IU/L\n"
+    )
+    candidates = parse_lab_candidates(doc, ["alt"])
+    results = [c for c in candidates if c.type_candidate == ENTITY_LAB_RESULT]
+    assert len(results) >= 1
+    assert any("45" in c.text for c in results)
+    assert_offsets(doc, candidates)
+    print("✓ test_unit_iu_l passed")
+
+
+def test_unit_ng_l():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- NT-proBNP 120 ng/L\n"
+    )
+    candidates = parse_lab_candidates(doc, ["nt-probnp", "nt probnp"])
+    results = [c for c in candidates if c.type_candidate == ENTITY_LAB_RESULT]
+    assert len(results) >= 1
+    assert any("120" in c.text for c in results)
+    assert_offsets(doc, candidates)
+    print("✓ test_unit_ng_l passed")
+
+
+def test_unit_percent():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- HbA1c 7.2%\n"
+    )
+    candidates = parse_lab_candidates(doc, ["hba1c", "hba1c"])
+    results = [c for c in candidates if c.type_candidate == ENTITY_LAB_RESULT]
+    assert len(results) >= 1
+    assert any("7.2" in c.text and "%" in c.text for c in results)
+    assert_offsets(doc, candidates)
+    print("✓ test_unit_percent passed")
+
+
+# ---------------------------------------------------------------------------
+# v2 tests: canonical metadata in trace
+# ---------------------------------------------------------------------------
+
+def test_canonical_metadata_in_trace():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- creatinine 1.2\n"
+    )
+    entries = [
+        LabTermEntry(
+            term="creatinine", canonical_key="creatinine",
+            canonical_name="Creatinin",
+            source="current_seed", source_detail="lab_seed_terms.csv",
+            category="chemistry", specimen="blood",
+            requires_context=False, priority=4,
+        ),
+    ]
+    candidates = parse_lab_candidates(
+        doc, ["creatinine"], lab_entries=entries,
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 1
+    trace = json.loads(names[0].notes)
+    assert trace.get("canonical_key") == "creatinine"
+    assert trace.get("canonical_name") == "Creatinin"
+    assert trace.get("category") == "chemistry"
+    assert trace.get("specimen") == "blood"
+    assert trace.get("requires_context") is False
+    print("✓ test_canonical_metadata_in_trace passed")
+
+
+# ---------------------------------------------------------------------------
+# v2 tests: regression on real clinical examples
+# ---------------------------------------------------------------------------
+
+def test_regression_canxi_ion_hoa():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- canxi là 12.0; canxi ion hóa 6.8\n"
+    )
+    candidates = parse_lab_candidates(doc, ["canxi", "canxi ion hóa"])
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 2
+    assert_offsets(doc, candidates)
+    print("✓ test_regression_canxi_ion_hoa passed")
+
+
+def test_regression_ure_photpho():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- Ure tăng từ 69 lên 91 mg/dl ... photpho 8.4\n"
+    )
+    candidates = parse_lab_candidates(doc, ["ure", "photpho", "ure máu"])
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 1
+    results = [c for c in candidates if c.type_candidate == ENTITY_LAB_RESULT]
+    assert len(results) >= 1
+    assert_offsets(doc, candidates)
+    print("✓ test_regression_ure_photpho passed")
+
+
+def test_regression_alp():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- alp 185\n"
+    )
+    candidates = parse_lab_candidates(doc, ["alp"])
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 1
+    results = [c for c in candidates if c.type_candidate == ENTITY_LAB_RESULT]
+    assert len(results) >= 1
+    assert any("185" in c.text for c in results)
+    assert_offsets(doc, candidates)
+    print("✓ test_regression_alp passed")
+
+
+def test_regression_ferritin_binh_thuong():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- ferritin là bình thường\n"
+    )
+    candidates = parse_lab_candidates(doc, ["ferritin"])
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 1
+    results = [c for c in candidates if c.type_candidate == ENTITY_LAB_RESULT]
+    assert len(results) >= 1
+    assert any("bình" in c.text.lower() for c in results)
+    assert_offsets(doc, candidates)
+    print("✓ test_regression_ferritin_binh_thuong passed")
+
+
+def test_regression_ck_58():
+    doc = make_doc(
+        "3. Đánh giá tại bệnh viện\n"
+        "Kết quả xét nghiệm\n"
+        "- ck 58\n"
+    )
+    candidates = parse_lab_candidates(
+        doc, ["ck", "ck-mb"],
+        lab_entries=[
+            LabTermEntry(
+                term="ck", canonical_key="ck", canonical_name="CK",
+                source="manual_curation", source_detail="", category="chemistry",
+                specimen="blood", requires_context=True, priority=5,
+            ),
+        ],
+    )
+    names = [c for c in candidates if c.type_candidate == ENTITY_LAB_NAME]
+    assert len(names) >= 1
+    results = [c for c in candidates if c.type_candidate == ENTITY_LAB_RESULT]
+    assert len(results) >= 1
+    assert any("58" in c.text for c in results)
+    assert_offsets(doc, candidates)
+    print("✓ test_regression_ck_58 passed")
+
+
 def run_all_tests():
     """Run lab parser tests without requiring pytest."""
     print("Running lab parser tests...\n")
@@ -532,6 +951,28 @@ def run_all_tests():
     test_nested_subsection_lab_detection()
     test_comma_decimal_parsing()
     test_no_false_lab_from_non_lab_term()
+
+    # v2 tests
+    print("\n--- v2 tests ---")
+    test_load_lab_dictionary_entries()
+    test_build_term_lookup()
+    test_context_gated_k_in_lab_section()
+    test_context_gated_k_rejected_outside_lab()
+    test_context_gated_cr_with_parenthetical_expansion()
+    test_context_gated_pt_rejected_english_word()
+    test_context_gated_na_inside_lab_with_result()
+    test_overlap_bilirubin_prefers_bilirubin_toan_phan()
+    test_overlap_canxi_prefers_canxi_ion_hoa()
+    test_overlap_crp_prefers_crp_hs()
+    test_unit_iu_l()
+    test_unit_ng_l()
+    test_unit_percent()
+    test_canonical_metadata_in_trace()
+    test_regression_canxi_ion_hoa()
+    test_regression_ure_photpho()
+    test_regression_alp()
+    test_regression_ferritin_binh_thuong()
+    test_regression_ck_58()
     print("\n✓✓✓ All lab parser tests passed! ✓✓✓")
 
 

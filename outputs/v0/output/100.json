@@ -1,9 +1,111 @@
 [
   {
+    "text": "U ác của đại tràng",
+    "position": [
+      123,
+      141
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "cường cận giáp nguyên phát",
+    "position": [
+      148,
+      174
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Xơ vữa động mạch",
+    "position": [
+      181,
+      197
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "cơn đau thắt ngực ổn định",
+    "position": [
+      204,
+      229
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "đến khám vì tăng calci máu",
+    "position": [
+      263,
+      289
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "tăng calci máu",
+    "position": [
+      316,
+      330
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "xét nghiệm xét nghiệm ngoại trú được thực hiện hôm nay và canxi là 12.0",
+    "position": [
+      388,
+      459
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "canxi ion hóa 6.8",
+    "position": [
+      461,
+      478
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ngất xỉu",
     "position": [
       504,
       512
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "một lần khi lái xe lần cuối và một lần khác khi nói chuyện với bạn trong xe một tháng trước",
+    "position": [
+      514,
+      605
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Cả hai lần đều kéo dài vài giây",
+    "position": [
+      612,
+      643
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -42,12 +144,58 @@
     ]
   },
   {
+    "text": "Không có biểu hiện động kinh",
+    "position": [
+      722,
+      750
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "đau ngực",
     "position": [
       895,
       903
     ],
     "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "cơn đau kéo dài khoảng 5 phút",
+    "position": [
+      929,
+      958
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "nitroglycerin",
+    "position": [
+      996,
+      1009
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
+    "text": "Hiện tại bệnh nhân còn đau ở sau đầu và cổ từ khi bị ngã trong bồn tắm năm ngoái đến nay",
+    "position": [
+      1030,
+      1118
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Truyền  dịch Natriclori 0.9 %  tĩnh mạch",
+    "position": [
+      1473,
+      1513
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

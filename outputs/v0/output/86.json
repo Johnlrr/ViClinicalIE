@@ -1,5 +1,29 @@
 [
   {
+    "text": "bệnh động mạch vành",
+    "position": [
+      34,
+      53
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "bệnh lý thần kinh ngoại biên",
+    "position": [
+      55,
+      83
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
     "text": "mệt mỏi",
     "position": [
       160,
@@ -33,6 +57,24 @@
       265
     ],
     "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Đo sức bền cơ tim bằng đồng vị phóng xạ kết quả có dị tật cố định vùng trước vách và vách dưới với  giảm chức năng tâm thu thất trái nghiêm trọng kèm theo rối loạn chức năng thất trái",
+    "position": [
+      434,
+      617
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Chụp động mạch vành cho thấy bệnh ba thân động mạch vành nghiêm trọng",
+    "position": [
+      621,
+      690
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]

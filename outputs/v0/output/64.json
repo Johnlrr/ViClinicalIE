@@ -1,5 +1,74 @@
 [
   {
+    "text": "percocet",
+    "position": [
+      273,
+      281
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "Tiền sử đã biết của bệnh túi thừa của cả ruột non và đại tràng",
+    "position": [
+      416,
+      478
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "không thủng hay áp xe",
+    "position": [
+      480,
+      501
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "táo bón trở nên tồi tệ hơn gần đây",
+    "position": [
+      508,
+      542
+    ],
+    "type": "CHẨN_ĐOÁN",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "percocet",
+    "position": [
+      582,
+      590
+    ],
+    "type": "THUỐC",
+    "assertions": [
+      "isHistorical"
+    ],
+    "candidates": []
+  },
+  {
+    "text": "đau vùng hạ vị bên phải và hạ vị bên trái",
+    "position": [
+      662,
+      703
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "đau bụng",
     "position": [
       741,
@@ -9,10 +78,28 @@
     "assertions": []
   },
   {
+    "text": "đau vùng hạ vị bên phải và hạ vị bên trái",
+    "position": [
+      830,
+      871
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "táo bón",
     "position": [
       878,
       885
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đổ mồ hôi qua đêm",
+    "position": [
+      919,
+      936
     ],
     "type": "TRIỆU_CHỨNG",
     "assertions": []
@@ -40,6 +127,61 @@
     ]
   },
   {
+    "text": "Không hoa mắt",
+    "position": [
+      990,
+      1003
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đi tiêu bình thường",
+    "position": [
+      1010,
+      1029
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không ra máu",
+    "position": [
+      1031,
+      1043
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "sử dụng ciproflagyl trong lần nhập viện trước",
+    "position": [
+      1254,
+      1299
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Tiếp tục đau tại thời điểm xuất viện khỏi lần nhập viện trước",
+    "position": [
+      1306,
+      1367
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "percocet",
+    "position": [
+      1400,
+      1408
+    ],
+    "type": "THUỐC",
+    "assertions": [],
+    "candidates": []
+  },
+  {
     "text": "sốt",
     "position": [
       1430,
@@ -60,6 +202,42 @@
     "assertions": [
       "isNegated"
     ]
+  },
+  {
+    "text": "Không hoa mắt",
+    "position": [
+      1462,
+      1475
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đi tiêu bình thường",
+    "position": [
+      1482,
+      1501
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "không ra máu",
+    "position": [
+      1503,
+      1515
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "đổ mồ hôi qua đêm",
+    "position": [
+      1572,
+      1589
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
   },
   {
     "text": "sốt",

@@ -12,6 +12,15 @@
     "candidates": []
   },
   {
+    "text": "Theo hẹn hóa trị huy động tế bào gốc",
+    "position": [
+      96,
+      132
+    ],
+    "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
     "text": "ho",
     "position": [
       165,
@@ -27,6 +36,33 @@
       182
     ],
     "type": "TRIỆU_CHỨNG",
+    "assertions": []
+  },
+  {
+    "text": "Định lượng IgA tăng cao trong bệnh đa u tuỷ xương",
+    "position": [
+      325,
+      374
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "các tổn thương ổ tiêu xương lan tỏa",
+    "position": [
+      434,
+      469
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
+    "assertions": []
+  },
+  {
+    "text": "Đa u tủy xương",
+    "position": [
+      485,
+      499
+    ],
+    "type": "TÊN_XÉT_NGHIỆM",
     "assertions": []
   }
 ]
