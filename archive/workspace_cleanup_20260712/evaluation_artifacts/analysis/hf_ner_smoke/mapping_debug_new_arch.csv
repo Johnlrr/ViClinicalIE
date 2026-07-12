@@ -1,0 +1,11 @@
+﻿file_id,text,type,start,end,codes,source,confidence,matched_term,reason
+1,metoprolol 25mg po bid,THUỐC,53,75,866436,rxnorm_exact,1.0,metoprolol 25mg po bid,
+1,doxycycline,THUỐC,82,93,197700,rxnorm_exact,1.0,doxycycline,
+1,atenolol,THUỐC,122,130,197380,rxnorm_exact,1.0,atenolol,
+1,metoprolol 25mg po bid,THUỐC,1772,1794,866436,rxnorm_exact,1.0,metoprolol 25mg po bid,
+1,atenololtrong,THUỐC,1849,1862,197380,rxnorm_exact,1.0,atenolol trong,
+1,aspirin 325mg x 1,THUỐC,2199,2216,212033,rxnorm_exact,1.0,aspirin 325mg x 1,
+1,VS98.3 12987 56 18 99RA,CHẨN_ĐOÁN,2482,2505,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,Khi được chuyển vào khoa điều trị,CHẨN_ĐOÁN,2512,2545,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,điện tâm đồ là không ghi nhận gì bất thường,CHẨN_ĐOÁN,2771,2814,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,monitor holter cho thấy Nhịp xoang chiếm ưu thế. Ghi nhận ngoại tâm thu nhĩ và ngoại tâm thu thất xuất hiện thường xuyên,CHẨN_ĐOÁN,2821,2941,,icd_unmapped,0.0,,no_icd_candidate_above_threshold

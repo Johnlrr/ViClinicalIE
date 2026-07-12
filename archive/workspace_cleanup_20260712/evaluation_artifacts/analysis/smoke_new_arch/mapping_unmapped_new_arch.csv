@@ -1,0 +1,5 @@
+﻿file_id,text,type,start,end,codes,source,confidence,matched_term,reason
+1,VS98.3 12987 56 18 99RA,CHẨN_ĐOÁN,2482,2505,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,Khi được chuyển vào khoa điều trị,CHẨN_ĐOÁN,2512,2545,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,điện tâm đồ là không ghi nhận gì bất thường,CHẨN_ĐOÁN,2771,2814,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,monitor holter cho thấy Nhịp xoang chiếm ưu thế. Ghi nhận ngoại tâm thu nhĩ và ngoại tâm thu thất xuất hiện thường xuyên,CHẨN_ĐOÁN,2821,2941,,icd_unmapped,0.0,,no_icd_candidate_above_threshold

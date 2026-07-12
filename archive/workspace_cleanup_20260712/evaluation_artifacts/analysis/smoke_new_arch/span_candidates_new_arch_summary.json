@@ -1,0 +1,54 @@
+{
+  "total_candidates": 81,
+  "output_candidates": 69,
+  "by_type": {
+    "TÊN_XÉT_NGHIỆM": 7,
+    "KẾT_QUẢ_XÉT_NGHIỆM": 2,
+    "THUỐC": 6,
+    "TRIỆU_CHỨNG": 49,
+    "CHẨN_ĐOÁN": 5
+  },
+  "rejected": {
+    "procedure_or_imaging_method": 12
+  },
+  "empty_output_files": [],
+  "offset_errors": 0,
+  "ner_candidates": 0,
+  "parser_architecture": "ner_optional_drug_parser_lab_parser_dictionary_rules",
+  "documents": 1,
+  "source_counts_raw": {
+    "lab_parser": 7,
+    "lab_dictionary": 5,
+    "local_structure": 12,
+    "result_detection": 2,
+    "paired_with_dictionary_name": 2,
+    "drug_parser": 6,
+    "drug_dictionary": 6,
+    "boundary_composition": 6,
+    "dose_parser": 3,
+    "rxnorm_prelink": 6,
+    "symptom_dictionary": 23,
+    "section_rule": 23,
+    "structural_fallback": 33,
+    "non_target_dictionary": 12
+  },
+  "source_counts_linked": {
+    "drug_parser": 6,
+    "drug_dictionary": 6,
+    "boundary_composition": 6,
+    "dose_parser": 3,
+    "local_structure": 12,
+    "rxnorm_prelink": 6,
+    "assertion_historical_rule": 4,
+    "rxnorm_exact": 6,
+    "symptom_dictionary": 21,
+    "section_rule": 21,
+    "structural_fallback": 16,
+    "assertion_negation_rule": 3,
+    "lab_parser": 7,
+    "lab_dictionary": 5,
+    "icd_unmapped": 4,
+    "result_detection": 2,
+    "paired_with_dictionary_name": 2
+  }
+}

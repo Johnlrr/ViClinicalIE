@@ -1,0 +1,61 @@
+﻿file_id,text,type,start,end,codes,source,confidence,matched_term,reason
+1,VS98.3 12987 56 18 99RA,CHẨN_ĐOÁN,2482,2505,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,Khi được chuyển vào khoa điều trị,CHẨN_ĐOÁN,2512,2545,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,điện tâm đồ là không ghi nhận gì bất thường,CHẨN_ĐOÁN,2771,2814,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+1,monitor holter cho thấy Nhịp xoang chiếm ưu thế. Ghi nhận ngoại tâm thu nhĩ và ngoại tâm thu thất xuất hiện thường xuyên,CHẨN_ĐOÁN,2821,2941,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+10,khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể,CHẨN_ĐOÁN,625,687,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+10,sinh thiết chỉ cho thấy một u tuyến,CHẨN_ĐOÁN,690,725,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+11,không đặc hiệu,CHẨN_ĐOÁN,122,136,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+11,cổ trướng và tràn dịch màng phổi,CHẨN_ĐOÁN,235,267,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+11,liệu pháp lợi tiểu,THUỐC,308,326,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+12,U Sacoit tổn thương chủ yếu tại tim,CHẨN_ĐOÁN,48,83,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+13,Bệnh phổi kẽ do sử dụng corticoid liều cao kéo dài,CHẨN_ĐOÁN,44,94,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+13,Thở oxy tại nhà,CHẨN_ĐOÁN,102,117,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+13,Hội chứng kháng enzym tổng hợp protein,CHẨN_ĐOÁN,124,162,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+13,Lo ngại về Nhiễm virus Herpes simplex (HSV) hoặc Bệnh thủy đậu/Zona,CHẨN_ĐOÁN,2477,2544,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+15,xuất huyết nội sọ không do chấn thương,CHẨN_ĐOÁN,205,243,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+15,không đặc hiệu,CHẨN_ĐOÁN,245,259,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+15,Điều trị chống đông,CHẨN_ĐOÁN,262,281,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+16,không xác định,CHẨN_ĐOÁN,103,117,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+16,guaiac,THUỐC,1578,1584,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+16,guaiac,THUỐC,1909,1915,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+16,Viêm phổi bệnh viện,CHẨN_ĐOÁN,2231,2250,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+17,bệnh trào ngược dạ dày- thực quản không có viêm thực quản,CHẨN_ĐOÁN,40,97,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+17,Vết rạch nhỏ trên ngực phải,CHẨN_ĐOÁN,1119,1146,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+17,hơi đau khi sờ nắn,CHẨN_ĐOÁN,1148,1166,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+17,Không đau khi vận động cánh tay,CHẨN_ĐOÁN,1169,1200,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+17,Không có dấu hiệu viêm mô tế bào hoặc nhiễm trùng ở các bộ phận khác trên cơ thể,CHẨN_ĐOÁN,1203,1283,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+17,Phổi rõ tiếng khi nghe,CHẨN_ĐOÁN,1286,1308,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+17,Tim nhịp đều,CHẨN_ĐOÁN,1311,1323,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+17,không có tiếng tim bệnh lý,CHẨN_ĐOÁN,1325,1351,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+18,nữ,CHẨN_ĐOÁN,49,51,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+18,nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái,CHẨN_ĐOÁN,53,108,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+18,bóc tách động mạch chủ loại B,CHẨN_ĐOÁN,804,833,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+19,Di căn não vùng trán phải dã phẫu thuật lấy u,CHẨN_ĐOÁN,115,160,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+19,Sa van hai lá,CHẨN_ĐOÁN,271,284,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+19,vicodin,THUỐC,382,389,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+20,không đặc hiệu,CHẨN_ĐOÁN,83,97,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+20,tăng sản tuyến tiền liệt,CHẨN_ĐOÁN,197,221,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+20,desmopressin,THUỐC,405,417,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+20,cảm thấy khỏe trên sàn,CHẨN_ĐOÁN,1881,1903,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+20,Than phiền đau ở hông phải khi cử động và thay đổi tư thế,CHẨN_ĐOÁN,1910,1967,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+20,mạn tính và đỉnh,CHẨN_ĐOÁN,2884,2900,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+20,tiểu đêm nhiều  do  tăng sản tuyến tiền liệt,CHẨN_ĐOÁN,2963,3007,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+3,phình động mạch chủ nhỏ,CHẨN_ĐOÁN,269,292,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+3,không tuân thủ điều trị bằng thuốc,THUỐC,328,362,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+5,không đặc hiệu,CHẨN_ĐOÁN,133,147,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+5,bệnh trào ngược dạ dày- thực quản không có viêm thực quản,CHẨN_ĐOÁN,154,211,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+5,levophed,THUỐC,1360,1368,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+5,propofol,THUỐC,1375,1383,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+5,phentolamine,THUỐC,1408,1420,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+7,ho Rối loạn cảm xúc (trầm cảm) (tiền sử giai đoạn trầm cảm không đặc hiệu),CHẨN_ĐOÁN,48,122,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+7,hội chứng nghiện rượu,CHẨN_ĐOÁN,129,150,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+7,seroquel,THUỐC,190,198,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
+7,đánh giá thần kinh để tìm bệnh lý chất trắng,CHẨN_ĐOÁN,1997,2041,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+7,Nguyên nhân chưa rõ (đối với phát hiện bệnh lý chất trắng),CHẨN_ĐOÁN,2097,2155,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+7,Sẽ không điển hình cho Bệnh đa xơ cứng theo ý kiến của bác sĩ thần kinh,CHẨN_ĐOÁN,2162,2233,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+7,Ảo giác do rượu (suy nghĩ),CHẨN_ĐOÁN,2240,2266,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+7,Không được coi là thực sự loạn thần,CHẨN_ĐOÁN,2273,2308,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+9,u cơ trơn tử cung,CHẨN_ĐOÁN,39,56,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+9,không đặc hiệu,CHẨN_ĐOÁN,58,72,,icd_unmapped,0.0,,no_icd_candidate_above_threshold
+9,iron,THUỐC,104,108,,rxnorm_unmapped,0.0,,no_rxnorm_candidate_above_threshold
