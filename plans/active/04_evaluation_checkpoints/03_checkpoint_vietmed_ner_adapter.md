@@ -152,6 +152,8 @@ Theo `plan_ner.md §7 Evaluate ablation`:
 
 Sau khi có ablation, kết quả nên được fold vào checkpoint tiếp theo (04) hoặc update tại [`silver_eval_new_arch.md`](02_silver_eval_new_arch.md).
 
+> **Update 2026-07-12**: Ablation đã chạy — xem [`04_ner_ablation_vietmed.md`](04_ner_ablation_vietmed.md). Kết quả: VietMed-NER adapter làm giảm mọi metric ABOUT.md chính thức (`text_score`, `assertions_score`, `candidates_score`, `final_score`) trên silver scope 20 file, ngoại trừ cải thiện F1 cho `TÊN_XÉT_NGHIỆM`. Cần deliberate exception (a) trong §4.2 nên nghiêng về giữ nguyên conservative drop, và cần tune per-type threshold trước khi đưa VietMed-NER vào pipeline mặc định.
+
 ---
 
 ## 7. Kết luận ngắn gọn

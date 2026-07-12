@@ -513,6 +513,10 @@ class HuggingFaceTokenPredictor:
         label_map: str = "compact",
     ) -> None:
         model_name_or_path = model_name_or_path.strip()
+        model_ref = model_name_or_path
+        model_subfolder: Optional[str] = None
+        if "::" in model_name_or_path:
+            model_ref, model_subfolder = [part.strip() for part in model_name_or_path.split("::", 1)]
         if label_map not in {"compact", "vietmed"}:
             raise ValueError(f"unknown NER label_map: {label_map!r}")
         self.label_map = label_map
@@ -528,10 +532,24 @@ class HuggingFaceTokenPredictor:
         self._torch = torch
         auto_tokenizer = transformers.AutoTokenizer
         auto_model = transformers.AutoModelForTokenClassification
-        self.tokenizer = auto_tokenizer.from_pretrained(model_name_or_path, use_fast=True)
+        model_kwargs: Dict[str, object] = {}
+        tokenizer_ref = model_ref
+        tokenizer_kwargs: Dict[str, object] = {}
+        if model_subfolder:
+            model_kwargs["subfolder"] = model_subfolder
+            if "phobert" in model_subfolder.lower():
+                tokenizer_ref = "vinai/phobert-base-v2"
+            else:
+                tokenizer_kwargs["subfolder"] = model_subfolder
+        try:
+            self.tokenizer = auto_tokenizer.from_pretrained(tokenizer_ref, use_fast=True, **tokenizer_kwargs)
+        except ValueError as error:
+            if "Couldn't instantiate the backend tokenizer" not in str(error):
+                raise
+            self.tokenizer = auto_tokenizer.from_pretrained(tokenizer_ref, use_fast=False, **tokenizer_kwargs)
 
         label2id = {label: index for index, label in DEFAULT_BIO_ID2LABEL.items()}
-        if _has_hf_file(model_name_or_path, "adapter_config.json"):
+        if not model_subfolder and _has_hf_file(model_ref, "adapter_config.json"):
             try:
                 peft = import_module("peft")
             except ImportError as error:
@@ -554,7 +572,7 @@ class HuggingFaceTokenPredictor:
                 **peft_kwargs,
             )
         else:
-            self.model = auto_model.from_pretrained(model_name_or_path)
+            self.model = auto_model.from_pretrained(model_ref, **model_kwargs)
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.model.to(self.device)
         self.model.eval()
@@ -564,14 +582,23 @@ class HuggingFaceTokenPredictor:
 
     def __call__(self, text: str) -> Sequence[TokenPrediction]:
         """Return per-token labels with offsets local to ``text``."""
-        encoded = self.tokenizer(
-            text,
-            return_offsets_mapping=True,
-            return_tensors="pt",
-            truncation=True,
-            max_length=self.max_length,
-        )
-        offset_mapping = encoded.pop("offset_mapping", None)
+        try:
+            encoded = self.tokenizer(
+                text,
+                return_offsets_mapping=True,
+                return_tensors="pt",
+                truncation=True,
+                max_length=self.max_length,
+            )
+            offset_mapping = encoded.pop("offset_mapping", None)
+        except NotImplementedError:
+            encoded = self.tokenizer(
+                text,
+                return_tensors="pt",
+                truncation=True,
+                max_length=self.max_length,
+            )
+            offset_mapping = None
         if offset_mapping is not None:
             offsets = offset_mapping[0].tolist()
         else:

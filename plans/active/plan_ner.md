@@ -167,6 +167,12 @@ Recommended first implementation: adapter + drug/lab-name mapping only. Then eva
 
 Steps 1–6 complete. Step 7 (ablation on `silver_test`) pending; not required for code to ship.
 
+### Decision note — conservative DISEASESYMTOM routing
+
+Current version intentionally keeps `DISEASESYMTOM` handling conservative. VietMed `DISEASESYMTOM` spans are decoded as temporary `_DISEASESYMTOM_PENDING` candidates, then routed to `CHẨN_ĐOÁN` or `TRIỆU_CHỨNG` only when section/subsection context is high-confidence enough. Candidates without usable section context are dropped by default via `drop_without_context=True`.
+
+Rationale: first implementation prioritizes precision and avoids type swaps between diagnosis and symptom. This may hurt recall, especially when section parsing fails or mentions appear in unknown sections. Keep this behavior for the first evaluation pass; consider lexical/context fallback later if `silver_test` shows recall loss is too high.
+
 ### Code changes
 
 #### `src/vihealthbert_ner.py`

@@ -43,6 +43,9 @@ plans/
 ### 04_evaluation_checkpoints
 
 - [`active/04_evaluation_checkpoints/01_checkpoint_1.md`](active/04_evaluation_checkpoints/01_checkpoint_1.md) — checkpoint/evaluation notes.
+- [`active/04_evaluation_checkpoints/02_silver_eval_new_arch.md`](active/04_evaluation_checkpoints/02_silver_eval_new_arch.md) — silver evaluation cho active new architecture (không NER).
+- [`active/04_evaluation_checkpoints/03_checkpoint_vietmed_ner_adapter.md`](active/04_evaluation_checkpoints/03_checkpoint_vietmed_ner_adapter.md) — VietMed-NER adapter checkpoint.
+- [`active/04_evaluation_checkpoints/04_ner_ablation_vietmed.md`](active/04_evaluation_checkpoints/04_ner_ablation_vietmed.md) — ablation VietMed-NER vs no-NER trên silver set; NER làm hỏng mọi metric ABOUT.md ngoại trừ `TÊN_XÉT_NGHIỆM`.
 
 ## Archive
 
