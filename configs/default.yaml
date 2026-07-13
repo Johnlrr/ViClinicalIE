@@ -240,4 +240,48 @@ rxnorm_linking:
     strength_mismatch_penalty: 0.20
     no_strength_clinical_drug_penalty: 0.10
 
+postprocess:
+  enabled: true
+  validation:
+    fail_on_offset_error: true
+    keep_invalid_entities: false
+  sorting:
+    type_priority:
+      TÊN_XÉT_NGHIỆM: 10
+      KẾT_QUẢ_XÉT_NGHIỆM: 20
+      THUỐC: 30
+      CHẨN_ĐOÁN: 40
+      TRIỆU_CHỨNG: 50
+  merge:
+    remove_exact_duplicates: true
+    same_type_iou_threshold: 0.80
+    contained_iou_threshold: 0.95
+    resolve_different_type_overlaps: true
+    preserve_same_text_different_positions: true
+  span_trim:
+    enabled: true
+    trim_leading_negation_cues: true
+    trim_leading_diagnosis_triggers: true
+    max_entity_chars:
+      TRIỆU_CHỨNG: 120
+      CHẨN_ĐOÁN: 140
+      THUỐC: 100
+      TÊN_XÉT_NGHIỆM: 120
+      KẾT_QUẢ_XÉT_NGHIỆM: 60
+  cleanup:
+    remove_candidates_from_non_linked_types: true
+    remove_assertions_from_non_assertable_types: true
+    dedupe_candidates: true
+    dedupe_assertions: true
+  drug_false_positive:
+    enabled: true
+    require_med_context_if_no_dose: true
+    food_or_substance_terms:
+      - caffeine
+      - cà phê
+      - rượu bia
+      - thuốc lá
+      - hút thuốc
+
+
 

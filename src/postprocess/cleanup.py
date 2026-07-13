@@ -1,0 +1,159 @@
+from __future__ import annotations
+
+import math
+from dataclasses import replace
+from typing import Any
+
+from src.data_types import FinalEntity
+from src.linking.terminology_normalizer import normalize_for_lookup
+from src.postprocess.models import PostprocessDecision
+from src.postprocess.policies import dedupe_stable, is_assertable, is_linked_type, ordered_valid_assertions
+from src.postprocess.span_utils import entity_payload, with_span
+from src.type_resolution.features import DISEASE_HEADS
+
+
+NEGATION_CUES = ("không có", "không thấy", "không ghi nhận", "chưa phát hiện", "phủ nhận", "không")
+DIAGNOSIS_TRIGGERS = ("lo ngại", "nghi ngờ", "chẩn đoán", "phát hiện", "cho thấy", "gợi ý")
+TRIM_CHARS = " \t\r\n-•*:;,。."
+QUALITATIVE_RESULTS = {"bình thường", "âm tính", "dương tính"}
+STRONG_MED_CONTEXT_CUES = (
+    "thuốc",
+    "điều trị",
+    "được cho",
+    "bắt đầu",
+    "ngừng",
+    "kê đơn",
+    "liều",
+    "tiêm",
+    "truyền",
+    "mg",
+    "mcg",
+    "iv",
+    "po",
+)
+
+
+def trim_entity(entity: FinalEntity, raw_text: str, config: dict[str, Any]) -> tuple[FinalEntity, PostprocessDecision | None]:
+    trim_cfg = config.get("span_trim", {}) if isinstance(config.get("span_trim"), dict) else {}
+    if not bool(trim_cfg.get("enabled", True)):
+        return entity, None
+
+    start, end = _trim_outer(raw_text, entity.start, entity.end)
+    assertions = list(entity.assertions)
+
+    if bool(trim_cfg.get("trim_leading_negation_cues", True)) and str(entity.type) in {"TRIỆU_CHỨNG", "CHẨN_ĐOÁN"}:
+        new_start = _trim_leading_cue(raw_text, start, end, NEGATION_CUES)
+        if new_start != start:
+            start = new_start
+            if "isNegated" not in assertions:
+                assertions.append("isNegated")
+
+    if bool(trim_cfg.get("trim_leading_diagnosis_triggers", True)) and str(entity.type) == "CHẨN_ĐOÁN":
+        new_start = _trim_diagnosis_trigger(raw_text, start, end)
+        if new_start != start:
+            start = new_start
+
+    start, end = _trim_outer(raw_text, start, end)
+    if start == entity.start and end == entity.end and assertions == entity.assertions:
+        return entity, None
+    if start >= end:
+        return entity, None
+    updated = with_span(replace(entity, assertions=ordered_valid_assertions(assertions)), raw_text, start, end)
+    return updated, PostprocessDecision(
+        action="trim_entity",
+        reason="conservative_span_trim",
+        before=entity_payload(entity),
+        after=entity_payload(updated),
+    )
+
+
+def should_drop_entity(entity: FinalEntity, raw_text: str, config: dict[str, Any]) -> tuple[bool, str]:
+    if _is_non_lab_qualitative_result(entity):
+        return True, "non_lab_qualitative_result"
+    if _is_food_context_drug_false_positive(entity, raw_text, config):
+        return True, "drug_without_dose_in_food_or_substance_context"
+    return False, ""
+
+
+def cleanup_candidates_assertions(entity: FinalEntity) -> tuple[FinalEntity, bool, bool]:
+    candidates = list(entity.candidates)
+    assertions = list(entity.assertions)
+    if not is_linked_type(entity):
+        candidates = []
+    else:
+        candidates = dedupe_stable(candidates)
+    if not is_assertable(entity):
+        assertions = []
+    else:
+        assertions = ordered_valid_assertions(assertions)
+    changed_candidates = candidates != entity.candidates
+    changed_assertions = assertions != entity.assertions
+    return replace(entity, candidates=candidates, assertions=assertions), changed_candidates, changed_assertions
+
+
+def _trim_outer(raw_text: str, start: int, end: int) -> tuple[int, int]:
+    while start < end and raw_text[start] in TRIM_CHARS:
+        start += 1
+    while end > start and raw_text[end - 1] in TRIM_CHARS:
+        end -= 1
+    return start, end
+
+
+def _trim_leading_cue(raw_text: str, start: int, end: int, cues: tuple[str, ...]) -> int:
+    text_norm = normalize_for_lookup(raw_text[start:end])
+    for cue in sorted(cues, key=len, reverse=True):
+        cue_norm = normalize_for_lookup(cue)
+        if text_norm == cue_norm:
+            return start
+        if text_norm.startswith(f"{cue_norm} "):
+            cursor = start + len(cue)
+            while cursor < end and raw_text[cursor] in TRIM_CHARS:
+                cursor += 1
+            return cursor
+    return start
+
+
+def _trim_diagnosis_trigger(raw_text: str, start: int, end: int) -> int:
+    text_norm = normalize_for_lookup(raw_text[start:end])
+    for trigger in sorted(DIAGNOSIS_TRIGGERS, key=len, reverse=True):
+        trigger_norm = normalize_for_lookup(trigger)
+        if text_norm.startswith(f"{trigger_norm} "):
+            cursor = start + len(trigger)
+            while cursor < end and raw_text[cursor] in TRIM_CHARS:
+                cursor += 1
+            remainder_norm = normalize_for_lookup(raw_text[cursor:end])
+            if any(remainder_norm == head or remainder_norm.startswith(f"{head} ") for head in DISEASE_HEADS):
+                return cursor
+    return start
+
+
+def _is_non_lab_qualitative_result(entity: FinalEntity) -> bool:
+    return str(entity.type) != "KẾT_QUẢ_XÉT_NGHIỆM" and normalize_for_lookup(entity.text) in QUALITATIVE_RESULTS
+
+
+def _is_food_context_drug_false_positive(entity: FinalEntity, raw_text: str, config: dict[str, Any]) -> bool:
+    fp_cfg = config.get("drug_false_positive", {}) if isinstance(config.get("drug_false_positive"), dict) else {}
+    if not bool(fp_cfg.get("enabled", True)) or str(entity.type) != "THUỐC":
+        return False
+    parsed = entity.provenance.get("rxnorm_linking", {}).get("parsed", {})
+    if _has_drug_slots(parsed):
+        return False
+    context = normalize_for_lookup(raw_text[max(0, entity.start - 80) : min(len(raw_text), entity.end + 80)])
+    food_terms = tuple(str(item) for item in fp_cfg.get("food_or_substance_terms", [])) or (
+        "caffeine",
+        "cà phê",
+        "rượu bia",
+        "thuốc lá",
+        "hút thuốc",
+    )
+    has_food_context = any(normalize_for_lookup(term) in context for term in food_terms)
+    has_strong_med_context = any(cue in context for cue in STRONG_MED_CONTEXT_CUES)
+    return has_food_context and not has_strong_med_context
+
+
+def _has_drug_slots(parsed: dict[str, Any]) -> bool:
+    if not isinstance(parsed, dict):
+        return False
+    strength = parsed.get("strength_value")
+    has_strength = strength not in (None, "") and not (isinstance(strength, float) and math.isnan(strength))
+    return bool(has_strength or parsed.get("route") or parsed.get("frequency"))

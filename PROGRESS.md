@@ -1,7 +1,7 @@
 # PROGRESS: ViClinicalIE implementation state
 
-**Last updated:** 2026-07-10  
-**Current implementation phase:** Phase 6 complete — deterministic assertion detection baseline  
+**Last updated:** 2026-07-13  
+**Current implementation phase:** Phase 8 baseline complete — ICD-10 and RxNorm candidate generation wrappers implemented  
 **Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
 
 ---
@@ -63,8 +63,8 @@ Implemented foundation files include:
     - `VALID_ENTITY_TYPES`
     - `VALID_ASSERTIONS`
 - `configs/default.yaml`
-  - Current `project.phase` is `phase_6_assertion_detection`.
-  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, and Phase 6 assertion-detection config.
+  - Current `project.phase` is `phase_8_rxnorm_candidate_generation`.
+  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, Phase 6 assertion-detection config, Phase 7 ICD-10 linking config, and Phase 8 RxNorm linking config.
 - `configs/paths.yaml`
   - Canonical paths for raw input, terminology files, processed indices, golden data, predictions, reports, and submissions.
 
@@ -103,7 +103,7 @@ Implemented:
 
 Known caveat:
 
-- `README.md` still describes the project as Phase 0 only. It should be updated after Phase 6 documentation stabilizes.
+- `README.md` has been updated to reflect Phase 8 baseline status and now includes a Vietnamese quick explanation of `section`, the current Phase 8 scope, latest verification results, and the next-phase roadmap. It still needs final rebuild/submission instructions once Phase 16/17 are implemented.
 
 ---
 
@@ -158,8 +158,8 @@ Phase 1 smoke checks passed.
 
 Notes:
 
-- Phase 1 currently provides terminology indexing and retrieval primitives, not final linker modules such as `icd10_linker.py` or `rxnorm_linker.py`.
-- Dense retrieval and reranking are not implemented yet.
+- Phase 1 provides terminology indexing and retrieval primitives consumed by the Phase 7/8 linker wrappers.
+- Dense retrieval and learned reranking are not implemented yet.
 
 ---
 
@@ -458,8 +458,8 @@ Implemented files:
   - Runs preprocess → section detection → Phase 4 extractors → Phase 5 resolver.
   - Prints entity counts, true type conflicts, same-type exact duplicates, overlaps, unresolved count, offset errors, and sample entities/debug records.
 - `configs/default.yaml`
-  - `project.phase: phase_5_type_resolution`.
-  - `type_resolution` config with source priorities, type priorities, confidence defaults, and flags.
+  - Includes `type_resolution` config with source priorities, type priorities, confidence defaults, and flags.
+  - The current project phase at the top of the file is Phase 8; this Phase 5 note describes the resolver-specific config block.
 
 Current resolver policy:
 
@@ -530,7 +530,7 @@ Known Phase 5 caveats:
 - Many Phase 4 problem spans are still over-extended. Phase 5 preserves them because global span selection and trimming belong mostly to Phase 10.
 - Overlap logs show expected cases like dictionary symptom spans contained in longer problem-rule spans.
 - Some Phase 4 false positives remain, e.g. broad drug aliases such as `caffeine`; Phase 5 keeps these with confidence/provenance warnings rather than dropping them prematurely.
-- No ICD/RxNorm linker wrappers, final postprocess merge, or JSON formatter/validator has been implemented yet.
+- At the time Phase 5 was implemented, ICD/RxNorm linker wrappers were not yet available. They have since been added in Phase 7/8. Final postprocess merge and JSON formatter/validator are still not implemented.
 
 ---
 
@@ -589,8 +589,8 @@ Implemented files:
   - Runs preprocess → section detection → Phase 4 extractors → Phase 5 type resolver → Phase 6 assertion detector.
   - Prints entity counts, assertable entity count, assertion counts, asserted entities by type, offset errors, and sample asserted entities with evidence.
 - `configs/default.yaml`
-  - `project.phase: phase_6_assertion_detection`.
-  - `assertion_detection` config with rules config path, assertable types, context windows, thresholds, and section priors.
+  - Includes `assertion_detection` config with rules config path, assertable types, context windows, thresholds, and section priors.
+  - The current project phase at the top of the file is Phase 8; this Phase 6 note describes the assertion-specific config block.
 
 Current assertion policy:
 
@@ -722,19 +722,7 @@ manual_assertion_tests_passed 12
 
 ### 4.2 Pytest status
 
-Attempted command:
-
-```cmd
-python -m pytest -q
-```
-
-Current result:
-
-```text
-C:\Program Files\Python313\python.exe: No module named pytest
-```
-
-`pytest` is listed in `requirements.txt`, so this is an environment/setup issue, not necessarily a test failure. Before relying on tests in a new session, install dependencies in the intended environment:
+Earlier sessions reported `No module named pytest` with one active interpreter. Later Phase 7/8 targeted pytest commands were recorded as passing in this repository state. If a new environment reports missing pytest again, install dependencies in the intended interpreter:
 
 ```cmd
 python -m pip install -r requirements.txt
@@ -745,7 +733,7 @@ If multiple Python installations/venvs exist, ensure the same interpreter is use
 
 ---
 
-## 5. Known limitations as of Phase 6
+## 5. Known limitations as of Phase 8
 
 The repo is still not an end-to-end competition output system.
 
@@ -754,17 +742,20 @@ Implemented now:
 - extractor interfaces and baseline candidate generators under `src/extractors/`;
 - baseline dictionaries and entity rules;
 - Phase 4 smoke script;
-- extractor tests.
+- extractor tests;
 - deterministic Phase 5 type-resolution package under `src/type_resolution/`;
 - Phase 5 smoke script;
-- type resolver tests.
+- type resolver tests;
 - deterministic Phase 6 assertion-detection package under `src/assertion/`;
 - Phase 6 smoke script;
-- assertion tests.
+- assertion tests;
+- Phase 7 ICD-10 linker wrapper under `src/linking/icd10_linker.py`;
+- Phase 8 RxNorm linker wrapper and drug parser under `src/linking/rxnorm_linker.py` and `src/linking/drug_parser.py`;
+- conservative candidate selector under `src/linking/candidate_selector.py`;
+- Phase 7/8 smoke scripts and linker tests.
 
 Not implemented yet:
 
-- final `src/linking/icd10_linker.py` / `rxnorm_linker.py` wrappers
 - deterministic reranker module beyond sparse retrieval primitives
 - `src/postprocess/`
   - merge overlap
@@ -786,7 +777,7 @@ Not implemented yet:
 - Streamlit validation UI beyond placeholder folder:
   - `streamlit_app/.gitkeep` exists, but no app yet.
 
-Current code can produce Phase 4 `SpanCandidate` objects, Phase 5 provisional typed `FinalEntity` objects, and Phase 6 asserted `FinalEntity` objects. It still does **not** produce final competition-format `output/{id}.json` predictions.
+Current code can produce Phase 4 `SpanCandidate` objects, Phase 5 provisional typed `FinalEntity` objects, Phase 6 asserted `FinalEntity` objects, and Phase 7/8 linked entities with ICD-10/RxNorm candidates. It still does **not** produce final competition-format `output/{id}.json` predictions because merge/postprocess, formatter, validator, batch inference, and packaging are not implemented yet.
 
 ---
 
@@ -839,67 +830,86 @@ tests/test_assertion.py
 PROGRESS.md
 ```
 
-Before starting major Phase 7/8 work, consider:
+Phase 7 added/modified:
+
+```text
+configs/default.yaml
+src/linking/candidate_selector.py
+src/linking/icd10_linker.py
+src/linking/__init__.py
+scripts/run_phase7_smoke.py
+tests/test_candidate_selector.py
+tests/test_icd10_linker.py
+PROGRESS.md
+```
+
+Phase 8 added/modified:
+
+```text
+configs/default.yaml
+src/linking/drug_parser.py
+src/linking/rxnorm_linker.py
+src/linking/__init__.py
+scripts/run_phase8_smoke.py
+tests/test_drug_parser.py
+tests/test_rxnorm_linker.py
+README.md
+PROGRESS.md
+```
+
+Before starting major Phase 9/10 work, consider:
 
 1. Install dependencies and run full `pytest`.
-2. Review/commit Phase 4–6 changes.
-3. Update `README.md` to reflect Phase 1–6 progress.
+2. Review/commit Phase 4–8 changes.
+3. Keep `README.md` and `PROGRESS.md` aligned with `configs/default.yaml`.
 
 ---
 
-## 7. Recommended next work: Phase 7/8 ICD-10 and RxNorm linker wrappers
+## 7. Recommended next work: Phase 9/10/11 end-to-end baseline path
 
-The next implementation target should be **Phase 7/8 — ICD-10 and RxNorm candidate generation**, following `Implementation Plan.md` sections 13 and 14.
+Phase 7/8 linker wrappers are now implemented. The next practical target should be turning the module-level linked baseline into an end-to-end valid baseline.
 
-Goal: attach candidate codes to asserted Phase 6 `FinalEntity` objects without inventing spans or changing entity offsets.
-
-Recommended Phase 7/8 deliverables:
+Recommended next implementation path:
 
 ```text
-src/linking/
-  icd10_linker.py
-  rxnorm_linker.py
-  drug_parser.py
-  candidate_selector.py
-tests/test_linking.py
-tests/test_icd10_linker.py
-tests/test_rxnorm_linker.py
-scripts/run_phase7_8_smoke.py
+Phase 10 minimal merge/postprocess
+→ Phase 11 output formatter + validator
+→ minimal src/pipeline.py + scripts/run_inference.py for golden/raw input
+→ Phase 12 golden evaluator and error reports
+→ Phase 9 deterministic reranking/calibration refinements
+→ Phase 13 Streamlit UI
 ```
 
-Initial linking policy:
+Why this order:
 
-1. Link only `CHẨN_ĐOÁN` to ICD-10.
-2. Link only `THUỐC` to RxNorm.
-3. Use existing Phase 1 sparse retrieval resources.
-4. Keep candidate count conservative.
-5. Do not return codes outside terminology indices.
-6. Preserve linker scores/provenance for later reranking and error analysis.
+1. Current Phase 8 can attach ICD/RxNorm candidates, but there is still no final JSON output.
+2. Without formatter/validator/evaluator, candidate reranking and threshold tuning are hard to measure.
+3. Phase 10 merge/postprocess is important because Phase 5 smoke showed exact duplicates and overlaps.
+4. Once golden evaluation exists, Phase 9 and extraction/assertion/linking calibration can be guided by metrics instead of manual guessing.
 
-Important Phase 7/8 caveats:
+Important caveats for the next work:
 
-- Linking must not create, remove, or move spans.
-- ICD/RxNorm linkability must not retroactively override Phase 5 type resolution in this phase.
-- Candidate precision matters; avoid arbitrary top-k output.
+- Preserve raw offsets through every postprocess operation.
+- Keep linker candidates only on `CHẨN_ĐOÁN` and `THUỐC`.
+- Do not let candidate linkability rewrite span/type silently.
+- Preserve provenance for Streamlit/evaluator debugging.
 
 ---
 
 ## 8. Later phases after extraction baseline
 
-After Phase 6, continue in this order:
+After Phase 8, continue in this order:
 
-1. **Phase 7/8 — ICD-10 and RxNorm linker wrappers**
-   - Use existing Phase 1 sparse retrievers.
-   - Add candidate thresholding and score logs.
-2. **Phase 9 — Reranking**
-   - Start deterministic; dense/cross-encoder later if needed.
-3. **Phase 10 — Merge and postprocess**
-   - Deduplication and overlap conflict handling.
-4. **Phase 11 — JSON formatter and validator**
+1. **Phase 10 — Merge and postprocess**
+   - Deduplication, overlap conflict handling, span trimming, and final entity cleanup.
+2. **Phase 11 — JSON formatter and validator**
    - Enforce schema and `raw_text[start:end] == text`.
-5. **Phase 12 — Golden evaluation loop**
-   - Validate 20 gold files.
-   - Run approximate local metrics and error reports.
+3. **Minimal pipeline/inference script**
+   - Compose existing Phase 2–8 modules and write prediction JSON files.
+4. **Phase 12 — Golden evaluation loop**
+   - Validate 20 gold files, run approximate local metrics and error reports.
+5. **Phase 9 — Reranking/calibration**
+   - Start deterministic; dense/cross-encoder later if needed.
 6. **Phase 13 — Streamlit UI**
    - Highlight raw text, predictions, gold, and diffs.
 7. **Phase 14/15 — NER and dense retrieval/reranker**
@@ -944,8 +954,8 @@ Implemented files:
   - Runs preprocess → section detection → extractors → type resolver → assertion detector → ICD-10 linker.
   - Validates unchanged offsets, unchanged entity fields, valid ICD codes, and no non-diagnosis candidates.
 - `configs/default.yaml`
-  - `project.phase: phase_7_icd10_candidate_generation`.
-  - Added `icd10_linking` config.
+  - Includes the `icd10_linking` config block added for Phase 7.
+  - The current project phase at the top of the file is Phase 8; this Phase 7 note describes the ICD-specific config block.
 
 Current default Phase 7 candidate policy:
 
@@ -1003,7 +1013,7 @@ Known Phase 7 caveats:
 - A 5-file Phase 7 smoke attempt exceeded the 30-second tool timeout in the current environment, although the 2-file smoke passed all integrity checks.
 - Existing sparse vectorizer artifacts were built with scikit-learn 1.8.0 and loaded under 1.9.0 in this environment, producing `InconsistentVersionWarning`; Phase 1 smoke still passed.
 
-Recommended next work: **Phase 8 — RxNorm candidate generation for `THUỐC` entities**, following the same linker wrapper pattern and conservative candidate selector.
+Phase 7 is complete for the baseline scope. Further ICD-10 quality improvements should be handled under Phase 9/12 calibration after formatter/validator/evaluator exist.
 
 ---
 
@@ -1105,6 +1115,91 @@ invalid_rxnorm_candidate_error_count: 0
 wrong_type_candidate_error_count: 0
 ```
 
+Latest re-check on 2026-07-13 after rebuilding missing processed terminology artifacts:
+
+```cmd
+set PYTHONUTF8=1
+python -m pytest -q tests\test_candidate_selector.py tests\test_icd10_linker.py tests\test_drug_parser.py tests\test_rxnorm_linker.py
+python scripts\build_all_indices.py --config configs\default.yaml
+python scripts\run_phase8_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 3
+```
+
+Observed latest output:
+
+```text
+19 passed in 1.33s
+
+Phase 1 terminology index build passed.
+icd10_index_rows: 15844
+icd10_aliases: 74766
+rxnorm_rows_filtered: 61978
+rxnorm_aliases: 101699
+icd_tfidf_shape: [74766, 115623]
+rx_tfidf_shape: [101699, 89662]
+icd_bm25_shape: [74766, 30540]
+rx_bm25_shape: [101699, 15565]
+
+Phase 8 smoke checks completed.
+files_checked: 2
+chunks_checked: 74
+span_candidates: 64
+final_entities: 57
+diagnosis_entities: 17
+diagnosis_with_icd_candidates: 1
+drug_entities: 4
+drug_with_rxnorm_candidates: 4
+candidate_count_by_diagnosis_entity: {0: 16, 1: 1}
+candidate_count_by_drug_entity: {1: 1, 2: 3}
+entities_by_type: {'CHẨN_ĐOÁN': 17, 'THUỐC': 4, 'TRIỆU_CHỨNG': 24, 'TÊN_XÉT_NGHIỆM': 12}
+offset_error_count: 0
+mutation_error_count: 0
+invalid_icd_candidate_error_count: 0
+invalid_rxnorm_candidate_error_count: 0
+wrong_type_candidate_error_count: 0
+```
+
+This confirms that Phase 7/8 code and targeted tests pass, and Phase 8 smoke passes once Phase 1 processed indices are present. The smoke output still exposes known quality issues, e.g. `caffeine` is linked as a drug candidate; this should be handled during Phase 10 postprocess and Phase 12/9 calibration.
+
+Additional documentation/verification re-check on 2026-07-13:
+
+```cmd
+set PYTHONUTF8=1
+python -m pytest -q tests\test_candidate_selector.py tests\test_icd10_linker.py tests\test_drug_parser.py tests\test_rxnorm_linker.py
+python scripts\run_phase8_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 3
+python scripts\check_setup.py --config configs\default.yaml
+```
+
+Observed output:
+
+```text
+19 passed in 1.52s
+
+Phase 8 smoke checks completed.
+files_checked: 2
+chunks_checked: 74
+span_candidates: 64
+final_entities: 57
+diagnosis_entities: 17
+diagnosis_with_icd_candidates: 1
+drug_entities: 4
+drug_with_rxnorm_candidates: 4
+candidate_count_by_diagnosis_entity: {0: 16, 1: 1}
+candidate_count_by_drug_entity: {1: 1, 2: 3}
+entities_by_type: {'CHẨN_ĐOÁN': 17, 'THUỐC': 4, 'TRIỆU_CHỨNG': 24, 'TÊN_XÉT_NGHIỆM': 12}
+offset_error_count: 0
+mutation_error_count: 0
+invalid_icd_candidate_error_count: 0
+invalid_rxnorm_candidate_error_count: 0
+wrong_type_candidate_error_count: 0
+
+Phase 0 setup check passed.
+raw_input_files: 100
+golden_pairs: 20
+golden_entities: 370
+```
+
+This latest re-check matches the documented Phase 8 status and confirms that the canonical data layout is intact.
+
 Known Phase 8 caveats:
 
 - Candidate quality is still deterministic and not calibrated against official/golden metrics.
@@ -1113,7 +1208,7 @@ Known Phase 8 caveats:
 - Combination drug handling is conservative and only detects obvious separators/markers in the baseline parser.
 - Existing sparse vectorizer artifacts were built with scikit-learn 1.8.0 and loaded under 1.9.0 in this environment, producing `InconsistentVersionWarning`; Phase 1/7/8 smoke checks still passed.
 
-Recommended next work: **Phase 9 — deterministic candidate reranking/calibration**, followed by Phase 10 merge/postprocess.
+Recommended next work: **Phase 10 — minimal merge/postprocess**, then **Phase 11 formatter/validator** and **Phase 12 golden evaluator** so Phase 9 reranking/calibration can be measured reliably.
 
 ---
 
@@ -1132,9 +1227,11 @@ python scripts\audit_phase2_phase3.py --config configs\default.yaml --max-unmatc
 python scripts\run_phase4_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
 python scripts\run_phase5_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
 python scripts\run_phase6_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
+python scripts\run_phase7_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 5
+python scripts\run_phase8_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 10
 ```
 
-Then proceed with Phase 7/8 ICD-10 and RxNorm linker wrapper implementation.
+Then proceed with Phase 10/11/12 work to create valid final JSON predictions and measurable golden reports.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -1149,7 +1246,7 @@ Every resolver/postprocess component should preserve enough provenance to debug 
 
 ## 10. Summary
 
-The repository currently has a solid foundation through Phase 6:
+The repository currently has a solid foundation through Phase 8:
 
 - canonical config/data layout;
 - ICD/RxNorm terminology parsing and sparse retrieval artifacts;
@@ -1161,6 +1258,8 @@ The repository currently has a solid foundation through Phase 6:
 - deterministic Phase 5 type resolution producing provisional `FinalEntity` objects;
 - Phase 5 smoke validation on 20 golden files with zero offset errors.
 - deterministic Phase 6 assertion detection producing asserted `FinalEntity` objects;
-- Phase 6 smoke validation on 20 golden files with zero offset errors.
+- Phase 6 smoke validation on 20 golden files with zero offset errors;
+- Phase 7 ICD-10 linker wrapper for `CHẨN_ĐOÁN` entities;
+- Phase 8 RxNorm linker wrapper and drug parser for `THUỐC` entities.
 
-The next major milestone is to implement Phase 7/8 linker wrappers, attaching ICD-10 candidates to `CHẨN_ĐOÁN` entities and RxNorm candidates to `THUỐC` entities while preserving offsets and keeping candidate output conservative.
+The next major milestone is to implement merge/postprocess, formatter/validator, and a minimal inference/evaluation loop. At that point, the current Phase 8 linked baseline can become a valid end-to-end baseline and can be tuned using the 20-file golden dataset.
