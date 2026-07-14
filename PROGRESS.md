@@ -1,7 +1,7 @@
 # PROGRESS: ViClinicalIE implementation state
 
 **Last updated:** 2026-07-13  
-**Current implementation phase:** Phase 12 baseline complete — golden evaluator and error reports implemented after Phase 11 formatter/validator  
+**Current implementation phase:** Phase 12.5 complete — minimal inference CLI and BTC-format trial submission zip implemented after Phase 12 evaluator  
 **Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
 
 ---
@@ -63,7 +63,7 @@ Implemented foundation files include:
     - `VALID_ENTITY_TYPES`
     - `VALID_ASSERTIONS`
 - `configs/default.yaml`
-  - Current `project.phase` remains `phase_8_rxnorm_candidate_generation` until the reusable end-to-end inference phase is added.
+  - Current `project.phase` remains `phase_8_rxnorm_candidate_generation`; later cleanup can rename this metadata to the current implementation milestone.
   - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, Phase 6 assertion-detection config, Phase 7 ICD-10 linking config, Phase 8 RxNorm linking config, Phase 10 postprocess config, Phase 11 output/validation config, and Phase 12 evaluation config.
 - `configs/paths.yaml`
   - Canonical paths for raw input, terminology files, processed indices, golden data, predictions, reports, and submissions.
@@ -914,29 +914,39 @@ README.md
 PROGRESS.md
 ```
 
-Before starting major inference/tuning work, consider:
+Phase 12.5 added/modified:
+
+```text
+src/pipeline.py
+scripts/run_inference.py
+scripts/make_submission_zip.py
+tests/test_submission_zip.py
+README.md
+PROGRESS.md
+```
+
+Before starting major tuning work, consider:
 
 1. Install dependencies and run full `pytest`.
-2. Review/commit Phase 4–8, Phase 10, Phase 11, and Phase 12 changes.
+2. Review/commit Phase 4–8, Phase 10, Phase 11, Phase 12, and Phase 12.5 changes.
 3. Keep `README.md` and `PROGRESS.md` aligned with `configs/default.yaml`.
 
 ---
 
-## 7. Recommended next work: inference + metric-guided tuning path
+## 7. Recommended next work: metric-guided tuning path
 
-Phase 7/8 linker wrappers, Phase 10 postprocess, Phase 11 formatting/validation, and Phase 12 evaluation are now implemented. The next practical target should be turning the cleaned linked baseline into a reusable inference command and using Phase 12 reports for metric-guided tuning.
+Phase 7/8 linker wrappers, Phase 10 postprocess, Phase 11 formatting/validation, Phase 12 evaluation, and Phase 12.5 trial inference/submission are now implemented. The next practical target should be using Phase 12 reports for metric-guided tuning.
 
 Recommended next implementation path:
 
 ```text
-minimal src/pipeline.py + scripts/run_inference.py for golden/raw input
-→ Phase 9 deterministic reranking/calibration refinements
+Phase 9 deterministic reranking/calibration refinements
 → Phase 13 Streamlit UI
 ```
 
 Why this order:
 
-1. Current Phase 11/12 can produce valid JSON records and measure them on golden data, but there is still no reusable final inference CLI for all raw inputs.
+1. Current Phase 12.5 can produce a valid 100-file trial `output.zip`, so tuning work can use the same inference path that will be submitted.
 2. Candidate reranking and threshold tuning can now be driven by Phase 12 error reports instead of manual guessing.
 3. Phase 10 reduced obvious duplicates/overlaps/false positives conservatively; remaining quality work should be metric-guided.
 4. The next tuning passes should use exact/relaxed metrics plus FP/FN/span/type/assertion/candidate reports.
@@ -950,20 +960,18 @@ Important caveats for the next work:
 
 ---
 
-## 8. Later phases after evaluator baseline
+## 8. Later phases after trial inference baseline
 
-After Phase 12, continue in this order:
+After Phase 12.5, continue in this order:
 
-1. **Minimal pipeline/inference script**
-   - Compose existing Phase 2–8 plus Phase 10/11 modules and write prediction JSON files.
-2. **Phase 9 — Reranking/calibration and rule tuning**
+1. **Phase 9 — Reranking/calibration and rule tuning**
    - Start deterministic; dense/cross-encoder later if needed.
-3. **Phase 13 — Streamlit UI**
+2. **Phase 13 — Streamlit UI**
    - Highlight raw text, predictions, gold, and diffs.
-4. **Phase 14/15 — NER and dense retrieval/reranker**
+3. **Phase 14/15 — NER and dense retrieval/reranker**
    - Only after rule baseline and evaluator are stable.
-5. **Phase 16/17 — End-to-end inference and packaging**
-   - `run_inference.py`, `run_validate.py`, `make_submission_zip.py`, README rebuild instructions.
+4. **Phase 16/17 — Final hardening and packaging**
+   - Re-run `run_inference.py`, `run_validate.py`, `make_submission_zip.py`, plus README/source-package rebuild instructions.
 
 ---
 
@@ -1592,7 +1600,102 @@ Known Phase 12 caveats:
 - Metrics are local golden metrics only; they are not official leaderboard metrics.
 - Candidate comparison is exact string hit/set comparison; no ICD dot/no-dot normalization is applied yet.
 - Actual baseline quality is still low. Phase 12 is intended to guide subsequent rule/linker/assertion/span tuning rather than to claim final performance.
-- Repo still needs a reusable `src/pipeline.py`/`scripts/run_inference.py` for production-style 100-file inference.
+- Phase 12.5 now adds reusable `src/pipeline.py`/`scripts/run_inference.py` for production-style 100-file inference.
+
+---
+
+## 8F. Phase 12.5 — Minimal inference CLI & trial submission zip
+
+**Status:** Implemented and validated on all 100 public raw input files.
+
+Phase 12.5 adds a reusable inference path and a BTC-format zip creator. This was prioritized before Phase 9 so the team can submit a schema-valid baseline early and detect any platform/package issues before deeper tuning.
+
+Implemented files:
+
+- `src/pipeline.py`
+  - `ClinicalIEPipeline` composes Phase 2–8 + Phase 10 + Phase 11:
+    `preprocess -> section detection -> extractors -> type resolver -> assertions -> ICD linker -> RxNorm linker -> postprocess -> formatter`.
+  - `PipelineResult` returns records, entities, postprocess report, and counters.
+- `scripts/run_inference.py`
+  - Runs inference over any `.txt` input directory and writes one `{id}.json` per input file.
+  - Supports `--max-files`, `--start-index`, `--keep-existing-output`, `--disable-sparse-retrieval`, and built-in validation.
+- `scripts/make_submission_zip.py`
+  - Creates `output.zip` with the exact structure required by `ABOUT.md`:
+
+    ```text
+    output/
+      1.json
+      2.json
+      ...
+      100.json
+    ```
+
+  - Verifies contiguous numeric files `1.json` through `100.json` before zipping.
+- `tests/test_submission_zip.py`
+  - Verifies zip root folder is `output/` and numeric files are contiguous.
+
+Commands run on 2026-07-13:
+
+```cmd
+python scripts\run_inference.py --config configs\default.yaml --input-dir data\raw\input --output-dir outputs\predictions\submission_trial_smoke\output --report-dir outputs\reports\submission_trial_smoke_validation --max-files 2 --expected-count 2 --disable-sparse-retrieval --sample-limit 5
+
+REM Full 100 files were generated in 10-file batches with --disable-sparse-retrieval and --keep-existing-output.
+
+python scripts\run_validate.py --config configs\default.yaml --input-dir data\raw\input --pred-dir outputs\predictions\submission_trial\output --report-dir outputs\reports\submission_trial_validation --expected-count 100 --sample-limit 10
+python scripts\make_submission_zip.py --pred-dir outputs\predictions\submission_trial\output --zip-path outputs\submission\output.zip --expected-count 100 --overwrite
+python -m pytest -q
+```
+
+Observed results:
+
+```text
+2-file smoke inference:
+files_processed: 2
+records_written: 46
+validation_error_count: 0
+validation_warning_count: 0
+
+Full 100-file validation:
+input_files_checked: 100
+prediction_files_checked: 100
+entities_checked: 2208
+missing_prediction_count: 0
+extra_prediction_count: 0
+error_count: 0
+warning_count: 0
+offset_error_count: 0
+schema_error_count: 0
+invalid_type_count: 0
+invalid_assertion_count: 0
+wrong_type_candidate_count: 0
+json_parse_error_count: 0
+
+Submission zip check:
+zip_exists: True
+zip_size: 74073
+entry_count: 100
+first_entries: ['output/1.json', 'output/2.json', 'output/3.json', 'output/4.json', 'output/5.json']
+last_entries: ['output/96.json', 'output/97.json', 'output/98.json', 'output/99.json', 'output/100.json']
+has_output_1: True
+has_output_100: True
+all_under_output: True
+
+149 passed in 24.29s
+```
+
+Trial submission artifacts:
+
+```text
+outputs/predictions/submission_trial/output/  # 100 JSON files
+outputs/reports/submission_trial_validation/  # validation_summary.json + validation_issues.jsonl
+outputs/submission/output.zip                 # BTC-format trial zip
+```
+
+Known Phase 12.5 caveats:
+
+- The generated `output.zip` is a valid-format **trial baseline**, not a tuned final submission.
+- Full 100-file generation was performed with `--disable-sparse-retrieval` for speed/stability in the current tool timeout environment. Later final runs can compare with sparse retrieval enabled if runtime permits.
+- Phase 9 should now use Phase 12 evaluator reports to improve extraction, type, assertion, postprocess, ICD, and RxNorm quality.
 
 ---
 
@@ -1617,9 +1720,11 @@ python scripts\run_phase10_smoke.py --config configs\default.yaml --max-files 2 
 python scripts\run_validate.py --config configs\default.yaml --input-dir data\golden\input --pred-dir data\golden\gold --report-dir outputs\reports\golden_schema_validation --expected-count 20
 python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 5
 python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir data\golden\gold --report-dir outputs\reports\phase12_gold_self_eval --expected-count 20
+python scripts\run_inference.py --config configs\default.yaml --input-dir data\raw\input --output-dir outputs\predictions\submission_trial\output --report-dir outputs\reports\submission_trial_validation --expected-count 100 --disable-sparse-retrieval
+python scripts\make_submission_zip.py --pred-dir outputs\predictions\submission_trial\output --zip-path outputs\submission\output.zip --expected-count 100 --overwrite
 ```
 
-Then proceed with minimal inference pipeline and metric-guided tuning using Phase 12 reports.
+Then proceed with Phase 9 metric-guided tuning using Phase 12 reports.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -1634,7 +1739,7 @@ Every resolver/postprocess component should preserve enough provenance to debug 
 
 ## 10. Summary
 
-The repository currently has a solid foundation through Phase 12:
+The repository currently has a solid foundation through Phase 12.5:
 
 - canonical config/data layout;
 - ICD/RxNorm terminology parsing and sparse retrieval artifacts;
@@ -1656,5 +1761,8 @@ The repository currently has a solid foundation through Phase 12:
 - Phase 11 smoke validation across all 20 golden files in batches with zero validation errors.
 - Phase 12 golden evaluator with exact/relaxed matching, duplicate-aware self-match validation, per-file/per-type metrics, assertion/candidate metrics, and JSONL/CSV/Markdown error reports;
 - Phase 12 evaluation on accumulated 20-file Phase 11 predictions with schema errors 0 and baseline exact F1 0.1788 / relaxed F1 0.3642.
+- Phase 12.5 minimal inference CLI and BTC-format `output.zip` creator;
+- 100-file trial predictions validated with zero schema/offset/type/assertion/candidate-placement errors;
+- `outputs/submission/output.zip` contains exactly `output/1.json` through `output/100.json`.
 
-The next major milestone is to implement a reusable minimal inference pipeline/CLI and then use Phase 12 reports to tune extraction, assertion, postprocess, and linker policies using the 20-file golden dataset.
+The next major milestone is Phase 9 metric-guided tuning: use Phase 12 reports to tune extraction, assertion, postprocess, and linker policies using the 20-file golden dataset, then regenerate the 100-file trial zip.
