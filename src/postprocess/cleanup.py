@@ -18,6 +18,7 @@ TRIM_CHARS = " \t\r\n-•*:;,。."
 QUALITATIVE_RESULTS = {"bình thường", "âm tính", "dương tính"}
 STRONG_MED_CONTEXT_CUES = (
     "thuốc",
+    "dùng",
     "điều trị",
     "được cho",
     "bắt đầu",
@@ -31,6 +32,7 @@ STRONG_MED_CONTEXT_CUES = (
     "iv",
     "po",
 )
+SUBSTANCE_CONTEXT_PHRASES = ("thuốc lá", "hút thuốc")
 
 
 def trim_entity(entity: FinalEntity, raw_text: str, config: dict[str, Any]) -> tuple[FinalEntity, PostprocessDecision | None]:
@@ -41,7 +43,7 @@ def trim_entity(entity: FinalEntity, raw_text: str, config: dict[str, Any]) -> t
     start, end = _trim_outer(raw_text, entity.start, entity.end)
     assertions = list(entity.assertions)
 
-    if bool(trim_cfg.get("trim_leading_negation_cues", True)) and str(entity.type) in {"TRIỆU_CHỨNG", "CHẨN_ĐOÁN"}:
+    if bool(trim_cfg.get("trim_leading_negation_cues", True)) and is_assertable(entity):
         new_start = _trim_leading_cue(raw_text, start, end, NEGATION_CUES)
         if new_start != start:
             start = new_start
@@ -75,16 +77,17 @@ def should_drop_entity(entity: FinalEntity, raw_text: str, config: dict[str, Any
     return False, ""
 
 
-def cleanup_candidates_assertions(entity: FinalEntity) -> tuple[FinalEntity, bool, bool]:
+def cleanup_candidates_assertions(entity: FinalEntity, config: dict[str, Any] | None = None) -> tuple[FinalEntity, bool, bool]:
+    cleanup_cfg = (config or {}).get("cleanup", {}) if isinstance((config or {}).get("cleanup"), dict) else {}
     candidates = list(entity.candidates)
     assertions = list(entity.assertions)
-    if not is_linked_type(entity):
+    if bool(cleanup_cfg.get("remove_candidates_from_non_linked_types", True)) and not is_linked_type(entity):
         candidates = []
-    else:
+    elif bool(cleanup_cfg.get("dedupe_candidates", True)):
         candidates = dedupe_stable(candidates)
-    if not is_assertable(entity):
+    if bool(cleanup_cfg.get("remove_assertions_from_non_assertable_types", True)) and not is_assertable(entity):
         assertions = []
-    else:
+    elif bool(cleanup_cfg.get("dedupe_assertions", True)):
         assertions = ordered_valid_assertions(assertions)
     changed_candidates = candidates != entity.candidates
     changed_assertions = assertions != entity.assertions
@@ -138,7 +141,7 @@ def _is_food_context_drug_false_positive(entity: FinalEntity, raw_text: str, con
     parsed = entity.provenance.get("rxnorm_linking", {}).get("parsed", {})
     if _has_drug_slots(parsed):
         return False
-    context = normalize_for_lookup(raw_text[max(0, entity.start - 80) : min(len(raw_text), entity.end + 80)])
+    context = normalize_for_lookup(_local_sentence_context(raw_text, entity.start, entity.end, radius=80))
     food_terms = tuple(str(item) for item in fp_cfg.get("food_or_substance_terms", [])) or (
         "caffeine",
         "cà phê",
@@ -147,7 +150,10 @@ def _is_food_context_drug_false_positive(entity: FinalEntity, raw_text: str, con
         "hút thuốc",
     )
     has_food_context = any(normalize_for_lookup(term) in context for term in food_terms)
-    has_strong_med_context = any(cue in context for cue in STRONG_MED_CONTEXT_CUES)
+    medication_context = context
+    for phrase in SUBSTANCE_CONTEXT_PHRASES:
+        medication_context = medication_context.replace(phrase, " ")
+    has_strong_med_context = any(cue in medication_context for cue in STRONG_MED_CONTEXT_CUES)
     return has_food_context and not has_strong_med_context
 
 
@@ -157,3 +163,17 @@ def _has_drug_slots(parsed: dict[str, Any]) -> bool:
     strength = parsed.get("strength_value")
     has_strength = strength not in (None, "") and not (isinstance(strength, float) and math.isnan(strength))
     return bool(has_strength or parsed.get("route") or parsed.get("frequency"))
+
+
+def _local_sentence_context(raw_text: str, start: int, end: int, radius: int = 80) -> str:
+    left = max(0, start - radius)
+    right = min(len(raw_text), end + radius)
+    for index in range(start - 1, left - 1, -1):
+        if raw_text[index] in ".!?\n\r":
+            left = index + 1
+            break
+    for index in range(end, right):
+        if raw_text[index] in ".!?\n\r":
+            right = index
+            break
+    return raw_text[left:right]

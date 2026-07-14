@@ -71,7 +71,7 @@ class Postprocessor:
     def _cleanup_candidates_assertions(self, entities: list[FinalEntity], report: PostprocessReport) -> list[FinalEntity]:
         output: list[FinalEntity] = []
         for entity in entities:
-            updated, candidate_changed, assertion_changed = cleanup_candidates_assertions(entity)
+            updated, candidate_changed, assertion_changed = cleanup_candidates_assertions(entity, self.config)
             if candidate_changed:
                 report.candidate_cleanups += 1
             if assertion_changed:

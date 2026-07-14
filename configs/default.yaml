@@ -283,5 +283,38 @@ postprocess:
       - thuốc lá
       - hút thuốc
 
+output_format:
+  include_assertions_for_all_types: true
+  include_candidates_for_linked_types: true
+  include_empty_candidates_for_linked_types: true
+  ensure_ascii: false
+  indent: 2
+
+prediction_validation:
+  allow_extra_fields: false
+  require_assertions_field: true
+  require_candidates_for_linked_types: true
+  forbid_candidates_for_non_linked_types: true
+  fail_on_offset_error: true
+  fail_on_schema_error: true
+  warn_on_duplicate_exact: true
+  warn_on_overlap: false
+
+evaluation:
+  matching:
+    relaxed_iou_threshold: 0.50
+    relaxed_containment_threshold: 0.80
+    type_mismatch_iou_threshold: 0.50
+    type_mismatch_containment_threshold: 0.80
+  attributes:
+    evaluate_assertions_on: exact
+    evaluate_candidates_on: exact
+    skip_empty_gold_candidates: true
+  reports:
+    context_window_chars: 120
+    max_samples_per_category: 50
+  validation:
+    fail_on_validation_error: true
+
 
 

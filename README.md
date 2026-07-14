@@ -2,7 +2,7 @@
 
 Rule-first clinical information extraction and normalization system for the Viettel AI Race clinical text task.
 
-Current repository status: **Phase 8 baseline complete** — the project can run the modular pipeline through:
+Current repository status: **Phase 12 golden evaluator baseline complete** — the project can run the modular pipeline through:
 
 ```text
 preprocess + offset mapping
@@ -12,9 +12,12 @@ preprocess + offset mapping
 → deterministic assertion detection
 → ICD-10 candidate generation for CHẨN_ĐOÁN
 → RxNorm candidate generation for THUỐC
+→ conservative merge/postprocess cleanup
+→ final JSON formatting + schema/offset validation
+→ golden evaluation and error reports
 ```
 
-It is **not yet a final end-to-end submission system**. The next major work is to add merge/postprocess, JSON formatting, validation, golden evaluation, Streamlit review UI, and final inference/submission packaging.
+It is **not yet a final end-to-end submission system**. The next major work is to add a reusable inference pipeline/CLI, then use Phase 12 reports to guide calibration, UI review, and final submission packaging.
 
 ## Setup
 
@@ -42,12 +45,16 @@ Run tests:
 python -m pytest -q
 ```
 
-For the current Phase 8 baseline, useful targeted checks are:
+For the current Phase 12 baseline, useful targeted checks are:
 
 ```cmd
 set PYTHONUTF8=1
-python -m pytest -q tests\test_candidate_selector.py tests\test_icd10_linker.py tests\test_drug_parser.py tests\test_rxnorm_linker.py
+python -m pytest -q tests\test_candidate_selector.py tests\test_icd10_linker.py tests\test_drug_parser.py tests\test_rxnorm_linker.py tests\test_postprocess_span_utils.py tests\test_postprocess_cleanup.py tests\test_postprocess_merge.py tests\test_postprocessor.py tests\test_json_formatter.py tests\test_prediction_schema_validator.py tests\test_file_validator.py tests\test_evaluation_span_matcher.py tests\test_evaluation_metrics.py tests\test_evaluator.py
 python scripts\run_phase8_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 10
+python scripts\run_phase10_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 5
+python scripts\run_validate.py --config configs\default.yaml --input-dir data\golden\input --pred-dir data\golden\gold --report-dir outputs\reports\golden_schema_validation --expected-count 20
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 5
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir data\golden\gold --report-dir outputs\reports\phase12_gold_self_eval --expected-count 20
 ```
 
 `PYTHONUTF8=1` is recommended on Windows when paths/usernames contain Vietnamese characters.
@@ -73,6 +80,9 @@ Root-level source files are intentionally left in place.
 - **Phase 6:** deterministic mention-level assertion detection (`isNegated`, `isHistorical`, `isFamily`).
 - **Phase 7:** ICD-10 linker wrapper for `CHẨN_ĐOÁN` entities.
 - **Phase 8:** RxNorm linker wrapper and drug parser for `THUỐC` entities.
+- **Phase 10:** Conservative postprocessor for exact duplicates, overlap cleanup, safe span trimming, clear false-positive filtering, and candidate/assertion cleanup.
+- **Phase 11:** Final JSON formatter plus schema/file/directory validator and Phase 11 smoke writer.
+- **Phase 12:** Golden evaluator with exact/relaxed matching, per-file/per-type metrics, assertion/candidate metrics, and JSONL/CSV/Markdown error reports.
 
 ## Ghi chú nhanh bằng tiếng Việt
 
@@ -96,9 +106,9 @@ Section giúp pipeline hiểu **ngữ cảnh** của một span, nhưng **không
 
 Vì vậy, section hiện được dùng như **feature/prior** cho extractor, type resolver và assertion detector. Quyết định cuối vẫn dựa trên mention-level context: cue phủ định, cue tiền sử, người trải nghiệm triệu chứng, thuốc đang dùng hay thuốc mới được chỉ định, v.v.
 
-### Hiện tại đã done tới Phase 8 chưa?
+### Hiện tại đã done tới Phase 12 chưa?
 
-**Có, nhưng cần hiểu đúng phạm vi:** repo đã done **Phase 8 baseline/module-level**, chưa done hệ thống submit end-to-end.
+**Có, nhưng cần hiểu đúng phạm vi:** repo đã done **Phase 12 baseline/module-level**, chưa done hệ thống submit end-to-end cho 100 files.
 
 Đã có thể chạy chuỗi module:
 
@@ -111,76 +121,74 @@ raw text
 → assertion detection
 → ICD-10 linking cho CHẨN_ĐOÁN
 → RxNorm linking cho THUỐC
+→ postprocess merge/cleanup
+→ format JSON + validate schema/offset
+→ evaluate against golden + write error reports
 ```
 
-Phase 8 không có nghĩa là đã tạo được `output.zip` cuối cùng. Các phần còn thiếu để submit gồm merge/postprocess, JSON formatter, validator, inference CLI, golden evaluator, UI review và packaging.
+Phase 12 không có nghĩa là đã tạo được `output.zip` cuối cùng. Các phần còn thiếu để submit gồm inference CLI/pipeline cho 100 files, UI review và packaging.
 
 ### Kết quả re-check mới nhất
 
-Ngày 2026-07-13, targeted checks cho Phase 7/8 đã chạy lại thành công:
+Ngày 2026-07-13, targeted checks cho Phase 12 đã chạy thành công:
 
 ```text
-19 passed in 1.52s
+147 passed in 1.97s
 
-Phase 8 smoke checks completed.
-files_checked: 2
-chunks_checked: 74
-span_candidates: 64
-final_entities: 57
-diagnosis_entities: 17
-diagnosis_with_icd_candidates: 1
-drug_entities: 4
-drug_with_rxnorm_candidates: 4
-offset_error_count: 0
-mutation_error_count: 0
-invalid_icd_candidate_error_count: 0
-invalid_rxnorm_candidate_error_count: 0
-wrong_type_candidate_error_count: 0
+Prediction validation completed.
+input_files_checked: 20
+prediction_files_checked: 20
+entities_checked: 525
+error_count: 0
+warning_count: 0
+
+Golden evaluation completed.
+files_evaluated: 20
+gold_entities: 370
+pred_entities: 525
+exact_f1: 0.1788
+relaxed_f1: 0.3642
+assertion_exact_match_rate: 0.5658
+candidate_hit_rate: 0.4000
 ```
 
 Điều này xác nhận:
 
-- Tests cho candidate selector, ICD linker, drug parser, RxNorm linker đều pass.
-- Phase 8 smoke chạy được trên subset golden.
-- Linker không làm lệch offset.
-- Linker không tự ý đổi span/type/assertion.
-- Không có candidate ICD/RxNorm sai loại entity trong smoke check.
+- Full test suite pass.
+- Golden schema validation pass với `error_count = 0`; 14 warnings là duplicate exact có sẵn trong golden.
+- Phase 11 smoke format/write/validate predictions chạy được trên subset golden và theo batch 20 golden files.
+- Formatter không xuất debug fields như `confidence`/`provenance`.
+- Validator bắt schema, offset, assertion, candidate và file-level errors.
+- Predictions sinh từ Phase 11 smoke có offset đúng, không candidate sai type, không assertion invalid.
+- Phase 12 gold-vs-gold self-match đạt exact/relaxed F1 = 1.0, chứng minh matcher xử lý duplicate gold đúng.
+- Phase 12 evaluator chạy trên 20 accumulated Phase 11 predictions và sinh reports tại `outputs/reports/phase12_eval_golden20`.
 
-Known issue vẫn còn: extractor/type resolver baseline có false positive, ví dụ `caffeine` trong text có thể bị xem như thuốc và được link RxNorm. Đây là lỗi chất lượng cần xử lý ở Phase 10 postprocess và Phase 12/9 calibration, không phải lỗi crash/blocker của Phase 8.
+Known issue vẫn còn: repo chưa có inference CLI reusable cho toàn bộ 100 raw files; quality baseline hiện còn thấp và nên dùng Phase 12 reports để tune có kiểm soát.
 
 ## Not Yet Implemented
 
 - Candidate reranking/calibration beyond current deterministic sparse/linker scoring.
-- Global merge/postprocess and overlap resolution.
-- Final JSON formatter and schema/offset validator.
 - End-to-end `src/pipeline.py` and `scripts/run_inference.py`.
-- Golden evaluator and error reports.
 - Streamlit validation UI.
 - Submission zip creator and source-package rebuild instructions.
 
 ## Recommended Next Work
 
-The practical next milestone is to turn the module-level Phase 8 baseline into an end-to-end valid baseline:
+The practical next milestone is to turn the module-level Phase 12 baseline into an end-to-end valid baseline:
 
 ```text
-Phase 10 minimal merge/postprocess
-→ Phase 11 formatter + validator
-→ minimal pipeline/run_inference on golden
-→ Phase 12 golden evaluator
+minimal pipeline/run_inference on golden/raw input
 → Phase 9/10 calibration and reranking refinements
 → Streamlit UI
 ```
 
 Roadmap chi tiết hơn:
 
-1. **Phase 10 — Merge/postprocess:** deduplicate spans, xử lý overlap, trim span quá dài/quá ngắn, lọc false positives rõ ràng.
-2. **Phase 11 — Formatter/validator:** sinh JSON đúng schema và bắt buộc kiểm `raw_text[start:end] == text`.
-3. **Minimal pipeline + inference CLI:** ghép Phase 2–8 + Phase 10/11 để chạy một lệnh trên golden/raw input.
-4. **Phase 12 — Golden evaluator:** đo trên 20 gold files, sinh FP/FN/type/candidate/assertion reports.
-5. **Phase 9 — Reranking/calibration:** tune ICD/RxNorm thresholds dựa trên evaluator thay vì cảm tính.
-6. **Phase 13 — Streamlit UI:** xem raw text, highlight prediction/gold, debug section/span/candidate/assertion.
-7. **Phase 14/15 — NER + dense/reranker:** chỉ nên làm sau khi rule baseline và evaluator ổn.
-8. **Phase 16/17 — Final inference + packaging:** tạo đủ `output/{id}.json`, validate, zip, và README rebuild cho BTC.
+1. **Minimal pipeline + inference CLI:** ghép Phase 2–8 + Phase 10/11 để chạy một lệnh trên golden/raw input.
+2. **Phase 9/10/4/6/7/8 calibration:** tune dựa trên Phase 12 evaluator thay vì cảm tính.
+3. **Phase 13 — Streamlit UI:** xem raw text, highlight prediction/gold, debug section/span/candidate/assertion.
+4. **Phase 14/15 — NER + dense/reranker:** chỉ nên làm sau khi rule baseline và evaluator ổn.
+5. **Phase 16/17 — Final inference + packaging:** tạo đủ `output/{id}.json`, validate, zip, và README rebuild cho BTC.
 
 
 

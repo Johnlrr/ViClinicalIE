@@ -1,7 +1,7 @@
 # PROGRESS: ViClinicalIE implementation state
 
 **Last updated:** 2026-07-13  
-**Current implementation phase:** Phase 8 baseline complete — ICD-10 and RxNorm candidate generation wrappers implemented  
+**Current implementation phase:** Phase 12 baseline complete — golden evaluator and error reports implemented after Phase 11 formatter/validator  
 **Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
 
 ---
@@ -63,8 +63,8 @@ Implemented foundation files include:
     - `VALID_ENTITY_TYPES`
     - `VALID_ASSERTIONS`
 - `configs/default.yaml`
-  - Current `project.phase` is `phase_8_rxnorm_candidate_generation`.
-  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, Phase 6 assertion-detection config, Phase 7 ICD-10 linking config, and Phase 8 RxNorm linking config.
+  - Current `project.phase` remains `phase_8_rxnorm_candidate_generation` until the reusable end-to-end inference phase is added.
+  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, Phase 6 assertion-detection config, Phase 7 ICD-10 linking config, Phase 8 RxNorm linking config, Phase 10 postprocess config, Phase 11 output/validation config, and Phase 12 evaluation config.
 - `configs/paths.yaml`
   - Canonical paths for raw input, terminology files, processed indices, golden data, predictions, reports, and submissions.
 
@@ -857,35 +857,89 @@ README.md
 PROGRESS.md
 ```
 
-Before starting major Phase 9/10 work, consider:
+Phase 10 added/modified:
+
+```text
+configs/default.yaml
+src/postprocess/__init__.py
+src/postprocess/models.py
+src/postprocess/span_utils.py
+src/postprocess/policies.py
+src/postprocess/cleanup.py
+src/postprocess/merge.py
+src/postprocess/postprocessor.py
+scripts/run_phase10_smoke.py
+tests/test_postprocess_span_utils.py
+tests/test_postprocess_cleanup.py
+tests/test_postprocess_merge.py
+tests/test_postprocessor.py
+README.md
+PROGRESS.md
+```
+
+Phase 11 added/modified:
+
+```text
+configs/default.yaml
+src/formatting/__init__.py
+src/formatting/json_formatter.py
+src/validation/__init__.py
+src/validation/prediction_schema.py
+src/validation/file_validator.py
+scripts/run_validate.py
+scripts/run_phase11_smoke.py
+tests/test_json_formatter.py
+tests/test_prediction_schema_validator.py
+tests/test_file_validator.py
+README.md
+PROGRESS.md
+```
+
+Phase 12 added/modified:
+
+```text
+configs/default.yaml
+src/evaluation/__init__.py
+src/evaluation/models.py
+src/evaluation/span_matcher.py
+src/evaluation/metrics.py
+src/evaluation/error_analysis.py
+src/evaluation/evaluator.py
+scripts/run_evaluate.py
+scripts/run_phase11_smoke.py
+tests/test_evaluation_span_matcher.py
+tests/test_evaluation_metrics.py
+tests/test_evaluator.py
+README.md
+PROGRESS.md
+```
+
+Before starting major inference/tuning work, consider:
 
 1. Install dependencies and run full `pytest`.
-2. Review/commit Phase 4–8 changes.
+2. Review/commit Phase 4–8, Phase 10, Phase 11, and Phase 12 changes.
 3. Keep `README.md` and `PROGRESS.md` aligned with `configs/default.yaml`.
 
 ---
 
-## 7. Recommended next work: Phase 9/10/11 end-to-end baseline path
+## 7. Recommended next work: inference + metric-guided tuning path
 
-Phase 7/8 linker wrappers are now implemented. The next practical target should be turning the module-level linked baseline into an end-to-end valid baseline.
+Phase 7/8 linker wrappers, Phase 10 postprocess, Phase 11 formatting/validation, and Phase 12 evaluation are now implemented. The next practical target should be turning the cleaned linked baseline into a reusable inference command and using Phase 12 reports for metric-guided tuning.
 
 Recommended next implementation path:
 
 ```text
-Phase 10 minimal merge/postprocess
-→ Phase 11 output formatter + validator
-→ minimal src/pipeline.py + scripts/run_inference.py for golden/raw input
-→ Phase 12 golden evaluator and error reports
+minimal src/pipeline.py + scripts/run_inference.py for golden/raw input
 → Phase 9 deterministic reranking/calibration refinements
 → Phase 13 Streamlit UI
 ```
 
 Why this order:
 
-1. Current Phase 8 can attach ICD/RxNorm candidates, but there is still no final JSON output.
-2. Without formatter/validator/evaluator, candidate reranking and threshold tuning are hard to measure.
-3. Phase 10 merge/postprocess is important because Phase 5 smoke showed exact duplicates and overlaps.
-4. Once golden evaluation exists, Phase 9 and extraction/assertion/linking calibration can be guided by metrics instead of manual guessing.
+1. Current Phase 11/12 can produce valid JSON records and measure them on golden data, but there is still no reusable final inference CLI for all raw inputs.
+2. Candidate reranking and threshold tuning can now be driven by Phase 12 error reports instead of manual guessing.
+3. Phase 10 reduced obvious duplicates/overlaps/false positives conservatively; remaining quality work should be metric-guided.
+4. The next tuning passes should use exact/relaxed metrics plus FP/FN/span/type/assertion/candidate reports.
 
 Important caveats for the next work:
 
@@ -896,25 +950,19 @@ Important caveats for the next work:
 
 ---
 
-## 8. Later phases after extraction baseline
+## 8. Later phases after evaluator baseline
 
-After Phase 8, continue in this order:
+After Phase 12, continue in this order:
 
-1. **Phase 10 — Merge and postprocess**
-   - Deduplication, overlap conflict handling, span trimming, and final entity cleanup.
-2. **Phase 11 — JSON formatter and validator**
-   - Enforce schema and `raw_text[start:end] == text`.
-3. **Minimal pipeline/inference script**
-   - Compose existing Phase 2–8 modules and write prediction JSON files.
-4. **Phase 12 — Golden evaluation loop**
-   - Validate 20 gold files, run approximate local metrics and error reports.
-5. **Phase 9 — Reranking/calibration**
+1. **Minimal pipeline/inference script**
+   - Compose existing Phase 2–8 plus Phase 10/11 modules and write prediction JSON files.
+2. **Phase 9 — Reranking/calibration and rule tuning**
    - Start deterministic; dense/cross-encoder later if needed.
-6. **Phase 13 — Streamlit UI**
+3. **Phase 13 — Streamlit UI**
    - Highlight raw text, predictions, gold, and diffs.
-7. **Phase 14/15 — NER and dense retrieval/reranker**
+4. **Phase 14/15 — NER and dense retrieval/reranker**
    - Only after rule baseline and evaluator are stable.
-8. **Phase 16/17 — End-to-end inference and packaging**
+5. **Phase 16/17 — End-to-end inference and packaging**
    - `run_inference.py`, `run_validate.py`, `make_submission_zip.py`, README rebuild instructions.
 
 ---
@@ -1200,15 +1248,351 @@ golden_entities: 370
 
 This latest re-check matches the documented Phase 8 status and confirms that the canonical data layout is intact.
 
-Known Phase 8 caveats:
+Known Phase 8 caveats now mostly feed into Phase 10/12 quality work:
 
 - Candidate quality is still deterministic and not calibrated against official/golden metrics.
-- Phase 8 can only link drug spans produced by the existing extractor/type resolver; false-positive drug spans such as broad `caffeine` mentions may still receive exact RxNorm candidates.
+- Phase 8 can only link drug spans produced by the existing extractor/type resolver; Phase 10 now drops the clearest food/substance false positives such as `caffeine` in coffee context.
 - Some strength-bearing mentions may still select ingredient-level candidates when the available RxNorm aliases/retrieval evidence does not surface the clinical-drug candidate strongly enough; this should be revisited in Phase 9 reranking and Phase 12 evaluation.
 - Combination drug handling is conservative and only detects obvious separators/markers in the baseline parser.
 - Existing sparse vectorizer artifacts were built with scikit-learn 1.8.0 and loaded under 1.9.0 in this environment, producing `InconsistentVersionWarning`; Phase 1/7/8 smoke checks still passed.
 
-Recommended next work: **Phase 10 — minimal merge/postprocess**, then **Phase 11 formatter/validator** and **Phase 12 golden evaluator** so Phase 9 reranking/calibration can be measured reliably.
+Recommended next work after Phase 11: **minimal pipeline/inference** and **Phase 12 golden evaluator** so Phase 9 reranking/calibration can be measured reliably.
+
+---
+
+## 8C. Phase 10 — Merge overlap & post-processing
+
+**Status:** Implemented and smoke-tested on all 20 golden files in small batches.
+
+Phase 10 consumes Phase 8 linked `FinalEntity` lists and returns cleaned `FinalEntity` lists plus a debug report:
+
+```python
+result = Postprocessor(config.raw.get("postprocess", {})).process(linked, raw_text=raw_text)
+postprocessed = result.entities
+report = result.report
+```
+
+Implemented files:
+
+- `src/postprocess/models.py`
+  - `PostprocessDecision`, `PostprocessReport`, and `PostprocessResult` dataclasses.
+- `src/postprocess/span_utils.py`
+  - Span overlap/containment/IoU helpers, offset validation, payload serialization, and `with_span(...)` using `dataclasses.replace(...)`.
+- `src/postprocess/policies.py`
+  - Type priority, assertable/linked type sets, stable candidate/assertion cleanup helpers.
+- `src/postprocess/cleanup.py`
+  - Conservative whitespace/punctuation trim.
+  - Leading negation cue trim with `isNegated` preservation.
+  - Diagnosis trigger trim only when a disease head follows.
+  - Conservative false-positive filtering for food/substance drug mentions such as `caffeine` in coffee context.
+  - Candidate/assertion cleanup according to output type policy.
+- `src/postprocess/merge.py`
+  - Exact duplicate merge by `(start, end, type)`.
+  - Same-type overlap resolution.
+  - Different-type overlap resolution for lab/test priority, linked-drug priority, and diagnosis-vs-symptom feature priority.
+  - `remaining_overlap_count(...)` smoke/debug helper.
+- `src/postprocess/postprocessor.py`
+  - Stable public `Postprocessor.process(...)` pipeline.
+- `src/postprocess/__init__.py`
+  - Exposes public Phase 10 API.
+- `scripts/run_phase10_smoke.py`
+  - Runs preprocess → section detection → extractors → type resolver → assertion detector → ICD10Linker → RxNormLinker → Postprocessor.
+  - Prints report counters and samples for drops/trims/overlap decisions.
+  - Fails on offset errors, wrong-type candidates, invalid assertions, or exact duplicate `(start, end, type)` after postprocess.
+  - Defaults to exact linker retrieval for speed; pass `--enable-sparse-retrieval` to use configured TF-IDF/BM25 retrieval.
+- `tests/test_postprocess_span_utils.py`
+- `tests/test_postprocess_cleanup.py`
+- `tests/test_postprocess_merge.py`
+- `tests/test_postprocessor.py`
+
+Validation commands run on 2026-07-13:
+
+```cmd
+python -m pytest tests/test_postprocess_span_utils.py tests/test_postprocess_cleanup.py tests/test_postprocess_merge.py tests/test_postprocessor.py -q
+python scripts\run_phase10_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 5
+python scripts\run_phase10_smoke.py --config configs\default.yaml --max-files 5 --start-index 0 --sample-limit 2
+python scripts\run_phase10_smoke.py --config configs\default.yaml --max-files 5 --start-index 5 --sample-limit 2
+python scripts\run_phase10_smoke.py --config configs\default.yaml --max-files 5 --start-index 10 --sample-limit 2
+python scripts\run_phase10_smoke.py --config configs\default.yaml --max-files 5 --start-index 15 --sample-limit 2
+python -m pytest -q
+```
+
+Observed validation results:
+
+```text
+21 passed in 0.07s
+
+Phase 10 smoke checks completed.
+files_checked: 2
+chunks_checked: 74
+span_candidates: 64
+entities_before_postprocess: 57
+entities_after_postprocess: 46
+exact_duplicates_removed: 0
+same_type_overlaps_resolved: 7
+different_type_overlaps_resolved: 2
+entities_trimmed: 0
+entities_dropped: 2
+candidate_cleanups: 0
+assertion_cleanups: 0
+offset_error_count: 0
+wrong_type_candidate_error_count: 0
+invalid_assertion_count: 0
+duplicate_exact_error_count: 0
+remaining_overlap_count: 0
+
+20 golden files covered in four 5-file batches:
+- batch 0-4: offset/wrong-type/invalid-assertion/duplicate errors all 0; remaining_overlap_count: 1
+- batch 5-9: offset/wrong-type/invalid-assertion/duplicate errors all 0; remaining_overlap_count: 0
+- batch 10-14: offset/wrong-type/invalid-assertion/duplicate errors all 0; remaining_overlap_count: 4
+- batch 15-19: offset/wrong-type/invalid-assertion/duplicate errors all 0; remaining_overlap_count: 0
+
+104 passed in 1.95s
+```
+
+Known Phase 10 caveats:
+
+- The postprocessor is intentionally conservative. It may leave some legitimate but unresolved overlaps for evaluator-guided tuning; smoke logs `remaining_overlap_count` but does not fail on it.
+- Same-type symptom/diagnosis long-span preference can still keep over-extended problem-rule spans; Phase 12 evaluator should quantify whether to tighten span-boundary policies.
+- Phase 10 itself does not generate final JSON and does not add new ICD/RxNorm candidates; Phase 11 now handles formatting/validation downstream.
+
+---
+
+## 8D. Phase 11 — JSON formatter & validation
+
+**Status:** Implemented and validated on golden schema plus Phase 11 smoke predictions.
+
+Phase 11 consumes Phase 10 cleaned `FinalEntity` lists and emits final-schema JSON records:
+
+```python
+records = format_entities(postprocessed, config.raw.get("output_format", {}))
+```
+
+Schema policy:
+
+- Always output `text`, `position`, `type`, and `assertions`.
+- Output `candidates` only for `CHẨN_ĐOÁN` and `THUỐC`.
+- Require `candidates` for `CHẨN_ĐOÁN`/`THUỐC`, even when empty.
+- Forbid debug fields such as `confidence` and `provenance`.
+- Validate `raw_text[start:end] == text` as a hard error.
+- Treat duplicate exact `(start, end, type)` as warning, because golden files contain 14 such duplicate warnings.
+
+Implemented files:
+
+- `src/formatting/json_formatter.py`
+  - `format_entity(...)`, `format_entities(...)`, `write_prediction_json(...)`, and `PredictionFormatter`.
+  - Writes UTF-8 JSON via existing `src.io_utils.write_json(...)`.
+- `src/formatting/__init__.py`
+  - Exposes public formatter API.
+- `src/validation/prediction_schema.py`
+  - `ValidationIssue`, `ValidationReport`, and `validate_prediction_records(...)`.
+  - Checks top-level list, object schema, required/extra fields, valid type/assertions, candidates policy, offset bounds/matches, duplicate candidates, duplicate exact spans, and invalid JSON values (`None`, NaN, Inf).
+- `src/validation/file_validator.py`
+  - `DirectoryValidationReport`, `validate_prediction_file(...)`, `validate_prediction_directory(...)`, and report writer.
+  - Writes `validation_summary.json` and `validation_issues.jsonl`.
+- `src/validation/__init__.py`
+  - Exposes public validator API.
+- `scripts/run_validate.py`
+  - CLI for validating prediction directories against raw `.txt` directories.
+- `scripts/run_phase11_smoke.py`
+  - Runs Phase 8 pipeline → Phase 10 postprocess → Phase 11 format/write/validate.
+  - Defaults to exact linker retrieval for speed; pass `--enable-sparse-retrieval` to use configured TF-IDF/BM25 retrieval.
+- `tests/test_json_formatter.py`
+- `tests/test_prediction_schema_validator.py`
+- `tests/test_file_validator.py`
+
+Validation commands run on 2026-07-13:
+
+```cmd
+python -m pytest tests/test_json_formatter.py tests/test_prediction_schema_validator.py tests/test_file_validator.py -q
+python scripts\run_validate.py --config configs\default.yaml --input-dir data\golden\input --pred-dir data\golden\gold --report-dir outputs\reports\golden_schema_validation --expected-count 20 --sample-limit 5
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 3
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 5 --start-index 0 --sample-limit 2
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 5 --start-index 5 --sample-limit 2
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 5 --start-index 10 --sample-limit 2
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 5 --start-index 15 --sample-limit 2
+python -m pytest -q
+```
+
+Observed validation results:
+
+```text
+23 passed in 0.21s
+
+Prediction validation completed.
+input_files_checked: 20
+prediction_files_checked: 20
+entities_checked: 370
+missing_prediction_count: 0
+extra_prediction_count: 0
+error_count: 0
+warning_count: 14
+offset_error_count: 0
+schema_error_count: 0
+invalid_type_count: 0
+invalid_assertion_count: 0
+wrong_type_candidate_count: 0
+json_parse_error_count: 0
+
+Phase 11 smoke checks completed.
+files_checked: 2
+chunks_checked: 64
+span_candidates: 62
+entities_before_format: 46
+records_written: 46
+validation_error_count: 0
+validation_warning_count: 0
+offset_error_count: 0
+wrong_type_candidate_error_count: 0
+invalid_assertion_count: 0
+
+20 golden files covered in four 5-file Phase 11 smoke batches:
+- batch 0-4: validation_error_count 0; validation_warning_count 0; records_written 187
+- batch 5-9: validation_error_count 0; validation_warning_count 0; records_written 76
+- batch 10-14: validation_error_count 0; validation_warning_count 0; records_written 83
+- batch 15-19: validation_error_count 0; validation_warning_count 0; records_written 179
+
+127 passed in 1.92s
+```
+
+Known Phase 11 caveats:
+
+- `scripts/run_phase11_smoke.py` is a smoke/integration check, not the final reusable inference command.
+- Directory validation can validate any input/prediction directory pair, but the repo still needs `src/pipeline.py`/`scripts/run_inference.py` to generate final predictions for all 100 raw input files in one production command.
+- Phase 11 validates schema/integrity only; Phase 12 now handles metric evaluation against gold.
+
+---
+
+## 8E. Phase 12 — Golden evaluator & error analysis
+
+**Status:** Implemented and validated with gold-vs-gold self-match plus accumulated Phase 11 golden predictions.
+
+Phase 12 consumes raw text, gold JSON, and prediction JSON directories and writes exact/relaxed metrics plus error reports:
+
+```cmd
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase11_golden20 --report-dir outputs\reports\phase12_eval_golden20 --expected-count 20
+```
+
+Implemented files:
+
+- `src/evaluation/models.py`
+  - `EvalEntity`, `EntityPair`, `PRFCounts`, `EvaluationFileResult`, and `EvaluationReport`.
+- `src/evaluation/span_matcher.py`
+  - Exact one-to-one matching with duplicate/multiset handling.
+  - Relaxed greedy matching by same type with IoU/containment thresholds.
+  - Nearest-overlap helper for diagnostics.
+- `src/evaluation/metrics.py`
+  - Overall/per-type PRF aggregation.
+  - Assertion exact-set and per-label metrics.
+  - Candidate hit/exact-set metrics for `CHẨN_ĐOÁN` and `THUỐC`.
+- `src/evaluation/error_analysis.py`
+  - Span mismatch, type mismatch, context slice, FP/FN diagnostic helpers.
+- `src/evaluation/evaluator.py`
+  - `GoldenEvaluator.evaluate_records(...)`, `evaluate_directories(...)`, and `write_evaluation_report(...)`.
+  - Writes `evaluation_summary.json`, `per_file_metrics.csv`, `per_type_metrics.csv`, JSONL error files, and `samples.md`.
+- `src/evaluation/__init__.py`
+  - Exposes public Phase 12 API.
+- `scripts/run_evaluate.py`
+  - CLI for gold-vs-pred evaluation.
+- `scripts/run_phase11_smoke.py`
+  - Added `--keep-existing-output` for accumulating 20-file prediction directories in batches before reusable inference exists.
+- `tests/test_evaluation_span_matcher.py`
+- `tests/test_evaluation_metrics.py`
+- `tests/test_evaluator.py`
+
+Report files:
+
+```text
+outputs/reports/phase12_eval_golden20/
+├── evaluation_summary.json
+├── per_file_metrics.csv
+├── per_type_metrics.csv
+├── true_positives.jsonl
+├── false_positives.jsonl
+├── false_negatives.jsonl
+├── span_mismatches.jsonl
+├── type_mismatches.jsonl
+├── assertion_mismatches.jsonl
+├── candidate_mismatches.jsonl
+├── error_cases.jsonl
+└── samples.md
+```
+
+Validation commands run on 2026-07-13:
+
+```cmd
+python -m pytest tests/test_evaluation_span_matcher.py tests/test_evaluation_metrics.py tests/test_evaluator.py -q
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir data\golden\gold --report-dir outputs\reports\phase12_gold_self_eval --expected-count 20
+
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 5 --start-index 0 --prediction-dir outputs\predictions\phase11_golden20 --report-dir outputs\reports\phase11_golden20_validation --sample-limit 0
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 5 --start-index 5 --prediction-dir outputs\predictions\phase11_golden20 --report-dir outputs\reports\phase11_golden20_validation --keep-existing-output --sample-limit 0
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 5 --start-index 10 --prediction-dir outputs\predictions\phase11_golden20 --report-dir outputs\reports\phase11_golden20_validation --keep-existing-output --sample-limit 0
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 5 --start-index 15 --prediction-dir outputs\predictions\phase11_golden20 --report-dir outputs\reports\phase11_golden20_validation --keep-existing-output --sample-limit 0
+
+python scripts\run_validate.py --config configs\default.yaml --input-dir data\golden\input --pred-dir outputs\predictions\phase11_golden20 --report-dir outputs\reports\phase11_golden20_validation --expected-count 20 --sample-limit 3
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase11_golden20 --report-dir outputs\reports\phase12_eval_golden20 --expected-count 20
+python -m pytest -q
+```
+
+Observed validation results:
+
+```text
+20 passed in 0.22s
+
+Gold self-match:
+files_evaluated: 20
+gold_entities: 370
+pred_entities: 370
+exact_tp: 370
+exact_fp: 0
+exact_fn: 0
+exact_f1: 1.0000
+relaxed_f1: 1.0000
+
+Accumulated Phase 11 predictions validation:
+input_files_checked: 20
+prediction_files_checked: 20
+entities_checked: 525
+error_count: 0
+warning_count: 0
+offset_error_count: 0
+schema_error_count: 0
+invalid_type_count: 0
+invalid_assertion_count: 0
+wrong_type_candidate_count: 0
+
+Phase 11 golden20 evaluation:
+files_evaluated: 20
+gold_entities: 370
+pred_entities: 525
+exact_tp: 80
+exact_fp: 445
+exact_fn: 290
+exact_precision: 0.1524
+exact_recall: 0.2162
+exact_f1: 0.1788
+relaxed_tp: 163
+relaxed_fp: 362
+relaxed_fn: 207
+relaxed_precision: 0.3105
+relaxed_recall: 0.4405
+relaxed_f1: 0.3642
+assertion_exact_match_rate: 0.5658
+candidate_hit_rate: 0.4000
+span_mismatch_count: 83
+type_mismatch_count: 42
+assertion_mismatch_count: 33
+candidate_mismatch_count: 4
+
+147 passed in 1.97s
+```
+
+Known Phase 12 caveats:
+
+- Metrics are local golden metrics only; they are not official leaderboard metrics.
+- Candidate comparison is exact string hit/set comparison; no ICD dot/no-dot normalization is applied yet.
+- Actual baseline quality is still low. Phase 12 is intended to guide subsequent rule/linker/assertion/span tuning rather than to claim final performance.
+- Repo still needs a reusable `src/pipeline.py`/`scripts/run_inference.py` for production-style 100-file inference.
 
 ---
 
@@ -1229,9 +1613,13 @@ python scripts\run_phase5_smoke.py --config configs\default.yaml --max-files 20 
 python scripts\run_phase6_smoke.py --config configs\default.yaml --max-files 20 --sample-limit 5
 python scripts\run_phase7_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 5
 python scripts\run_phase8_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 10
+python scripts\run_phase10_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 5
+python scripts\run_validate.py --config configs\default.yaml --input-dir data\golden\input --pred-dir data\golden\gold --report-dir outputs\reports\golden_schema_validation --expected-count 20
+python scripts\run_phase11_smoke.py --config configs\default.yaml --max-files 2 --sample-limit 5
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir data\golden\gold --report-dir outputs\reports\phase12_gold_self_eval --expected-count 20
 ```
 
-Then proceed with Phase 10/11/12 work to create valid final JSON predictions and measurable golden reports.
+Then proceed with minimal inference pipeline and metric-guided tuning using Phase 12 reports.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -1246,7 +1634,7 @@ Every resolver/postprocess component should preserve enough provenance to debug 
 
 ## 10. Summary
 
-The repository currently has a solid foundation through Phase 8:
+The repository currently has a solid foundation through Phase 12:
 
 - canonical config/data layout;
 - ICD/RxNorm terminology parsing and sparse retrieval artifacts;
@@ -1261,5 +1649,12 @@ The repository currently has a solid foundation through Phase 8:
 - Phase 6 smoke validation on 20 golden files with zero offset errors;
 - Phase 7 ICD-10 linker wrapper for `CHẨN_ĐOÁN` entities;
 - Phase 8 RxNorm linker wrapper and drug parser for `THUỐC` entities.
+- Phase 10 conservative merge/postprocess for linked `FinalEntity` lists;
+- Phase 10 smoke validation across all 20 golden files in batches with zero offset errors, zero wrong-type candidate errors, zero invalid assertion errors, and zero exact duplicate errors.
+- Phase 11 JSON formatter and schema/file/directory validator;
+- Golden schema validation with zero errors and 14 duplicate-exact warnings from the manually annotated gold files;
+- Phase 11 smoke validation across all 20 golden files in batches with zero validation errors.
+- Phase 12 golden evaluator with exact/relaxed matching, duplicate-aware self-match validation, per-file/per-type metrics, assertion/candidate metrics, and JSONL/CSV/Markdown error reports;
+- Phase 12 evaluation on accumulated 20-file Phase 11 predictions with schema errors 0 and baseline exact F1 0.1788 / relaxed F1 0.3642.
 
-The next major milestone is to implement merge/postprocess, formatter/validator, and a minimal inference/evaluation loop. At that point, the current Phase 8 linked baseline can become a valid end-to-end baseline and can be tuned using the 20-file golden dataset.
+The next major milestone is to implement a reusable minimal inference pipeline/CLI and then use Phase 12 reports to tune extraction, assertion, postprocess, and linker policies using the 20-file golden dataset.

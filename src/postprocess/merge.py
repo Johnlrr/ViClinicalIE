@@ -16,6 +16,9 @@ def merge_exact_duplicates(
     config: dict[str, Any],
 ) -> tuple[list[FinalEntity], list[PostprocessDecision]]:
     del raw_text
+    merge_cfg = config.get("merge", {}) if isinstance(config.get("merge"), dict) else {}
+    if not bool(merge_cfg.get("remove_exact_duplicates", True)):
+        return entities, []
     grouped: dict[tuple[int, int, str], list[FinalEntity]] = defaultdict(list)
     for entity in entities:
         grouped[entity_key(entity)].append(entity)
@@ -63,7 +66,13 @@ def resolve_same_type_overlaps(
                 if not _same_type_should_resolve(first, second, iou_threshold):
                     continue
                 keep, drop = _choose_overlap_winner(first, second, config)
-                output.pop(j if drop is second else i)
+                keep = _mark_overlap_resolution(keep, "same_type_overlap", [drop])
+                if drop is second:
+                    output[i] = keep
+                    output.pop(j)
+                else:
+                    output[j] = keep
+                    output.pop(i)
                 decisions.append(
                     PostprocessDecision(
                         action="resolve_same_type_overlap",
@@ -104,7 +113,13 @@ def resolve_different_type_overlaps(
                 if decision is None:
                     continue
                 keep, drop, reason = decision
-                output.pop(j if drop is second else i)
+                keep = _mark_overlap_resolution(keep, reason, [drop])
+                if drop is second:
+                    output[i] = keep
+                    output.pop(j)
+                else:
+                    output[j] = keep
+                    output.pop(i)
                 decisions.append(
                     PostprocessDecision(
                         action="resolve_different_type_overlap",
@@ -153,6 +168,16 @@ def _merge_group_fields(winner: FinalEntity, group: list[FinalEntity]) -> FinalE
         confidence=max(item.confidence for item in group),
         provenance=provenance,
     )
+
+
+def _mark_overlap_resolution(winner: FinalEntity, reason: str, removed: list[FinalEntity]) -> FinalEntity:
+    provenance = dict(winner.provenance)
+    postprocess = dict(provenance.get("postprocess", {}))
+    previous = list(postprocess.get("resolved_overlaps", []))
+    previous.append({"reason": reason, "removed": [entity_payload(item) for item in removed]})
+    postprocess["resolved_overlaps"] = previous
+    provenance["postprocess"] = postprocess
+    return replace(winner, provenance=provenance)
 
 
 def _same_type_should_resolve(first: FinalEntity, second: FinalEntity, iou_threshold: float) -> bool:
