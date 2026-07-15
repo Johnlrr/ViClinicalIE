@@ -1,6 +1,6 @@
 project:
   name: ViClinicalIE
-  phase: phase_9_metric_guided_calibration
+  phase: phase_13_streamlit_review_ui
 paths_config: paths.yaml
 encoding: utf-8
 seed: 42

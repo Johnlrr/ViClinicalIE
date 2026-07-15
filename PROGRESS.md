@@ -1,7 +1,7 @@
 # PROGRESS: ViClinicalIE implementation state
 
 **Last updated:** 2026-07-13  
-**Current implementation phase:** Phase 9 complete — metric-guided deterministic calibration implemented on top of Phase 12.5 inference/submission baseline  
+**Current implementation phase:** Phase 13 complete — Streamlit local review UI implemented on top of Phase 9 calibrated inference/submission baseline  
 **Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
 
 ---
@@ -63,8 +63,10 @@ Implemented foundation files include:
     - `VALID_ENTITY_TYPES`
     - `VALID_ASSERTIONS`
 - `configs/default.yaml`
-  - Current `project.phase` is `phase_9_metric_guided_calibration`.
+  - Current `project.phase` is `phase_13_streamlit_review_ui`.
   - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, Phase 6 assertion-detection config, Phase 7 ICD-10 linking config, Phase 8 RxNorm linking config, Phase 9 calibration config, Phase 10 postprocess config, Phase 11 output/validation config, and Phase 12 evaluation config.
+- `streamlit_app/`
+  - Phase 13 local review UI for metric overview, file-level highlights, error browsing, live inference debug, and submission validation review.
 - `configs/paths.yaml`
   - Canonical paths for raw input, terminology files, processed indices, golden data, predictions, reports, and submissions.
 
@@ -1847,6 +1849,90 @@ Known Phase 9 caveats:
 
 ---
 
+## 8H. Phase 13 — Streamlit local review UI
+
+**Status:** Implemented and smoke-tested by helper tests/app import.
+
+Phase 13 adds a local Streamlit dashboard for reviewing Phase 9 artifacts and debugging future Phase 9.1/14/15 work. It does not change inference outputs by itself.
+
+Implemented files:
+
+```text
+streamlit_app/__init__.py
+streamlit_app/app.py
+streamlit_app/data_loader.py
+streamlit_app/highlight.py
+streamlit_app/tables.py
+streamlit_app/pipeline_debug.py
+streamlit_app/README.md
+tests/test_streamlit_app_helpers.py
+```
+
+Main app command:
+
+```cmd
+streamlit run streamlit_app\app.py
+```
+
+Default Phase 13 paths:
+
+```text
+configs/default.yaml
+data/golden/input/
+data/golden/gold/
+outputs/predictions/phase9_golden20/
+outputs/reports/phase9_eval/
+data/raw/input/
+outputs/predictions/submission_phase9/output/
+outputs/reports/submission_phase9_validation/
+```
+
+Tabs implemented:
+
+- **Overview**
+  - Reads `evaluation_summary.json`, `per_file_metrics.csv`, and `per_type_metrics.csv`.
+  - Shows exact/relaxed F1, counts, assertion/candidate metrics, per-file and per-type tables.
+- **File Reviewer**
+  - Selects a golden file.
+  - Shows raw text with offset-based highlights for gold, prediction, TP, FP, FN, span/type/assertion/candidate mismatch layers.
+  - Shows gold/prediction/compare/error/type-count tables.
+- **Error Browser**
+  - Reads evaluator JSONL reports:
+    `true_positives`, `false_positives`, `false_negatives`, `span_mismatches`, `type_mismatches`, `assertion_mismatches`, `candidate_mismatches`, `error_cases`.
+  - Supports file/type/subcategory/text filters and row-level inspection.
+- **Live Inference**
+  - Runs `ClinicalIEPipeline` on pasted text or selected raw input file.
+  - Shows counters, entity distribution, postprocess summary, highlighted spans, records, and optional provenance.
+  - Uses `st.cache_resource` to avoid reloading pipeline every interaction.
+- **Submission Review**
+  - Reads `outputs/predictions/submission_phase9/output/`.
+  - Shows JSON count, record counts by file, selected file records, raw JSON, and validation summary.
+
+Validation commands run:
+
+```cmd
+python -m pytest tests/test_streamlit_app_helpers.py -q
+python -m py_compile streamlit_app\app.py streamlit_app\data_loader.py streamlit_app\highlight.py streamlit_app\tables.py streamlit_app\pipeline_debug.py
+python -c "import streamlit_app.app as app; print('app_import_ok')"
+python -m pytest -q
+```
+
+Observed results:
+
+```text
+tests/test_streamlit_app_helpers.py: 5 passed
+app_import_ok
+full test suite: 160 passed in 12.94s
+```
+
+Known Phase 13 caveats:
+
+- This is intended for local review first. Streamlit Cloud deployment is optional and would need private data/report handling.
+- Highlight rendering uses non-overlapping spans to keep the UI readable. For heavily overlapping errors, inspect the tables/error rows for full detail.
+- Live inference defaults sparse retrieval off for speed and to match the Phase 9 submission run behavior.
+
+---
+
 ## 9. Practical continuation checklist
 
 For a future session, start here:
@@ -1873,9 +1959,10 @@ python scripts\make_submission_zip.py --pred-dir outputs\predictions\submission_
 python scripts\run_inference.py --config configs\default.yaml --input-dir data\golden\input --output-dir outputs\predictions\phase9_golden20 --report-dir outputs\reports\phase9_validation --expected-count 20 --disable-sparse-retrieval
 python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase9_golden20 --report-dir outputs\reports\phase9_eval --expected-count 20
 python scripts\analyze_phase9_errors.py --report-dir outputs\reports\phase9_eval --top-k 8
+streamlit run streamlit_app\app.py
 ```
 
-Then proceed with Phase 13 Streamlit UI or optional Phase 9.1 targeted tuning using Phase 9 reports.
+Then use Phase 13 UI for review, or proceed with optional Phase 9.1 targeted tuning using Phase 9 reports.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -1890,7 +1977,7 @@ Every resolver/postprocess component should preserve enough provenance to debug 
 
 ## 10. Summary
 
-The repository currently has a solid foundation through Phase 9 on top of Phase 12.5:
+The repository currently has a solid foundation through Phase 13 on top of Phase 9/12.5:
 
 - canonical config/data layout;
 - ICD/RxNorm terminology parsing and sparse retrieval artifacts;
@@ -1919,5 +2006,7 @@ The repository currently has a solid foundation through Phase 9 on top of Phase 
 - Phase 9 golden20 exact F1 improved from 0.1788 to 0.2303 and relaxed F1 from 0.3642 to 0.4145;
 - Phase 9 100-file predictions validated with zero schema/offset/type/assertion/candidate-placement errors;
 - `outputs/submission/output_phase9.zip` contains exactly `output/1.json` through `output/100.json`.
+- Phase 13 Streamlit local review UI for Phase 9 metrics/errors/file highlights/live inference/submission review;
+- Streamlit helper tests and full test suite pass with 160 tests.
 
-The next major milestone is Phase 13 Streamlit UI for visual review/debugging, followed by optional Phase 9.1 targeted calibration or Phase 14/15 model-assisted components.
+The next major milestone is to use Phase 13 for visual review/debugging, followed by optional Phase 9.1 targeted calibration or Phase 14/15 model-assisted components.

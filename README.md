@@ -2,7 +2,7 @@
 
 Rule-first clinical information extraction and normalization system for the Viettel AI Race clinical text task.
 
-Current repository status: **Phase 9 metric-guided calibration complete on top of Phase 12.5 inference** — the project can run the modular pipeline through:
+Current repository status: **Phase 13 Streamlit local review UI complete** on top of the Phase 9 calibrated inference baseline — the project can run the modular pipeline through:
 
 ```text
 preprocess + offset mapping
@@ -17,9 +17,10 @@ preprocess + offset mapping
 → golden evaluation and error reports
 → reusable inference CLI + BTC-format output.zip trial package
 → deterministic Phase 9 rule/candidate/assertion calibration
+→ Streamlit local dashboard for metric/error/submission/live-inference review
 ```
 
-It is still **not a final model-based solution**, but the rule-first baseline has now been tuned with golden metrics and can generate a schema-valid 100-file Phase 9 submission zip.
+It is still **not a final model-based solution**, but the rule-first baseline has now been tuned with golden metrics, can generate a schema-valid 100-file Phase 9 submission zip, and can be reviewed visually through Streamlit.
 
 ## Setup
 
@@ -62,6 +63,7 @@ python scripts\make_submission_zip.py --pred-dir outputs\predictions\submission_
 python scripts\run_inference.py --config configs\default.yaml --input-dir data\golden\input --output-dir outputs\predictions\phase9_golden20 --report-dir outputs\reports\phase9_validation --expected-count 20 --disable-sparse-retrieval
 python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase9_golden20 --report-dir outputs\reports\phase9_eval --expected-count 20
 python scripts\analyze_phase9_errors.py --report-dir outputs\reports\phase9_eval --top-k 12
+streamlit run streamlit_app\app.py
 ```
 
 `PYTHONUTF8=1` is recommended on Windows when paths/usernames contain Vietnamese characters.
@@ -92,6 +94,7 @@ Root-level source files are intentionally left in place.
 - **Phase 12:** Golden evaluator with exact/relaxed matching, per-file/per-type metrics, assertion/candidate metrics, and JSONL/CSV/Markdown error reports.
 - **Phase 12.5:** Minimal reusable inference pipeline/CLI and BTC-format `output.zip` creator for 100-file trial submission.
 - **Phase 9:** Metric-guided deterministic calibration for extractor precision, qualitative lab/imaging results, negation scope, and ICD candidate selection.
+- **Phase 13:** Streamlit local review UI for Phase 9 metrics, file-level highlights, error browsing, live inference, and 100-file submission validation review.
 
 ## Ghi chú nhanh bằng tiếng Việt
 
@@ -138,6 +141,22 @@ raw text
 ```
 
 Phase 9 đã tạo được `outputs/submission/output_phase9.zip` để nộp thử. Đây là bản tốt hơn `outputs/submission/output.zip` baseline Phase 12.5.
+
+Phase 13 đã tạo Streamlit app local:
+
+```cmd
+streamlit run streamlit_app\app.py
+```
+
+App mặc định đọc Phase 9 artifacts và có các tab:
+
+```text
+Overview
+File Reviewer
+Error Browser
+Live Inference
+Submission Review
+```
 
 ### Kết quả re-check mới nhất
 
@@ -230,26 +249,24 @@ all_under_output: True
 
 ## Not Yet Implemented
 
-- Streamlit validation UI.
 - NER/dense/cross-encoder model components.
 - Source-package rebuild instructions for BTC source-code review.
 
 ## Recommended Next Work
 
-The practical next milestone is UI/error review and optional next calibration pass:
+The practical next milestone is using the UI for review and then deciding whether to do optional Phase 9.1 calibration or move to model-assisted components:
 
 ```text
-Phase 13 Streamlit UI
+Use Phase 13 Streamlit UI for review
 → optional Phase 9.1 targeted calibration
 → Phase 14/15 model-assisted components
 ```
 
 Roadmap chi tiết hơn:
 
-1. **Phase 13 — Streamlit UI:** xem raw text, highlight prediction/gold, debug section/span/candidate/assertion.
-2. **Optional Phase 9.1 calibration:** tune tiếp dựa trên UI + `outputs/reports/phase9_eval`.
-3. **Phase 14/15 — NER + dense/reranker:** chỉ nên làm sau khi rule baseline và evaluator ổn.
-4. **Phase 16/17 — Final hardening + packaging:** chạy lại inference đủ 100, validate, zip, và README rebuild cho BTC.
+1. **Optional Phase 9.1 calibration:** tune tiếp dựa trên UI + `outputs/reports/phase9_eval` nếu muốn cải thiện rule baseline thêm.
+2. **Phase 14/15 — NER + dense/reranker:** chỉ nên làm sau khi review UI xác nhận rule baseline ổn.
+3. **Phase 16/17 — Final hardening + packaging:** chạy lại inference đủ 100, validate, zip, và README rebuild cho BTC.
 
 
 
