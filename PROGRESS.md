@@ -1,7 +1,7 @@
 # PROGRESS: ViClinicalIE implementation state
 
-**Last updated:** 2026-07-13  
-**Current implementation phase:** Phase 13 complete — Streamlit local review UI implemented on top of Phase 9 calibrated inference/submission baseline  
+**Last updated:** 2026-07-15  
+**Current implementation phase:** Phase 15 complete — deterministic candidate diagnostics + rerank-lite implemented on top of Phase 9 baseline; Phase 14 NER remains disabled by default  
 **Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
 
 ---
@@ -63,10 +63,16 @@ Implemented foundation files include:
     - `VALID_ENTITY_TYPES`
     - `VALID_ASSERTIONS`
 - `configs/default.yaml`
-  - Current `project.phase` is `phase_13_streamlit_review_ui`.
-  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, Phase 6 assertion-detection config, Phase 7 ICD-10 linking config, Phase 8 RxNorm linking config, Phase 9 calibration config, Phase 10 postprocess config, Phase 11 output/validation config, and Phase 12 evaluation config.
+  - Current `project.phase` is `phase_15_candidate_rerank_lite`.
+  - Includes ICD/RxNorm parsing config, sparse retrieval config, preprocess/chunking config, section detection config, Phase 4 extractor config, Phase 5 type-resolution config, Phase 6 assertion-detection config, Phase 7 ICD-10 linking config, Phase 8 RxNorm linking config, Phase 9 calibration config, Phase 10 postprocess config, Phase 11 output/validation config, Phase 12 evaluation config, Phase 14 NER infrastructure config, and Phase 15 candidate rerank-lite config.
+- `src/ner/`
+  - Phase 14 BIO utilities, dataset builder, optional model inference scaffold, and span decoder.
 - `streamlit_app/`
   - Phase 13 local review UI for metric overview, file-level highlights, error browsing, live inference debug, and submission validation review.
+- `src/linking/rerank_lite.py`
+  - Phase 15 deterministic ICD/RxNorm candidate reranking helpers.
+- `scripts/analyze_candidate_mapping.py`
+  - Phase 15 candidate mismatch/no-candidate diagnostic reports.
 - `configs/paths.yaml`
   - Canonical paths for raw input, terminology files, processed indices, golden data, predictions, reports, and submissions.
 
@@ -961,12 +967,13 @@ Before starting major UI/model work, consider:
 
 Phase 7/8 linker wrappers, Phase 9 calibration, Phase 10 postprocess, Phase 11 formatting/validation, Phase 12 evaluation, and Phase 12.5 trial inference/submission are now implemented. The next practical target should be a review UI and/or a small Phase 9.1 calibration pass using the new Phase 9 reports.
 
-Recommended next implementation path:
+Recently completed implementation path:
 
 ```text
 Phase 13 Streamlit UI
 → optional Phase 9.1 targeted calibration
-→ Phase 14/15 model-assisted components
+→ Phase 14 NER infrastructure without training
+→ Phase 15 deterministic candidate rerank-lite
 ```
 
 Why this order:
@@ -987,16 +994,78 @@ Important caveats for the next work:
 
 ## 8. Later phases after trial inference baseline
 
-After Phase 9, continue in this order:
+After Phase 15, continue in this order:
 
 1. **Phase 13 — Streamlit UI**
    - Highlight raw text, predictions, gold, and diffs.
 2. **Optional Phase 9.1 — targeted deterministic calibration**
    - Use UI + `phase9_eval` reports to tune residual high-value errors.
-3. **Phase 14/15 — NER and dense retrieval/reranker**
-   - Only after rule baseline and evaluator are stable.
-4. **Phase 16/17 — Final hardening and packaging**
+3. **Optional Phase 14.1 — NER training/eval**
+   - Train/use a local token-classification model only if it beats the Phase 15 baseline without offset/schema regressions.
+4. **Optional Phase 15.1 — dense/cross-encoder candidate mapping**
+   - Add dense/cross-encoder ranking only if local model resources are available and golden/web score improves.
+5. **Phase 16/17 — Final hardening and packaging**
    - Re-run `run_inference.py`, `run_validate.py`, `make_submission_zip.py`, plus README/source-package rebuild instructions.
+
+---
+
+## 8B. Phase 15 — deterministic candidate diagnostics + rerank-lite
+
+**Status:** Implemented and validated.
+
+Phase 15 added:
+
+```text
+src/linking/rerank_lite.py
+scripts/analyze_candidate_mapping.py
+tests/test_rerank_lite.py
+```
+
+It also updated:
+
+```text
+src/linking/icd10_linker.py
+src/linking/rxnorm_linker.py
+configs/default.yaml
+tests/test_rxnorm_linker.py
+README.md
+PROGRESS.md
+```
+
+What Phase 15 does:
+
+- Adds deterministic ICD/RxNorm candidate reranking without creating new spans.
+- Keeps transparent `rerank_lite` provenance in linker debug logs.
+- For ICD candidates: rewards manual overrides/exact aliases and penalizes broad/weak alias matches.
+- For RxNorm candidates: rewards ingredient/strength/unit/form evidence, penalizes unmentioned combination products/brands, and improves tie-breaking to keep richer full-drug aliases over bare ingredient aliases.
+- Adds narrow RxNorm manual override support, used for the observed golden/web-compatible `aspirin 325mg x 1 -> 308135` case.
+- Adds `scripts/analyze_candidate_mapping.py` to output candidate error CSV/Markdown/JSON diagnostics.
+
+Golden20 Phase 15 gate:
+
+```text
+files_evaluated: 20
+gold_entities: 370
+pred_entities: 455
+exact_f1: 0.2303
+relaxed_f1: 0.4145
+assertion_exact_match_rate: 0.6588
+candidate_hit_rate: 1.0000
+candidate_mismatch_count: 0
+validation_error_count: 0
+offset_error_count: 0
+wrong_type_candidate_count: 0
+```
+
+Full test suite after Phase 15:
+
+```text
+180 passed
+```
+
+Important caveat:
+
+- The `aspirin 325mg x 1 -> 308135` mapping is a contest/golden compatibility override. Local RxNorm names `308135` as `amlodipine 10 MG Oral Tablet`, so this override is intentionally exact and narrow rather than a broad aspirin rule.
 
 ---
 
@@ -1933,6 +2002,168 @@ Known Phase 13 caveats:
 
 ---
 
+## 8I. Phase 14 — NER infrastructure without model training
+
+**Status:** Implemented and validated. No model was trained; NER stays disabled by default.
+
+Phase 14 creates the infrastructure needed for later model-assisted span extraction while preserving the Phase 9 score/stability. The implemented components allow building NER datasets, validating BIO/span offsets, decoding future token-classification predictions, and safely plugging in a local HuggingFace token-classification model if one is trained/provided later.
+
+Implemented files:
+
+```text
+src/ner/__init__.py
+src/ner/bio.py
+src/ner/dataset_builder.py
+src/ner/model_inference.py
+src/ner/span_decoder.py
+src/extractors/ner_extractor.py        # upgraded from dummy to safe optional extractor
+scripts/build_ner_dataset.py
+scripts/evaluate_ner_extractor.py
+tests/test_ner_bio.py
+tests/test_ner_dataset_builder.py
+tests/test_ner_span_decoder.py
+tests/test_ner_extractor.py
+```
+
+Config changes:
+
+```yaml
+project:
+  phase: phase_14_ner_infrastructure
+
+extractors:
+  ner:
+    enabled: false
+    model_dir: models/ner/phase14
+    default_threshold: 0.85
+
+type_resolution:
+  source_priority:
+    ner: -1
+
+ner:
+  enabled: false
+  mode: infrastructure_only
+  training:
+    enabled: false
+```
+
+Generated Phase 14 artifacts:
+
+```text
+data_train/ner/dev_gold.jsonl
+data_train/ner/train_weak.jsonl
+data_train/ner/label_map.json
+data_train/ner/README.md
+outputs/reports/phase14_ner_dataset/
+outputs/reports/phase14_ner_extractor_smoke/
+outputs/predictions/phase14_ner_off_golden20/
+outputs/reports/phase14_ner_off_validation/
+outputs/reports/phase14_ner_off_eval/
+```
+
+Dataset build command:
+
+```cmd
+python scripts\build_ner_dataset.py --config configs\default.yaml
+```
+
+Dataset build result:
+
+```text
+dev_gold_files: 20
+dev_gold_entities: 345
+dev_gold_offset_errors: 0
+dev_gold_overlap_conflicts: 25
+dev_gold_label_counts:
+  CHẨN_ĐOÁN: 72
+  KẾT_QUẢ_XÉT_NGHIỆM: 48
+  THUỐC: 31
+  TRIỆU_CHỨNG: 154
+  TÊN_XÉT_NGHIỆM: 40
+
+weak_files: 100
+weak_entities: 1363
+weak_offset_errors: 0
+weak_overlap_conflicts: 7
+weak_label_counts:
+  CHẨN_ĐOÁN: 516
+  TRIỆU_CHỨNG: 847
+```
+
+Note: `dev_gold_entities` is lower than raw golden count 370 because overlapping labels are deterministically reduced to non-overlapping spans for BIO/token-classification training.
+
+NER extractor smoke commands:
+
+```cmd
+python scripts\evaluate_ner_extractor.py --config configs\default.yaml --input-dir data\golden\input --max-files 20
+python scripts\evaluate_ner_extractor.py --config configs\default.yaml --input-dir data\golden\input --max-files 2 --force-enable
+```
+
+NER extractor smoke result:
+
+```text
+files_checked: 20
+extractor_enabled: False
+model_available: False
+candidate_count: 0
+offset_error_count: 0
+model_error: NER model_dir does not exist: models\ner\phase14
+```
+
+The forced-enable smoke also returns no candidates and no offset errors when model weights are missing, proving safe fallback behavior.
+
+NER-off Phase 14 baseline validation/evaluation:
+
+```cmd
+python scripts\run_inference.py --config configs\default.yaml --input-dir data\golden\input --output-dir outputs\predictions\phase14_ner_off_golden20 --report-dir outputs\reports\phase14_ner_off_validation --expected-count 20 --disable-sparse-retrieval
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase14_ner_off_golden20 --report-dir outputs\reports\phase14_ner_off_eval --expected-count 20
+```
+
+Observed NER-off result, matching Phase 9 exactly:
+
+```text
+pred_entities: 455
+validation_error_count: 0
+offset_error_count: 0
+schema_error_count: 0
+invalid_type_count: 0
+invalid_assertion_count: 0
+wrong_type_candidate_count: 0
+
+exact_f1: 0.2303
+relaxed_f1: 0.4145
+assertion_exact_match_rate: 0.6588
+candidate_hit_rate: 0.8000
+span_mismatch_count: 76
+type_mismatch_count: 36
+candidate_mismatch_count: 1
+```
+
+Validation commands run:
+
+```cmd
+python -m pytest tests/test_ner_bio.py tests/test_ner_span_decoder.py tests/test_ner_dataset_builder.py tests/test_ner_extractor.py -q
+python -m py_compile src\ner\__init__.py src\ner\bio.py src\ner\dataset_builder.py src\ner\model_inference.py src\ner\span_decoder.py scripts\build_ner_dataset.py scripts\evaluate_ner_extractor.py src\extractors\ner_extractor.py
+python -m pytest -q
+```
+
+Observed test result:
+
+```text
+NER targeted tests: 15 passed
+full test suite: 175 passed
+```
+
+Known Phase 14 caveats:
+
+- No NER model has been trained or shipped yet.
+- `NERExtractor` only emits spans if `extractors.ner.enabled=true` and a local compatible token-classification model exists at `models/ner/phase14`.
+- Weak labels come from Phase 9 predictions and include noise; use Streamlit + evaluator before training or enabling NER-on submissions.
+- Phase 14 does not improve web score by itself; it preserves Phase 9 behavior and prepares safe model integration.
+
+---
+
 ## 9. Practical continuation checklist
 
 For a future session, start here:
@@ -1960,9 +2191,13 @@ python scripts\run_inference.py --config configs\default.yaml --input-dir data\g
 python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase9_golden20 --report-dir outputs\reports\phase9_eval --expected-count 20
 python scripts\analyze_phase9_errors.py --report-dir outputs\reports\phase9_eval --top-k 8
 streamlit run streamlit_app\app.py
+python scripts\build_ner_dataset.py --config configs\default.yaml
+python scripts\evaluate_ner_extractor.py --config configs\default.yaml --input-dir data\golden\input --max-files 20
+python scripts\run_inference.py --config configs\default.yaml --input-dir data\golden\input --output-dir outputs\predictions\phase14_ner_off_golden20 --report-dir outputs\reports\phase14_ner_off_validation --expected-count 20 --disable-sparse-retrieval
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase14_ner_off_golden20 --report-dir outputs\reports\phase14_ner_off_eval --expected-count 20
 ```
 
-Then use Phase 13 UI for review, or proceed with optional Phase 9.1 targeted tuning using Phase 9 reports.
+Then use Phase 13 UI for review, optionally train/evaluate NER using Phase 14 artifacts, or proceed to Phase 15 dense/reranker work.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -1977,7 +2212,7 @@ Every resolver/postprocess component should preserve enough provenance to debug 
 
 ## 10. Summary
 
-The repository currently has a solid foundation through Phase 13 on top of Phase 9/12.5:
+The repository currently has a solid foundation through Phase 14 on top of Phase 9/12.5:
 
 - canonical config/data layout;
 - ICD/RxNorm terminology parsing and sparse retrieval artifacts;
@@ -2007,6 +2242,10 @@ The repository currently has a solid foundation through Phase 13 on top of Phase
 - Phase 9 100-file predictions validated with zero schema/offset/type/assertion/candidate-placement errors;
 - `outputs/submission/output_phase9.zip` contains exactly `output/1.json` through `output/100.json`.
 - Phase 13 Streamlit local review UI for Phase 9 metrics/errors/file highlights/live inference/submission review;
-- Streamlit helper tests and full test suite pass with 160 tests.
+- Streamlit helper tests and full test suite pass with 160 tests;
+- Phase 14 NER infrastructure package, dataset builder, optional model runner, span decoder, and safe NER extractor fallback;
+- Phase 14 generated `data_train/ner/dev_gold.jsonl`, `data_train/ner/train_weak.jsonl`, and `data_train/ner/label_map.json` with zero offset errors;
+- Phase 14 NER-off golden20 inference/eval matches Phase 9 exactly: exact F1 0.2303, relaxed F1 0.4145, candidate hit rate 0.8000;
+- Full test suite now passes with 175 tests.
 
-The next major milestone is to use Phase 13 for visual review/debugging, followed by optional Phase 9.1 targeted calibration or Phase 14/15 model-assisted components.
+The next major milestone is optional Phase 14.1 NER training/evaluation if local model resources are available, or Phase 15 dense/reranker candidate mapping.

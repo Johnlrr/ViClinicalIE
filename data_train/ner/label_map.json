@@ -1,0 +1,28 @@
+{
+  "label2id": {
+    "O": 0,
+    "B-TRIỆU_CHỨNG": 1,
+    "I-TRIỆU_CHỨNG": 2,
+    "B-CHẨN_ĐOÁN": 3,
+    "I-CHẨN_ĐOÁN": 4,
+    "B-THUỐC": 5,
+    "I-THUỐC": 6,
+    "B-TÊN_XÉT_NGHIỆM": 7,
+    "I-TÊN_XÉT_NGHIỆM": 8,
+    "B-KẾT_QUẢ_XÉT_NGHIỆM": 9,
+    "I-KẾT_QUẢ_XÉT_NGHIỆM": 10
+  },
+  "id2label": {
+    "0": "O",
+    "1": "B-TRIỆU_CHỨNG",
+    "2": "I-TRIỆU_CHỨNG",
+    "3": "B-CHẨN_ĐOÁN",
+    "4": "I-CHẨN_ĐOÁN",
+    "5": "B-THUỐC",
+    "6": "I-THUỐC",
+    "7": "B-TÊN_XÉT_NGHIỆM",
+    "8": "I-TÊN_XÉT_NGHIỆM",
+    "9": "B-KẾT_QUẢ_XÉT_NGHIỆM",
+    "10": "I-KẾT_QUẢ_XÉT_NGHIỆM"
+  }
+}

@@ -9,6 +9,7 @@ import pandas as pd
 from src.config import AppConfig
 from src.data_types import FinalEntity, MappingCandidate
 from src.linking.candidate_selector import CandidateSelectionConfig, select_candidates
+from src.linking.rerank_lite import rerank_icd_candidates
 from src.linking.sparse_retriever import BM25AliasRetriever, SparseAliasRetriever
 from src.linking.terminology_normalizer import normalize_for_lookup, normalize_no_diacritics_for_lookup
 
@@ -47,6 +48,7 @@ class ICD10Linker:
         self.top_k_tfidf = int(retrieval_cfg.get("top_k_tfidf", 20))
         self.top_k_bm25 = int(retrieval_cfg.get("top_k_bm25", 20))
         self.selection_config = CandidateSelectionConfig.from_dict(self.config.get("selection", {}))
+        self.rerank_config = self.config.get("candidate_reranking", {}) if isinstance(self.config.get("candidate_reranking", {}), dict) else {}
         self.manual_overrides = _normalize_manual_overrides(self.config.get("manual_overrides", {}))
         selection_cfg = self.config.get("selection", {}) if isinstance(self.config.get("selection", {}), dict) else {}
         self.min_retrieval_similarity = float(selection_cfg.get("min_retrieval_similarity", 0.55))
@@ -92,7 +94,6 @@ class ICD10Linker:
         return replace(entity, candidates=selected.chosen_codes, provenance=provenance)
 
     def generate_candidates(self, mention: str, context: str = "") -> list[MappingCandidate]:
-        del context  # reserved for later deterministic context boosts/reranking
         cache_key = normalize_for_lookup(mention)
         if cache_key in self._candidate_cache:
             return list(self._candidate_cache[cache_key])
@@ -105,6 +106,7 @@ class ICD10Linker:
                 candidates.extend(self._tfidf_candidates(query))
                 candidates.extend(self._bm25_candidates(query))
         merged = self._merge_candidates(candidates)
+        merged = rerank_icd_candidates(merged, mention, context=context, config=self.rerank_config)
         self._candidate_cache[cache_key] = merged
         return list(merged)
 
@@ -288,6 +290,7 @@ def _candidate_to_log(candidate: MappingCandidate) -> dict[str, Any]:
         "alias_source": candidate.metadata.get("alias_source", ""),
         "source": candidate.metadata.get("retriever", candidate.metadata.get("match_type", "")),
         "query_alias_similarity": candidate.metadata.get("query_alias_similarity"),
+        "rerank_lite": candidate.metadata.get("rerank_lite"),
     }
 
 

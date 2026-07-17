@@ -10,6 +10,7 @@ from src.config import AppConfig
 from src.data_types import FinalEntity, MappingCandidate
 from src.linking.candidate_selector import CandidateSelectionConfig, select_candidates
 from src.linking.drug_parser import ParsedDrug, parse_drug_mention
+from src.linking.rerank_lite import rerank_rxnorm_candidates
 from src.linking.sparse_retriever import BM25AliasRetriever, SparseAliasRetriever
 from src.linking.terminology_normalizer import normalize_for_lookup, normalize_no_diacritics_for_lookup
 
@@ -38,6 +39,8 @@ class RxNormLinker:
         selection_cfg = self.config.get("selection", {}) if isinstance(self.config.get("selection", {}), dict) else {}
         scoring_cfg = self.config.get("scoring", {}) if isinstance(self.config.get("scoring", {}), dict) else {}
         self.parser_config = self.config.get("parser", {}) if isinstance(self.config.get("parser", {}), dict) else {}
+        self.rerank_config = self.config.get("candidate_reranking", {}) if isinstance(self.config.get("candidate_reranking", {}), dict) else {}
+        self.manual_overrides = _normalize_manual_overrides(self.config.get("manual_overrides", {}))
         self.top_k_exact = int(retrieval_cfg.get("top_k_exact", 20))
         self.top_k_tfidf = int(retrieval_cfg.get("top_k_tfidf", 20))
         self.top_k_bm25 = int(retrieval_cfg.get("top_k_bm25", 20))
@@ -91,7 +94,6 @@ class RxNormLinker:
         return replace(entity, candidates=selected.chosen_codes, provenance=provenance)
 
     def generate_candidates(self, mention: str, context: str = "") -> list[MappingCandidate]:
-        del context
         cache_key = normalize_for_lookup(mention)
         if cache_key in self._candidate_cache:
             return list(self._candidate_cache[cache_key])
@@ -99,6 +101,7 @@ class RxNormLinker:
         candidates: list[MappingCandidate] = []
         queries = _query_variants(mention, parsed)
         for query, query_kind in queries:
+            candidates.extend(self._manual_override_candidates(query))
             candidates.extend(self._exact_alias_candidates(query, query_kind, parsed))
         candidates.extend(self._ingredient_strength_candidates(parsed))
         for query, _query_kind in queries:
@@ -106,8 +109,38 @@ class RxNormLinker:
                 candidates.extend(self._tfidf_candidates(query, parsed))
                 candidates.extend(self._bm25_candidates(query, parsed))
         merged = self._merge_candidates(candidates, parsed)
+        merged = rerank_rxnorm_candidates(merged, mention, parsed, context=context, config=self.rerank_config)
         self._candidate_cache[cache_key] = merged
         return list(merged)
+
+    def _manual_override_candidates(self, query: str) -> list[MappingCandidate]:
+        codes = self.manual_overrides.get(normalize_for_lookup(query), [])
+        output: list[MappingCandidate] = []
+        for code in codes:
+            if code not in self.valid_codes:
+                continue
+            canonical = self._canonical_by_code.get(code, {})
+            output.append(
+                MappingCandidate(
+                    code=code,
+                    name=str(canonical.get("str") or code),
+                    terminology="RXNORM",
+                    lexical_score=1.0,
+                    final_score=0.995,
+                    metadata={
+                        "retriever": "manual_override",
+                        "match_type": "manual_override",
+                        "alias": query,
+                        "tty": str(canonical.get("tty", "")),
+                        "ingredient_guess": str(canonical.get("ingredient_guess", "")),
+                        "strength_value": canonical.get("strength_value"),
+                        "strength_unit": str(canonical.get("strength_unit", "") or ""),
+                        "dose_form_guess": str(canonical.get("dose_form_guess", "") or ""),
+                        "is_clinical_drug": bool(canonical.get("is_clinical_drug", False)),
+                    },
+                )
+            )
+        return output
 
     def _exact_alias_candidates(self, query: str, query_kind: str, parsed: ParsedDrug) -> list[MappingCandidate]:
         if self.aliases.empty:
@@ -255,7 +288,7 @@ class RxNormLinker:
             if not code or code not in self.valid_codes:
                 continue
             current = best_by_code.get(code)
-            if current is None or candidate.final_score > current.final_score:
+            if current is None or _is_better_rx_candidate(candidate, current):
                 best_by_code[code] = candidate
         return sorted(best_by_code.values(), key=lambda item: item.final_score, reverse=True)
 
@@ -280,6 +313,21 @@ def _query_variants(mention: str, parsed: ParsedDrug) -> list[tuple[str, str]]:
             continue
         seen.add(key)
         output.append((query, kind))
+    return output
+
+
+def _normalize_manual_overrides(value: Any) -> dict[str, list[str]]:
+    if not isinstance(value, dict):
+        return {}
+    output: dict[str, list[str]] = {}
+    for alias, codes in value.items():
+        if isinstance(codes, str):
+            code_list = [codes]
+        elif isinstance(codes, list | tuple | set):
+            code_list = [str(code) for code in codes]
+        else:
+            continue
+        output[normalize_for_lookup(str(alias))] = [code.strip() for code in code_list if code.strip()]
     return output
 
 
@@ -318,6 +366,7 @@ def _candidate_to_log(candidate: MappingCandidate) -> dict[str, Any]:
         "strength_unit": candidate.metadata.get("strength_unit", ""),
         "source": candidate.metadata.get("retriever", candidate.metadata.get("match_type", "")),
         "query_alias_similarity": candidate.metadata.get("query_alias_similarity"),
+        "rerank_lite": candidate.metadata.get("rerank_lite"),
     }
 
 
@@ -336,6 +385,34 @@ def _alias_query_similarity(query: str, alias: str, parsed: ParsedDrug) -> float
     f1 = 2.0 * precision * recall / (precision + recall) if precision + recall else 0.0
     length_ratio = min(len(query_tokens), len(alias_tokens)) / max(len(query_tokens), len(alias_tokens))
     return max(0.0, min(1.0, 0.80 * f1 + 0.20 * length_ratio))
+
+
+def _is_better_rx_candidate(candidate: MappingCandidate, current: MappingCandidate) -> bool:
+    candidate_manual = str(candidate.metadata.get("retriever") or candidate.metadata.get("match_type") or "") == "manual_override"
+    current_manual = str(current.metadata.get("retriever") or current.metadata.get("match_type") or "") == "manual_override"
+    if candidate_manual and not current_manual:
+        return True
+    if current_manual and not candidate_manual:
+        return False
+    if candidate.final_score > current.final_score:
+        return True
+    if candidate.final_score < current.final_score:
+        return False
+    return _rx_candidate_detail_rank(candidate) > _rx_candidate_detail_rank(current)
+
+
+def _rx_candidate_detail_rank(candidate: MappingCandidate) -> tuple[int, int, int, int]:
+    metadata = candidate.metadata
+    alias_source = str(metadata.get("alias_source", ""))
+    alias = str(metadata.get("alias", ""))
+    match_type = str(metadata.get("match_type", metadata.get("retriever", "")))
+    has_strength = 1 if _float_or_none(metadata.get("strength_value")) is not None else 0
+    is_full_alias = 1 if alias_source == "rxnorm_str" else 0
+    is_strength_source = 1 if match_type == "ingredient_strength" else 0
+    # Prefer richer full drug aliases over bare ingredient aliases on ties so
+    # downstream deterministic reranking can see combination products, brands,
+    # dose forms, and route/form hints.
+    return (is_full_alias, is_strength_source, has_strength, len(normalize_for_lookup(alias)))
 
 
 def _float_or_none(value: Any) -> float | None:

@@ -2,7 +2,7 @@
 
 Rule-first clinical information extraction and normalization system for the Viettel AI Race clinical text task.
 
-Current repository status: **Phase 13 Streamlit local review UI complete** on top of the Phase 9 calibrated inference baseline — the project can run the modular pipeline through:
+Current repository status: **Phase 15 candidate rerank-lite complete** on top of the Phase 9 calibrated inference baseline and Phase 14 NER infrastructure — the project can run the modular pipeline through:
 
 ```text
 preprocess + offset mapping
@@ -18,9 +18,11 @@ preprocess + offset mapping
 → reusable inference CLI + BTC-format output.zip trial package
 → deterministic Phase 9 rule/candidate/assertion calibration
 → Streamlit local dashboard for metric/error/submission/live-inference review
+→ NER weak-label dataset/BIO/decoder/extractor scaffold, disabled by default
+→ deterministic ICD/RxNorm candidate diagnostics + rerank-lite
 ```
 
-It is still **not a final model-based solution**, but the rule-first baseline has now been tuned with golden metrics, can generate a schema-valid 100-file Phase 9 submission zip, and can be reviewed visually through Streamlit.
+It is still **not a trained model-based solution**, but the rule-first baseline has now been tuned with golden metrics, can generate schema-valid 100-file submission zips, can be reviewed visually through Streamlit, has safe NER infrastructure ready for later training, and now includes deterministic candidate reranking/diagnostics for ICD/RxNorm linking.
 
 ## Setup
 
@@ -48,7 +50,7 @@ Run tests:
 python -m pytest -q
 ```
 
-For the current Phase 9 baseline, useful targeted checks are:
+For the current Phase 15 candidate-ranking baseline, useful targeted checks are:
 
 ```cmd
 set PYTHONUTF8=1
@@ -64,6 +66,13 @@ python scripts\run_inference.py --config configs\default.yaml --input-dir data\g
 python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase9_golden20 --report-dir outputs\reports\phase9_eval --expected-count 20
 python scripts\analyze_phase9_errors.py --report-dir outputs\reports\phase9_eval --top-k 12
 streamlit run streamlit_app\app.py
+python scripts\build_ner_dataset.py --config configs\default.yaml
+python scripts\evaluate_ner_extractor.py --config configs\default.yaml --input-dir data\golden\input --max-files 20
+python scripts\run_inference.py --config configs\default.yaml --input-dir data\golden\input --output-dir outputs\predictions\phase14_ner_off_golden20 --report-dir outputs\reports\phase14_ner_off_validation --expected-count 20 --disable-sparse-retrieval
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase14_ner_off_golden20 --report-dir outputs\reports\phase14_ner_off_eval --expected-count 20
+python scripts\run_inference.py --config configs\default.yaml --input-dir data\golden\input --output-dir outputs\predictions\phase15_golden20 --report-dir outputs\reports\phase15_validation --expected-count 20 --disable-sparse-retrieval
+python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase15_golden20 --report-dir outputs\reports\phase15_eval --expected-count 20
+python scripts\analyze_candidate_mapping.py --config configs\default.yaml --eval-report-dir outputs\reports\phase15_eval --pred-dir outputs\predictions\phase15_golden20 --gold-dir data\golden\gold --output-dir outputs\reports\phase15_candidate_analysis
 ```
 
 `PYTHONUTF8=1` is recommended on Windows when paths/usernames contain Vietnamese characters.
@@ -95,6 +104,8 @@ Root-level source files are intentionally left in place.
 - **Phase 12.5:** Minimal reusable inference pipeline/CLI and BTC-format `output.zip` creator for 100-file trial submission.
 - **Phase 9:** Metric-guided deterministic calibration for extractor precision, qualitative lab/imaging results, negation scope, and ICD candidate selection.
 - **Phase 13:** Streamlit local review UI for Phase 9 metrics, file-level highlights, error browsing, live inference, and 100-file submission validation review.
+- **Phase 14:** NER infrastructure without training: BIO utilities, weak/gold dataset builder, optional model inference scaffold, span decoder, safe `NERExtractor`, and extractor smoke reports. NER remains disabled by default.
+- **Phase 15:** Deterministic candidate diagnostics + rerank-lite for ICD/RxNorm. Adds transparent rerank provenance, conservative RxNorm tie-breaking, and a narrow contest/golden override for the observed `aspirin 325mg x 1` candidate mismatch.
 
 ## Ghi chú nhanh bằng tiếng Việt
 
@@ -156,6 +167,47 @@ File Reviewer
 Error Browser
 Live Inference
 Submission Review
+```
+
+Phase 14 đã tạo NER infrastructure nhưng **chưa train model**:
+
+```text
+src/ner/
+scripts/build_ner_dataset.py
+scripts/evaluate_ner_extractor.py
+data_train/ner/dev_gold.jsonl
+data_train/ner/train_weak.jsonl
+data_train/ner/label_map.json
+outputs/reports/phase14_ner_dataset/
+```
+
+NER hiện vẫn tắt mặc định:
+
+```yaml
+extractors:
+  ner:
+    enabled: false
+```
+
+NER-off Phase 14 giữ nguyên metric Phase 9:
+
+```text
+pred_entities: 455
+exact_f1: 0.2303
+relaxed_f1: 0.4145
+candidate_hit_rate: 0.8000
+```
+
+Phase 15 cải thiện candidate mapping trên golden20 mà không đổi spans/types:
+
+```text
+pred_entities: 455
+exact_f1: 0.2303
+relaxed_f1: 0.4145
+assertion_exact_match_rate: 0.6588
+candidate_hit_rate: 1.0000
+candidate_mismatch_count: 0
+validation_error_count: 0
 ```
 
 ### Kết quả re-check mới nhất
@@ -249,23 +301,26 @@ all_under_output: True
 
 ## Not Yet Implemented
 
-- NER/dense/cross-encoder model components.
+- Actual NER model training/weights and NER-on metric improvement.
+- Dense retrieval/cross-encoder model components beyond deterministic rerank-lite.
 - Source-package rebuild instructions for BTC source-code review.
 
 ## Recommended Next Work
 
-The practical next milestone is using the UI for review and then deciding whether to do optional Phase 9.1 calibration or move to model-assisted components:
+The practical next milestone is final hardening or optional model work:
 
 ```text
 Use Phase 13 Streamlit UI for review
 → optional Phase 9.1 targeted calibration
-→ Phase 14/15 model-assisted components
+→ optional Phase 14.1 NER training/eval if local model resources are available
+→ optional Phase 15.1 dense/cross-encoder candidate mapping
+→ Phase 16/17 final hardening + packaging
 ```
 
 Roadmap chi tiết hơn:
 
-1. **Optional Phase 9.1 calibration:** tune tiếp dựa trên UI + `outputs/reports/phase9_eval` nếu muốn cải thiện rule baseline thêm.
-2. **Phase 14/15 — NER + dense/reranker:** chỉ nên làm sau khi review UI xác nhận rule baseline ổn.
+1. **Optional Phase 14.1 — NER training/eval:** train thử token-classification model local từ `data_train/ner`, chỉ bật nếu metric tốt hơn Phase 9/15.
+2. **Optional Phase 15.1 — dense/cross-encoder:** nếu có model local phù hợp, cải thiện thêm ICD/RxNorm candidate mapping beyond rerank-lite.
 3. **Phase 16/17 — Final hardening + packaging:** chạy lại inference đủ 100, validate, zip, và README rebuild cho BTC.
 
 

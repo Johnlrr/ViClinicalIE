@@ -15,6 +15,8 @@ def _write_minimal_processed(tmp_path: Path) -> None:
             {"rxcui": "clinical_25", "tty": "SCD", "str": "metoprolol 25 MG Oral Tablet", "strength_value": 25.0, "strength_unit": "MG", "is_clinical_drug": True},
             {"rxcui": "atenolol_in", "tty": "IN", "str": "atenolol", "strength_value": None, "strength_unit": "", "is_clinical_drug": False},
             {"rxcui": "acetaminophen_in", "tty": "IN", "str": "acetaminophen", "strength_value": None, "strength_unit": "", "is_clinical_drug": False},
+            {"rxcui": "aspirin_combo", "tty": "SCD", "str": "aspirin 325 MG / carisoprodol 200 MG Oral Tablet", "strength_value": 325.0, "strength_unit": "MG", "is_clinical_drug": True},
+            {"rxcui": "aspirin_plain", "tty": "SCD", "str": "aspirin 325 MG Oral Tablet", "strength_value": 325.0, "strength_unit": "MG", "is_clinical_drug": True},
         ]
     )
     aliases = pd.DataFrame(
@@ -70,6 +72,58 @@ def _write_minimal_processed(tmp_path: Path) -> None:
                 "strength_unit": "",
                 "dose_form_guess": "",
                 "is_clinical_drug": False,
+            },
+            {
+                "rxcui": "aspirin_combo",
+                "tty": "SCD",
+                "alias": "aspirin 325 MG / carisoprodol 200 MG Oral Tablet",
+                "alias_norm": "aspirin 325 mg/carisoprodol 200 mg oral tablet",
+                "alias_no_diacritics": "aspirin 325 mg/carisoprodol 200 mg oral tablet",
+                "alias_source": "rxnorm_str",
+                "ingredient_guess": "aspirin",
+                "strength_value": 325.0,
+                "strength_unit": "MG",
+                "dose_form_guess": "Oral Tablet",
+                "is_clinical_drug": True,
+            },
+            {
+                "rxcui": "aspirin_combo",
+                "tty": "SCD",
+                "alias": "aspirin",
+                "alias_norm": "aspirin",
+                "alias_no_diacritics": "aspirin",
+                "alias_source": "ingredient_guess",
+                "ingredient_guess": "aspirin",
+                "strength_value": 325.0,
+                "strength_unit": "MG",
+                "dose_form_guess": "Oral Tablet",
+                "is_clinical_drug": True,
+            },
+            {
+                "rxcui": "aspirin_plain",
+                "tty": "SCD",
+                "alias": "aspirin 325 MG Oral Tablet",
+                "alias_norm": "aspirin 325 mg oral tablet",
+                "alias_no_diacritics": "aspirin 325 mg oral tablet",
+                "alias_source": "rxnorm_str",
+                "ingredient_guess": "aspirin",
+                "strength_value": 325.0,
+                "strength_unit": "MG",
+                "dose_form_guess": "Oral Tablet",
+                "is_clinical_drug": True,
+            },
+            {
+                "rxcui": "aspirin_plain",
+                "tty": "SCD",
+                "alias": "aspirin",
+                "alias_norm": "aspirin",
+                "alias_no_diacritics": "aspirin",
+                "alias_source": "ingredient_guess",
+                "ingredient_guess": "aspirin",
+                "strength_value": 325.0,
+                "strength_unit": "MG",
+                "dose_form_guess": "Oral Tablet",
+                "is_clinical_drug": True,
             },
         ]
     )
@@ -127,3 +181,37 @@ def test_rxnorm_linker_unknown_drug_returns_no_candidate(tmp_path) -> None:
     linker = RxNormLinker(tmp_path, {"retrieval": {"top_k_tfidf": 0, "top_k_bm25": 0}})
     linked = linker.link_entity(FinalEntity(text="notarealdrug 123mg", start=0, end=19, type="THUỐC"), raw_text="notarealdrug 123mg")
     assert linked.candidates == []
+
+
+def test_rxnorm_linker_rerank_prefers_plain_drug_over_unmentioned_combination(tmp_path) -> None:
+    _write_minimal_processed(tmp_path)
+    linker = RxNormLinker(
+        tmp_path,
+        {
+            "retrieval": {"top_k_exact": 20, "top_k_tfidf": 0, "top_k_bm25": 0},
+            "candidate_reranking": {"enabled": True},
+        },
+    )
+
+    candidates = linker.generate_candidates("aspirin 325mg x 1")
+
+    assert candidates[0].code == "aspirin_plain"
+    assert "unmentioned_combination_penalty" in candidates[-1].metadata["rerank_lite"]["reasons"]
+
+
+def test_rxnorm_linker_manual_override_can_supply_contest_code(tmp_path) -> None:
+    _write_minimal_processed(tmp_path)
+    linker = RxNormLinker(
+        tmp_path,
+        {
+            "manual_overrides": {"aspirin 325mg x 1": ["aspirin_combo"]},
+            "retrieval": {"top_k_exact": 20, "top_k_tfidf": 0, "top_k_bm25": 0},
+            "selection": {"max_candidates": 1, "min_score_top1": 0.60},
+            "candidate_reranking": {"enabled": True, "rx_manual_override_bonus": 0.30},
+        },
+    )
+
+    linked = linker.link_entity(FinalEntity(text="aspirin 325mg x 1", start=0, end=17, type="THUỐC"), raw_text="aspirin 325mg x 1")
+
+    assert linked.candidates == ["aspirin_combo"]
+    assert linked.provenance["rxnorm_linking"]["chosen"][0]["source"] == "manual_override"
