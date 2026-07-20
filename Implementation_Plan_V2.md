@@ -1035,7 +1035,52 @@ Nếu gate không đạt, nhánh V2 không được promote. `V1_FROZEN` tiếp 
 | P2 | NER-6.2 | Fine-tune and ablate nếu go | NER-6.1 | Candidate checkpoint |
 | P0 | NER-7.1 | Freeze accepted NER artifacts và handoff | Accepted config | Phase exit bundle |
 
-## 8.14 Milestone plan
+## 8.14 Phân công nhóm 3 người
+
+Cách phân công này cho phép triển khai song song các work package `NER-0` đến `NER-6`:
+
+| Người | Workstream | Work package | Đầu ra chính |
+|---|---|---|---|
+| **Người 1 – Pipeline & Evaluation** | Freeze V1, tích hợp và benchmark GLiNER zero-shot, validator, error analysis và fusion | `NER-0` đến `NER-4` | Zero-shot baseline, per-type error report, hybrid NER config |
+| **Người 2 – Problem Data** | Synthetic cho `TRIỆU_CHỨNG`, `CHẨN_ĐOÁN`; SYM/DX contrast và hard negatives | `NER-5` | Versioned Problem NER dataset và manifest |
+| **Người 3 – Structured Data** | Synthetic cho `THUỐC`, `TÊN_XÉT_NGHIỆM`, `KẾT_QUẢ_XÉT_NGHIỆM`; test-result pairs, hard negatives và noise | `NER-5` | Versioned Structured NER dataset và manifest |
+
+Trước khi tách nhánh, cả nhóm phải chốt annotation contract, JSONL schema và validator dùng chung. Mọi sample được nhận phải đúng raw offset, có `template_family`/`concept_family`, pass duplicate/leakage checks và manual review.
+
+### Data contract phải chốt trước khi synthesize
+
+- **Format:** JSONL, mỗi dòng là một sample; negative sample dùng `"entities": []`.
+- **Sample fields:** `file_id`, `text`, `source`, `generator_version`, `seed`, `entities`.
+- **Entity fields:** `text`, `start`, `end`, `type`, `source`, `metadata`.
+- **Labels:** chỉ dùng `TRIỆU_CHỨNG`, `CHẨN_ĐOÁN`, `THUỐC`, `TÊN_XÉT_NGHIỆM`, `KẾT_QUẢ_XÉT_NGHIỆM`.
+- **Offsets:** zero-based, end-exclusive và bắt buộc `text[start:end] == entity.text` trên raw text.
+- **Metadata tối thiểu:** `template_family`, `concept_family`, `noise_profile`, `concept_id` nếu có; dữ liệu biến đổi thêm `original_sample_id` và `transformations`.
+- **Boundary policy:** chốt cách xử lý negation cue, drug formulation, test/result, imaging finding, suspected/screening concept và overlap trước khi generate hàng loạt.
+- **Split:** group theo `template_family`, `concept_family` và `original_sample_id`; clean/noisy variants của cùng sample phải ở cùng split.
+- **Quality gate:** shared validator phải đạt 100% offset/label validity, không marker leakage, không duplicate/leakage và có human spot-check.
+
+Ba artifact dùng chung phải được version hóa: `ANNOTATION_GUIDELINE_V2.md`, NER data schema và dataset validator. Hai data owners không được tự thay schema hoặc boundary policy trên branch riêng.
+
+Nhịp phối hợp:
+
+```text
+Người 1 chạy GLiNER và xuất error buckets
+→ Người 2/3 sinh dữ liệu nhắm đúng lỗi
+→ validate + cross-review
+→ Người 1 benchmark lại
+→ quyết định fine-tuning go/no-go theo NER-6
+```
+
+Trong hai tuần đầu:
+
+1. **Dựng nền:** Người 1 reproduce zero-shot; Người 2/3 tạo pilot data.
+2. **Data V0:** mỗi data owner chỉ mở rộng sau khi pilot pass quality gate.
+3. **Tích hợp:** so sánh V1-only, GLiNER-only, naive union và deterministic fusion.
+4. **Phase review:** chỉ fine-tune khi extraction còn là bottleneck và synthetic data cải thiện được error buckets mục tiêu.
+
+Không dùng số lượng sample làm KPI chính. KPI chung là offset hợp lệ 100%, không leakage, dữ liệu đủ đa dạng và cải thiện metric/error bucket sau benchmark.
+
+## 8.15 Milestone plan
 
 Timeline được quản lý theo dependency thay vì ngày cứng vì chưa có team capacity/compute SLA.
 
