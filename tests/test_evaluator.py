@@ -54,6 +54,7 @@ def test_write_evaluation_report(tmp_path) -> None:
     assert (tmp_path / "per_file_metrics.csv").is_file()
     assert (tmp_path / "error_cases.jsonl").is_file()
     assert (tmp_path / "samples.md").is_file()
+    assert (tmp_path / "type_confusion_matrix.csv").is_file()
 
 
 def test_evaluator_on_golden_self_match_has_perfect_exact_metrics() -> None:

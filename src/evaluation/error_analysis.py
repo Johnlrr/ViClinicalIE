@@ -7,11 +7,11 @@ from src.evaluation.span_matcher import containment_ratio, nearest_overlaps, spa
 
 
 def span_mismatch_subtype(pred: EvalEntity, gold: EvalEntity) -> str:
-    if pred.start <= gold.start and pred.end >= gold.end:
-        return "pred_too_long"
-    if gold.start <= pred.start and gold.end >= pred.end:
-        return "pred_too_short"
-    return "partial_overlap"
+    if pred.start == gold.start and pred.end != gold.end:
+        return "right_boundary_error"
+    if pred.start != gold.start and pred.end == gold.end:
+        return "left_boundary_error"
+    return "both_boundary_error"
 
 
 def find_span_mismatches(

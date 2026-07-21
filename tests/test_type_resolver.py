@@ -123,6 +123,17 @@ def test_unresolved_invalid_type_is_logged_once() -> None:
     assert resolver.unresolved[0]["reason"] == "invalid_or_missing_raw_type"
 
 
+def test_gliner_candidate_keeps_model_provenance() -> None:
+    raw = "đau ngực"
+    entity = TypeResolver().resolve([
+        _candidate(raw, raw, source="gliner", raw_type="TRIỆU_CHỨNG", features={"window_id": "c0:w0", "prompt_label": "symptom"})
+    ], raw)[0]
+
+    assert entity.type == "TRIỆU_CHỨNG"
+    assert entity.provenance["chosen_candidate_features"]["window_id"] == "c0:w0"
+    assert entity.provenance["source_candidates"][0]["features"]["prompt_label"] == "symptom"
+
+
 def test_different_span_overlaps_are_kept_and_logged() -> None:
     raw = "đau bụng vùng hạ sườn phải"
     candidates = [

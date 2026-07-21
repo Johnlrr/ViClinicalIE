@@ -1,0 +1,79 @@
+# ViClinicalIE NER Annotation Guideline V2.0 (Draft for Team Freeze)
+
+This document is the shared boundary/type contract for Phase 1. Any semantic
+change requires a new version and a record of affected datasets/runs.
+
+## 1. Universal contract
+
+- Labels are exactly `TRIỆU_CHỨNG`, `CHẨN_ĐOÁN`, `THUỐC`,
+  `TÊN_XÉT_NGHIỆM`, and `KẾT_QUẢ_XÉT_NGHIỆM`.
+- Offsets are zero-based and end-exclusive.
+- Every entity satisfies `sample["text"][start:end] == entity["text"]`.
+- Preserve the raw spelling, accents, case, spacing, and typo in entity text.
+- Exclude surrounding whitespace, list markers, and terminal punctuation.
+- Do not create a corrected/non-verbatim output span.
+
+## 2. Symptom and diagnosis
+
+- Exclude assertion cues such as `không`, `không có`, and `tiền sử`.
+- Exclude presentation/diagnosis cues such as `bệnh nhân có`, `chẩn đoán`,
+  `nghi ngờ`, and `gợi ý` when the clinical concept remains self-contained.
+- `TRIỆU_CHỨNG` describes a manifestation experienced or observed in the
+  patient (for example `đau ngực`, `khó thở`).
+- `CHẨN_ĐOÁN` denotes a named disease, disorder, syndrome, or diagnostic
+  conclusion (for example `viêm phổi`, `suy tim`).
+- Negated, historical, family, suspected, and ruled-out mentions are still NER
+  mentions; their status is handled by the assertion stage.
+- Keep clinically distinguishing modifiers inside the concept when present,
+  such as anatomy, laterality, acuity, type, stage, or subtype.
+
+## 3. Drug
+
+- Anchor the span on a recognizable ingredient, generic name, or brand.
+- Include strength, unit, concentration, dose form, route, frequency, and PRN
+  tokens when they form one contiguous medication formulation/order phrase.
+- Stop before indication phrases such as `điều trị`, `cho`, `để`, `khi`, or
+  `nếu` unless verified gold demonstrates otherwise.
+- Combination products may remain one span. Fused raw spellings remain
+  verbatim; do not invent offsets for a normalized split.
+
+## 4. Test name and result
+
+- Emit the test/analyte/procedure name as `TÊN_XÉT_NGHIỆM`.
+- Emit its value, unit, range, or qualitative interpretation as
+  `KẾT_QUẢ_XÉT_NGHIỆM` when the result is explicitly tied to a test.
+- Test and result use separate spans.
+- Do not emit an isolated number without sufficiently strong test context.
+- `âm tính`, `dương tính`, and `bình thường` are results, not generic negation.
+- For `từ v1 lên v2`, keep the contiguous result expression supported by the
+  verified annotation convention; do not merge the test name into it.
+
+## 5. Imaging
+
+- The imaging procedure/name is `TÊN_XÉT_NGHIỆM`.
+- A measured or descriptive imaging finding is `KẾT_QUẢ_XÉT_NGHIỆM` unless it
+  is explicitly stated as a named diagnostic conclusion, in which case it is
+  `CHẨN_ĐOÁN`.
+- Procedure and finding are separate spans.
+
+## 6. Overlap and duplicates
+
+- Exact duplicate `(start, end, type)` annotations are forbidden.
+- A full valid medication formulation is preferred over its nested drug name.
+- A symptom/diagnosis same-span conflict resolves to one type.
+- Test and result spans may coexist and must not be merged.
+- Other nesting requires explicit guideline examples before bulk generation.
+
+## 7. Synthetic JSONL contract
+
+Each line contains `file_id`, `text`, `source`, `generator_version`, `seed`,
+and `entities`. Negative samples use `"entities": []`.
+
+Each entity contains `text`, `start`, `end`, `type`, `source`, and `metadata`.
+Metadata contains `template_family`, `concept_family`, `noise_profile`, and
+`concept_id` when available. Transformed samples additionally contain
+`original_sample_id` and `transformations`.
+
+Split synthetic samples by `template_family`, `concept_family`, and
+`original_sample_id`. Clean and noisy variants of one original sample must stay
+in the same split.

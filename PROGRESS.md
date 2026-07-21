@@ -1,8 +1,10 @@
 # PROGRESS: ViClinicalIE implementation state
 
-**Last updated:** 2026-07-15  
-**Current implementation phase:** Phase 15 complete — deterministic candidate diagnostics + rerank-lite implemented on top of Phase 9 baseline; Phase 14 NER remains disabled by default  
-**Reference docs:** `ABOUT.md`, `Solution Design.md`, `Implementation Plan.md`
+**Last updated:** 2026-07-21
+
+**Current implementation phase:** V2 Phase 1 — NER-0 measurement foundation and NER-1 GLiNER zero-shot reproduction complete; NER-2 controlled benchmark is next
+
+**Reference docs:** `ABOUT.md`, `Solution_Design_V2.md`, `Implementation_Plan_V2.md`, `NER01_IMPLEMENTATION.md`
 
 ---
 
@@ -2164,6 +2166,303 @@ Known Phase 14 caveats:
 
 ---
 
+## 8I. V2 Phase 1 — NER-0 measurement foundation and NER-1 GLiNER reproduction
+
+**Status:** Implemented, validated, and benchmarked on 2026-07-21.
+
+V2 keeps the earlier token-classification NER infrastructure intact and adds a
+separate GLiNER semantic extractor. `configs/default.yaml` remains the V1
+fallback configuration; the V2 reproduction uses
+`configs/gliner_zero_shot.yaml`.
+
+### 8I.1 NER-0 — baseline, contracts, split, scorer, and oracle analysis
+
+Implemented shared contracts and measurement artifacts:
+
+```text
+configs/splits_v2.yaml
+data/golden/ANNOTATION_GUIDELINE_V2.md
+data/golden/ner_data_schema.json
+data/golden/ner_data_example.jsonl
+data/golden/DATA_REQUESTS_V0.md
+src/ner/data_validator.py
+src/evaluation/official_like_scorer.py
+scripts/freeze_v1_baseline.py
+scripts/validate_ner_dataset.py
+scripts/report_split_coverage.py
+scripts/run_official_like_score.py
+scripts/run_ner_oracles.py
+```
+
+The 20 verified notes are now divided into coverage-aware work sets:
+
+```text
+development: 1-12
+calibration: 13-16
+lockbox:     17-20
+```
+
+All three splits contain all five entity types. Lockbox use is prohibited for
+daily prompt/threshold/rule selection and is reserved for declared milestones.
+
+`V1_FROZEN` was reproduced twice with the same config, terminology artifacts,
+and inputs:
+
+```text
+files:                  20
+predicted entities:     455
+byte-identical files:   20/20
+prediction mismatches:  0
+validation errors:      0
+offset errors:          0
+schema errors:          0
+```
+
+Frozen/generated artifacts:
+
+```text
+outputs/baselines/v1_frozen/
+outputs/reports/v2_ner_baseline/
+```
+
+V1 diagnostic extraction result:
+
+```text
+exact precision: 0.2088
+exact recall:    0.2568
+exact F1:        0.2303
+relaxed F1:      0.4145
+```
+
+The evaluator now also reports left/right/both boundary errors and a five-type
+confusion matrix. A pre-existing per-type counting bug was fixed: reconstructed
+entities are now matched by stable `(file_id, record_index)` rather than Python
+object identity.
+
+The local scorer is explicitly marked `official_like_v1`, not the organizer
+grader. Gold-vs-gold returns 1.0 for all components. V1 results under this local
+profile are:
+
+```text
+text_score:       0.243721
+assertions_score: 0.120986
+candidates_score: 0.130747
+final_score:      0.161711
+```
+
+Diagnostic oracle ceilings under the documented greedy-overlap assumptions:
+
+```text
+baseline:    0.161711
+oracle span: 0.180693
+oracle type: 0.165698
+```
+
+The shared synthetic JSONL example passes the new validator:
+
+```text
+samples:  2
+entities: 1
+errors:   0
+```
+
+`data/golden/DATA_REQUESTS_V0.md` converts observed errors into pilot-data
+requests for the Problem Data and Structured Data owners. Primary targets are
+symptom boundary/precision contrasts, symptom-vs-diagnosis contrasts,
+test-result extraction, and full medication formulation boundaries.
+
+### 8I.2 NER-1 — GLiNER backend, windows, cache, and pipeline integration
+
+Implemented files:
+
+```text
+configs/gliner_zero_shot.yaml
+requirements-v2-ner.txt
+src/ner/gliner_backend.py
+src/ner/gliner_windows.py
+src/ner/prediction_cache.py
+src/extractors/gliner_extractor.py
+scripts/provision_gliner.py
+scripts/check_gliner_environment.py
+scripts/run_gliner_smoke.py
+scripts/benchmark_gliner.py
+scripts/write_gliner_model_manifest.py
+NER01_IMPLEMENTATION.md
+```
+
+Architecture:
+
+```text
+existing raw text/section chunks
+→ tokenizer-aligned GLiNER windows
+→ local GLiNER spans
+→ global raw-offset restoration
+→ exact overlap-window deduplication
+→ SpanCandidate(source="gliner")
+→ existing TypeResolver
+→ ClinicalIEPipeline.process_ner()
+```
+
+The existing token-classification `NERExtractor` was not replaced. GLiNER is a
+separate feature-flagged extractor, and `ClinicalIEPipeline(..., ner_only=True)`
+reuses the repository pipeline without initializing assertion or linking
+components.
+
+Pinned runtime used for the reproduced run:
+
+```text
+Python:       3.13.7 (development machine; 3.10/3.11 recommended for release)
+torch:        2.11.0
+transformers: 4.51.3
+gliner:       0.2.27
+safetensors:  0.7.0
+pytest:       8.4.2
+```
+
+Pinned model artifacts:
+
+```text
+urchade/gliner_multi-v2.1
+revision: 443d26d654e0324125a96bebd8e796c14ff2efe6
+
+microsoft/mdeberta-v3-base tokenizer/config
+revision: a0484667b22365f84929a935b5e50a51f71f159d
+```
+
+The mDeBERTa dependency is provisioned tokenizer-only; GLiNER already contains
+the encoder weights. Model and tokenizer manifests store file hashes. Final
+inference uses `required: true` and `local_files_only: true`, so a missing
+artifact fails fast instead of silently returning an empty result.
+
+Offline real-model smoke input:
+
+```text
+Bệnh nhân đau ngực và dùng aspirin.
+```
+
+Observed predictions:
+
+```text
+đau ngực → symptom, score 0.897188
+aspirin   → medication or drug, score 0.803847
+```
+
+Window/cache contract:
+
+```text
+maximum tokens/window: 320
+overlap tokens:         64
+raw offset mismatch:     0
+exact overlap duplicate: 0
+```
+
+The prediction cache key includes input, model metadata, label schema,
+windowing, threshold profile, and pass/inference options. Internal debug
+artifacts preserve model/pass/window provenance; submission-safe JSON excludes
+debug fields.
+
+### 8I.3 GLiNER development reproduction result
+
+The mandatory full five-label descriptive-English pass was run offline at the
+Training Session reference threshold `0.35` on the 12-note development split.
+This is a reproduction point, not the selected NER-2 configuration.
+
+```text
+gold entities: 205
+pred entities: 251
+
+exact precision:   0.1992
+exact recall:      0.2439
+exact F1:          0.2193
+relaxed precision: 0.3785
+relaxed recall:    0.4634
+relaxed F1:        0.4167
+```
+
+Per-type metrics:
+
+| Type | Exact F1 | Relaxed F1 |
+|---|---:|---:|
+| `CHẨN_ĐOÁN` | 0.3333 | 0.4722 |
+| `THUỐC` | 0.2222 | 0.4762 |
+| `TRIỆU_CHỨNG` | 0.2232 | 0.4549 |
+| `TÊN_XÉT_NGHIỆM` | 0.1961 | 0.3529 |
+| `KẾT_QUẢ_XÉT_NGHIỆM` | 0.0000 | 0.0541 |
+
+Prediction distribution:
+
+```text
+TRIỆU_CHỨNG:          143
+THUỐC:                 45
+CHẨN_ĐOÁN:             31
+TÊN_XÉT_NGHIỆM:        27
+KẾT_QUẢ_XÉT_NGHIỆM:     5
+```
+
+Validation and determinism:
+
+```text
+files:                    12
+entities checked:         251
+validation errors:          0
+offset errors:              0
+schema errors:              0
+exact duplicate warnings:   0
+two-run byte mismatches:     0/12
+```
+
+CPU-only runtime:
+
+```text
+first development run: 117.36 seconds
+cached rerun:           29.89 seconds
+per-note inference:     approximately 2-31 seconds before cache
+process working set:    approximately 1.3 GB
+```
+
+The reproduction confirms useful semantic recall but also substantial
+over-emission and exact-boundary errors. `KẾT_QUẢ_XÉT_NGHIỆM` is the largest
+residual gap; medication discovery has good relaxed recall but needs formulation
+boundary expansion. These findings are inputs to NER-2 and the two data-owner
+workstreams, not reasons to tune the NER-1 reproduction config in place.
+
+### 8I.4 Verification
+
+Commands and results:
+
+```text
+python -m pytest -q
+→ 198 passed
+
+python -m compileall -q src scripts tests
+→ pass
+
+git diff --check
+→ pass
+
+offline GLiNER smoke
+→ pass
+
+V1 two-run byte comparison
+→ 20/20 identical
+
+GLiNER development two-run byte comparison
+→ 12/12 identical
+```
+
+Known limitations and next gate:
+
+- Active development Python is 3.13.7; release rebuild should use a clean pinned
+  Python 3.10/3.11 environment.
+- Model weights live in the local Hugging Face cache and must be provisioned or
+  packaged separately; they are intentionally not committed to Git.
+- Threshold `0.35` is not calibrated and produces false positives.
+- No V1+GLiNER hybrid fusion has been promoted yet; that belongs to NER-3/NER-4.
+- Next work package is NER-2: controlled label, windowing, pass, and per-type
+  threshold benchmark without lockbox tuning.
+
+---
+
 ## 9. Practical continuation checklist
 
 For a future session, start here:
@@ -2195,9 +2494,24 @@ python scripts\build_ner_dataset.py --config configs\default.yaml
 python scripts\evaluate_ner_extractor.py --config configs\default.yaml --input-dir data\golden\input --max-files 20
 python scripts\run_inference.py --config configs\default.yaml --input-dir data\golden\input --output-dir outputs\predictions\phase14_ner_off_golden20 --report-dir outputs\reports\phase14_ner_off_validation --expected-count 20 --disable-sparse-retrieval
 python scripts\run_evaluate.py --config configs\default.yaml --input-dir data\golden\input --gold-dir data\golden\gold --pred-dir outputs\predictions\phase14_ner_off_golden20 --report-dir outputs\reports\phase14_ner_off_eval --expected-count 20
+
+# V2 NER-0 / NER-1
+python -m pip install -r requirements-v2-ner.txt
+python scripts\check_gliner_environment.py
+python scripts\validate_ner_dataset.py --input data\golden\ner_data_example.jsonl
+python scripts\report_split_coverage.py --split-config configs\splits_v2.yaml --input-dir data\golden\input --gold-dir data\golden\gold --output outputs\reports\v2_ner_baseline\split_coverage.json
+python scripts\run_official_like_score.py --pred-dir outputs\baselines\v1_frozen\predictions_run1 --gold-dir data\golden\gold --output outputs\reports\v2_ner_baseline\official_like_score.json
+python scripts\run_ner_oracles.py --pred-dir outputs\baselines\v1_frozen\predictions_run1 --gold-dir data\golden\gold --output outputs\reports\v2_ner_baseline\oracles.json
+python scripts\provision_gliner.py --model urchade/gliner_multi-v2.1 --max-workers 1
+python scripts\provision_gliner.py --model microsoft/mdeberta-v3-base --max-workers 1 --tokenizer-only
+set HF_HUB_OFFLINE=1
+set TRANSFORMERS_OFFLINE=1
+python scripts\run_gliner_smoke.py
+python scripts\benchmark_gliner.py --config configs\gliner_zero_shot.yaml --split-config configs\splits_v2.yaml --split development
 ```
 
-Then use Phase 13 UI for review, optionally train/evaluate NER using Phase 14 artifacts, or proceed to Phase 15 dense/reranker work.
+Then review the NER-1 error reports and run NER-2 controlled experiments. Do
+not use the V2 lockbox for daily label, threshold, or window selection.
 
 Before writing new extractor code, keep these invariants visible:
 
@@ -2246,6 +2560,20 @@ The repository currently has a solid foundation through Phase 14 on top of Phase
 - Phase 14 NER infrastructure package, dataset builder, optional model runner, span decoder, and safe NER extractor fallback;
 - Phase 14 generated `data_train/ner/dev_gold.jsonl`, `data_train/ner/train_weak.jsonl`, and `data_train/ner/label_map.json` with zero offset errors;
 - Phase 14 NER-off golden20 inference/eval matches Phase 9 exactly: exact F1 0.2303, relaxed F1 0.4145, candidate hit rate 0.8000;
-- Full test suite now passes with 175 tests.
+- V2 NER-0 freezes `V1_FROZEN` with 20/20 byte-identical files across two runs,
+  zero validation/offset/schema errors, a versioned annotation/data contract,
+  coverage-aware development/calibration/lockbox splits, an official-like local
+  scorer, boundary/type diagnostics, and span/type oracle reports;
+- V2 NER-1 adds a separate GLiNER backend/extractor, tokenizer-aligned overlapping
+  windows, exact raw-offset restoration, prediction caching, provenance, an
+  NER-only `ClinicalIEPipeline` entry point, pinned offline artifacts, and
+  fail-fast required-model behavior;
+- GLiNER zero-shot reproduction on the 12-note development split at threshold
+  0.35 produced exact F1 0.2193 and relaxed F1 0.4167 with zero validation,
+  offset, schema, duplicate, or two-run determinism errors;
+- Full test suite now passes with 198 tests.
 
-The next major milestone is optional Phase 14.1 NER training/evaluation if local model resources are available, or Phase 15 dense/reranker candidate mapping.
+The next major milestone is V2 NER-2: controlled zero-shot benchmarking of label
+schema, token-window strategy, pass strategy, and per-type thresholds. NER-3/4
+hybrid expert integration and fusion follow only after one zero-shot config is
+selected; fine-tuning remains conditional under NER-6.

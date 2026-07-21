@@ -1,0 +1,2 @@
+{"file_id":"problem_000001","text":"Bệnh nhân không đau ngực.","source":"task_aligned_synthetic","generator_version":"problem-v0.1.0","seed":42,"entities":[{"text":"đau ngực","start":16,"end":24,"type":"TRIỆU_CHỨNG","source":"problem_generator","metadata":{"template_family":"negated_symptom","concept_family":"chest_pain","noise_profile":"clean","concept_id":null}}]}
+{"file_id":"problem_negative_000001","text":"Bệnh nhân đến tái khám định kỳ.","source":"task_aligned_synthetic","generator_version":"problem-v0.1.0","seed":42,"entities":[]}

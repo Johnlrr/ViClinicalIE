@@ -139,7 +139,7 @@ class TypeResolver:
             return self._resolved(candidate, "CHẨN_ĐOÁN", "problem_disease_head", features)
         if source == "problem_rule" and features.has_symptom_head:
             return self._resolved(candidate, "TRIỆU_CHỨNG", "problem_symptom_head", features)
-        if source == "ner" and raw_type in VALID_ENTITY_TYPES:
+        if source in {"ner", "gliner"} and raw_type in VALID_ENTITY_TYPES:
             return self._resolved(candidate, str(raw_type), "ner_fallback", features)
         if raw_type in VALID_ENTITY_TYPES:
             return self._resolved(candidate, str(raw_type), "fallback", features)
@@ -199,6 +199,7 @@ class TypeResolver:
                 "section": candidate.section,
                 "type_priority": self.type_priority.get(chosen.entity_type, 0),
                 "source_priority": self.source_priority.get(candidate.source, 0),
+                "chosen_candidate_features": dict(candidate.features),
                 "warnings": warnings,
                 "type_features": self._features_payload(chosen.features),
                 "exact_span_candidate_count": len(resolved_group),
@@ -211,6 +212,7 @@ class TypeResolver:
                         "resolved_type": item.entity_type,
                         "confidence": item.confidence,
                         "reason": item.reason,
+                        "features": dict(item.candidate.features),
                     }
                     for item in resolved_group
                 ],

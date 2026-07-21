@@ -47,7 +47,7 @@ def load_config(
 ) -> AppConfig:
     root = Path(project_root).resolve() if project_root else PROJECT_ROOT
     resolved_config = _resolve_path(config_path, root).resolve()
-    config_data = load_yaml(resolved_config)
+    config_data = _load_config_with_extends(resolved_config)
 
     paths_config_value = config_data.get("paths_config")
     paths_data: dict[str, Any] = {}
@@ -76,6 +76,31 @@ def load_config(
         raw=raw,
         paths=resolved_paths,
     )
+
+
+def _load_config_with_extends(path: Path, stack: tuple[Path, ...] = ()) -> dict[str, Any]:
+    resolved = path.resolve()
+    if resolved in stack:
+        chain = " -> ".join(str(item) for item in (*stack, resolved))
+        raise ValueError(f"Circular config extends chain: {chain}")
+    data = load_yaml(resolved)
+    parent_value = data.pop("extends", None)
+    if not parent_value:
+        return data
+    parent_path = _resolve_path(parent_value, resolved.parent).resolve()
+    parent = _load_config_with_extends(parent_path, (*stack, resolved))
+    return _deep_merge(parent, data)
+
+
+def _deep_merge(base: Mapping[str, Any], override: Mapping[str, Any]) -> dict[str, Any]:
+    merged: dict[str, Any] = dict(base)
+    for key, value in override.items():
+        current = merged.get(key)
+        if isinstance(current, Mapping) and isinstance(value, Mapping):
+            merged[key] = _deep_merge(current, value)
+        else:
+            merged[key] = value
+    return merged
 
 
 def _resolve_path(path_value: str | Path, base_dir: Path) -> Path:

@@ -8,6 +8,7 @@ from src.extractors.base import BaseExtractor, ExtractionContext
 from src.extractors.dictionary_extractor import DictionaryExtractor
 from src.extractors.drug_extractor import DrugExtractor
 from src.extractors.imaging_extractor import ImagingExtractor
+from src.extractors.gliner_extractor import GLiNERExtractor
 from src.extractors.lab_extractor import LabExtractor
 from src.extractors.ner_extractor import NERExtractor
 from src.extractors.problem_extractor import ProblemExtractor
@@ -50,6 +51,9 @@ def build_default_extractors(config: AppConfig) -> list[BaseExtractor]:
     if extractor_cfg.get("ner", {}).get("enabled", False):
         extractors.append(NERExtractor(config=extractor_cfg.get("ner", {})))
 
+    if extractor_cfg.get("gliner", {}).get("enabled", False):
+        extractors.append(GLiNERExtractor(config=extractor_cfg.get("gliner", {})))
+
     return extractors
 
 
@@ -59,6 +63,7 @@ __all__ = [
     "DrugExtractor",
     "ExtractionContext",
     "ImagingExtractor",
+    "GLiNERExtractor",
     "LabExtractor",
     "NERExtractor",
     "ProblemExtractor",

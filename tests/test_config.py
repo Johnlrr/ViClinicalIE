@@ -26,3 +26,15 @@ def test_default_config_resolves_paths() -> None:
         assert isinstance(config.path(key), Path)
         assert config.path(key).is_absolute()
 
+
+def test_config_extends_deep_merges_parent(tmp_path) -> None:
+    parent = tmp_path / "parent.yaml"
+    child = tmp_path / "child.yaml"
+    parent.write_text("paths:\n  raw_input_dir: raw\nfeature:\n  enabled: false\n  threshold: 0.5\n", encoding="utf-8")
+    child.write_text("extends: parent.yaml\nfeature:\n  enabled: true\n", encoding="utf-8")
+
+    config = load_config(child, project_root=tmp_path)
+
+    assert config.raw["feature"] == {"enabled": True, "threshold": 0.5}
+    assert config.path("raw_input_dir") == tmp_path / "raw"
+

@@ -29,15 +29,17 @@ def counts_by_type(
     pairs: list[EntityPair],
 ) -> dict[str, PRFCounts]:
     counts: dict[str, PRFCounts] = {entity_type: PRFCounts() for entity_type in sorted(VALID_ENTITY_TYPES)}
-    matched_pred_ids = {id(pair.pred) for pair in pairs}
-    matched_gold_ids = {id(pair.gold) for pair in pairs}
+    # Directory evaluation reconstructs entities after per-file matching, so
+    # Python object identity is not stable. File ID + record index is stable.
+    matched_pred_ids = {(pair.pred.file_id, pair.pred.index) for pair in pairs}
+    matched_gold_ids = {(pair.gold.file_id, pair.gold.index) for pair in pairs}
     for pair in pairs:
         counts.setdefault(pair.gold.type, PRFCounts()).tp += 1
     for pred in predictions:
-        if id(pred) not in matched_pred_ids:
+        if (pred.file_id, pred.index) not in matched_pred_ids:
             counts.setdefault(pred.type, PRFCounts()).fp += 1
     for gold in golds:
-        if id(gold) not in matched_gold_ids:
+        if (gold.file_id, gold.index) not in matched_gold_ids:
             counts.setdefault(gold.type, PRFCounts()).fn += 1
     return {key: value for key, value in counts.items() if value.tp or value.fp or value.fn}
 

@@ -144,6 +144,8 @@ class EvaluationReport:
     assertion_metrics: dict[str, Any]
     candidate_metrics: dict[str, Any]
     error_category_counts: dict[str, int]
+    type_confusion: dict[str, dict[str, int]] = field(default_factory=dict)
+    boundary_error_counts: dict[str, int] = field(default_factory=dict)
 
     @property
     def files_evaluated(self) -> int:
@@ -169,5 +171,7 @@ class EvaluationReport:
             "assertions": self.assertion_metrics,
             "candidates": self.candidate_metrics,
             "error_category_counts": dict(sorted(self.error_category_counts.items())),
+            "type_confusion": self.type_confusion,
+            "boundary_error_counts": self.boundary_error_counts,
             "files": [file.to_summary_dict() for file in self.files],
         }

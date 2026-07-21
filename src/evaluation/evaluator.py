@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import csv
-from collections import Counter
+from collections import Counter, defaultdict
 from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
@@ -141,6 +141,8 @@ class GoldenEvaluator:
             assertion_metrics=_strip_mismatch_records(assertion_metrics),
             candidate_metrics=_strip_mismatch_records(candidate_metrics),
             error_category_counts=_error_category_counts(file_results),
+            type_confusion=_type_confusion(file_results),
+            boundary_error_counts=_boundary_error_counts(file_results),
         )
 
     def _validate_records_or_raise(self, records: Any, raw_text: str, *, file_name: str) -> None:
@@ -176,6 +178,7 @@ def write_evaluation_report(report: EvaluationReport, report_dir: str | Path) ->
     write_json(target / "evaluation_summary.json", report.to_dict())
     _write_per_file_metrics(report, target / "per_file_metrics.csv")
     _write_per_type_metrics(report, target / "per_type_metrics.csv")
+    _write_confusion_matrix(report, target / "type_confusion_matrix.csv")
     _write_jsonl(target / "true_positives.jsonl", [pair.to_dict() for file in report.files for pair in file.exact_pairs])
     _write_jsonl(target / "false_positives.jsonl", [_fp_to_dict(entity) for file in report.files for entity in file.false_positives])
     _write_jsonl(target / "false_negatives.jsonl", [_fn_to_dict(entity) for file in report.files for entity in file.false_negatives])
@@ -250,6 +253,16 @@ def _write_per_type_metrics(report: EvaluationReport, path: Path) -> None:
     _write_csv(path, rows)
 
 
+def _write_confusion_matrix(report: EvaluationReport, path: Path) -> None:
+    entity_types = sorted(set(report.type_confusion) | {pred for row in report.type_confusion.values() for pred in row})
+    rows = []
+    for gold_type in entity_types:
+        row: dict[str, Any] = {"gold_type": gold_type}
+        row.update({pred_type: report.type_confusion.get(gold_type, {}).get(pred_type, 0) for pred_type in entity_types})
+        rows.append(row)
+    _write_csv(path, rows)
+
+
 def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
@@ -309,6 +322,23 @@ def _error_category_counts(file_results: list[EvaluationFileResult]) -> dict[str
         counter["assertion_mismatch"] += len(file.assertion_mismatches)
         counter["candidate_mismatch"] += len(file.candidate_mismatches)
     return dict(counter)
+
+
+def _type_confusion(file_results: list[EvaluationFileResult]) -> dict[str, dict[str, int]]:
+    matrix: dict[str, Counter[str]] = defaultdict(Counter)
+    for file in file_results:
+        for record in file.type_mismatches:
+            gold_type = str(record.get("gold", {}).get("type", "UNKNOWN"))
+            pred_type = str(record.get("pred", {}).get("type", "UNKNOWN"))
+            matrix[gold_type][pred_type] += 1
+    return {gold: dict(sorted(row.items())) for gold, row in sorted(matrix.items())}
+
+
+def _boundary_error_counts(file_results: list[EvaluationFileResult]) -> dict[str, int]:
+    counter: Counter[str] = Counter()
+    for file in file_results:
+        counter.update(str(record.get("subcategory", "unknown")) for record in file.span_mismatches)
+    return dict(sorted(counter.items()))
 
 
 def _ordered_dedupe_assertions(assertions: Any) -> list[str]:

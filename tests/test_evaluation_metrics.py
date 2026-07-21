@@ -31,12 +31,21 @@ def test_prf_counts_values() -> None:
 
 
 def test_counts_by_type() -> None:
-    pred_match = E(0, 3, "TRIỆU_CHỨNG")
-    gold_match = E(0, 3, "TRIỆU_CHỨNG")
-    pred_fp = E(4, 7, "CHẨN_ĐOÁN")
-    gold_fn = E(8, 11, "THUỐC")
-    counts = counts_by_type([pred_match, pred_fp], [gold_match, gold_fn], [EntityPair(pred_match, gold_match, "exact")])
+    matched_pred = E(0, 3, "TRIỆU_CHỨNG", index=0)
+    matched_gold = E(0, 3, "TRIỆU_CHỨNG", index=0)
+    pred_fp = E(4, 7, "CHẨN_ĐOÁN", index=1)
+    gold_fn = E(8, 11, "THUỐC", index=1)
+    # Simulate directory evaluation rebuilding the entity lists.
+    reconstructed_pred = E(0, 3, "TRIỆU_CHỨNG", index=0)
+    reconstructed_gold = E(0, 3, "TRIỆU_CHỨNG", index=0)
+    counts = counts_by_type(
+        [reconstructed_pred, pred_fp],
+        [reconstructed_gold, gold_fn],
+        [EntityPair(matched_pred, matched_gold, "exact")],
+    )
     assert counts["TRIỆU_CHỨNG"].tp == 1
+    assert counts["TRIỆU_CHỨNG"].fp == 0
+    assert counts["TRIỆU_CHỨNG"].fn == 0
     assert counts["CHẨN_ĐOÁN"].fp == 1
     assert counts["THUỐC"].fn == 1
 

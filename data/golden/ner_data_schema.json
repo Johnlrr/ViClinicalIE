@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "viclinicalie-ner-data-v2.0",
+  "type": "object",
+  "required": ["file_id", "text", "source", "generator_version", "seed", "entities"],
+  "properties": {
+    "file_id": {"type": "string", "minLength": 1},
+    "text": {"type": "string"},
+    "source": {"type": "string", "minLength": 1},
+    "generator_version": {"type": "string", "minLength": 1},
+    "seed": {"type": "integer"},
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "start", "end", "type", "source", "metadata"],
+        "properties": {
+          "text": {"type": "string", "minLength": 1},
+          "start": {"type": "integer", "minimum": 0},
+          "end": {"type": "integer", "minimum": 1},
+          "type": {"enum": ["TRIỆU_CHỨNG", "CHẨN_ĐOÁN", "THUỐC", "TÊN_XÉT_NGHIỆM", "KẾT_QUẢ_XÉT_NGHIỆM"]},
+          "source": {"type": "string", "minLength": 1},
+          "metadata": {
+            "type": "object",
+            "required": ["template_family", "concept_family", "noise_profile"],
+            "properties": {
+              "template_family": {"type": "string", "minLength": 1},
+              "concept_family": {"type": "string", "minLength": 1},
+              "noise_profile": {"type": "string", "minLength": 1},
+              "concept_id": {"type": ["string", "null"]},
+              "original_sample_id": {"type": "string"},
+              "transformations": {"type": "array", "items": {"type": "string"}}
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -38,7 +38,7 @@ class ClinicalIEPipeline:
     ICD/RxNorm linking -> postprocess -> final JSON formatting.
     """
 
-    def __init__(self, config: AppConfig, *, enable_sparse_retrieval: bool = True) -> None:
+    def __init__(self, config: AppConfig, *, enable_sparse_retrieval: bool = True, ner_only: bool = False) -> None:
         self.config = config
         self.raw_config = copy.deepcopy(config.raw)
         if not enable_sparse_retrieval:
@@ -51,25 +51,22 @@ class ClinicalIEPipeline:
         self.extractors = build_default_extractors(config)
         self.resolver = TypeResolver(self.raw_config.get("type_resolution", {}))
 
+        self.ner_only = ner_only
         assertion_cfg = dict(self.raw_config.get("assertion_detection", {}))
         assertion_rules = _load_assertion_rules(config.config_path, assertion_cfg)
-        self.assertion_detector = AssertionDetector(assertion_cfg, rules=assertion_rules)
+        self.assertion_detector = None if ner_only else AssertionDetector(assertion_cfg, rules=assertion_rules)
 
-        self.icd_linker = ICD10Linker(config.path("processed_dir"), self.raw_config.get("icd10_linking", {}))
-        self.rx_linker = RxNormLinker(config.path("processed_dir"), self.raw_config.get("rxnorm_linking", {}))
+        self.icd_linker = None if ner_only else ICD10Linker(config.path("processed_dir"), self.raw_config.get("icd10_linking", {}))
+        self.rx_linker = None if ner_only else RxNormLinker(config.path("processed_dir"), self.raw_config.get("rxnorm_linking", {}))
         self.postprocessor = Postprocessor(self.raw_config.get("postprocess", {}))
         self.formatter = PredictionFormatter(self.raw_config.get("output_format", {}))
 
     def process_text(self, raw_text: str, *, file_id: str = "") -> PipelineResult:
-        output = preprocess_text(raw_text, self.raw_config)
-        chunks = detect_sections(output.chunks, self.section_patterns, self.section_config)
-        context = ExtractionContext(raw_text=raw_text, views=output.views, chunks=chunks, config=self.raw_config)
-
-        span_candidates: list[SpanCandidate] = []
-        for extractor in self.extractors:
-            span_candidates.extend(extractor.extract(context))
-
-        resolved = self.resolver.resolve(span_candidates, raw_text)
+        if self.ner_only:
+            return self.process_ner(raw_text, file_id=file_id)
+        if self.assertion_detector is None or self.icd_linker is None or self.rx_linker is None:
+            raise RuntimeError("Downstream pipeline components are not initialized")
+        resolved, chunks, span_candidates = self._extract_and_resolve(raw_text)
         asserted = self.assertion_detector.apply(resolved, raw_text)
         icd_linked = self.icd_linker.link_entities(asserted, raw_text=raw_text)
         rx_linked = self.rx_linker.link_entities(icd_linked, raw_text=raw_text)
@@ -95,6 +92,35 @@ class ClinicalIEPipeline:
             entities_by_type=dict(sorted(entity_counts.items())),
             postprocess_report=postprocessed.report,
         )
+
+    def process_ner(self, raw_text: str, *, file_id: str = "") -> PipelineResult:
+        resolved, chunks, span_candidates = self._extract_and_resolve(raw_text)
+        records = self.formatter.format_entities(resolved)
+        entity_counts = Counter(str(entity.type) for entity in resolved)
+        return PipelineResult(
+            file_id=file_id,
+            raw_text=raw_text,
+            entities=resolved,
+            records=records,
+            counters={
+                "chunks": len(chunks),
+                "span_candidates": len(span_candidates),
+                "entities_after_ner": len(resolved),
+                "records": len(records),
+            },
+            entities_by_type=dict(sorted(entity_counts.items())),
+        )
+
+    def _extract_and_resolve(self, raw_text: str) -> tuple[list[FinalEntity], list[Any], list[SpanCandidate]]:
+        output = preprocess_text(raw_text, self.raw_config)
+        chunks = detect_sections(output.chunks, self.section_patterns, self.section_config)
+        context = ExtractionContext(raw_text=raw_text, views=output.views, chunks=chunks, config=self.raw_config)
+
+        span_candidates: list[SpanCandidate] = []
+        for extractor in self.extractors:
+            span_candidates.extend(extractor.extract(context))
+
+        return self.resolver.resolve(span_candidates, raw_text), chunks, span_candidates
 
     def process_file(self, path: str | Path) -> PipelineResult:
         file_path = Path(path)

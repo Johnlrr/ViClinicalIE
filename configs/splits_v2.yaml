@@ -1,0 +1,22 @@
+version: v2.0
+annotation_guideline_version: v2.0-draft
+
+# The 20 verified notes are small. Development is used for daily diagnostics,
+# calibration only for threshold selection, and lockbox only at milestones.
+development:
+  ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+calibration:
+  ids: [13, 14, 15, 16]
+lockbox:
+  ids: [17, 18, 19, 20]
+
+grouping:
+  synthetic:
+    - template_family
+    - concept_family
+    - original_sample_id
+
+policy:
+  use_lockbox_for_daily_tuning: false
+  lockbox_open_milestones: [M3, M6]
+  keep_clean_and_noisy_variants_together: true

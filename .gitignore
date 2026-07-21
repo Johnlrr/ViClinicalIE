@@ -13,6 +13,8 @@ env/
 outputs/reports/*
 outputs/predictions/*
 outputs/submission/*
+outputs/cache/*
+outputs/baselines/*
 !outputs/reports/.gitkeep
 !outputs/predictions/.gitkeep
 !outputs/submission/.gitkeep

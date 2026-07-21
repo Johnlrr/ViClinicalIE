@@ -1,0 +1,47 @@
+extends: default.yaml
+
+project:
+  name: ViClinicalIE
+  phase: v2_ner1_gliner_zero_shot_reproduction
+
+extractors:
+  dictionary:
+    enabled: false
+  drug:
+    enabled: false
+  lab:
+    enabled: false
+  imaging:
+    enabled: false
+  problem:
+    enabled: false
+  ner:
+    enabled: false
+  gliner:
+    enabled: true
+    required: true
+    model_name_or_path: urchade/gliner_multi-v2.1
+    model_revision: 443d26d654e0324125a96bebd8e796c14ff2efe6
+    local_files_only: true
+    device: auto
+    pass_name: full_five_type
+    threshold:
+      default: 0.35
+    label_map:
+      symptom: TRIỆU_CHỨNG
+      disease or diagnosis: CHẨN_ĐOÁN
+      medication or drug: THUỐC
+      medical test or lab name: TÊN_XÉT_NGHIỆM
+      test result or measurement value: KẾT_QUẢ_XÉT_NGHIỆM
+    windowing:
+      max_tokens: 320
+      overlap_tokens: 64
+      tokenizer_name_or_path: microsoft/mdeberta-v3-base
+      tokenizer_revision: a0484667b22365f84929a935b5e50a51f71f159d
+    cache:
+      enabled: true
+      directory: outputs/cache/gliner
+
+type_resolution:
+  source_priority:
+    gliner: 50
