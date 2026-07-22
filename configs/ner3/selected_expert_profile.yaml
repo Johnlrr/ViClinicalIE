@@ -1,8 +1,16 @@
 version: ner3-expert-profile-v1
-status: pending_full_development
+status: development_complete_no_promotion
 selected_system: null
 promotion_allowed: false
-reason: one-note smoke passed technical integrity but cannot select a system; full development A/B/C/D is pending
+reason: D improves end-to-end score and density over diagnostic C but does not beat A or B and regresses exact F1 versus C
+development:
+  files: 12
+  candidate_ledger_manifest_hash: 7612562c591390dd410705df6fc5b7e523f8844488b95275047acbab72854373
+  systems:
+    A: {exact_f1: 0.229205, end_to_end_final_score: 0.16627540592632473, density_ratio: 1.0}
+    B: {exact_f1: 0.280992, end_to_end_final_score: 0.2216076570499013, density_ratio: 0.8303571428571429}
+    C: {exact_f1: 0.260745, end_to_end_final_score: 0.1578735598805087, density_ratio: 1.4672619047619047}
+    D: {exact_f1: 0.256186, end_to_end_final_score: 0.1617798098805087, density_ratio: 1.4345238095238095}
 parents_for_ner4:
   diagnostic_union: C
   simple_fusion_candidate: D

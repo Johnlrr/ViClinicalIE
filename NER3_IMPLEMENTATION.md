@@ -97,3 +97,13 @@ ledger mechanics and A/B reproduction only; it cannot select D. The frozen
 `configs/ner3/selected_expert_profile.yaml` therefore remains
 `pending_full_development` with `selected_system: null` until the 12-note
 development gate is explicitly authorized and completed.
+
+## Full development decision
+
+The 12-note development run completed from one shared 646-candidate ledger.
+A reproduced `V1_FROZEN` and B reproduced the selected NER-2 outputs for all 12
+notes. D reduced density and improved the end-to-end score over diagnostic C,
+but its exact F1 was lower than C and its primary score did not beat A or B.
+Therefore NER-3 completed with no promoted hybrid. C and D remain diagnostic
+parents for NER-4; `selected_system` remains null. Calibration and lockbox were
+not opened.

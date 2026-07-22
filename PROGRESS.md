@@ -2667,4 +2667,10 @@ and emitted zero exact duplicates/evidence errors. Its prediction-to-gold ratio
 was 2.67 and its density relative to A was 1.40. The frozen policy blocks
 promotion because the smoke covers only 1/12 required development notes; this
 is not a development decision. Full development, calibration, and lockbox were
-not run. The full repository suite passed with 256 tests before and after smoke.
+not run at the smoke checkpoint. The later 12-note development run completed
+from one shared 646-candidate ledger with zero evidence, validation, or exact
+duplicate errors. B remained the strongest system (exact F1 0.2810; end-to-end
+0.2216). D improved end-to-end score and density over diagnostic C but did not
+beat A or B and had lower exact F1 than C, so no NER-3 hybrid was promoted.
+Calibration and lockbox remain unopened. C and D are retained only as NER-4
+diagnostic parents.
