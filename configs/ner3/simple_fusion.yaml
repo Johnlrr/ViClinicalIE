@@ -1,0 +1,16 @@
+extends: base.yaml
+
+project:
+  phase: v2_ner3_simple_fusion
+
+ner3:
+  enabled: true
+  mode: simple_fusion
+  diagnostic_only: false
+  fusion:
+    structured_anchors_enabled: true
+    anchor_source_priority:
+      lab_result_rule: 100
+      lab_rule: 95
+      imaging_rule: 90
+      drug_rule: 85

@@ -1,0 +1,9 @@
+extends: base.yaml
+
+project:
+  phase: v2_ner3_naive_union_diagnostic
+
+ner3:
+  enabled: true
+  mode: naive_union
+  diagnostic_only: true

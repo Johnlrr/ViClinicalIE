@@ -8,15 +8,18 @@ from typing import Any
 
 from src.assertion import AssertionDetector, load_assertion_rules
 from src.config import AppConfig
-from src.data_types import FinalEntity, SpanCandidate
+from src.data_types import Chunk, FinalEntity, SpanCandidate
 from src.extractors import ExtractionContext, build_default_extractors
 from src.formatting import PredictionFormatter
 from src.linking.icd10_linker import ICD10Linker
 from src.linking.rxnorm_linker import RxNormLinker
 from src.postprocess import PostprocessReport, Postprocessor
+from src.ner.evidence_adapter import normalize_candidates
+from src.ner.simple_fusion import resolve_replay, resolve_replay_trace
 from src.preprocess.chunker import preprocess_text
 from src.section.section_detector import detect_sections, load_section_patterns
 from src.type_resolution import TypeResolver
+from src.type_resolution.resolver import TypeConflict, TypeOverlap
 
 
 @dataclass(slots=True)
@@ -28,6 +31,18 @@ class PipelineResult:
     counters: dict[str, int] = field(default_factory=dict)
     entities_by_type: dict[str, int] = field(default_factory=dict)
     postprocess_report: PostprocessReport | None = None
+
+
+@dataclass(slots=True)
+class NERExtractionTrace:
+    raw_text: str
+    chunks: list[Chunk]
+    candidates: list[SpanCandidate]
+    entities: list[FinalEntity]
+    resolver_conflicts: list[TypeConflict] = field(default_factory=list)
+    resolver_overlaps: list[TypeOverlap] = field(default_factory=list)
+    unresolved_candidates: list[dict[str, Any]] = field(default_factory=list)
+    duplicate_exact_span_count: int = 0
 
 
 class ClinicalIEPipeline:
@@ -111,16 +126,97 @@ class ClinicalIEPipeline:
             entities_by_type=dict(sorted(entity_counts.items())),
         )
 
-    def _extract_and_resolve(self, raw_text: str) -> tuple[list[FinalEntity], list[Any], list[SpanCandidate]]:
+    def extract_ner_trace(self, raw_text: str) -> NERExtractionTrace:
+        chunks, candidates = self._collect_ner_candidates(raw_text)
+        mode = self._ner3_mode()
+        if mode is not None:
+            replay = resolve_replay_trace(
+                candidates, raw_text, mode=mode,
+                resolver_config=self.raw_config.get("type_resolution", {}),
+                fusion_config=self.raw_config.get("ner3", {}).get("fusion", {}),
+            )
+            return NERExtractionTrace(
+                raw_text=raw_text, chunks=chunks, candidates=candidates, entities=replay.entities,
+                resolver_conflicts=list(replay.conflicts), resolver_overlaps=list(replay.overlaps),
+                unresolved_candidates=list(replay.unresolved),
+                duplicate_exact_span_count=replay.duplicate_exact_span_count,
+            )
+        resolver = self._new_resolver()
+        entities = resolver.resolve(candidates, raw_text)
+        return NERExtractionTrace(
+            raw_text=raw_text,
+            chunks=chunks,
+            candidates=candidates,
+            entities=entities,
+            resolver_conflicts=list(resolver.conflicts),
+            resolver_overlaps=list(resolver.overlaps),
+            unresolved_candidates=list(resolver.unresolved),
+            duplicate_exact_span_count=resolver.duplicate_exact_span_count,
+        )
+
+    def collect_ner_candidates(self, raw_text: str) -> tuple[list[Chunk], list[SpanCandidate]]:
+        """Collect every enabled source once without resolving final entities."""
+        return self._collect_ner_candidates(raw_text)
+
+    def _collect_ner_candidates(self, raw_text: str) -> tuple[list[Chunk], list[SpanCandidate]]:
         output = preprocess_text(raw_text, self.raw_config)
         chunks = detect_sections(output.chunks, self.section_patterns, self.section_config)
         context = ExtractionContext(raw_text=raw_text, views=output.views, chunks=chunks, config=self.raw_config)
-
-        span_candidates: list[SpanCandidate] = []
+        candidates: list[SpanCandidate] = []
         for extractor in self.extractors:
-            span_candidates.extend(extractor.extract(context))
+            candidates.extend(extractor.extract(context))
+        ner3_cfg = self.raw_config.get("ner3", {})
+        if isinstance(ner3_cfg, dict) and bool(ner3_cfg.get("enabled", False)):
+            evidence_cfg = ner3_cfg.get("evidence", {})
+            if not isinstance(evidence_cfg, dict) or bool(evidence_cfg.get("enabled", True)):
+                candidates = normalize_candidates(candidates)
+        return chunks, candidates
 
-        return self.resolver.resolve(span_candidates, raw_text), chunks, span_candidates
+    def resolve_candidates(
+        self, raw_text: str, candidates: list[SpanCandidate], *, mode: str | None = None,
+    ) -> list[FinalEntity]:
+        if mode is not None:
+            return resolve_replay(
+                candidates, raw_text, mode=mode,
+                resolver_config=self.raw_config.get("type_resolution", {}),
+                fusion_config=self.raw_config.get("ner3", {}).get("fusion", {}),
+            )
+        return self._new_resolver().resolve(candidates, raw_text)
+
+    def process_resolved_ner(self, raw_text: str, entities: list[FinalEntity], *, file_id: str = "") -> PipelineResult:
+        records = self.formatter.format_entities(entities)
+        counts = Counter(str(entity.type) for entity in entities)
+        return PipelineResult(file_id, raw_text, entities, records, entities_by_type=dict(sorted(counts.items())))
+
+    def process_resolved_end_to_end(self, raw_text: str, entities: list[FinalEntity], *, file_id: str = "") -> PipelineResult:
+        if self.assertion_detector is None or self.icd_linker is None or self.rx_linker is None:
+            raise RuntimeError("Downstream pipeline components are not initialized")
+        asserted = self.assertion_detector.apply(entities, raw_text)
+        icd_linked = self.icd_linker.link_entities(asserted, raw_text=raw_text)
+        rx_linked = self.rx_linker.link_entities(icd_linked, raw_text=raw_text)
+        postprocessed = self.postprocessor.process(rx_linked, raw_text=raw_text)
+        records = self.formatter.format_entities(postprocessed.entities)
+        counts = Counter(str(entity.type) for entity in postprocessed.entities)
+        return PipelineResult(
+            file_id, raw_text, postprocessed.entities, records,
+            entities_by_type=dict(sorted(counts.items())), postprocess_report=postprocessed.report,
+        )
+
+    def _extract_and_resolve(self, raw_text: str) -> tuple[list[FinalEntity], list[Any], list[SpanCandidate]]:
+        chunks, candidates = self._collect_ner_candidates(raw_text)
+        mode = self._ner3_mode()
+        entities = self.resolve_candidates(raw_text, candidates, mode=mode)
+        return entities, chunks, candidates
+
+    def _new_resolver(self) -> TypeResolver:
+        return TypeResolver(self.raw_config.get("type_resolution", {}))
+
+    def _ner3_mode(self) -> str | None:
+        ner3_cfg = self.raw_config.get("ner3", {})
+        if not isinstance(ner3_cfg, dict) or not bool(ner3_cfg.get("enabled", False)):
+            return None
+        mode = ner3_cfg.get("mode")
+        return str(mode) if mode is not None else None
 
     def process_file(self, path: str | Path) -> PipelineResult:
         file_path = Path(path)

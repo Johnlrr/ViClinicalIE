@@ -1,0 +1,18 @@
+version: ner3-expert-profile-v1
+status: pending_full_development
+selected_system: null
+promotion_allowed: false
+reason: one-note smoke passed technical integrity but cannot select a system; full development A/B/C/D is pending
+parents_for_ner4:
+  diagnostic_union: C
+  simple_fusion_candidate: D
+frozen_sources:
+  semantic_backbone: gliner
+  experts:
+    - dictionary
+    - drug_rule
+    - lab_rule
+    - lab_result_rule
+    - imaging_rule
+    - problem_rule
+lockbox_seen: false

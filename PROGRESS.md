@@ -1,10 +1,10 @@
 # PROGRESS: ViClinicalIE implementation state
 
-**Last updated:** 2026-07-21
+**Last updated:** 2026-07-22
 
-**Current implementation phase:** V2 Phase 1 — NER-0 measurement foundation and NER-1 GLiNER zero-shot reproduction complete; NER-2 controlled benchmark is next
+**Current implementation phase:** V2 NER-3 — V1 precision-expert integration implementation and one-note smoke validation
 
-**Reference docs:** `ABOUT.md`, `Solution_Design_V2.md`, `Implementation_Plan_V2.md`, `NER01_IMPLEMENTATION.md`
+**Reference docs:** `ABOUT.md`, `Solution_Design_V2.md`, `Implementation_Plan_V2.md`, `NER01_IMPLEMENTATION.md`, `NER2_IMPLEMENTATION.md`, `NER3_IMPLEMENTATION.md`
 
 ---
 
@@ -2622,3 +2622,49 @@ The next major milestone is V2 NER-2: controlled zero-shot benchmarking of label
 schema, token-window strategy, pass strategy, and per-type thresholds. NER-3/4
 hybrid expert integration and fusion follow only after one zero-shot config is
 selected; fine-tuning remains conditional under NER-6.
+
+---
+
+## 8K. V2 NER-3 — V1 expert integration experiment harness
+
+**Status:** Implementation and one-note smoke complete. The 12-note model-bearing
+development experiment has intentionally not been run.
+
+NER-3 now has a frozen development-only A/B/C/D plan: A=`V1_FROZEN`,
+B=selected NER-2 GLiNER, C=diagnostic naive union, and D=GLiNER-centered simple
+fusion. `configs/ner3/base.yaml` enables all sources and narrow same-type
+structured anchors. `configs/ner3/selection_policy.yaml` requires a shared
+candidate ledger, zero evidence/validation/exact-duplicate errors, preservation
+of unconfirmed GLiNER hypotheses, and manual source-error review.
+
+Implemented operational artifacts:
+
+```text
+configs/ner3/base.yaml
+configs/ner3/experiment_matrix.yaml
+configs/ner3/selection_policy.yaml
+configs/ner3/naive_union.yaml
+configs/ner3/simple_fusion.yaml
+configs/ner3/selected_expert_profile.yaml
+scripts/run_ner3_experiments.py
+scripts/summarize_ner3_experiments.py
+scripts/review_ner3_source_errors.py
+tests/test_ner3_experiment_runner.py
+NER3_IMPLEMENTATION.md
+```
+
+The runner collects every enabled source once through the main pipeline,
+validates raw offsets/evidence, and replays the identical ledger through all
+four modes. It emits per-source/per-type complementarity, prediction/evaluation
+artifacts, fusion safety counts, and hash-bound manifests. The summarizer cannot
+promote a configuration; a passing result is only ready for manual review.
+
+One development note was collected into a 111-candidate ledger and replayed
+through A/B/C/D twice without model inference on replay. A reproduced the V1
+frozen end-to-end bytes and B reproduced both NER-2 selected prediction modes.
+D used four structured anchors, retained all 15 unconfirmed GLiNER-only spans,
+and emitted zero exact duplicates/evidence errors. Its prediction-to-gold ratio
+was 2.67 and its density relative to A was 1.40. The frozen policy blocks
+promotion because the smoke covers only 1/12 required development notes; this
+is not a development decision. Full development, calibration, and lockbox were
+not run. The full repository suite passed with 256 tests before and after smoke.

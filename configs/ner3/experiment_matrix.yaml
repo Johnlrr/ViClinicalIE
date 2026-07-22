@@ -1,0 +1,24 @@
+version: ner3-abcd-v1
+base_config: base.yaml
+split: development
+checkpoints:
+  - id: A
+    name: v1_frozen
+    mode: v1
+    requires: []
+    diagnostic_only: false
+  - id: B
+    name: gliner_only
+    mode: gliner
+    requires: [A]
+    diagnostic_only: false
+  - id: C
+    name: naive_union
+    mode: naive_union
+    requires: [A, B]
+    diagnostic_only: true
+  - id: D
+    name: simple_fusion
+    mode: simple_fusion
+    requires: [A, B, C]
+    diagnostic_only: false

@@ -1,0 +1,51 @@
+extends: ../ner2/selected_zero_shot.yaml
+
+project:
+  phase: v2_ner3_expert_integration
+
+# NER-3 collects all sources once, writes an immutable candidate ledger, and
+# replays that ledger through the four declared checkpoints.  Turning NER-3 off
+# therefore continues to preserve the frozen V1/default behavior.
+extractors:
+  dictionary:
+    enabled: true
+  drug:
+    enabled: true
+  lab:
+    enabled: true
+  imaging:
+    enabled: true
+  problem:
+    enabled: true
+  ner:
+    enabled: false
+  gliner:
+    enabled: true
+    required: true
+
+type_resolution:
+  source_priority:
+    lab_result_rule: 100
+    lab_rule: 95
+    imaging_rule: 90
+    drug_rule: 85
+    problem_rule: 70
+    dictionary: 60
+    gliner: 50
+
+ner3:
+  enabled: true
+  evidence:
+    enabled: true
+    schema_version: ner3-evidence-v1
+  ledger:
+    schema_version: ner3-candidate-ledger-v1
+  complementarity:
+    near_iou_threshold: 0.50
+  fusion:
+    structured_anchors_enabled: true
+    anchor_source_priority:
+      lab_result_rule: 100
+      lab_rule: 95
+      imaging_rule: 90
+      drug_rule: 85

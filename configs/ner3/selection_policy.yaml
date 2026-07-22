@@ -1,0 +1,32 @@
+version: ner3-policy-v1
+primary_metric: end_to_end_official_like_final_score
+minimum_useful_effect:
+  end_to_end_final_score_absolute: 0.002
+  extraction_exact_f1_absolute: 0.005
+regression_budget:
+  overall_exact_f1_absolute: 0.01
+  per_type_exact_f1_absolute: 0.03
+  relaxed_f1_absolute: 0.01
+  density_ratio_max: 1.50
+  drug_precision_absolute: 0.03
+  lab_test_precision_absolute: 0.03
+technical_gates:
+  validation_errors: 0
+  offset_errors: 0
+  schema_errors: 0
+  exact_duplicates: 0
+  missing_provenance: 0
+allowed_split: development
+required_development_files: 12
+required_checkpoints: [A, B, C, D]
+require_shared_candidate_ledger: true
+require_zero_validation_errors: true
+require_zero_evidence_errors: true
+require_zero_duplicate_exact_spans: true
+naive_union_diagnostic_only: true
+promotion:
+  automatic: false
+  requires_manual_source_error_review: true
+  compare_simple_fusion_to: [A, B, C]
+  simple_fusion_must_beat_one_of: [A, B]
+  simple_fusion_must_improve_over_naive_union: primary_metric_or_fp_density_without_extraction_regression
