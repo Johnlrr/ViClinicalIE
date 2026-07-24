@@ -1,0 +1,55 @@
+version: ner5-v1.0.0
+annotation_guideline_version: v2.1-frozen
+schema_version: viclinicalie-ner-data-v2.0
+seed: 42
+
+output_dir: data/processed/ner_v2
+splits_config: configs/splits_v2.yaml
+gold_input_dir: data/golden/input
+gold_dir: data/golden/gold
+
+sources:
+  symptoms: data/dictionaries/symptoms_vi.csv
+  labs: data/dictionaries/lab_tests.csv
+  diagnosis_manual: data/dictionaries/diagnosis_aliases.csv
+  diagnosis: data/processed/icd10_aliases.parquet
+  drugs_manual: data/dictionaries/drug_aliases.csv
+  drugs: data/processed/rxnorm_aliases.parquet
+
+concepts_per_type:
+  TRIỆU_CHỨNG: 20
+  CHẨN_ĐOÁN: 20
+  THUỐC: 20
+  TÊN_XÉT_NGHIỆM: 20
+
+validation:
+  near_duplicate_threshold: 0.96
+  require_zero_offset_errors: true
+  require_zero_marker_leakage: true
+  require_zero_train_eval_leakage: true
+  require_all_five_types: true
+
+# Set to approved only after a person reviews the generated pilot and records
+# reviewer/date/notes below. Automated validation never changes this field.
+human_review:
+  status: pending
+  reviewer: null
+  date: null
+  notes: "Review representative clean/noisy positive and hard-negative samples."
+
+external_sources:
+  - name: ViMedNER
+    status: deferred
+    included_in_training: false
+    reason: "License, guideline, partial annotation and label semantics not verified locally."
+    ambiguous_labels: [Symptom_and_Disease]
+  - name: VietBioNER
+    status: deferred
+    included_in_training: false
+    reason: "License, provenance, version and competition label mapping not verified locally."
+    ambiguous_labels: []
+  - name: phase9_weak
+    status: review
+    confidence_tier: REVIEW
+    included_in_training: false
+    reason: "No independent annotator agreement or NER-5 manual quality evidence."

@@ -2,11 +2,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "viclinicalie-ner-data-v2.0",
   "type": "object",
-  "required": ["file_id", "text", "source", "generator_version", "seed", "entities"],
+  "required": ["file_id", "text", "source", "confidence_tier", "generator_version", "seed", "entities"],
   "properties": {
     "file_id": {"type": "string", "minLength": 1},
     "text": {"type": "string"},
     "source": {"type": "string", "minLength": 1},
+    "confidence_tier": {"enum": ["GOLD_VERIFIED", "TASK_ALIGNED_BY_CONSTRUCTION", "AUGMENTED_HIGH", "SILVER_HIGH", "REVIEW", "REJECT"]},
     "generator_version": {"type": "string", "minLength": 1},
     "seed": {"type": "integer"},
     "entities": {

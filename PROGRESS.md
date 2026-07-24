@@ -2698,3 +2698,30 @@ The one-use experiment harness/configs/traces were removed after the decision.
 The retained artifacts are the production modules, `configs/ner4.yaml`, two test
 files, `NER4_IMPLEMENTATION.md`, and `outputs/reports/ner4_final/summary.json`.
 Focused tests passed 12/12 and the full repository suite passed 268/268.
+
+---
+
+## 8M. V2 NER-5 — data readiness
+
+**Status:** Technical implementation complete; verification UI ready for human review.
+
+NER-5 freezes annotation/data contract V2.1, adds confidence tiers, strengthens
+validation for offsets, marker/overlap/duplicate and cross-split leakage, and
+builds one compact bundle under `data/processed/ner_v2/`. The bundle contains
+147 clean task-aligned samples, 143 noisy samples, 12 development views and 4
+calibration views. Training data covers all five types with 332 entities total.
+
+Technical validation passes with zero offset, marker, duplicate, near-duplicate,
+group, train/evaluation and lockbox leakage errors. A second build is
+byte-identical. Lockbox data is not exported or used for template selection.
+ViMedNER/VietBioNER remain deferred; ambiguous labels are not force-mapped, and
+Phase-9 weak labels remain excluded at `REVIEW` tier.
+
+**Verification UI:** A simple web interface (`scripts/verify_ner5_ui.py` + 
+`templates/verify_ner5.html`) allows reviewing 9 pilot samples with entity
+highlighting, checklist, notes and export. After human review, update
+`configs/ner5.yaml` with approval/rejection, rebuild, and NER-5 hands off to
+NER-6 fine-tuning go/no-go decision.
+
+**Quick start:** `python scripts/verify_ner5_ui.py` then open `http://localhost:5000`.
+See `NER5_QUICKSTART.md` for full workflow.

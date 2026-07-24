@@ -24,6 +24,9 @@ outputs/experiments/*
 
 data/processed/*
 !data/processed/.gitkeep
+!data/processed/ner_v2/
+!data/processed/ner_v2/*.jsonl
+!data/processed/ner_v2/manifest.json
 
 models/
 *.zip

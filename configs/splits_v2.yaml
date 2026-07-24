@@ -1,5 +1,5 @@
 version: v2.0
-annotation_guideline_version: v2.0-draft
+annotation_guideline_version: v2.1-frozen
 
 # The 20 verified notes are small. Development is used for daily diagnostics,
 # calibration only for threshold selection, and lockbox only at milestones.
